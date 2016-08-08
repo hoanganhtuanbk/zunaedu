@@ -1,0 +1,23 @@
+{
+  "name": "App",
+  "base": "Application",
+  "idInjection": true,
+  "options": {
+    "validateUpsert": true
+  },
+  "properties": {
+    "serviceId": {
+      "type": [
+        "string"
+      ]
+    },
+    "userId": {
+      "type":
+        "string"
+     }
+  },
+  "validations": [],
+  "relations": {},
+  "acls": [],
+  "methods": {}
+}

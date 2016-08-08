@@ -1,0 +1,70 @@
+.navbar{
+  height: $height-index-center-header ;
+  text-align: center;
+  color: #444444;
+  margin: 0 0 0 220px;
+  border-bottom: 1px solid rgba(153, 153, 153, 0.26);
+  -webkit-transition: all 1s; /* Safari */
+  transition: all 1s;
+
+  .navbar-main{
+    left: $sidebar;
+    margin: 0;
+
+    .navbar-tab{
+      width: 67px;
+      height: 57px;
+      position: absolute;
+      left: 0;
+      background-color: transparent;
+      border: 0;
+      border-right: 1px solid rgba(153, 153, 153, 0.26);
+
+      i{
+        font-size: 21px;
+      }
+    }
+    .search{
+      top: 10px;
+      position: absolute;
+      left: 82px;
+
+
+      input{
+        padding: 5px 15px;
+        border-radius: 25px;
+        width: 250px;
+        display: none;
+        border-color: rgba(68, 68, 68, 0.09);
+      }
+      .search-style{
+        //margin-left: -37px;
+
+      }
+      button{
+        margin: 7px;
+        background-color: transparent;
+        border: 0;
+      }
+    }
+    .profile{
+      margin-top: 10px;
+      float: right;
+      img{
+        height: 40px;
+        margin: -5px 5px 0 5px;
+      }
+      span{
+        margin: 4px 10px 0 10px;
+        font-weight: $font-semibold;
+      }
+    }
+  }
+
+}
+
+.navbar-style{
+  margin-left: 0!important;
+  width: 100%!important;
+
+}

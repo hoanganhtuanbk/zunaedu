@@ -1,0 +1,136 @@
+<!doctype html>
+<html>
+<head>
+  <!--<style>-->
+    <!--* { margin: 0; padding: 0; box-sizing: border-box; }-->
+    <!--body { font: 13px Helvetica, Arial; }-->
+    <!--form { background: #000; padding: 3px; position: fixed; bottom: 0; width: 100%; }-->
+    <!--form input { border: 0; padding: 10px; width: 90%; margin-right: .5%; }-->
+    <!--form button { width: 9%; background: rgb(130, 224, 255); border: none; padding: 10px; }-->
+
+    <!--#topic input {-->
+      <!--width: 44%;-->
+      <!--margin-right: 1%;-->
+    <!--}-->
+    <!--#messages { list-style-type: none; margin: 0; padding: 0; }-->
+    <!--#messages li { padding: 5px 10px; }-->
+    <!--#messages li:nth-child(odd) { background: #eee; }-->
+  <!--</style>-->
+  <style>
+    fieldset {
+      margin-bottom: 20px;
+    }
+    .form form {
+      width: 47%;
+      margin-right: 1%;
+      float: left
+    }
+    #publish input, #subscribe input {
+      width: 85%;
+      height: 20px;
+      margin-bottom: 10px
+    }
+    #publish label, #subscribe label {
+      display: inline-block;
+      width: 10%
+    }
+    #publish button, #subscribe button, .credential button {
+      float: right;
+    }
+    #subscribe {
+      margin-right: 0;
+    }
+    .message {
+      width: 100%;
+      min-height: 300px;
+    }
+    .credential input {
+      width: 40%;
+      margin-right: 20px;
+      height: 20px;
+    }
+    .credential label {
+      display: inline-block;
+      margin-right: 20px;
+    }
+  </style>
+</head>
+<body>
+<div class="credential">
+  <form>
+    <fieldset>
+      <legend>Credential</legend>
+      <label for="ci">ClientId</label>
+      <input id="ci" type="text" placeholder="Client Id">
+      <label for="cs">Client Secret</label>
+      <input id="cs" type="text" placeholder="Client Secret">
+      <button onclick="credential()">Submit</button>
+    </fieldset>
+  </form>
+</div>
+<div class="form">
+  <form id="publish">
+    <fieldset>
+      <legend>Publish A message</legend>
+      <label for="t">Topic:</label>
+      <input id="t" type="text" placeholder="Topic to publish"/>
+      <label for="m">Message:</label>
+      <input id="m" type="text" placeholder="Message to publish">
+      <button onclick="publish()">Send</button>
+    </fieldset>
+  </form>
+  <form id="subscribe">
+    <fieldset>
+      <legend>Subscribe to a topic</legend>
+      <label for="topic">Topic: </label>
+      <input id="topic" type="text" placeholder="Subscribe to a topic">
+      <button onclick="subscribe()">Subscribe</button>
+    </fieldset>
+  </form>
+</div>
+<fieldset class="message">
+  <legend>Messages</legend>
+  <ul id="messages"></ul>
+</fieldset>
+<script src="http://code.jquery.com/jquery-1.11.1.js"></script>
+<script src="/pubsub-api.js"></script>
+<script>
+  var client = pubsubApi();
+  var pubsub;
+  $("form").submit(function(e) {
+    e.preventDefault()
+  });
+  function credential() {
+    var clientId = $("#ci").val(),
+      clientSecret = $("#cs").val();
+    pubsub = client.connect(clientId, clientSecret);
+    pubsub.on('message', function(topic, msg, packet) {
+      console.log(topic, msg, packet);
+      $('#messages').append($('<li>').text(msg.toString()));
+    })
+
+  }
+
+  function publish() {
+    var topic = $('#t').val()
+      , message = $('#m').val();
+    pubsub.publish(topic, message);
+    $('#m').val('');
+  }
+
+  function subscribe() {
+    $("li").remove();
+    var topic = $("#topic").val();
+    pubsub.subscribe(topic, function(err, status) {
+      if (!err) {
+        alert('Subscribe!')
+      }
+    });
+  }
+
+
+
+
+</script>
+</body>
+</html>

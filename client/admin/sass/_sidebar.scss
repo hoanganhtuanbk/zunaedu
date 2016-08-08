@@ -1,0 +1,575 @@
+
+
+@include responsive_320{
+  .index-center{
+    .sidebar{
+      height: 100%;
+      background-color: $index-blue;
+      float: left;
+      width: $sidebar;
+      transition: all 1s;
+      transform: translate(-220px, 0);
+      position: absolute;
+      top: 60px;
+      .sidebar-main{
+        margin-top: 20px;
+        list-style: none;
+        transition: transform 1s ease-in-out, opacity 1s ease-in-out;
+        li{
+          height: $height-feature;
+          border: 0;
+          border-top: 1px solid rgba(226, 226, 226, 0.14);
+          background-color: $index-blue;
+
+          a{
+            color: $sidebar-gray;
+            font-size: 15px;
+            font-weight: $font-bold;
+            line-height: 50px;
+            padding: 0 20px;
+            border-left: 4px solid #253559;
+            display: list-item;
+            .toggle-icon{
+              float: right;
+              font-weight: 800;
+              font-size: 21px;
+              margin-top: 14px;
+              animation: anim 1s ease-in-out;
+            }
+            i{
+              margin-right: 16px;
+            }
+            span{
+              animation: anim 1s ease-in-out;
+            }
+          }
+          .active{
+            background-color: $index-blue-active;
+            border-left: 4px solid $index-pink;
+            color: white;
+            i{
+              color: $index-pink!important;
+            }
+          }
+        }
+      }
+
+      .sidebar-footer{
+        margin-left: 20px;
+        width: 100%;
+        animation: anim .3s ease-in-out;
+        p{
+          float: left;
+          color: $white
+        }
+        span{
+          color: $index-pink;
+          margin-left: 10px;
+          font-weight: $font-semibold;
+        }
+      }
+    }
+    .toggle-menu-transition{
+      transform: translate(0, 0)
+    }
+
+  }
+}
+
+@include responsive_375{
+  .index-center{
+    .sidebar{
+      height: 100%;
+      background-color: $index-blue;
+      float: left;
+      width: $sidebar;
+      transition: all 1s;
+      transform: translate(-220px, 0);
+      position: absolute;
+      top: 60px;
+      .sidebar-main{
+        margin-top: 20px;
+        list-style: none;
+        transition: transform 1s ease-in-out, opacity 1s ease-in-out;
+        li{
+          height: $height-feature;
+          border: 0;
+          border-top: 1px solid rgba(226, 226, 226, 0.14);
+          background-color: $index-blue;
+
+          a{
+            color: $sidebar-gray;
+            font-size: 15px;
+            font-weight: $font-bold;
+            line-height: 50px;
+            padding: 0 20px;
+            border-left: 4px solid #253559;
+            display: list-item;
+            .toggle-icon{
+              float: right;
+              font-weight: 800;
+              font-size: 21px;
+              margin-top: 14px;
+              animation: anim 1s ease-in-out;
+            }
+            i{
+              margin-right: 16px;
+            }
+            span{
+              animation: anim 1s ease-in-out;
+            }
+          }
+          .active{
+            background-color: $index-blue-active;
+            border-left: 4px solid $index-pink;
+            color: white;
+            i{
+              color: $index-pink!important;
+            }
+          }
+        }
+      }
+
+      .sidebar-footer{
+        margin-left: 20px;
+        width: 100%;
+        animation: anim .3s ease-in-out;
+        p{
+          float: left;
+          color: $white
+        }
+        span{
+          color: $index-pink;
+          margin-left: 10px;
+          font-weight: $font-semibold;
+        }
+      }
+    }
+    .toggle-menu-transition{
+      transform: translate(0, 0)
+    }
+
+  }
+}
+
+@include responsive_425{
+  .index-center{
+    .sidebar{
+      height: 100%;
+      background-color: $index-blue;
+      float: left;
+      width: $sidebar;
+      transition: all 1s;
+      transform: translate(-220px, 0);
+      position: absolute;
+      top: 60px;
+      .sidebar-main{
+        margin-top: 20px;
+        list-style: none;
+        transition: transform 1s ease-in-out, opacity 1s ease-in-out;
+        li{
+          height: $height-feature;
+          border: 0;
+          border-top: 1px solid rgba(226, 226, 226, 0.14);
+          background-color: $index-blue;
+
+          a{
+            color: $sidebar-gray;
+            font-size: 15px;
+            font-weight: $font-bold;
+            line-height: 50px;
+            padding: 0 20px;
+            border-left: 4px solid #253559;
+            display: list-item;
+            .toggle-icon{
+              float: right;
+              font-weight: 800;
+              font-size: 21px;
+              margin-top: 14px;
+              animation: anim 1s ease-in-out;
+            }
+            i{
+              margin-right: 16px;
+            }
+            span{
+              animation: anim 1s ease-in-out;
+            }
+          }
+          .active{
+            background-color: $index-blue-active;
+            border-left: 4px solid $index-pink;
+            color: white;
+            i{
+              color: $index-pink!important;
+            }
+          }
+        }
+      }
+
+      .sidebar-footer{
+        margin-left: 20px;
+        width: 100%;
+        animation: anim .3s ease-in-out;
+        p{
+          float: left;
+          color: $white
+        }
+        span{
+          color: $index-pink;
+          margin-left: 10px;
+          font-weight: $font-semibold;
+        }
+      }
+    }
+    .toggle-menu-transition{
+      transform: translate(0, 0)
+    }
+
+  }
+}
+
+@include responsive_768{
+  .index-center{
+    .sidebar{
+      height: 100%;
+      background-color: $index-blue;
+      float: left;
+      width: $sidebar;
+      transition: all 1s;
+      transform: translate(-220px, 0);
+      position: absolute;
+      top: 60px;
+      .sidebar-main{
+        margin-top: 20px;
+        list-style: none;
+        transition: transform 1s ease-in-out, opacity 1s ease-in-out;
+        li{
+          height: $height-feature;
+          border: 0;
+          border-top: 1px solid rgba(226, 226, 226, 0.14);
+          background-color: $index-blue;
+
+          a{
+            color: $sidebar-gray;
+            font-size: 15px;
+            font-weight: $font-bold;
+            line-height: 50px;
+            padding: 0 20px;
+            border-left: 4px solid #253559;
+            display: list-item;
+            .toggle-icon{
+              float: right;
+              font-weight: 800;
+              font-size: 21px;
+              margin-top: 14px;
+              animation: anim 1s ease-in-out;
+            }
+            i{
+              margin-right: 16px;
+            }
+            span{
+              animation: anim 1s ease-in-out;
+            }
+          }
+          .active{
+            background-color: $index-blue-active;
+            border-left: 4px solid $index-pink;
+            color: white;
+            i{
+              color: $index-pink!important;
+            }
+          }
+        }
+      }
+
+      .sidebar-footer{
+        margin-left: 20px;
+        width: 100%;
+        animation: anim .3s ease-in-out;
+        p{
+          float: left;
+          color: $white
+        }
+        span{
+          color: $index-pink;
+          margin-left: 10px;
+          font-weight: $font-semibold;
+        }
+      }
+    }
+    .toggle-menu-transition{
+      transform: translate(0, 0)
+    }
+
+  }
+
+}
+
+@include responsive_992{
+  .index-center{
+    .sidebar{
+      height: 100%;
+      background-color: $index-blue;
+      width: $sidebar;
+      transition: all 1s;
+      position: absolute;
+      .sidebar-main{
+        margin-top: 20px;
+        list-style: none;
+        transition: transform 1s ease-in-out, opacity 1s ease-in-out;
+        li{
+          height: $height-feature;
+          border: 0;
+          border-top: 1px solid rgba(226, 226, 226, 0.14);
+          background-color: $index-blue;
+
+          a{
+            color: $sidebar-gray;
+            font-size: 15px;
+            font-weight: $font-bold;
+            line-height: 50px;
+            padding: 0 20px;
+            border-left: 4px solid #253559;
+            display: list-item;
+            .toggle-icon{
+              float: right;
+              font-weight: 800;
+              font-size: 21px;
+              margin-top: 14px;
+              animation: anim 1s ease-in-out;
+            }
+            i{
+              margin-right: 16px;
+            }
+            span{
+              animation: anim 1s ease-in-out;
+            }
+          }
+          .active{
+            background-color: $index-blue-active;
+            border-left: 4px solid $index-pink;
+            color: white;
+            i{
+              color: $index-pink!important;
+            }
+          }
+        }
+      }
+
+      .sidebar-footer{
+        margin-left: 20px;
+        width: 100%;
+        animation: anim .3s ease-in-out;
+        p{
+          float: left;
+          color: $white
+        }
+        span{
+          color: $index-pink;
+          margin-left: 10px;
+          font-weight: $font-semibold;
+        }
+      }
+    }
+    .toggle-menu-transition{
+      transition: all 1s;
+
+      transform: translate(-220px, 0)
+    }
+
+  }
+
+}
+
+@include responsive_1024{
+  .index-center{
+    .sidebar{
+      height: 100%;
+      background-color: $index-blue;
+      width: $sidebar;
+      transition: all 1s;
+      position: absolute;
+      .sidebar-main{
+        margin-top: 20px;
+        list-style: none;
+        transition: transform 1s ease-in-out, opacity 1s ease-in-out;
+        li{
+          height: $height-feature;
+          border: 0;
+          border-top: 1px solid rgba(226, 226, 226, 0.14);
+          background-color: $index-blue;
+
+          a{
+            color: $sidebar-gray;
+            font-size: 15px;
+            font-weight: $font-bold;
+            line-height: 50px;
+            padding: 0 20px;
+            border-left: 4px solid #253559;
+            display: list-item;
+            .toggle-icon{
+              float: right;
+              font-weight: 800;
+              font-size: 21px;
+              margin-top: 14px;
+              animation: anim 1s ease-in-out;
+            }
+            i{
+              margin-right: 16px;
+            }
+            span{
+              animation: anim 1s ease-in-out;
+            }
+          }
+          .active{
+            background-color: $index-blue-active;
+            border-left: 4px solid $index-pink;
+            color: white;
+            i{
+              color: $index-pink!important;
+            }
+          }
+        }
+      }
+
+      .sidebar-footer{
+        margin-left: 20px;
+        width: 100%;
+        animation: anim .3s ease-in-out;
+        p{
+          float: left;
+          color: $white
+        }
+        span{
+          color: $index-pink;
+          margin-left: 10px;
+          font-weight: $font-semibold;
+        }
+      }
+    }
+    .toggle-menu-transition{
+      transition: all 1s;
+
+      transform: translate(-220px, 0)
+    }
+
+  }
+
+}
+
+@include responsive_1200{
+  .index-center{
+    .sidebar{
+      height: 100%;
+      background-color: $index-blue;
+      width: $sidebar;
+      transition: all 1s;
+      position: absolute;
+      .sidebar-main{
+        margin-top: 20px;
+        list-style: none;
+        transition: transform 1s ease-in-out, opacity 1s ease-in-out;
+        li{
+          height: $height-feature;
+          border: 0;
+          border-top: 1px solid rgba(226, 226, 226, 0.14);
+          background-color: $index-blue;
+
+          a{
+            color: $sidebar-gray;
+            font-size: $font-base;
+            font-weight: $font-bold;
+            line-height: 50px;
+            padding: 0 20px;
+            border-left: 4px solid #253559;
+            display: list-item;
+            .toggle-icon{
+              float: right;
+              font-weight: 800;
+              font-size: 21px;
+              margin-top: 14px;
+              animation: anim 1s ease-in-out;
+            }
+            i{
+              margin-right: 16px;
+            }
+            span{
+              animation: anim 1s ease-in-out;
+            }
+          }
+          .active{
+            background-color: $index-blue-active;
+            border-left: 4px solid $index-pink;
+            color: white;
+            i{
+              color: $index-pink!important;
+            }
+          }
+        }
+      }
+
+      .sidebar-footer{
+        margin-left: 20px;
+        animation: anim .3s ease-in-out;
+        p{
+          float: left;
+          color: $white
+        }
+        span{
+          color: $index-pink;
+          margin-left: 10px;
+          font-weight: $font-semibold;
+        }
+      }
+    }
+    .toggle-menu-transition{
+      transform: translate(-220px, 0)
+    }
+
+  }
+
+}
+
+
+.toggle-settings {
+  display: none;
+  transform: scale(0);
+  opacity: 0;
+  transition: transform .3s ease-in-out, opacity .3s ease-in-out;
+  i{
+    margin: 4px 0 0 22px!important;
+    width: 21px;
+    font-size: 8px;
+  }
+  a{
+    background-color: inherit !important;
+    border-bottom: 1px solid rgba(226,226,226,.14);
+    border-left: 0!important;
+  }
+  //transition: all .3s ease .15s;
+  &.activeSetting {
+    display: block;
+    transform: scale(1);
+    opacity: 1;
+    &.setting {
+      animation: anim .3s ease-in-out;
+    }
+  }
+}
+
+@keyframes anim {
+  0% {
+    display: none;
+    opacity: 0;
+  }
+  1% {
+    display: block;
+    opacity: 0;
+    transform: scale(0);
+  }
+  100% {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
