@@ -44,7 +44,6 @@
     "react-responsive-carousel": "^3.0.12",
     "react-router": "^2.4.0",
     "serve-favicon": "^2.0.1",
-    "simple-line-icons": "^2.3.2",
     "strong-pubsub": "^0.2.0",
     "strong-pubsub-bridge": "^0.2.1",
     "strong-pubsub-connection-mqtt": "^0.1.2",
