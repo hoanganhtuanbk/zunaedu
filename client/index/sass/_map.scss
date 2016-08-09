@@ -1,0 +1,14 @@
+.icon{
+  fill: currentColor;
+}
+#map-canvas{
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  width: 1066px;
+  min-width: 300px;
+  -webkit-transition: all 1s; /* Safari */
+  transition: all 1s;
+}
+
+

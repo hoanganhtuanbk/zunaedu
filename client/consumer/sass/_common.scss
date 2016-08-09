@@ -1,0 +1,63 @@
+/* ------------------------------>>> COMMON <<<------------------------------ */
+body {
+  font-family: $font-family;
+  font-size: $font-base;
+  line-height: 1.5;
+  background-color: $white;
+  box-sizing: border-box;
+  color: $xlight-black;
+  overflow: hidden;
+}
+
+.wrapper {
+  overflow: hidden;
+
+  &.active {
+    position: fixed;
+    width: 100%;
+    height: 100%;
+  }
+}
+*,
+*:after,
+*:before {
+  box-sizing: inherit;
+}
+
+img {
+  vertical-align: top;
+}
+
+a {
+  color: $xlight-black;
+  outline: none;
+  text-decoration: none;
+  -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+
+  &:hover,
+  &:active,
+  &:focus {
+    color: $base-color;
+    text-decoration: none;
+  }
+}
+td{
+  font-size: 14px;
+}
+th{
+  font-size: 15px;
+}
+a,
+a i,
+button,
+input {
+  transition-duration: 0.25s;
+  transition-property: color, background-color, border-color;
+  transition-timing-function: ease-out;
+
+  &:hover,
+  &:active,
+  &:focus {
+    outline: none;
+  }
+}

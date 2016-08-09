@@ -1,0 +1,29 @@
+.login{
+	&-wrap{
+		background-color: $dark-white;
+		font-weight: 300;
+    height: 100%;
+		.checkbox label{
+			font-weight: 300;
+		}
+	}
+	&-container{
+		margin: 0 auto 2*$gutter auto;
+		width: 505px;
+		padding: $gutter;
+	}
+	&-header{
+		text-align: center;
+		margin: 0 auto;
+		padding-top: 2 * $gutter;
+
+		h1{
+			font-size: 35px;
+			font-weight: bold;
+		}
+	}
+	&-footer{
+		text-align: center;
+		font-size: 18px;
+	}
+}
