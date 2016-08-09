@@ -6,24 +6,42 @@ import { Link, IndexLink } from 'react-router';
 class Header extends React.Component{
   render(){
     return(
-      <div className="stm-page-head">
+      <div className="breadcrumbs-v1">
         <div className="container">
-          <div className="stm-page-head__content">
-            <h1 className="stm-page-head__title">About our School</h1>
-
-            <div className="stm-page-head__separator">
-              <div className="stm-page-head__separator-line"></div>
-            </div>
-
-          </div>
+          <span>Blog ZunaEdu</span>
+          <h1>Vân tay học</h1>
         </div>
-
-        <div className="stm-page-head__overlay"></div>
       </div>
     )
   }
 }
-
+class Menu extends React.Component{
+  render(){
+    return(
+      <div className="col-md-3">
+        <div className="headline-v2"><h2>Mục lục</h2></div>
+        <ul className="list-unstyled blog-trending margin-bottom-50">
+          <li>
+            <h3><Link to="/van-tay-hoc">Vân tay học là gì ?</Link></h3>
+            <small>23 Jan, 2015 / <Link to="/van-tay-hoc">Admin</Link></small>
+          </li>
+          <li>
+            <h3><Link to="/van-tay-hoc/lich-su-hinh-thanh">Lịch sử nghiên cứu sinh trắc học dấu vân tay.</Link></h3>
+            <small>22 Jan, 2015 / <Link to="/van-tay-hoc/lich-su-hinh-thanh">Admin</Link></small>
+          </li>
+          <li>
+            <h3><Link to="/van-tay-hoc/ung-dung">Ứng dụng của vân tay học vào cuộc sống.</Link></h3>
+            <small>19 Jan, 2015 / <Link to="/van-tay-hoc/ung-dung">Admin</Link></small>
+          </li>
+          <li>
+            <h3><Link to="/van-tay-hoc/phan-hoi">Cảm nhận </Link></h3>
+            <small>17 Jan, 2015 / <Link to="/van-tay-hoc/phan-hoi">Admin</Link></small>
+          </li>
+        </ul>
+      </div>
+    )
+  }
+}
 
 
 export class PricingPage extends React.Component{
@@ -42,29 +60,17 @@ export class PricingPage extends React.Component{
   }
   render(){
     return (
-      <section className="pricing">
+      <section className="">
         <Header />
-
-        <div className="pricing-body">
-          <div className="container">
-              {this.props.children}
-            </div>
-        </div>
-        <div className="pricing-footer">
-          <div className="container">
+        <div className="bg-color-light">
+          <div className="container content-sm">
             <div className="row">
-              <div className="col-md-6 col-md-offset-3 col-sm-10 col-sm-offset-1">
-                <h2 className="title">Ready to start trial <span>Now !</span></h2>
-                <div className="sumary">
-                  <p>Use vndispatch put the car anytime , anywhere to experience a safe trip , comfortable . Fit on foot phones running iOS , Android.</p>
-                </div>
-                <div className="link">
-
-                </div>
-              </div>
+              <Menu />
+                {this.props.children}
             </div>
           </div>
         </div>
+
       </section>
     );
   }

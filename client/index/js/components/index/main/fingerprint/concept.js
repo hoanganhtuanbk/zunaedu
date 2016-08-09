@@ -6,36 +6,46 @@ import { Link, IndexLink } from 'react-router';
 export class Concept extends React.Component{
   render(){
     return(
-      <div className="package ">
-          <div className="col-md-12">
-              <div className="wpb_wrapper">
-                <h2 className="stm-title stm-font_color_dark-blue stm-title_sep_bottom">
-
-                  SINH TRẮC HỌC DẤU VÂN TAY LÀ GÌ?
-                </h2>
-                <div className="stm-separator stm-clearfix stm-separator_type_title">
-                  <div className="stm-separator__line stm-border-b_color_dark-blue"></div>
-                </div>
-                <div className="stm-blockquote">
-                  <div className="stm-blockquote__content">
-
-                    <div className="stm-blockquote__body">
-                      <p>
-                        Công nghệ Sinh trắc học (Biometric) là một công nghệ sử dụng những thuộc tính vật lý hoặc các mẫu hành vi, các đặc điểm sinh học đặc trưng như dấu vân tay, mẫu mống mắt, giọng nói, khuôn mặt, dáng đi,… để nhận diện con người.
-                        <strong>Sinh trắc học là một công cụ kiểm tra cá nhân hữu hiệu chưa từng có trong lịch sử.</strong></p>
-                      <img src="../index/img/concept/concept2.png" width={300} />
-                      <p></p>
-                      <p>Công nghệ sinh trắc học được áp dụng phổ biến và lâu đời nhất là công nghệ nhận dạng vân tay. Dấu vân tay là một đặc điểm quan trọng để phân biệt giữa người này và người khác. Chính vì vậy, sự phát triển của công nghệ thông tin có thể giúp thu nhận và ghi nhớ được hàng triệu các ghi chép dưới dạng số hoá. Kỹ thuật này được đánh giá sẽ là chìa khoá của một cuộc cách mạng công nghệ mới, khi những thiết bị có khả năng nhận dạng vân tay để bảo vệ dữ liệu được ứng dụng ngày càng nhiều.
-                      </p>
-                      <p>Nguyên lý hoạt động của Công nghệ nhận dạng vân tay là khi đặt ngón tay lên trên một thiết bị nhận dạng dấu vân tay, ngay lập tức thiết bị này sẽ quét hình ảnh ngón tay đó và đối chiếu các đặc điểm của ngón tay đó với dữ liệu đã được lưu trữ trong hệ thống. Quá trình xử lý dữ liệu sẽ được thiết bị chuyển sang các dữ liệu số và ra thông báo rằng dấu vân tay đó là hợp lệ hay không hợp lệ để cho phép hệ thống thực hiện các chức năng tiếp theo.</p>
-                      <img src="../index/img/concept/concept3.jpg" width={300} />
-                      <footer><strong>Mrs Joanna McQuaid</strong>, Principal</footer>
-                    </div>
-                  </div>
-                </div>
-                <div className="stm-spacing"></div>
-              </div>
+      <div className="col-md-9">
+        <div className="news-v3 bg-color-white margin-bottom-60">
+          <img className="img-responsive full-width" src="../index/img/concept/img12.jpg" alt="" />
+          <div className="news-v3-in">
+            <ul className="list-inline posted-info">
+              <li>By <a href="#">Admin</a></li>
+              <li>In <a href="#">Khai niem</a></li>
+              <li>Posted January 24, 2015</li>
+            </ul>
+            <h2><a href="#">DERMATOGLYPHICS Là Gì?</a></h2>
+            <p>Dựa trên những thành tựu nghiên cứu về tiềm năng con người, các nhà khoa học trên thế giới đã đúc kết công trình nghiên cứu về ngành khoa học dấu vân tay (Dermatoglyphics) có liên quan đến sự phát triển và hình thành não bộ con người. Các kiểm chứng cho thấy sinh trắc học dấu vân tay là cách duy nhất để giải các mật mã của não bộ.</p>
+            <p>Bằng cách phân tích sinh trắc dấu vân tay (Dermatoglyphics), chúng tôi có thể giúp bạn khám phá ra các vị trí tiềm năng vượt trội được phân bổ trên não bộ. Từ đó có thể xác định được điểm mạnh và điểm yếu trong tố chất bẩm sinh của bạn, giúp bạn cân bằng hệ não bộ bằng các phương pháp giáo dục hỗ trợ tác động từ bên ngoài.</p>
+            <p>Vân tay được cấu tạo bởi những lớp đệm da tay. Những lớp đệm có kích cỡ nhỏ sẽ tạo ra những vân dạng vòm; những lớp đệm kích cỡ lớn hơn sẽ tạo ra vân hình móc hoặc tròn. Nếu lớp đệm bị lệch thì nó sẽ tạo ra vân tay không đối xứng. Dấu vân tay của mỗi người là không đổi trong suốt cuộc đời. Người ta có thể làm phẫu thuật thay da ngón tay, nhưng chỉ sau một thời gian dấu vân tay lại được hồi phục như ban đầu.
+            </p>
+            <ul className="post-shares">
+              <li>
+                <a href="#">
+                  <i className="rounded-x icon-speech"></i>
+                  <span>26</span>
+                </a>
+              </li>
+              <li>
+                <a href="#">
+                  <i className="rounded-x icon-share"></i>
+                  <span>98</span>
+                </a>
+              </li>
+              <li>
+                <a href="#">
+                  <i className="rounded-x icon-heart"></i>
+                  <span>30</span>
+                </a>
+              </li>
+            </ul>
           </div>
+        </div>
+        <div className="blog-post-quote bg-color-white margin-bottom-60">
+          <p>Look deep into nature, and then you will understand everything better.</p>
+          <span>- Albert Einstein</span>
+        </div>
       </div>
     )
   }

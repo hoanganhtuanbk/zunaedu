@@ -2,10 +2,10 @@ import React from 'react';
 import {render} from 'react-dom';
 import Slider from 'react-slick'
 import { Link, browserHistory } from 'react-router';
+import {FeaturedNews} from './featuredNews'
 
 
-
-class SingleItem extends React.Component{
+class Backgroud extends React.Component{
 
   render(){
     var settings = {
@@ -39,6 +39,25 @@ class SingleItem extends React.Component{
         </Slider>
       </section>
     );
+  }
+}
+class Purchase extends React.Component{
+  render(){
+    return(
+      <div className="purchase">
+        <div className="container overflow-h">
+          <div className="row">
+            <div className="col-md-9 animated fadeInLeft">
+              <span>Unify is a clean and fully responsive incredible Template.</span>
+              <p>At vero eos et accusamus et iusto odio dignissimos ducimus qui blanditiis praesentium voluptatum deleniti atque corrupti quos dolores et quas molestias excepturi  vehicula sem ut volutpat. Ut non libero magna fusce condimentum eleifend enim a feugiat corrupti quos.</p>
+            </div>
+            <div className="col-md-3 btn-buy animated fadeInRight">
+              <a href="#" className="btn-u btn-u-lg"><i className="fa fa-cloud-download"></i> Download Now</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    )
   }
 }
 class WhatItAbout extends React.Component{
@@ -240,48 +259,6 @@ class MultipleItems extends React.Component{
     );
   }
 }
-
-
-class Highlights extends React.Component{
-  render(){
-    return(
-      <div className="bg-header">
-        <div className="content-header text-center">
-          <h2 className="section-title stm-title">Highlights</h2>
-          <div className="line-bottom">
-            <div className="line">
-            </div>
-          </div>
-        </div>
-      </div>
-    )
-  }
-}
-
-class Menu extends React.Component{
-  constructor(){
-    super();
-    this.state = {selected: ''}
-  }
-  setMenuActive(menu) {
-    this.setState({selected  : menu})
-  }
-
-  isActive(value){
-    return ((value===this.state.selected) ?'active tab-item':'tab-item');
-  }
-  render(){
-    return(
-      <div className="container">
-        <div className="headline">
-          <Link to="/home" className="title-text"><h2>Featured News</h2></Link>
-        </div>
-
-      </div>
-    )
-  }
-}
-
 class OurClients extends React.Component{
 
   render(){
@@ -340,26 +317,9 @@ export class HomePage extends React.Component{
 
     return (
       <div className="section">
-        <SingleItem/>
-        <div className="purchase">
-          <div className="container overflow-h">
-            <div className="row">
-              <div className="col-md-9 animated fadeInLeft">
-                <span>Unify is a clean and fully responsive incredible Template.</span>
-                <p>At vero eos et accusamus et iusto odio dignissimos ducimus qui blanditiis praesentium voluptatum deleniti atque corrupti quos dolores et quas molestias excepturi  vehicula sem ut volutpat. Ut non libero magna fusce condimentum eleifend enim a feugiat corrupti quos.</p>
-              </div>
-              <div className="col-md-3 btn-buy animated fadeInRight">
-                <a href="#" className="btn-u btn-u-lg"><i className="fa fa-cloud-download"></i> Download Now</a>
-              </div>
-            </div>
-          </div>
-        </div>
-        <section className="section-3">
-          <Menu />
-          <div className="container">
-            {this.props.children}
-          </div>
-        </section>
+        <Backgroud/>
+        <Purchase />
+        <FeaturedNews />
         <WhatItAbout />
         <MultipleItems />
         <OurClients />

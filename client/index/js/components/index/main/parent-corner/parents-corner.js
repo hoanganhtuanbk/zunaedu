@@ -1,5 +1,6 @@
 import React from 'react';
 import {render} from 'react-dom';
+import { Link, IndexLink } from 'react-router';
 
 
 class Header extends React.Component{
@@ -46,14 +47,14 @@ export class ParentsCorner extends React.Component{
                     </li>
                     <li>
                       <a href="#">
-                        <i className="icon-share"></i>
-                        <span>355</span>
+                        <i className="rounded-x icon-share"></i>
+                        <span>35</span>
                       </a>
                     </li>
                     <li>
                       <a href="#">
                         <i className="rounded-x icon-heart"></i>
-                        <span>107</span>
+                        <span>17</span>
                       </a>
                     </li>
                   </ul>

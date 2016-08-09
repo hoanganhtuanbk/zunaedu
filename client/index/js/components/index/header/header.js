@@ -59,7 +59,9 @@ export class Header extends React.Component{
                 </li>
 
                 <li className={this.isActive('program')} onClick={this.setMenuActive.bind(this, 'program')}><Link to="/for-developer">Chương trình</Link></li>
-                <li className={this.isActive('service')} onClick={this.setMenuActive.bind(this, 'service')}><Link to="/service">Tổ chức sự kiện</Link></li>
+                <li className={this.isActive('service')} onClick={this.setMenuActive.bind(this, 'service')}><Link to="/service">Sự kiện</Link></li>
+                <li className={this.isActive('service')} onClick={this.setMenuActive.bind(this, 'service')}><Link to="/service">Sách giáo dục</Link></li>
+
                 <li className={this.isActive('goc-cha-me')} onClick={this.setMenuActive.bind(this, 'goc-cha-me')}><Link to="/goc-cha-me">Góc cha mẹ</Link></li>
                 <li className={this.isActive('lien-he')} onClick={this.setMenuActive.bind(this, 'lien-he')}><Link to="/lien-he">Liên hệ</Link></li>
 

@@ -9,14 +9,13 @@ import {FeaturedNews} from './js/components/index/main/home-feature/featuredNews
 import {UpcomingEvent} from './js/components/index/main/home-feature/upcomingEvent'
 
 
-import { ServicePage } from './js/components/index/main/service';
 import { PricingPage } from './js/components/index/main/fingerprint/fingerprint';
 import { Concept } from './js/components/index/main/fingerprint/concept';
 import { HistoryBegin } from './js/components/index/main/fingerprint/history-begin';
 import { Application } from './js/components/index/main/fingerprint/application';
 import { Feedback } from './js/components/index/main/fingerprint/feedback';
 
-import {ParentCorner} from './js/components/index/main/parent-corner/parents-corner'
+import {ParentsCorner} from './js/components/index/main/parent-corner/parents-corner'
 import { Contact } from './js/components/index/main/contact/contact';
 
 import { Login } from './js/components/index/login/login';
@@ -41,23 +40,16 @@ class Index extends React.Component {
 render(
   <Router history={browserHistory}>
     <Route path="/" component={Index}>
-      <IndexRedirect to="/home" />
-      <Route path="/home" component={HomePage}>
-        <IndexRoute component={FeaturedNews}/>
-        <Route path="/home/upcoming-event" component={UpcomingEvent}/>
-      </Route>
-
-      <Route path="/service" component={ServicePage}/>
+      <IndexRoute component={HomePage}/>
       <Route path="/van-tay-hoc" component={PricingPage}>
-        <IndexRedirect to="/van-tay-hoc/khai-niem" />
-        <Route path="/van-tay-hoc/khai-niem" component={Concept}/>
+        <IndexRoute component={Concept}/>
         <Route path="/van-tay-hoc/lich-su-hinh-thanh" component={HistoryBegin}/>
         <Route path="/van-tay-hoc/ung-dung" component={Application}/>
         <Route path="/van-tay-hoc/phan-hoi" component={Feedback}/>
       </Route>
       <Route path="/lien-he" component={Contact}/>
 
-      <Route path="/goc-cha-me" component = {ParentCorner} />
+      <Route path="/goc-cha-me" component = {ParentsCorner} />
     </Route>
     <Route path="/login" component={Login} />
     <Route path="/register" component={Register} />

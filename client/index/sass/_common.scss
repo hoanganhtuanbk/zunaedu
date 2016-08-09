@@ -80,9 +80,22 @@ input {
 .overflow-h {
   overflow: hidden;
 }
+.rounded-x {
+  border-radius: 50% !important;
+}
 .margin-bottom-50 {
   margin-bottom: 50px;
 }
+.margin-bottom-60 {
+  margin-bottom: 60px;
+}
+.medium-width{
+  width: 70%;
+  margin-left: auto;
+  margin-right: auto;
+  margin-bottom: 40px;
+}
+
 .form-control {
   box-shadow: none;
   border-radius: 0;
