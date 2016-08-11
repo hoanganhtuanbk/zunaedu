@@ -1,0 +1,21 @@
+.responsive-video {
+  height: 0;
+  padding-top: 1px;
+  position: relative;
+  padding-bottom: 56.25%;
+  iframe {
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    border: 0;
+  }
+}
+.news-v3 {
+  .news-v3-in-sm {
+    .post-shares {
+      margin: 20px 0 0 -5px;
+    }
+  }
+}

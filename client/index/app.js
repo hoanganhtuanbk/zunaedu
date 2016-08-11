@@ -4,17 +4,13 @@ import { Router,IndexRedirect, Route, hashHistory, browserHistory, Link, IndexRo
 import { Header } from './js/components/index/header/header';
 import { Footer} from './js/components/index/footer/footer';
 
-import { HomePage } from './js/components/index/main/home-feature/home';
-import {FeaturedNews} from './js/components/index/main/home-feature/featuredNews'
-import {UpcomingEvent} from './js/components/index/main/home-feature/upcomingEvent'
-
-
+import { HomePage } from './js/components/index/main/home/home';
 import { PricingPage } from './js/components/index/main/fingerprint/fingerprint';
 import { Concept } from './js/components/index/main/fingerprint/concept';
 import { HistoryBegin } from './js/components/index/main/fingerprint/history-begin';
 import { Application } from './js/components/index/main/fingerprint/application';
 import { Feedback } from './js/components/index/main/fingerprint/feedback';
-
+import {Program} from './js/components/index/main/program/program'
 import {ParentsCorner} from './js/components/index/main/parent-corner/parents-corner'
 import { Contact } from './js/components/index/main/contact/contact';
 
@@ -47,6 +43,7 @@ render(
         <Route path="/van-tay-hoc/ung-dung" component={Application}/>
         <Route path="/van-tay-hoc/phan-hoi" component={Feedback}/>
       </Route>
+      <Route path="/chuong-trinh" component={Program}/>
       <Route path="/lien-he" component={Contact}/>
 
       <Route path="/goc-cha-me" component = {ParentsCorner} />

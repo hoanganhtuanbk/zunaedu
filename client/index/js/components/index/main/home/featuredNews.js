@@ -8,7 +8,7 @@ export class FeaturedNews extends React.Component {
     <section className="section-3">
       <div className="container">
         <div className="headline">
-          <Link to="/home" className="title-text"><h2>Featured News</h2></Link>
+          <Link to="/home" className="title-text"><h2>Chương trình đào tạo</h2></Link>
         </div>
         <div className="feature-new row margin-bottom-20">
           <div className="col-md-3 col-sm-6">

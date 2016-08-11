@@ -36,12 +36,12 @@ export class Header extends React.Component{
         </div>
 
         <div className="row header-content">
-          <div className="col-sm-3">
+          <div className="col-sm-3 col-md-3">
             <div className="header-logo">
-              <Link to="/" >ZuNa Viet Nam</Link>
+              <Link to="/" ><img src="../index/img/logo/logo.jpg" /> </Link>
             </div>
           </div>
-          <div className="col-sm-9">
+          <div className="col-sm-9 col-md-9">
             <nav className="header-menu navigation">
               <ul>
                 <li className={this.isActive('')} onClick={this.setMenuActive.bind(this, '')}><Link to="/">Trang chủ</Link></li>
@@ -58,7 +58,7 @@ export class Header extends React.Component{
                     : null}
                 </li>
 
-                <li className={this.isActive('program')} onClick={this.setMenuActive.bind(this, 'program')}><Link to="/for-developer">Chương trình</Link></li>
+                <li className={this.isActive('chuong-trinh')} onClick={this.setMenuActive.bind(this, 'chuong-trinh')}><Link to="/chuong-trinh">Chương trình</Link></li>
                 <li className={this.isActive('service')} onClick={this.setMenuActive.bind(this, 'service')}><Link to="/service">Sự kiện</Link></li>
                 <li className={this.isActive('service')} onClick={this.setMenuActive.bind(this, 'service')}><Link to="/service">Sách giáo dục</Link></li>
 

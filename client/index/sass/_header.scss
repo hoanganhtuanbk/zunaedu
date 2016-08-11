@@ -16,11 +16,13 @@
     a {
       display: inline-block;
       line-height: 3.5 * $gutter;
+      margin-top: -25px;
     }
 
     img {
       max-width: 100%;
-      height: auto;
+      height: 80px;
+
     }
   }
 
@@ -111,7 +113,6 @@
     }
 
   }
-
   .fingerprint_menu{
     background-color: white;
     position: absolute;
@@ -137,6 +138,7 @@
     }
 
   }
+
 }
 
 

@@ -50,6 +50,9 @@ app.get('/goc-cha-me', function(req, res){
 app.get('/goc-cha-me/*', function(req, res){
   res.sendFile(require('path').join(__dirname + '/../client/index/index.html'));
 });
+app.get('/chuong-trinh', function(req, res){
+  res.sendFile(require('path').join(__dirname + '/../client/index/index.html'));
+});
 app.get('/lien-he', function(req, res){
   res.sendFile(require('path').join(__dirname + '/../client/index/index.html'));
 });
