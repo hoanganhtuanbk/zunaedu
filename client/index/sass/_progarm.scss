@@ -19,3 +19,38 @@
     }
   }
 }
+
+.carousel-v1 {
+  .carousel-arrow {
+    a {
+      i {
+        top: 50%;
+        opacity: 0.6;
+        background: #000;
+        margin-top: -18px;
+        padding: 2px 12px;
+        position: absolute;
+      }
+      &.right {
+        i {
+          right: 0;
+        }
+      }
+      &.left {
+        i {
+          left: 0;
+        }
+      }
+      &.carousel-control {
+        opacity: 1;
+        font-size: 30px;
+        height: inherit;
+        width: inherit;
+        background: none;
+        text-shadow: none;
+        position: inherit;
+      }
+    }
+
+  }
+}

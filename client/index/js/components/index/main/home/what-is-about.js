@@ -20,7 +20,7 @@ export class WhatItAbout extends React.Component{
         <div className="container">
           <div className="row margin-bottom-30">
             <div className="col-md-8 md-margin-bottom-40">
-              <div className="headline"><h2>Welcome To ZunaEdu</h2></div>
+              <div className="headline"><h2>Đến với Zuna Education</h2></div>
               <div className="row">
                 <div className="col-sm-4">
                   <img className="img-responsive margin-bottom-20" src="../index/img/info/img18.jpg" alt=""/>

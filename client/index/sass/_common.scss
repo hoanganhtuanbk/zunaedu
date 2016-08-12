@@ -56,6 +56,15 @@ input {
     outline: none;
   }
 }
+label {
+  color: #999;
+}
+label {
+  display: inline-block;
+  max-width: 100%;
+  margin-bottom: 5px;
+  font-weight: 700;
+}
 .headline {
   display: block;
   margin: 10px 0 25px 0;
@@ -67,6 +76,9 @@ input {
     display: inline-block;
     border-bottom: 2px solid #72c02c;
   }
+}
+.color-red {
+  color: #e74c3c;
 }
 .color-green {
   color: #72c02c;
@@ -115,4 +127,7 @@ input {
 }
 .bg-color-white {
   background-color: #fff !important;
+}
+.btn-u-sm, a.btn-u-sm {
+  padding: 3px 12px;
 }

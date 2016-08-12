@@ -7,8 +7,8 @@ class Header extends React.Component{
     return(
       <div className="breadcrumbs-v1">
         <div className="container">
-          <span>Blog ZunaEdu</span>
-          <h1>Góc cha mẹ</h1>
+          <span>Zuna Việt Nam</span>
+          <h1>Chương trình đào tạo</h1>
         </div>
       </div>
     )
@@ -18,7 +18,7 @@ class Header extends React.Component{
 export class Program extends React.Component{
   render(){
     return(
-      <div className="bg-color-light ">
+      <div className="">
         <Header />
         <div className="container content-sm">
           <div className="row">
@@ -54,7 +54,7 @@ export class Program extends React.Component{
               <div className="clearfix margin-bottom-20"><hr/></div>
               <div className="row margin-bottom-20">
                 <div className="col-sm-5 sm-margin-bottom-20">
-                  <div className="carousel slide" data-ride="carousel" classID="blog-carousel">
+                  <div className="carousel slide carousel-v1" data-ride="carousel" id="myCarousel">
                     <ol className="carousel-indicators">
                       <li data-target="#blog-carousel" data-slide-to="0" className="rounded-x"></li>
                       <li data-target="#blog-carousel" data-slide-to="1" className="rounded-x active"></li>
@@ -70,6 +70,14 @@ export class Program extends React.Component{
                       <div className="item">
                         <img src="../index/img/program/img23.jpg" alt=""/>
                       </div>
+                    </div>
+                    <div className="carousel-arrow">
+                      <a data-slide="prev" href="#myCarousel" className="left carousel-control">
+                        <i className="fa fa-angle-left"></i>
+                      </a>
+                      <a data-slide="next" href="#myCarousel" className="right carousel-control">
+                        <i className="fa fa-angle-right"></i>
+                      </a>
                     </div>
                   </div>
                 </div>
@@ -99,7 +107,7 @@ export class Program extends React.Component{
               <div className="row margin-bottom-20">
                 <div className="col-sm-5 sm-margin-bottom-20">
                   <div className="responsive-video">
-                    <iframe src="//player.vimeo.com/video/93094247?title=0&amp;byline=0&amp;portrait=0" frameborder="0" webkitallowfullscreen="" mozallowfullscreen="" allowfullscreen=""></iframe>
+                    <iframe src="//player.vimeo.com/video/93094247?title=0&amp;byline=0&amp;portrait=0"></iframe>
                   </div>
                 </div>
                 <div className="col-sm-7 news-v3">

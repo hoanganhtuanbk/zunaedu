@@ -8,7 +8,7 @@ class Header extends React.Component{
     return(
       <div className="breadcrumbs-v1">
         <div className="container">
-          <span>Blog ZunaEdu</span>
+          <span>Zuna Việt Nam</span>
           <h1>Vân tay học</h1>
         </div>
       </div>
