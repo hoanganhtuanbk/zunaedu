@@ -50,5 +50,21 @@
   "App": {
     "dataSource": "db",
     "public": true
+  },
+  "Program": {
+    "dataSource": "db",
+    "public": true
+  },
+  "Book": {
+    "dataSource": "db",
+    "public": true
+  },
+  "Parent": {
+    "dataSource": "db",
+    "public": true
+  },
+  "Dermatoglyphic": {
+    "dataSource": "db",
+    "public": true
   }
 }

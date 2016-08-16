@@ -1,0 +1,29 @@
+{
+  "name": "Parent",
+  "base": "PersistedModel",
+  "idInjection": true,
+  "options": {
+    "validateUpsert": true
+  },
+  "properties": {
+    "title": {
+      "type": "string"
+    },
+    "content": {
+      "type": "string"
+    },
+    "date": {
+      "type": "string"
+    },
+    "author": {
+      "type": "string"
+    },
+    "url": {
+      "type": "string"
+    }
+  },
+  "validations": [],
+  "relations": {},
+  "acls": [],
+  "methods": {}
+}

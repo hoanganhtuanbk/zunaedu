@@ -1,0 +1,29 @@
+{
+  "name": "Dermatoglyphic",
+  "base": "PersistedModel",
+  "idInjection": true,
+  "options": {
+    "validateUpsert": true
+  },
+  "properties": {
+    "title": {
+      "type": "string"
+    },
+    "content": {
+      "type": "string"
+    },
+    "url": {
+      "type": "string"
+    },
+    "author": {
+      "type": "string"
+    },
+    "date": {
+      "type": "string"
+    }
+  },
+  "validations": [],
+  "relations": {},
+  "acls": [],
+  "methods": {}
+}

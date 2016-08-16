@@ -1,17 +1,21 @@
 {
-  "name": "App",
-  "base": "Application",
+  "name": "Book",
+  "base": "PersistedModel",
   "idInjection": true,
   "options": {
     "validateUpsert": true
   },
   "properties": {
-    "serviceId": {
-      "type": [
-        "string"
-      ]
+    "title": {
+      "type": "string"
     },
-    "userId": {
+    "content": {
+      "type": "string"
+    },
+    "date": {
+      "type": "string"
+    },
+    "author": {
       "type": "string"
     }
   },

@@ -1,28 +1,30 @@
 import React from 'react';
 import {render} from 'react-dom';
 import { Router,IndexRedirect, Route, hashHistory, browserHistory, Link, IndexRoute, useRouterHistory } from 'react-router';
-import { Header } from './js/components/index/header/header';
-import { Footer} from './js/components/index/footer/footer';
+import { Header } from './js/components/header/header';
+import { Footer} from './js/components/footer/footer';
 
-import { HomePage } from './js/components/index/main/home/home';
-import { PricingPage } from './js/components/index/main/fingerprint/fingerprint';
-import { Concept } from './js/components/index/main/fingerprint/concept';
-import { HistoryBegin } from './js/components/index/main/fingerprint/history-begin';
-import { Application } from './js/components/index/main/fingerprint/application';
-import { Feedback } from './js/components/index/main/fingerprint/feedback';
-import { Program } from './js/components/index/main/program/program'
-import { Event } from './js/components/index/main/event/event'
-import { Book } from './js/components/index/main/book/book'
+import { HomePage } from './js/components/main/home/home';
+import { PricingPage } from './js/components/main/fingerprint/fingerprint';
+import { Concept } from './js/components/main/fingerprint/concept';
+import { HistoryBegin } from './js/components/main/fingerprint/history-begin';
+import { Application } from './js/components/main/fingerprint/application';
+import { Feedback } from './js/components/main/fingerprint/feedback';
+import { Program } from './js/components/main/program/program'
+import { Event } from './js/components/main/event/event'
+import { Book } from './js/components/main/book/book'
 
-import {ParentsCorner} from './js/components/index/main/parent-corner/parents-corner'
-import { Contact } from './js/components/index/main/contact/contact';
+import {ParentsCorner} from './js/components/main/parent-corner/parents-corner'
+import {SubParent} from './js/components/main/parent-corner/sub-parent'
 
-import { Login } from './js/components/index/login/login';
-import { Register} from './js/components/index/register/register';
+import { Contact } from './js/components/main/contact/contact';
 
-import { EmailVerified } from './js/components/index/register/verified.js';
-import { ResetPassword } from './js/components/index/reset-password/reset-password.js';
-import { ForgotPassword } from './js/components/index/reset-password/forgot-password.js';
+import { Login } from './js/components/login/login';
+import { Register} from './js/components/register/register';
+
+import { EmailVerified } from './js/components/register/verified.js';
+import { ResetPassword } from './js/components/reset-password/reset-password.js';
+import { ForgotPassword } from './js/components/reset-password/forgot-password.js';
 
 
 class Index extends React.Component {
@@ -50,7 +52,9 @@ render(
       <Route path="/lien-he" component={Contact}/>
       <Route path="/su-kien" component={Event}/>
       <Route path="/sach-giao-duc" component = {Book} />
+      <Route path="/sach-giao-duc/:id" component = {Book} />
       <Route path="/goc-cha-me" component = {ParentsCorner} />
+      <Route path="/goc-cha-me/:id" component = {SubParent} />
     </Route>
     <Route path="/login" component={Login} />
     <Route path="/register" component={Register} />

@@ -23,8 +23,8 @@
     ]
   },
   "mongo": {
+    "url": "mongodb://mongo:27017/paas",
     "name": "mongo",
-    "connector": "mongodb",
-    "url": "mongodb://mongo:27017/paas"
+    "connector": "mongodb"
   }
 }
