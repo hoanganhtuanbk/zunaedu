@@ -1,0 +1,59 @@
+{
+  "ids": {
+    "User": 1,
+    "AccessToken": 2,
+    "ACL": 1,
+    "RoleMapping": 4,
+    "Role": 4,
+    "user": 4,
+    "Service": 3,
+    "App": 1,
+    "Program": 1,
+    "Book": 1,
+    "Parent": 1,
+    "Dermatoglyphic": 1,
+    "OAuthAccessToken": 1,
+    "OAuthAuthorizationCode": 1,
+    "OAuthClientApplication": 1,
+    "OAuthPermission": 1,
+    "OAuthScope": 1,
+    "OAuthScopeMapping": 1
+  },
+  "models": {
+    "User": {},
+    "AccessToken": {
+      "OfWBGYzMRYVzviEJ8RkLKOlWD6YLhEV4zrU5ZRGOBnvLAqPTNfJP0WQjdqeDk8Zq": "{\"id\":\"OfWBGYzMRYVzviEJ8RkLKOlWD6YLhEV4zrU5ZRGOBnvLAqPTNfJP0WQjdqeDk8Zq\",\"ttl\":1209600,\"created\":\"2016-08-17T02:56:22.497Z\",\"userId\":2}"
+    },
+    "ACL": {},
+    "RoleMapping": {
+      "1": "{\"principalType\":\"USER\",\"principalId\":\"1\",\"roleId\":3,\"id\":1}",
+      "2": "{\"principalType\":\"USER\",\"principalId\":\"2\",\"roleId\":1,\"id\":2}",
+      "3": "{\"principalType\":\"USER\",\"principalId\":\"3\",\"roleId\":2,\"id\":3}"
+    },
+    "Role": {
+      "1": "{\"name\":\"master-admin\",\"created\":\"2016-08-17T02:37:37.007Z\",\"modified\":\"2016-08-17T02:37:37.007Z\",\"id\":1}",
+      "2": "{\"name\":\"admin\",\"created\":\"2016-08-17T02:37:37.007Z\",\"modified\":\"2016-08-17T02:37:37.007Z\",\"id\":2}",
+      "3": "{\"name\":\"consumer\",\"created\":\"2016-08-17T02:37:37.007Z\",\"modified\":\"2016-08-17T02:37:37.007Z\",\"id\":3}"
+    },
+    "user": {
+      "1": "{\"privilege\":\"3\",\"password\":\"$2a$10$oAaVY8K7ooRQ//zfvyjGCOovhYjy.mEyGh8fAm/cp5/4RuioRaGuu\",\"email\":\"user@user.com\",\"emailVerified\":true,\"id\":1}",
+      "2": "{\"privilege\":1,\"username\":\"master\",\"password\":\"$2a$10$nW8kOjcKRwJWVy7315uTMuuRI8meu7ULZwYfr1bz3LJJd7JzMMrXa\",\"email\":\"master@master.com\",\"emailVerified\":true,\"id\":2}",
+      "3": "{\"privilege\":2,\"username\":\"admin\",\"password\":\"$2a$10$Cr7pkV8l.6ZDPaQT.My4NeuFSwA4ILFdSC34otS4XEvAKdZZYv4GW\",\"email\":\"admin@admin.com\",\"emailVerified\":true,\"id\":3}"
+    },
+    "Service": {
+      "1": "{\"name\":\"Pubsub\",\"active\":true,\"scopes\":[\"pubsub\"],\"id\":1}",
+      "2": "{\"name\":\"Oauth2\",\"active\":false,\"scopes\":[\"oauth2\"],\"id\":2}"
+    },
+    "App": {},
+    "Program": {},
+    "Book": {},
+    "Parent": {},
+    "Dermatoglyphic": {},
+    "OAuthAccessToken": {},
+    "OAuthAuthorizationCode": {},
+    "OAuthClientApplication": {},
+    "OAuthPermission": {},
+    "OAuthScope": {},
+    "OAuthScopeMapping": {}
+  }
+}
