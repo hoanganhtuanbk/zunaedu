@@ -69,7 +69,16 @@ export class SubProgram extends React.Component{
                     </ul>
                     <h2>{this.state.program.title}</h2>
                     < div dangerouslySetInnerHTML={{ __html: this.state.program.content }}></div>
-
+                    <ul className="post-shares">
+                      <li>
+                        <a href="#">
+                          <i className="rounded-x icon-speech"></i>
+                          <span>5</span>
+                        </a>
+                      </li>
+                      <li><a href="#"><i className="rounded-x icon-share"></i></a></li>
+                      <li><a href="#"><i className="rounded-x icon-heart"></i></a></li>
+                    </ul>
                   </div>
                 </div> : null
               }

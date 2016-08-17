@@ -58,6 +58,16 @@ export class Book extends React.Component {
               </ul>
               <div dangerouslySetInnerHTML={{ __html: book.content}}></div>
               <Link className="read-more" to={`/sach-giao-duc/${book.id}`}>Xem chi tiết</Link>
+              <ul className="post-shares">
+                <li>
+                  <a href="#">
+                    <i className="rounded-x icon-speech"></i>
+                    <span>5</span>
+                  </a>
+                </li>
+                <li><a href="#"><i className="rounded-x icon-share"></i></a></li>
+                <li><a href="#"><i className="rounded-x icon-heart"></i></a></li>
+              </ul>
             </div>
           </div>
         </li>
