@@ -29,12 +29,19 @@
       display: inline-block;
       margin: 0;
 
-      &:hover > a,
-
-      &.active > a {
-        color: $base-color;
-        background: none;
+      &:hover > a{
+        background: none!important;
       }
+
+      &.active {
+        a {
+          color: $base-color;
+          background: none!important;
+        }
+      }
+        a {
+          background: none!important;
+        }
     }
 
     a {

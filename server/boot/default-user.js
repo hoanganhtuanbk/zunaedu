@@ -15,7 +15,7 @@ module.exports = function(app) {
     privilege: 1
   }];
 
-  
+
   var User = app.models.user;
   users.forEach(function(user) {
     User.create(user, function(err, result) {

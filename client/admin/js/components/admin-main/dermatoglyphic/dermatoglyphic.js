@@ -4,7 +4,6 @@ import { Link, IndexLink } from 'react-router';
 
 export class Dermatoglyphics extends React.Component{
 	render() {
-    if (this.props.currentUser.privilege == 1) {
       return (
         <div>
           <div className="content-header">
@@ -18,8 +17,5 @@ export class Dermatoglyphics extends React.Component{
           </div>
         </div>
       )
-    } else {
-      window.location = '/admin'
-    }
   }
 }
