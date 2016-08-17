@@ -1,10 +1,5 @@
 {
   "loopback-component-explorer": {
     "mountPath": "/explorer"
-  },
-  "loopback-component-oauth2": {
-    "dataSource": "db",
-    "authorizationServer": true,
-    "resourceServer": true
   }
 }

@@ -5,19 +5,28 @@ import { Link, IndexLink ,browserHistory} from 'react-router';
 import {PanelHeader} from '../../../../../sharedComponent/main/panel-header'
 import Actions from '../../../actions/actions.js'
 import Stores from '../../../stores/stores.js'
+import BasicHtmlEditor from '../src/BasicHtmlEditor';
 
 export class AddProgram extends React.Component{
   constructor(props){
     super();
     this.state = {
       title: '',
-      content: '',
+      content: `
+      <h1>This is a content</h1>
+      <p>Here's some text, it's useful</p>
+      <p>More text, some inline <strong>styling</strong> for <em>some</em> elements</p>
+    `,
       url: '',
       author: '',
       date: ''
     };
-    console.log(props);
     this.handleCreateProgram = this.handleCreateProgram.bind(this);
+  }
+  updateContent(content) {
+    this.setState({
+      content
+    });
   }
   handleCreateProgram(e){
     var dateNow = new Date();
@@ -51,11 +60,24 @@ export class AddProgram extends React.Component{
                     </div>
                     <div className="col-md-12">
                       <label>Content</label>
-                      <input type="text" className="form-control "  onChange={(e) =>{this.setState({content : e.target.value})}} />
+                      <BasicHtmlEditor
+                        value={ this.state.content }
+                        onChange={ (content) => this.updateContent(content) }
+                        debounce={ 500 }
+                      />
                     </div>
-                    <div className="col-md-12">
-                      <label>Url image</label>
-                      <input type="text" className="form-control "  onChange={(e) =>{this.setState({url : e.target.value})}} />
+                  </div>
+                </div>
+                <div className="col-md-6">
+                  <div className="col-md-12">
+                    <label>Url image</label>
+                    <input type="text" className="form-control "  onChange={(e) =>{this.setState({url : e.target.value})}} />
+                  </div>
+                  <div className="col-md-12">
+                    <div style={{ margin: '30px 10px 10px 10px' }}>
+                      <code>Exported HTML</code>
+                      <hr/>
+                      <div dangerouslySetInnerHTML={{ __html: this.state.content }} />
                     </div>
                   </div>
                 </div>

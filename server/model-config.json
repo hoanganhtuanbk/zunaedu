@@ -43,14 +43,6 @@
       "emailVerificationRequired": true
     }
   },
-  "Service": {
-    "dataSource": "db",
-    "public": true
-  },
-  "App": {
-    "dataSource": "db",
-    "public": true
-  },
   "Program": {
     "dataSource": "db",
     "public": true

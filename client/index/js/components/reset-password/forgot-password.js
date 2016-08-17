@@ -1,7 +1,7 @@
 import React from 'react';
 import {render} from 'react-dom';
 import { Header } from '../header/header';
-import { LoginFooter } from '../footer/login-footer';
+import { Footer } from '../footer/footer';
 import { Link, IndexLink } from 'react-router';
 import SweetAlert from 'sweetalert-react';
 
@@ -99,7 +99,7 @@ export class ForgotPassword extends React.Component{
             </div>
           </div>
         </div>
-        <LoginFooter />
+        <Footer />
       </div>
     );
   }

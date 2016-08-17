@@ -4,6 +4,7 @@ import { Link, IndexLink, browserHistory } from 'react-router';
 import {PanelHeader} from '../../../../../sharedComponent/main/panel-header'
 import Stores from '../../../stores/stores';
 import Actions from '../../../actions/actions.js'
+import BasicHtmlEditor from '../src/BasicHtmlEditor';
 
 export class EditDermatoglyphic extends React.Component{
   constructor() {
@@ -17,6 +18,11 @@ export class EditDermatoglyphic extends React.Component{
   }
   componentWillMount(){
     this.findById(this);
+  }
+  updateContent(content) {
+    this.setState({
+      content
+    });
   }
   findById(t) {
     Stores.findById('/dermatoglyphics', this.props.params.id, function(dermatoglyphic, status) {
@@ -46,19 +52,34 @@ export class EditDermatoglyphic extends React.Component{
         <div className="panel-body">
           <div className="row">
             <div className="col-md-6">
-              <label>Title</label> *
-              <input type="text" value={this.state.title} className="form-control " onChange={(e)=>{this.setState({title: e.target.value })}}/>
+              <div className="col-md-12">
+                <label>Title</label> *
+                <input type="text" value={this.state.title} className="form-control " onChange={(e)=>{this.setState({title: e.target.value })}}/>
+              </div>
+              <div className="col-md-12">
+                <label>Content</label>
+                <BasicHtmlEditor
+                  value={this.state.content }
+                  onChange={ (content) => this.updateContent(content) }
+                  debounce={ 500 }
+                />
+              </div>
+
             </div>
             <div className="col-md-6">
-              <label>Url</label> *
-              <input type="text" value={this.state.url} className="form-control " onChange={(e)=>{this.setState({url: e.target.value })}}/>
-
+              <div className="col-md-12">
+                <label>Url</label> *
+                <input type="text" value={this.state.url} className="form-control " onChange={(e)=>{this.setState({url: e.target.value })}}/>
+              </div>
+              <div className="col-md-12">
+                <div style={{ margin: '30px 10px 10px 10px' }}>
+                  <code>Exported HTML</code>
+                  <hr/>
+                  <div dangerouslySetInnerHTML={{ __html: this.state.content }} />
+                </div>
+              </div>
             </div>
-            <div className="col-md-12">
-              <label>Content</label> *
-              <input type="text" value={this.state.content} className="form-control " onChange={(e)=>{this.setState({content: e.target.value })}}/>
 
-            </div>
           </div>
         </div>
         <div className="panel-body panal-feature text-center" >

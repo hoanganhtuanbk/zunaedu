@@ -32,20 +32,17 @@ class ListProgram extends React.Component{
       <div>
         <div className="row margin-bottom-20">
           <div className="col-sm-5 sm-margin-bottom-20">
-            {
-              this.props.url? <img className="img-responsive" src={this.props.url} /> : <img className="img-responsive" src="../index/img/program/img12.jpg" alt=""/>
-            }
+            <Link to={`/chuong-trinh/${this.props.id}`}> <img className="img-responsive" src={this.props.url} /> </Link>
           </div>
 
           <div className="col-sm-7 news-v3">
             <div className="news-v3-in-sm no-padding">
               <ul className="list-inline posted-info">
-                <li>By Alexander Jenni</li>
-                <li>In <a href="#">Design</a></li>
+                <li>By Admin</li>
                 <li>Posted {this.props.date}</li>
               </ul>
-              <h2><a href="#">{this.props.title}</a></h2>
-              <p>{this.props.content}</p>
+              <h2><Link to={`/chuong-trinh/${this.props.id}`}>{this.props.title}</Link></h2>
+              <div dangerouslySetInnerHTML={{ __html: this.props.content }}></div>
               <ul className="post-shares">
                 <li>
                   <a href="#">
@@ -59,7 +56,6 @@ class ListProgram extends React.Component{
             </div>
           </div>
         </div>
-        <div className="clearfix margin-bottom-20"><hr/></div>
       </div>
     )
   }

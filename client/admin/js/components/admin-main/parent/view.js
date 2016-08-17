@@ -28,23 +28,10 @@ export class ViewParent extends React.Component{
             linkEdit={`/admin/parent/${this.props.params.id}/edit`}
             />
         </div>
-        <div className="table-responsive">
-          <table className="table ">
-            <thead>
-            <tr>
-              <th>ID</th>
-              <th>Title</th>
-              <th>Content</th>
-            </tr>
-            </thead>
-            <tbody>
-            <tr>
-              <td >{this.state.parent.id}</td>
-              <td >{this.state.parent.title}</td>
-              <td >{this.state.parent.content}</td>
-            </tr>
-            </tbody>
-          </table>
+        <div className="panel-body">
+          <img src={this.state.parent.url} />
+          <h3> {this.state.parent.title}</h3>
+          <div dangerouslySetInnerHTML={{ __html: this.state.parent.content }} ></div>
         </div>
       </div>
     )

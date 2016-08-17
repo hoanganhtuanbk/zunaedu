@@ -10,13 +10,12 @@ export default class Navbar extends React.Component{
     this.state = {
       displayProfile: false,
       displayApp: false,
-      value: 2,
-      link: "/consumer/apis/2"
+      value: 2
     }
   };
-  
 
-  
+
+
   render(){
     var openTab = function(){
       $(".main-index").toggleClass("main-style");
@@ -34,14 +33,6 @@ export default class Navbar extends React.Component{
 
     var handleClose =function() {
       this.setState({ displayProfile: false })
-    }.bind(this);
-
-    var openApp = function(){
-      this.setState({displayApp: !this.state.displayApp}) ;
-    }.bind(this);
-
-    var closeApp = function(){
-      this.setState({displayApp: false}) ;
     }.bind(this);
     const popover = {
       position: 'absolute',
@@ -61,7 +52,7 @@ export default class Navbar extends React.Component{
       <nav className="navbar">
 
         <li className="header">
-          <span>PAAS</span>
+          <span>Zuna Edu Admin</span>
         </li>
 
         <li>
@@ -70,18 +61,7 @@ export default class Navbar extends React.Component{
           </button>
         </li>
 
-        <li className="search">
-          <input type="search" className="search-input"/>
-
-        </li>
-        <li className="search-feature">
-          <button onClick={search}> <i className="fa fa-search" aria-hidden="true"></i></button>
-          <button  ><i className="fa fa-bell-o" aria-hidden="true"></i></button>
-          <button><i className="fa fa-envelope-o" aria-hidden="true"></i></button>
-        </li>
-       
         <li className="profile" onClick={openProfile}>
-
           <img src="./img/Avatar/avatar.png"/>
           <span>{this.props.currentUser.username}</span>
           <a><i className="fa fa-caret-down"></i></a>

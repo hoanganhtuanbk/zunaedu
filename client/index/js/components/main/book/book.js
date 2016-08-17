@@ -44,9 +44,11 @@ export class Book extends React.Component {
       return (
         <li key={stt} className="col-md-4 image-element-class">
           <div className="masonry-main">
-            <img src={book.url} />
+            <Link to={`/sach-giao-duc/${book.id}`}>
+              <img src={book.url} />
+            </Link>
             <div   className="grid-boxes-caption">
-              <h3><a href="#">{book.title}</a></h3>
+              <h3><Link to={`/sach-giao-duc/${book.id}`}>{book.title}</Link></h3>
               <ul   className="list-inline grid-boxes-news">
                 <li><span>By</span> <a href="#">Kathy Reyes</a></li>
                 <li>|</li>
@@ -54,7 +56,7 @@ export class Book extends React.Component {
                 <li>|</li>
                 <li><a href="#"><i   className="fa fa-comments-o"></i> 06</a></li>
               </ul>
-              <p>{book.content}</p>
+              <div dangerouslySetInnerHTML={{ __html: book.content }}></div>
             </div>
           </div>
         </li>

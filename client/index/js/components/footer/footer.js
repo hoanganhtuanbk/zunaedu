@@ -19,7 +19,7 @@ export class Footer extends React.Component{
               </div>
               <div className="col-md-3 md-margin-bottom-40">
                 <div className="posts">
-                  <div className="headline"><h2>Latest Posts</h2></div>
+                  <div className="headline"><h2>Bài mới đăng</h2></div>
                   <ul className="list-unstyled latest-list">
                     <li>
                       <a href="#">Incredible content</a>

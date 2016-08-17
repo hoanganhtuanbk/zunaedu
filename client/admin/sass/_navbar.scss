@@ -636,7 +636,10 @@
     -webkit-transition: all 1s; /* Safari */
     transition: all 1s;
     margin: 0;
-
+    position: absolute;
+    background: white;
+    width: 100%;
+    z-index: 100;
     .header{
       background-color: $base-color;
       height: $height-index-center-header;

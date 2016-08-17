@@ -14,7 +14,7 @@ export default class ViewProfile extends React.Component{
               name = "Profile"
               linkEdit = {this.props.editLink}
         />
-      
+
         <div className="panel-body">
           <div className="row">
             <div className="col-md-12">
@@ -26,23 +26,9 @@ export default class ViewProfile extends React.Component{
                     <td>{this.props.currentUser.username}</td>
                   </tr>
                   <tr>
-                    <th >Full name:</th>
-                    <td >
-                      <span className="data-profile">{this.props.currentUser.firstName} {this.props.currentUser.lastName} </span>
-                    </td>
-                  </tr>
-                  <tr>
                     <th>Email</th>
                     <td >
                       <span className="data-profile">{this.props.currentUser.email} </span>
-                    </td>
-                  </tr>
-                  <tr>
-                    <th>Phone</th>
-                    <td >
-                        {
-                          this.props.currentUser.phone ? <span className="data-profile">{this.props.currentUser.phone}</span> : <span className="data-profile">N.A</span>
-                        }
                     </td>
                   </tr>
                   </tbody></table>

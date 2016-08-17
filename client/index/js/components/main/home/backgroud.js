@@ -21,7 +21,6 @@ export class Backgroud extends React.Component{
             <Link to="/van-tay-hoc" className="item active">
               <img className="img-responsive" src="../index/img/bg-section1/sinhtrac.jpg" alt=""/>
               <div className="carousel-caption">
-                <p>Facilisis odio, dapibus ac justo acilisis gestinas.</p>
               </div>
             </Link>
           </div>
@@ -29,7 +28,6 @@ export class Backgroud extends React.Component{
             <Link to="/chuong-trinh" className="item">
               <img className="img-responsive" src="../index/img/bg-section1/chuongtrinhgiaoduc.jpg" alt=""/>
               <div className="carousel-caption">
-                <p>Mussum ipsum cacilds, vidis litro abertis.</p>
               </div>
             </Link>
           </div>
@@ -37,7 +35,6 @@ export class Backgroud extends React.Component{
             <Link to="/su-kien" className="item">
               <img className="img-responsive" src="../index/img/bg-section1/sukien.jpg" alt="" />
               <div className="carousel-caption">
-                <p>Justo cras odio apibus ac afilisis lingestas de.</p>
               </div>
             </Link>
           </div>
@@ -45,7 +42,6 @@ export class Backgroud extends React.Component{
             <Link to="/sach-giao-duc" className="item">
               <img className="img-responsive" src="../index/img/bg-section1/sachgiaoduc.jpg" alt="" />
               <div className="carousel-caption">
-                <p>Justo cras odio apibus ac afilisis lingestas de.</p>
               </div>
             </Link>
           </div>
@@ -53,31 +49,11 @@ export class Backgroud extends React.Component{
             <Link to="/goc-cha-me" className="item">
               <img className="img-responsive" src="../index/img/bg-section1/gocchame.jpg" alt="" />
               <div className="carousel-caption">
-                <p>Justo cras odio apibus ac afilisis lingestas de.</p>
               </div>
             </Link>
           </div>
         </Slider>
       </section>
     );
-  }
-}
-export class Purchase extends React.Component{
-  render(){
-    return(
-      <div className="purchase">
-        <div className="container overflow-h">
-          <div className="row">
-            <div className="col-md-9 animated fadeInLeft">
-              <span>Zuna là đơn vị hàng đầu trong lĩnh vực Đào tạo - Phát triển con người .</span>
-              <p>Với phương châm hoạt động “Hãy là người tiên phong” mục tiêu của chúng tôi là khai sáng, hỗ trợ, phát triển tiềm năng của trẻ nhỏ, bằng các chương trình đào tạo đặc biệt, các phương pháp kiểm tra khoa học mang tính ứng dụng thực tiễn cao.</p>
-            </div>
-            <div className="col-md-3 btn-buy animated fadeInRight">
-              <a href="#" className="btn-u btn-u-lg"><i className="fa fa-graduation-cap"></i> Tham gia ngay</a>
-            </div>
-          </div>
-        </div>
-      </div>
-    )
   }
 }

@@ -3,25 +3,15 @@ var path = require('path');
 
 module.exports = function(User) {
   var app = require('../../server/server');
-  User.observe('after save', function(ctx, next) {
-    if (ctx.isNewInstance) {
-      var Role = app.models.Role;
-      var RoleMapping = app.models.RoleMapping;
-      Role.findById(ctx.instance.privilege, function(err, role) {
-        if (err) throw err;
-        role.principals.create({
-          principalType: RoleMapping.USER,
-          principalId: ctx.instance.id
-        }, function(err, principal) {
-          if (err) throw err;
-          next()
-        })
-      })
-
+  User.observe('before save', function setDefaultUsername(ctx, next) {
+    if (ctx.instance) {
+      if(ctx.isNewInstance) {
+        ctx.instance.username = ctx.instance.email;
+      }
+      ctx.instance.status = 'created';
+      ctx.instance.created = Date.now();
     }
-    else {
-      next();
-    }
+    next();
   });
 
   User.afterRemote('create', function(context, result, next) {

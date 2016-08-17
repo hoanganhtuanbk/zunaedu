@@ -35,12 +35,6 @@ var adminComponent = [
 '!client/admin/js/bundle.js'
 ];
 
-var consumerComponent = [
-'client/consumer/app.js',
-'client/consumer/**/*.js',
-'client/sharedComponent/**/*.js',
-'!client/consumer/js/bundle.js'
-]
 // run server
 gulp.task( 'server:start', function() {
   server.listen( options, livereload.listen  );
@@ -64,17 +58,6 @@ gulp.task('compileIndex', function(){
     .pipe(gulp.dest('client/index/js'));
 });
 
-gulp.task('compileConsumer', function(){
-  browserify(['client/consumer/app.js'])
-    .transform(babelify)
-    .bundle()
-    .on('error', function(err){
-      console.log(chalk.bold.red(err));
-    })
-    .pipe(source('bundle.js'))
-    .pipe(gulp.dest('client/consumer/js'));
-});
-
 gulp.task('compileAdmin', function(){
   browserify(['client/admin/app.js'])
     .transform(babelify)
@@ -96,15 +79,6 @@ gulp.task('sassIndex', function () {
     .pipe(gulp.dest('client/index/css'));
 });
 
-gulp.task('sassConsumer', function () {
-  return gulp.src('client/consumer/sass/*.scss')
-    .pipe(sass().on('error', sass.logError))
-    .pipe(chmod(777))
-    .pipe(cleanCSS({compatibility: 'ie8'}))
-    .pipe(rename("style.min.css"))
-    .pipe(gulp.dest('client/consumer/css'));
-});
-
 gulp.task('sassAdmin', function () {
   return gulp.src('client/admin/sass/*.scss')
     .pipe(sass().on('error', sass.logError))
@@ -114,15 +88,12 @@ gulp.task('sassAdmin', function () {
     .pipe(gulp.dest('client/admin/css'));
 });
 
-gulp.task('build', ['compileIndex', 'compileConsumer','compileAdmin','sassIndex','sassAdmin','sassConsumer']);
+gulp.task('build', ['compileIndex', 'compileAdmin','sassIndex','sassAdmin']);
 
 //auto watch change file
 gulp.task('watch', function () {
   watch(indexComponent, batch(function (events, done) {
     gulp.start('compileIndex', done);
-  }));
-  watch(consumerComponent, batch(function (events, done) {
-    gulp.start('compileConsumer', done);
   }));
   watch(adminComponent, batch(function (events, done) {
     gulp.start('compileAdmin', done);
@@ -132,9 +103,6 @@ gulp.task('watch', function () {
   }));
   watch(['client/admin/sass/*.scss'], batch(function (events, done) {
     gulp.start('sassAdmin', done);
-  }));
-  watch(['client/consumer/sass/*.scss'], batch(function (events, done) {
-    gulp.start('sassConsumer', done);
   }));
 });
 

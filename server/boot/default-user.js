@@ -8,17 +8,11 @@ module.exports = function(app) {
     password: 'user',
     emailVerified: true
   }, {
-    username: 'master',
-    email: 'master@master.com',
-    password: 'admin',
-    emailVerified: true,
-    privilege: 1
-  }, {
     username: 'admin',
     email: 'admin@admin.com',
     password: 'admin',
     emailVerified: true,
-    privilege: 2
+    privilege: 1
   }];
 
   var User = app.models.user;

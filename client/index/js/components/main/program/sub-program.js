@@ -1,9 +1,8 @@
 import React from 'react';
 import {render} from 'react-dom';
 import { Link, IndexLink } from 'react-router';
+import Masonry from 'react-masonry-component';
 import Stores from '../../../stores/stores'
-import Actions from '../../../actions/actions'
-
 
 class Header extends React.Component{
   render(){
@@ -11,46 +10,46 @@ class Header extends React.Component{
       <div className="breadcrumbs-v1">
         <div className="container">
           <span>Zuna Việt Nam</span>
-          <h1>Góc cha mẹ</h1>
+          <h1>Sách giáo dục</h1>
         </div>
       </div>
     )
   }
 }
-export class SubParent extends React.Component{
+
+export class SubProgram extends React.Component{
   constructor(props){
     super();
     this.state = {
-      parents : [],
-      parent: {}
+      programs : [],
+      program: {}
     };
     console.log(props)
   }
   componentWillMount(){
-    this.getParentDetail(this);
-    this.getParentCorners(this);
+    this.getProgramDetail(this);
+    this.getProgram(this);
 
   }
-  getParentDetail(t){
-    console.log('hi')
-    Stores.findById('/parents', t.props.params.id, function(parent){
-      console.log(parent);
-      t.setState({parent: parent})
+  getProgramDetail(t){
+    Stores.findById('/programs', t.props.params.id, function(program){
+      console.log(program);
+      t.setState({program: program})
     })
   }
-  getParentCorners(t){
-    Stores.getAll('/parents', function(parents, status) {
-      if (parents) {
-        t.setState({parents: parents});
+  getProgram(t){
+    Stores.getAll('/programs', function(programs, status) {
+      if (programs) {
+        t.setState({programs: programs});
       }
     });
   }
   render(){
-    const childElements = this.state.parents.map(function(parent,id){
+    const childElements = this.state.programs.map(function(program,id){
       return (
         <li key={id}>
-          <h3><a href="#">{parent.title}</a></h3>
-          <small>{parent.date} <a href="#">Art,</a> <a href="#">Lifestyles</a></small>
+          <h3><a href="#">{program.title}</a></h3>
+          <small>{program.date} <a href="#">Art,</a> <a href="#">Lifestyles</a></small>
         </li>
       );
     });
@@ -61,16 +60,15 @@ export class SubParent extends React.Component{
           <div className="row">
             <div className="col-md-9">
               {
-                this.state.parent ? <div className="news-v3 bg-color-white margin-bottom-30">
-                  <img className="img-responsive full-width" src={this.state.parent.url} alt=""/>
+                this.state.program ? <div className="news-v3 bg-color-white margin-bottom-30">
+                  <img className="img-responsive full-width" src={this.state.program.url} alt=""/>
                   <div className="news-v3-in">
                     <ul className="list-inline posted-info">
-                      <li>By <a href="#">Alexander Jenni</a></li>
-                      <li>In <a href="#">Design</a></li>
-                      <li>Posted {this.state.parent.date}</li>
+                      <li>By Admin</li>
+                      <li>Posted {this.state.program.date}</li>
                     </ul>
-                    <h2>{this.state.parent.title}</h2>
-                    < div dangerouslySetInnerHTML={{ __html: this.state.parent.content }}></div>
+                    <h2>{this.state.program.title}</h2>
+                    < div dangerouslySetInnerHTML={{ __html: this.state.program.content }}></div>
 
                   </div>
                 </div> : null

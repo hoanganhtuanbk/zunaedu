@@ -13,10 +13,7 @@ export default class EditProfile extends React.Component{
     this.state = {
       id: this.props.currentUser.id,
       username: this.props.currentUser.username,
-      firstName: this.props.currentUser.firstName,
-      lastName: this.props.currentUser.lastName,
       email: this.props.currentUser.email,
-      phone: this.props.currentUser.phone,
       password: ''
     };
 
@@ -25,10 +22,7 @@ export default class EditProfile extends React.Component{
 
     handleUpdate(){
     const user = {
-      firstName: this.state.firstName,
-      lastName: this.state.lastName,
       email: this.state.email,
-      phone: this.state.phone
     };
     if(this.state.password.length){
       user.password = this.state.password;
@@ -58,26 +52,6 @@ export default class EditProfile extends React.Component{
                 <table className="table table-profile">
                   <tbody>
                   <tr>
-                    <th >User name:</th>
-                    <td>{this.state.username}</td>
-                  </tr>
-                  <tr>
-                    <th >First name:</th>
-                    <td><input type="text"
-                               className="form-control"
-                               value={this.state.firstName}
-                               onChange={(e)=>{this.setState({firstName: e.target.value})}}
-                      /></td>
-                  </tr>
-                  <tr>
-                    <th >Last name:</th>
-                    <td><input type="text"
-                               className="form-control"
-                               value={this.state.lastName}
-                               onChange={(e)=>{this.setState({lastName: e.target.value})}}
-                      /></td>
-                  </tr>
-                  <tr>
                     <th>Email</th>
                     <td><input type="text"
                                className="form-control"
@@ -85,15 +59,6 @@ export default class EditProfile extends React.Component{
                                onChange={(e)=>{this.setState({email: e.target.value})}}
 
                       /></td>
-                  </tr>
-                  <tr>
-                    <th>Phone</th>
-                    <td><input type="text"
-                               className="form-control"
-                               value={this.state.phone}
-                               onChange={(e)=>{this.setState({phone: e.target.value})}}
-                      /></td>
-
                   </tr>
                   <tr>
                     <th>New password</th>

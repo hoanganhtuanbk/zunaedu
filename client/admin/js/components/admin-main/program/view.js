@@ -28,23 +28,10 @@ export class ViewProgram extends React.Component{
             linkEdit={`/admin/program/${this.props.params.id}/edit`}
             />
         </div>
-        <div className="table-responsive">
-          <table className="table ">
-            <thead>
-            <tr>
-              <th>ID</th>
-              <th>Title</th>
-              <th>Content</th>
-            </tr>
-            </thead>
-            <tbody>
-            <tr>
-              <td >{this.state.program.id}</td>
-              <td >{this.state.program.title}</td>
-              <td >{this.state.program.content}</td>
-            </tr>
-            </tbody>
-          </table>
+        <div className="panel-body">
+          <img src={this.state.program.url} />
+          <h3> {this.state.program.title}</h3>
+          <div dangerouslySetInnerHTML={{ __html: this.state.program.content }} ></div>
         </div>
       </div>
     )

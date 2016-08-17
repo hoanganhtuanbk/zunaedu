@@ -25,12 +25,6 @@ app.get('/admin', function(req, res){
 app.get('/admin/*', function(req, res){
   res.sendFile(require('path').join(__dirname + '/../client/admin/index.html'));
 });
-app.get('/consumer', function(req, res){
-  res.sendFile(require('path').join(__dirname + '/..client/consumer/index.html'))
-});
-app.get('/consumer/*', function(req, res){
-  res.sendFile(require('path').join(__dirname + '/../client/consumer/index.html'))
-});
 app.get('/', function(req, res){
   res.sendFile(require('path').join(__dirname + '/../client/index/index.html'));
 });
@@ -77,11 +71,6 @@ app.get('/forgot-password', function(req, res){
 app.get('/reset-password', function(req, res){
   res.sendFile(require('path').join(__dirname + '/../client/index/index.html'));
 });
-
-app.get('/chat', function(req, res) {
-  res.sendFile(require('path').join(__dirname + '/../client/chat.html'))
-});
-
 
 boot(app, __dirname, function(err) {
   if (err) throw err;

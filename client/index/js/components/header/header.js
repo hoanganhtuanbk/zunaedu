@@ -40,7 +40,6 @@ export class Header extends React.Component{
             </button>
           </div>
         </div>
-
         <div className="navbar-collapse mega-menu navbar-responsive-collapse collapse ">
           <div className="container">
             <div className="user-feature">
@@ -48,7 +47,7 @@ export class Header extends React.Component{
             </div>
             <ul className="nav navbar-nav">
               <li className={this.isActive('')} onClick={this.setMenuActive.bind(this, '')}><Link to="/">Trang chủ</Link></li>
-              <li className={this.isActive('van-tay-hoc')} onMouseEnter={this.setMenuActive.bind(this, 'van-tay-hoc')}><Link to="/van-tay-hoc">Vân tay học</Link>
+              <li className={this.isActive('van-tay-hoc')} onMouseEnter={this.setMenuActive.bind(this, 'van-tay-hoc')}><Link to="/van-tay-hoc">Sinh trắc vân tay</Link>
                 {this.state.activeMenu == true ? <div className="fingerprint_menu" onMouseLeave={this.handleClose.bind(this)}>
                   <ul className="">
                     <li><Link to="/van-tay-hoc/khai-niem" className={this.isActive('')} onClick={this.setMenuActive.bind(this, '')}>Khái niệm</Link></li>
@@ -61,8 +60,8 @@ export class Header extends React.Component{
                   : null}
               </li>
 
-              <li className={this.isActive('chuong-trinh')} onClick={this.setMenuActive.bind(this, 'chuong-trinh')}><Link to="/chuong-trinh">Chương trình</Link></li>
-              <li className={this.isActive('su-kien')} onClick={this.setMenuActive.bind(this, 'su-kien')}><Link to="/su-kien">Sự kiện</Link></li>
+              <li className={this.isActive('chuong-trinh')} onClick={this.setMenuActive.bind(this, 'chuong-trinh')}><Link to="/chuong-trinh">Chương trình đào tạo</Link></li>
+              <li className={this.isActive('su-kien')} onClick={this.setMenuActive.bind(this, 'su-kien')}><Link to="/su-kien">Tổ chức sự kiện</Link></li>
               <li className={this.isActive('sach-giao-duc')} onClick={this.setMenuActive.bind(this, 'sach-giao-duc')}><Link to="/sach-giao-duc">Sách giáo dục</Link></li>
 
               <li className={this.isActive('goc-cha-me')} onClick={this.setMenuActive.bind(this, 'goc-cha-me')}><Link to="/goc-cha-me">Góc cha mẹ</Link></li>

@@ -11,9 +11,11 @@ import { HistoryBegin } from './js/components/main/fingerprint/history-begin';
 import { Application } from './js/components/main/fingerprint/application';
 import { Feedback } from './js/components/main/fingerprint/feedback';
 import { Program } from './js/components/main/program/program'
+import { SubProgram } from './js/components/main/program/sub-program'
+
 import { Event } from './js/components/main/event/event'
 import { Book } from './js/components/main/book/book'
-
+import { SubBook } from './js/components/main/book/sub-book'
 import {ParentsCorner} from './js/components/main/parent-corner/parents-corner'
 import {SubParent} from './js/components/main/parent-corner/sub-parent'
 
@@ -49,12 +51,18 @@ render(
         <Route path="/van-tay-hoc/phan-hoi" component={Feedback}/>
       </Route>
       <Route path="/chuong-trinh" component={Program}/>
-      <Route path="/lien-he" component={Contact}/>
+      <Route path="/chuong-trinh/:id" component={SubProgram}/>
+
       <Route path="/su-kien" component={Event}/>
+      
       <Route path="/sach-giao-duc" component = {Book} />
-      <Route path="/sach-giao-duc/:id" component = {Book} />
+      <Route path="/sach-giao-duc/:id" component = {SubBook} />
+
       <Route path="/goc-cha-me" component = {ParentsCorner} />
       <Route path="/goc-cha-me/:id" component = {SubParent} />
+
+      <Route path="/lien-he" component={Contact}/>
+
     </Route>
     <Route path="/login" component={Login} />
     <Route path="/register" component={Register} />

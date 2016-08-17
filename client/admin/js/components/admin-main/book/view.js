@@ -15,9 +15,7 @@ export class ViewBook extends React.Component{
   componentWillMount(){
     Stores.findById('/books', this.props.params.id, function(book, status) {
       this.setState({book: book})
-      console.log(book)
     }.bind(this));
-    console.log(this.state.book)
   }
   render(){
     return(
@@ -28,24 +26,12 @@ export class ViewBook extends React.Component{
             linkEdit={`/admin/book/${this.props.params.id}/edit`}
           />
         </div>
-        <div className="table-responsive">
-          <table className="table ">
-            <thead>
-            <tr>
-              <th>ID</th>
-              <th>Title</th>
-              <th>Content</th>
-            </tr>
-            </thead>
-            <tbody>
-            <tr>
-              <td >{this.state.book.id}</td>
-              <td >{this.state.book.title}</td>
-              <td >{this.state.book.content}</td>
-            </tr>
-            </tbody>
-          </table>
+        <div className="panel-body">
+          <img src={this.state.book.url} />
+         <h3> {this.state.book.title}</h3>
+          <div dangerouslySetInnerHTML={{ __html: this.state.book.content }} ></div>
         </div>
+
       </div>
     )
   }

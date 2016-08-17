@@ -17,66 +17,73 @@ class Header extends React.Component{
   }
 }
 
-export class SubBook extends React.Component {
-  constructor(){
+export class SubBook extends React.Component{
+  constructor(props){
     super();
     this.state = {
-      books : []
-    }
+      books : [],
+      book: {}
+    };
+    console.log(props)
   }
   componentWillMount(){
-    this.getBooks(this);
+    this.getBookDetail(this);
+    this.getBook(this);
+
   }
-  getBooks(t){
+  getBookDetail(t){
+    Stores.findById('/books', t.props.params.id, function(book){
+      console.log(book);
+      t.setState({book: book})
+    })
+  }
+  getBook(t){
     Stores.getAll('/books', function(books, status) {
-      console.log(books);
       if (books) {
         t.setState({books: books});
-        console.log(t.state.books)
       }
     });
   }
   render(){
-    const masonryOptions = {
-      transitionDuration: 0
-    };
-    const childElements = this.state.books.map(function(book,stt){
+    const childElements = this.state.books.map(function(book,id){
       return (
-        <li key={stt} className="col-md-4 image-element-class">
-          <div className="masonry-main">
-            <img src={book.url} />
-            <div   className="grid-boxes-caption">
-              <h3><a href="#">{book.title}</a></h3>
-              <ul   className="list-inline grid-boxes-news">
-                <li><span>By</span> <a href="#">Kathy Reyes</a></li>
-                <li>|</li>
-                <li><i   className="fa fa-clock-o"></i> {book.date}</li>
-                <li>|</li>
-                <li><a href="#"><i   className="fa fa-comments-o"></i> 06</a></li>
-              </ul>
-              <p>{book.content}</p>
-            </div>
-          </div>
+        <li key={id}>
+          <h3><a href="#">{book.title}</a></h3>
+          <small>{book.date} <a href="#">Art,</a> <a href="#">Lifestyles</a></small>
         </li>
       );
     });
-    return(
-      <div>
+    return (
+      <div className="bg-color-light ">
         <Header />
-        <div className="container content masonry">
-          <Masonry
-            className={'row masonry'} // default ''
-            elementType={'ul'} // default 'div'
-            options={masonryOptions} // default {}
-            disableImagesLoaded={false} // default false
-            updateOnEachImageLoad={false} // default false and works only if disableImagesLoaded is false
-          >
-            {childElements}
-          </Masonry>
+        <div className="container content-sm">
+          <div className="row">
+            <div className="col-md-9">
+              {
+                this.state.book ? <div className="news-v3 bg-color-white margin-bottom-30">
+                  <img className="img-responsive full-width" src={this.state.book.url} alt=""/>
+                  <div className="news-v3-in">
+                    <ul className="list-inline posted-info">
+                      <li>By Admin</li>
+                      <li>Posted {this.state.book.date}</li>
+                    </ul>
+                    <h2>{this.state.book.title}</h2>
+                    < div dangerouslySetInnerHTML={{ __html: this.state.book.content }}></div>
+
+                  </div>
+                </div> : null
+              }
+
+            </div>
+            <div className="col-md-3">
+              <div className="headline-v2"><h2>Trending</h2></div>
+              <ul className="list-unstyled blog-trending margin-bottom-50">
+                {childElements}
+              </ul>
+            </div>
+          </div>
         </div>
       </div>
-
-    )
-
+    );
   }
 }

@@ -15,9 +15,7 @@ export class ViewDermatoglyphic extends React.Component{
   componentWillMount(){
     Stores.findById('/dermatoglyphics', this.props.params.id, function(dermatoglyphic, status) {
       this.setState({dermatoglyphic: dermatoglyphic});
-      console.log(dermatoglyphic)
     }.bind(this));
-    console.log(this.state.dermatoglyphic)
   }
 	render(){
 		return(
@@ -28,23 +26,10 @@ export class ViewDermatoglyphic extends React.Component{
             linkEdit={`/admin/dermatoglyphic/${this.props.params.id}/edit`}
             />
         </div>
-        <div className="table-responsive">
-          <table className="table ">
-            <thead>
-            <tr>
-              <th>ID</th>
-              <th>Title</th>
-              <th>Content</th>
-            </tr>
-            </thead>
-            <tbody>
-            <tr>
-              <td >{this.state.dermatoglyphic.id}</td>
-              <td >{this.state.dermatoglyphic.title}</td>
-              <td >{this.state.dermatoglyphic.content}</td>
-            </tr>
-            </tbody>
-          </table>
+        <div className="panel-body">
+          <img src={this.state.dermatoglyphic.url} />
+          <h3> {this.state.dermatoglyphic.title}</h3>
+          <div dangerouslySetInnerHTML={{ __html: this.state.dermatoglyphic.content }} ></div>
         </div>
       </div>
     )
