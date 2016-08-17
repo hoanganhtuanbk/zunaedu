@@ -1,7 +1,7 @@
 {
   "restApiRoot": "/api",
-  "host": "45.32.13.121",
-  "port": 3300,
+  "host": "https://www.zunaedu.com",
+  "port": "",
   "domain": "https://www.zunaedu.com",
   "remoting": {
     "context": {
