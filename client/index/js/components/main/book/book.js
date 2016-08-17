@@ -56,7 +56,8 @@ export class Book extends React.Component {
                 <li>|</li>
                 <li><a href="#"><i   className="fa fa-comments-o"></i> 06</a></li>
               </ul>
-              <div dangerouslySetInnerHTML={{ __html: book.content }}></div>
+              <div dangerouslySetInnerHTML={{ __html: book.content}}></div>
+              <Link className="read-more" to={`/chuong-trinh/${this.props.id}`}>Xem chi tiết</Link>
             </div>
           </div>
         </li>

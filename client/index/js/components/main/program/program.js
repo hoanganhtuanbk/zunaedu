@@ -36,13 +36,14 @@ class ListProgram extends React.Component{
           </div>
 
           <div className="col-sm-7 news-v3">
-            <div className="news-v3-in-sm no-padding">
+            <div className="news-v3-in-sm no-padding content-program">
               <ul className="list-inline posted-info">
                 <li>By Admin</li>
                 <li>Posted {this.props.date}</li>
               </ul>
               <h2><Link to={`/chuong-trinh/${this.props.id}`}>{this.props.title}</Link></h2>
               <div dangerouslySetInnerHTML={{ __html: this.props.content }}></div>
+              <Link className="read-more" to={`/chuong-trinh/${this.props.id}`}>Xem chi tiết</Link>
               <ul className="post-shares">
                 <li>
                   <a href="#">
