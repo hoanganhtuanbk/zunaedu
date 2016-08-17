@@ -43,7 +43,7 @@ export class Book extends React.Component {
     const childElements = this.state.books.map(function(book,stt){
       return (
         <li key={stt} className="col-md-4 image-element-class">
-          <div className="masonry-main">
+          <div className="masonry-main news-v3">
             <Link to={`/sach-giao-duc/${book.id}`}>
               <img src={book.url} />
             </Link>
