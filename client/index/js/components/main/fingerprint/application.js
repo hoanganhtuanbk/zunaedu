@@ -39,7 +39,8 @@ export class Application extends React.Component{
             <h2>{this.state.application.title}</h2>
 
             <img className="img-responsive medium-width" src={this.state.application.url} alt="" />
-            <p>{this.state.application.content}</p>
+            < div dangerouslySetInnerHTML={{ __html: this.state.application.content }}></div>
+
           </div>
         </div>
       </div>

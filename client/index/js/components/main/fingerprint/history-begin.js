@@ -35,7 +35,8 @@ export class HistoryBegin extends React.Component{
             <h2>{this.state.history.title}</h2>
 
             <img className="img-responsive medium-width" src={this.state.history.url} alt="" />
-            <p>{this.state.history.content}</p>
+            < div dangerouslySetInnerHTML={{ __html: this.state.history.content }}></div>
+
           </div>
         </div>
         <div className="blog-post-quote bg-color-white margin-bottom-60">

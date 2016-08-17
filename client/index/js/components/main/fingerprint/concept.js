@@ -33,14 +33,15 @@ export class Concept extends React.Component{
               <li>Posted {this.state.concept.date}</li>
             </ul>
             <h2><a href="#">{this.state.concept.title}</a></h2>
-              <p>{this.state.concept.content}</p>
-          </div>
-        </div>
-        <div className="blog-post-quote bg-color-white margin-bottom-60">
-          <p>Look deep into nature, and then you will understand everything better.</p>
-          <span>- Albert Einstein</span>
-        </div>
-      </div>
-    )
-  }
-}
+            < div dangerouslySetInnerHTML={{ __html: this.state.concept.content }}></div>
+
+              </div>
+              </div>
+              <div className="blog-post-quote bg-color-white margin-bottom-60">
+              <p>Look deep into nature, and then you will understand everything better.</p>
+              <span>- Albert Einstein</span>
+              </div>
+              </div>
+              )
+            }
+            }
