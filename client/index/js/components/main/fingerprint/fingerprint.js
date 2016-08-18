@@ -35,8 +35,9 @@ class Menu extends React.Component{
     const settings = {
       dots: false,
       infinite: true,
-      speed: 500,
-
+      speed: 1000,
+      autoplay: true,
+      lazyLoad: true,
     };
     return(
       <div className="col-md-4">
