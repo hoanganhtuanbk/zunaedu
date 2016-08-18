@@ -1,6 +1,3 @@
-/**
- * Created by duyhung on 04/07/2016.
- */
 module.exports = function(app) {
   var roles = ['admin', 'consumer'];
   var Role = app.models.Role;

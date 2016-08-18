@@ -73,6 +73,7 @@ export class AddBook extends React.Component{
                   <div className="col-md-12">
                     <label>Url image</label>
                     <input type="text" className="form-control "  onChange={(e) =>{this.setState({url : e.target.value})}} />
+                    <input type="checkbox" />
                   </div>
                   <div className="col-md-12">
                     <div style={{ margin: '30px 10px 10px 10px' }}>

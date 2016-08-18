@@ -13,6 +13,7 @@ export class HomePage extends React.Component{
     return (
       <div className="section">
         <Backgroud/>
+        <Purchase />
         <WhatItAbout />
         <FeaturedNews />
         <WhatPeopleSay />

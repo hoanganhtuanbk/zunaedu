@@ -50,16 +50,19 @@ render(
         <Route path="/van-tay-hoc/ung-dung" component={Application}/>
         <Route path="/van-tay-hoc/phan-hoi" component={Feedback}/>
       </Route>
-      <Route path="/chuong-trinh" component={Program}/>
-      <Route path="/chuong-trinh/:id" component={SubProgram}/>
+      <Route path="/chuong-trinh" component={Program}>
+        <Route path="/chuong-trinh/:id" component={SubProgram}/>
+      </Route>
 
       <Route path="/su-kien" component={Event}/>
-      
-      <Route path="/sach-giao-duc" component = {Book} />
-      <Route path="/sach-giao-duc/:id" component = {SubBook} />
 
-      <Route path="/goc-cha-me" component = {ParentsCorner} />
-      <Route path="/goc-cha-me/:id" component = {SubParent} />
+      <Route path="/sach-giao-duc" component = {Book} >
+        <Route path="/sach-giao-duc/:id" component = {SubBook} />
+      </Route>
+
+      <Route path="/goc-cha-me" component = {ParentsCorner} >
+        <Route path="/goc-cha-me/:id" component = {SubParent} />
+      </Route>
 
       <Route path="/lien-he" component={Contact}/>
 

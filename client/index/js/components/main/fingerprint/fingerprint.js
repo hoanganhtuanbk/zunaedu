@@ -19,6 +19,8 @@ class Menu extends React.Component{
   render(){
     return(
       <div className="col-md-3">
+        <div className="headline-v2"><h2>Video nổi bật</h2></div>
+
         <div className="headline-v2"><h2>Mục lục</h2></div>
         <ul className="list-unstyled blog-trending margin-bottom-50">
           <li>
@@ -60,7 +62,7 @@ export class PricingPage extends React.Component{
   }
   render(){
     return (
-      <section className="">
+      <section className="fingerprint">
         <Header />
         <div className="bg-color-light">
           <div className="container content-sm">
