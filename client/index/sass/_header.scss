@@ -31,11 +31,14 @@
 
       &:hover > a{
         background: none!important;
+        cursor: pointer;
       }
 
       &.active {
-        a {
+        .route-page{
           color: $base-color;
+        }
+        a {
           background: none!important;
         }
       }

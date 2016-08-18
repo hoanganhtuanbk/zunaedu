@@ -46,11 +46,11 @@ export class Header extends React.Component{
               <Link to="/login">Login</Link>
             </div>
             <ul className="nav navbar-nav">
-              <li className={this.isActive('')} onClick={this.setMenuActive.bind(this, '')}><Link to="/">Trang chủ</Link></li>
-              <li className={this.isActive('van-tay-hoc')} onMouseEnter={this.setMenuActive.bind(this, 'van-tay-hoc')}><Link to="/van-tay-hoc">Sinh trắc vân tay</Link>
+              <li className={this.isActive('')} onClick={this.setMenuActive.bind(this, '')}><Link className="route-page" to="/">Trang chủ</Link></li>
+              <li className={this.isActive('van-tay-hoc')} onClick={this.setMenuActive.bind(this, 'van-tay-hoc')}><a className="route-page">Sinh trắc vân tay</a>
                 {this.state.activeMenu == true ? <div className="fingerprint_menu" onMouseLeave={this.handleClose.bind(this)}>
                   <ul className="">
-                    <li><Link to="/van-tay-hoc/khai-niem" className={this.isActive('')} onClick={this.setMenuActive.bind(this, '')}>Khái niệm</Link></li>
+                    <li><Link to="/van-tay-hoc" className={this.isActive('')} onClick={this.setMenuActive.bind(this, '')}>Khái niệm</Link></li>
 
                     <li><Link to="/van-tay-hoc/lich-su-hinh-thanh" className={this.isActive('history')} onClick={this.setMenuActive.bind(this, 'history')}>Lịch sử hình thành</Link></li>
                     <li><Link to="/van-tay-hoc/ung-dung" className={this.isActive('application')} onClick={this.setMenuActive.bind(this, 'application')}>Ứng dụng</Link></li>
@@ -60,12 +60,12 @@ export class Header extends React.Component{
                   : null}
               </li>
 
-              <li className={this.isActive('chuong-trinh')} onClick={this.setMenuActive.bind(this, 'chuong-trinh')}><Link to="/chuong-trinh">Chương trình đào tạo</Link></li>
-              <li className={this.isActive('su-kien')} onClick={this.setMenuActive.bind(this, 'su-kien')}><Link to="/su-kien">Tổ chức sự kiện</Link></li>
-              <li className={this.isActive('sach-giao-duc')} onClick={this.setMenuActive.bind(this, 'sach-giao-duc')}><Link to="/sach-giao-duc">Sách giáo dục</Link></li>
+              <li className={this.isActive('chuong-trinh')} onClick={this.setMenuActive.bind(this, 'chuong-trinh')}><Link className="route-page" to="/chuong-trinh">Chương trình đào tạo</Link></li>
+              <li className={this.isActive('su-kien')} onClick={this.setMenuActive.bind(this, 'su-kien')}><Link className="route-page" to="/su-kien">Tổ chức sự kiện</Link></li>
+              <li className={this.isActive('sach-giao-duc')} onClick={this.setMenuActive.bind(this, 'sach-giao-duc')}><Link  className="route-page" to="/sach-giao-duc">Sách giáo dục</Link></li>
 
-              <li className={this.isActive('goc-cha-me')} onClick={this.setMenuActive.bind(this, 'goc-cha-me')}><Link to="/goc-cha-me">Góc cha mẹ</Link></li>
-              <li className={this.isActive('lien-he')} onClick={this.setMenuActive.bind(this, 'lien-he')}><Link to="/lien-he">Liên hệ</Link></li>
+              <li className={this.isActive('goc-cha-me')} onClick={this.setMenuActive.bind(this, 'goc-cha-me')}><Link className="route-page" to="/goc-cha-me">Góc cha mẹ</Link></li>
+              <li className={this.isActive('lien-he')} onClick={this.setMenuActive.bind(this, 'lien-he')}><Link className="route-page" to="/lien-he">Liên hệ</Link></li>
 
             </ul>
           </div>
