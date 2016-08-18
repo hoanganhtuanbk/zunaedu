@@ -23,7 +23,7 @@ export class Concept extends React.Component{
   }
   render(){
     return(
-      <div className="col-md-9">
+      <div className="col-md-8">
         <div className="news-v3 bg-color-white margin-bottom-60">
           <img className="img-responsive full-width" src={this.state.concept.url} alt="" />
           <div className="news-v3-in">

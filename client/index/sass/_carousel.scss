@@ -90,3 +90,55 @@
 .slick-dots{
   bottom: 0 !important;
 }
+
+
+.slick-control {
+  opacity: 1;
+  font-size: 30px;
+  height: inherit;
+  width: inherit;
+  background: none;
+  text-shadow: none;
+  position: inherit;
+  color: #fff;
+  i {
+    top: 50%;
+    opacity: 0.6;
+    background: #000;
+    margin-top: -18px;
+    padding: 2px 12px;
+    position: absolute;
+  }
+  &:hover{
+    cursor: pointer;
+  }
+}
+.right {
+  right: 0;
+  left: auto;
+  position: absolute;
+  top: 50%;
+  background-image: -webkit-linear-gradient(left,rgba(0,0,0,.0001) 0,rgba(0,0,0,.5) 100%);
+  background-image: -o-linear-gradient(left,rgba(0,0,0,.0001) 0,rgba(0,0,0,.5) 100%);
+  background-image: -webkit-gradient(linear,left top,right top,from(rgba(0,0,0,.0001)),to(rgba(0,0,0,.5)));
+  background-image: linear-gradient(to right,rgba(0,0,0,.0001) 0,rgba(0,0,0,.5) 100%);
+  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#00000000', endColorstr='#80000000', GradientType=1);
+  background-repeat: repeat-x;
+
+  i {
+    right: 0;
+  }
+}
+.left {
+  position: absolute;
+  top: 50%;
+  background-image: -webkit-linear-gradient(left,rgba(0,0,0,.0001) 0,rgba(0,0,0,.5) 100%);
+  background-image: -o-linear-gradient(left,rgba(0,0,0,.0001) 0,rgba(0,0,0,.5) 100%);
+  background-image: -webkit-gradient(linear,left top,right top,from(rgba(0,0,0,.0001)),to(rgba(0,0,0,.5)));
+  background-image: linear-gradient(to right,rgba(0,0,0,.0001) 0,rgba(0,0,0,.5) 100%);
+  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#00000000', endColorstr='#80000000', GradientType=1);
+  background-repeat: repeat-x;
+  i {
+    left: 0;
+  }
+}

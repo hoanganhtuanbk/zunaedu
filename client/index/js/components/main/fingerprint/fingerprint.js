@@ -1,6 +1,7 @@
 import React from 'react';
 import {render} from 'react-dom';
 import { Link, IndexLink } from 'react-router';
+import Slider from 'react-slick'
 
 
 class Header extends React.Component{
@@ -15,11 +16,53 @@ class Header extends React.Component{
     )
   }
 }
+class LeftNavButton extends React.Component {
+  render() {
+    return  <a onClick={this.props.onClick} className="left slick-control">
+      <i className="fa fa-angle-left"></i>
+    </a>
+  }
+}
+class RightNavButton extends React.Component {
+  render() {
+    return <a onClick={this.props.onClick} className="right slick-control">
+        <i className="fa fa-angle-right"></i>
+      </a>
+  }
+}
 class Menu extends React.Component{
   render(){
+    const settings = {
+      dots: false,
+      infinite: true,
+      speed: 500,
+
+    };
     return(
-      <div className="col-md-3">
+      <div className="col-md-4">
         <div className="headline-v2"><h2>Video nổi bật</h2></div>
+        <div className="video-hit">
+          <Slider {...settings} prevArrow={ <LeftNavButton /> } nextArrow={<RightNavButton />}>
+            <div className="slide-video">
+              <iframe height={250} src="https://www.youtube.com/embed/otsWFBYUZ10" frameBorder="0" allowFullScreen=""></iframe>
+            </div>
+            <div className="slide-video">
+              <iframe height={250} src="https://www.youtube.com/embed/utS5Cvo3ILI" frameBorder="0" allowFullScreen=""></iframe>          </div>
+            <div className="slide-video">
+              <iframe height={250} src="https://www.youtube.com/embed/lt8CPvZ8y7E" frameBorder="0" allowFullScreen=""></iframe>
+            </div>
+            <div className="slide-video">
+              <iframe height={250} src="https://www.youtube.com/embed/FSJ6FEtIKfA" frameBorder="0"></iframe>
+            </div>
+            <div className="slide-video">
+              <iframe height={250} src="https://www.youtube.com/embed/fUm737CYYds" frameBorder="0"></iframe>
+            </div>
+            <div className="slide-video">
+              <iframe height={250} src="https://www.youtube.com/embed/GRP_aK934y4" frameBorder="0"></iframe>
+            </div>
+
+          </Slider>
+        </div>
 
         <div className="headline-v2"><h2>Mục lục</h2></div>
         <ul className="list-unstyled blog-trending margin-bottom-50">
@@ -68,7 +111,7 @@ export class PricingPage extends React.Component{
           <div className="container content-sm">
             <div className="row">
               <Menu />
-                {this.props.children}
+              {this.props.children}
             </div>
           </div>
         </div>
