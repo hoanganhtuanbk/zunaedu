@@ -4,7 +4,6 @@ import { Link, IndexLink, browserHistory } from 'react-router';
 import {PanelHeader} from '../../../../../sharedComponent/main/panel-header'
 import Stores from '../../../stores/stores';
 import Actions from '../../../actions/actions.js'
-import BasicHtmlEditor from '../src/BasicHtmlEditor';
 
 export class EditParent extends React.Component{
   constructor() {
@@ -59,11 +58,6 @@ export class EditParent extends React.Component{
               </div>
               <div className="col-md-12">
                 <label>Content</label>
-                <BasicHtmlEditor
-                  value={this.state.content }
-                  onChange={ (content) => this.updateContent(content) }
-                  debounce={ 500 }
-                />
               </div>
 
             </div>
@@ -71,13 +65,6 @@ export class EditParent extends React.Component{
               <div className="col-md-12">
                 <label>Url</label> *
                 <input type="text" value={this.state.url} className="form-control " onChange={(e)=>{this.setState({url: e.target.value })}}/>
-              </div>
-              <div className="col-md-12">
-                <div style={{ margin: '30px 10px 10px 10px' }}>
-                  <code>Exported HTML</code>
-                  <hr/>
-                  <div dangerouslySetInnerHTML={{ __html: this.state.content }} />
-                </div>
               </div>
             </div>
 

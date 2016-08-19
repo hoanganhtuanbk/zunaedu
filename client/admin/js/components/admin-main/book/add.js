@@ -5,18 +5,16 @@ import { Link, IndexLink ,browserHistory} from 'react-router';
 import {PanelHeader} from '../../../../../sharedComponent/main/panel-header'
 import Actions from '../../../actions/actions.js'
 import Stores from '../../../stores/stores.js'
-import BasicHtmlEditor from '../src/BasicHtmlEditor';
+import RichEditor from '../src'
+
+
 
 export class AddBook extends React.Component{
   constructor(props){
     super();
     this.state = {
       title: '',
-      content: `
-      <h1>This is a content</h1>
-      <p>Here's some text, it's useful</p>
-      <p>More text, some inline <strong>styling</strong> for <em>some</em> elements</p>
-    `,
+      content: {},
       url: '',
       author: '',
       date: ''
@@ -27,6 +25,12 @@ export class AddBook extends React.Component{
     this.setState({
       content
     });
+  }
+  onChangeContent(content){
+    console.log(content);
+    return(
+      this.setState({content: content})
+    )
   }
   handleCreateBook(e){
     var dateNow = new Date();
@@ -58,15 +62,6 @@ export class AddBook extends React.Component{
                       <label>Title</label>
                       <input type="text" className="form-control "  onChange={(e) =>{this.setState({title : e.target.value})}} />
                     </div>
-                    <div className="col-md-12">
-                      <label>Content</label>
-                      <BasicHtmlEditor
-                        value={ this.state.content }
-                        onChange={ (content) => this.updateContent(content) }
-                        debounce={ 500 }
-                      />
-                    </div>
-
                   </div>
                 </div>
                 <div className="col-md-6">
@@ -75,13 +70,10 @@ export class AddBook extends React.Component{
                     <input type="text" className="form-control "  onChange={(e) =>{this.setState({url : e.target.value})}} />
                     <input type="checkbox" />
                   </div>
-                  <div className="col-md-12">
-                    <div style={{ margin: '30px 10px 10px 10px' }}>
-                      <code>Exported HTML</code>
-                      <hr/>
-                      <div dangerouslySetInnerHTML={{ __html: this.state.content }} />
-                    </div>
-                  </div>
+                </div>
+                <div className="col-md-12">
+                  <label>Content</label>
+                  <RichEditor onChangeContent = {this.onChangeContent} />
                 </div>
               </div>
             </div>

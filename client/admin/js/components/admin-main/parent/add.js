@@ -4,7 +4,7 @@ import { Link, IndexLink ,browserHistory} from 'react-router';
 import {PanelHeader} from '../../../../../sharedComponent/main/panel-header'
 import Actions from '../../../actions/actions.js'
 import Stores from '../../../stores/stores.js'
-import BasicHtmlEditor from '../src/BasicHtmlEditor';
+import RichEditor from '../src'
 
 export class AddParent extends React.Component{
   constructor(props){
@@ -57,14 +57,7 @@ export class AddParent extends React.Component{
                       <label>Title</label>
                       <input type="text" className="form-control "  onChange={(e) =>{this.setState({title : e.target.value})}} />
                     </div>
-                    <div className="col-md-12">
-                      <label>Content</label>
-                      <BasicHtmlEditor
-                        value={ this.state.content }
-                        onChange={ (content) => this.updateContent(content) }
-                        debounce={ 500 }
-                      />
-                    </div>
+
                   </div>
                 </div>
                 <div className="col-md-6">
@@ -72,13 +65,11 @@ export class AddParent extends React.Component{
                     <label>Url image</label>
                     <input type="text" className="form-control "  onChange={(e) =>{this.setState({url : e.target.value})}} />
                   </div>
-                  <div className="col-md-12">
-                    <div style={{ margin: '30px 10px 10px 10px' }}>
-                      <code>Exported HTML</code>
-                      <hr/>
-                      <div dangerouslySetInnerHTML={{ __html: this.state.content }} />
-                    </div>
-                  </div>
+                </div>
+                <div className="col-md-12">
+                  <label>Content</label>
+                  <RichEditor onChangeContent = {this.onChangeContent} />
+
                 </div>
               </div>
             </div>
