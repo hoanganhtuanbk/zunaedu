@@ -18,13 +18,7 @@ export class Book extends React.Component {
     super();
     this.state = {
       books : [],
-      editorState: EditorState.createEmpty()
     };
-    this.coverFromRaw= (content) =>{
-      const jsObject = JSON.parse(content);
-      const editorState = convertFromRaw(jsObject);
-      return editorState;
-    }
   }
   componentWillMount(){
     this.getBooks(this);
@@ -35,12 +29,7 @@ export class Book extends React.Component {
       console.log(books);
       if (books) {
         t.setState({books: books});
-      };
-      t.state.books.forEach(function(book){
-        const jsObject = JSON.parse(book.content);
-        const editorState = convertFromRaw(jsObject);
-        book.objContent = EditorState.createWithContent(editorState)
-      })
+      }
     });
   }
   render(){
@@ -64,10 +53,7 @@ export class Book extends React.Component {
                 <li>|</li>
                 <li><a href="#"><i   className="fa fa-comments-o"></i> 06</a></li>
               </ul>
-              <Editor
-                editorState={this.state.editorState}
-                readOnly={true}
-              />
+              <p>{book.description}</p>
               <Link className="read-more" to={`/sach-giao-duc/${book.id}`}>Xem chi tiết</Link>
               <ul className="post-shares">
                 <li>

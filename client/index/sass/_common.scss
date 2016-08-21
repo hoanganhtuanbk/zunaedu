@@ -1,6 +1,6 @@
 /* ------------------------------>>> COMMON <<<------------------------------ */
 body {
-  font-family: $font-family;
+  font-family: $font-open-sans;
   font-size: $font-base;
   line-height: 1.6;
   background-color: $white;
@@ -25,6 +25,7 @@ body {
 
 img {
   vertical-align: top;
+  max-width: 100%;
 }
 
 a {
@@ -139,4 +140,9 @@ label {
 }
 .read-more{
   color: $base-color
+}
+.bg-article{
+  img{
+    height: 250px;
+  }
 }

@@ -60,32 +60,32 @@
 /*# sourceMappingURL=slick.css.map */
 .feedback{
 
-.carousel-header{
-  .testimonials-v3-title {
-    font-size: 22px;
-    font-weight: 200;
-    margin-bottom: 20px;
-    p {
-      color: #72c02c;
-      margin-bottom: 0;
+  .carousel-header{
+    .testimonials-v3-title {
+      font-size: 22px;
+      font-weight: 200;
+      margin-bottom: 20px;
+      p {
+        color: #72c02c;
+        margin-bottom: 0;
+      }
+      span {
+        color: #777;
+        display: block;
+        font-size: 14px;
+      }
     }
-    span {
-      color: #777;
-      display: block;
-      font-size: 14px;
+    .rounded-x {
+      border-radius: 50% !important;
+    }
+    .img-bordered{
+      width: 150px;
+      height: 150px;
+      margin-bottom: 10px;
+      padding: 3px !important;
+      border: solid 1px #eee !important;
     }
   }
-  .rounded-x {
-    border-radius: 50% !important;
-  }
-  .img-bordered{
-    width: 150px;
-    height: 150px;
-    margin-bottom: 10px;
-    padding: 3px !important;
-    border: solid 1px #eee !important;
-  }
-}
 }
 .slick-dots{
   bottom: 0 !important;

@@ -31,7 +31,7 @@ class ListProgram extends React.Component{
                 <li>Posted {this.props.date}</li>
               </ul>
               <h2><Link to={`/chuong-trinh/${this.props.id}`}>{this.props.title}</Link></h2>
-              <div dangerouslySetInnerHTML={{ __html: this.props.content }}></div>
+              <p>{this.props.description}</p>
               <Link className="read-more" to={`/chuong-trinh/${this.props.id}`}>Xem chi tiết</Link>
               <ul className="post-shares">
                 <li>
@@ -85,7 +85,7 @@ export class Program extends React.Component{
         id={item.id}
         title={item.title}
         date={item.date}
-        content={item.content}
+        description={item.description}
         url={item.url}
       />)
     });

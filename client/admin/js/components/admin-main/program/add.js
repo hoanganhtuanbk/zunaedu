@@ -12,26 +12,26 @@ export class AddProgram extends React.Component{
     super();
     this.state = {
       title: '',
-      content: `
-      <h1>This is a content</h1>
-      <p>Here's some text, it's useful</p>
-      <p>More text, some inline <strong>styling</strong> for <em>some</em> elements</p>
-    `,
+      description: '',
+      content: '',
       url: '',
       author: '',
       date: ''
     };
     this.handleCreateProgram = this.handleCreateProgram.bind(this);
+    this.onChangeContent = this.onChangeContent.bind(this);
+
   }
-  updateContent(content) {
+  onChangeContent(content) {
     this.setState({
-      content
+      content: content
     });
   }
   handleCreateProgram(e){
     var dateNow = new Date();
     var apps = {
       title: this.state.title,
+      description: this.state.description,
       content: this.state.content,
       url: this.state.url,
       date: dateNow.toDateString()
@@ -57,6 +57,10 @@ export class AddProgram extends React.Component{
                     <div className="col-md-12">
                       <label>Title</label>
                       <input type="text" className="form-control "  onChange={(e) =>{this.setState({title : e.target.value})}} />
+                    </div>
+                    <div className="col-md-12">
+                      <label>Description</label>
+                      <textarea className="form-control "  onChange={(e) =>{this.setState({description : e.target.value})}} ></textarea>
                     </div>
                   </div>
                 </div>

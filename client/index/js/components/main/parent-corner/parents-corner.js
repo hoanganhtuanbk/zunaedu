@@ -15,6 +15,7 @@ export class ParentsCorner extends React.Component{
   }
   getParentCorners(t){
     Stores.getAll('/parents', function(parents, status) {
+      console.log(parents);
       if (parents) {
         t.setState({parents: parents});
       }
@@ -37,15 +38,16 @@ export class ParentsCorner extends React.Component{
             <div className="col-md-9">
               {
                 (this.state.parents.length > 0 ) ? <div className="news-v3 bg-color-white margin-bottom-30">
-                  <img className="img-responsive full-width" src={this.state.parents[0].url} alt=""/>
+                  <div className="bg-article">
+                    <img className="img-responsive full-width" src={this.state.parents[0].url} alt=""/>
+                  </div>
                   <div className="news-v3-in">
                     <ul className="list-inline posted-info">
                       <li>By <a href="#">Admin</a></li>
                       <li>Posted {this.state.parents[0].date}</li>
                     </ul>
                     <h2>{this.state.parents[0].title}</h2>
-                    < div dangerouslySetInnerHTML={{ __html: this.state.parents[0].content }}></div>
-
+                    <p>{this.state.parents[0].description}</p>
                     <ul className="post-shares post-shares-lg">
                       <li>
                         <a href="#">

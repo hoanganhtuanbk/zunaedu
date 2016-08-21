@@ -1,5 +1,4 @@
 import React from 'react';
-
 import {render} from 'react-dom';
 import { Link, IndexLink ,browserHistory} from 'react-router';
 import {PanelHeader} from '../../../../../sharedComponent/main/panel-header'
@@ -14,6 +13,7 @@ export class AddBook extends React.Component{
     super();
     this.state = {
       title: '',
+      description: '',
       content: '',
       url: '',
       author: '',
@@ -31,6 +31,7 @@ export class AddBook extends React.Component{
     var dateNow = new Date();
     var apps = {
       title: this.state.title,
+      description: this.state.description,
       content: this.state.content,
       url: this.state.url,
       date: dateNow.toDateString()
@@ -56,6 +57,10 @@ export class AddBook extends React.Component{
                     <div className="col-md-12">
                       <label>Title</label>
                       <input type="text" className="form-control "  onChange={(e) =>{this.setState({title : e.target.value})}} />
+                    </div>
+                    <div className="col-md-12">
+                      <label>Description</label>
+                      <textarea className="form-control "  onChange={(e) =>{this.setState({description : e.target.value})}} ></textarea>
                     </div>
                   </div>
                 </div>
