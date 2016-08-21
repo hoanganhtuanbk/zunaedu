@@ -39,7 +39,7 @@ export class ParentsCorner extends React.Component{
               {
                 (this.state.parents.length > 0 ) ? <div className="news-v3 bg-color-white margin-bottom-30">
                   <div className="bg-article">
-                    <img className="img-responsive full-width" src={this.state.parents[0].url} alt=""/>
+                    <img className="img-responsive" src={this.state.parents[0].url} alt=""/>
                   </div>
                   <div className="news-v3-in">
                     <ul className="list-inline posted-info">

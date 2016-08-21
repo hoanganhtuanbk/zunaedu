@@ -67,8 +67,8 @@ export class SubBook extends React.Component{
     const childElements = this.state.books.map(function(book,id){
       return (
         <li key={id}>
-          <h3><a href="#">{book.title}</a></h3>
-          <small>{book.date} <a href="#">Art,</a> <a href="#">Lifestyles</a></small>
+          <h3><Link to={`/sach-giao-duc/${book.id}`}>{book.title}</Link></h3>
+          <small>{book.date}, Admin</small>
         </li>
       );
     });
@@ -83,7 +83,7 @@ export class SubBook extends React.Component{
               {
                 this.state.book ? <div className="news-v3 bg-color-white margin-bottom-30">
                   <div className="bg-article">
-                  <img className="img-responsive full-width" src={this.state.book.url} alt=""/>
+                  <img className="img-responsive" src={this.state.book.url} alt=""/>
                     </div>
                   <div className="news-v3-in">
                     <ul className="list-inline posted-info">

@@ -66,8 +66,8 @@ export class SubParent extends React.Component{
     const childElements = this.state.parents.map(function(parent,id){
       return (
         <li key={id}>
-          <h3><a href="#">{parent.title}</a></h3>
-          <small>{parent.date} <a href="#">Art,</a> <a href="#">Lifestyles</a></small>
+          <h3><Link to={`/goc-cha-me/${parent.id}`}>{parent.title}</Link></h3>
+          <small>{parent.date} ,<a href="#">Admin</a></small>
         </li>
       );
     });
@@ -80,7 +80,7 @@ export class SubParent extends React.Component{
               {
                 this.state.parent ? <div className="news-v3 bg-color-white margin-bottom-30">
                   <div className="bg-article">
-                  <img className="img-responsive full-width" src={this.state.parent.url} alt=""/>
+                  <img className="img-responsive" src={this.state.parent.url} alt=""/>
                     </div>
                   <div className="news-v3-in">
                     <ul className="list-inline posted-info">
