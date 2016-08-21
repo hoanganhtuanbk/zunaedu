@@ -23,17 +23,18 @@ export class WhatItAbout extends React.Component{
               <div className="headline"><h2>Đến với Zuna Education</h2></div>
               <div className="row">
                 <div className="col-sm-4">
-                  <img className="img-responsive margin-bottom-20" src="../index/img/info/giatricotloi.png" alt=""/>
+                  <img className="img-responsive" src="../index/img/info/giatricotloi.png" alt=""/>
                 </div>
                 <div className="col-sm-8">
                   <ul className="list-unstyled margin-bottom-20">
-                    <li><i className="fa fa-check color-green"></i><strong>Tâm</strong>: Xây dựng và phát triển công ty từ TÂM, mỗi nhân viên phải có đạo đức kinh doanh, lấy khách hàng làm trung tâm.
+                    <li>Với sứ mệnh mang chất lượng dịch vụ, sản phẩm và xây dựng một nền tảng vững chắc cân bằng về Tâm – Thân – Trí cho khách hàng, ZenuEdu cũng tạo dựng cho mình những giá trị cốt lỗi bền vững:</li>
+                    <li><i className="fa fa-check color-green"></i><strong>Tâm</strong>: Xây dựng và phát triển công ty từ TÂM.
                     </li>
-                    <li><i className="fa fa-check color-green"></i><strong>Tín</strong>: Bảo vệ chữ TÍN được đặt lên hàng đầu, luôn chuẩn bị đầy đủ và nỗ lực hết mình để đảm bảo đúng cam kết, lời nói phải đi đôi với hành động.
+                    <li><i className="fa fa-check color-green"></i><strong>Tín</strong>: Bảo vệ chữ TÍN được đặt lên hàng đầu.
                     </li>
-                    <li><i className="fa fa-check color-green"></i><strong>Trí</strong>: Xem SÁNG TẠO là sức sống, là đòn bẩy phát triển, đề cao tinh thần dám nghĩ, dám làm, tư duy tích cực, chủ trương xây dựng doanh nghiệp là một ngôi trường, mỗi nhân viên là một học trò cũng là một người thầy.
+                    <li><i className="fa fa-check color-green"></i><strong>Trí</strong>: Xem SÁNG TẠO là sức sống.
                     </li>
-                    <li><i className="fa fa-check color-green"></i><strong>Nhân</strong>: Xây dựng các mối quan hệ với tinh thần nhân văn; coi trọng các thành viên trong doanh nghiệp  như là tài sản quý giá nhất. Xây dựng con người dựa trên sự công bằng, liêm chính. Tạo lập một doanh nghiệp đoàn kết phát huy sức mạnh nội tại của từng cá nhân, thông qua đó phát huy sức mạnh tối ưu của doanh nghiệp. Xây dựng con người – con người xây dựng kinh doanh.
+                    <li><i className="fa fa-check color-green"></i><strong>Nhân</strong>: Xây dựng các mối quan hệ với tinh thần nhân văn, là tài sản quý giá nhất.
                     </li>
                     <li><i className="fa fa-check color-green"></i><strong>Tốc</strong>: Suy nghĩ nhanh - Quyết định nhanh – Hành động nhanh .
                     </li>
@@ -42,8 +43,8 @@ export class WhatItAbout extends React.Component{
               </div>
 
               <blockquote className="hero-unify">
-                <p>Award winning digital agency. We bring a personal and effective approach to every project we work on, which is why. Unify is an incredibly beautiful responsive Bootstrap Template for corporate professionals.</p>
-                <small>CEO, Jack Bour</small>
+                <p>"Bạn không thể giúp người khác thành công, bạn chỉ có thể TẠO ĐIỀU KIỆN và KHÍCH LỆ để người MUỐN THÀNH CÔNG thành công. </p>
+                <small>C- John Maxwell</small>
               </blockquote>
             </div>
 
@@ -68,9 +69,7 @@ export class WhatItAbout extends React.Component{
                           <li><span className="stm-event__venue"><i className="fa fa-map-marker"></i>Napoli, Pizarro 41/22</span></li>
                         </ul>
                       </div>
-                      <h5 className="stm-event__title"><a href="http://smartyschool.stylemixthemes.com/meeting/henry-cluster-council/">Henry Cluster Council</a></h5>
-                      <div className="stm-event__summary"><p>Discussion and community dialogue with school staff, parents and community members.</p>
-                      </div>
+                      <h5 className="stm-event__title">Henry Cluster Council</h5>
                     </div>
                   </div>
 
@@ -94,13 +93,11 @@ export class WhatItAbout extends React.Component{
                           <li><span className="stm-event__venue"><i className="fa fa-map-marker"></i>Napoli, Pizarro 41/22</span></li>
                         </ul>
                       </div>
-                      <h5 className="stm-event__title"><a href="http://smartyschool.stylemixthemes.com/meeting/henry-cluster-council/">Henry Cluster Council</a></h5>
-                      <div className="stm-event__summary"><p>Discussion and community dialogue with school staff, parents and community members.</p>
-                      </div>
+                      <h5 className="stm-event__title">Henry Cluster Council</h5>
                     </div>
                   </div>
 
-                  <img src="../index/img/info/img18.jpg" />
+                  <img src="../index/img/info/img4.jpg" />
                 </div>
                 <div className="upcoming-event">
                   <div className="stm-event__body">
@@ -120,13 +117,11 @@ export class WhatItAbout extends React.Component{
                           <li><span className="stm-event__venue"><i className="fa fa-map-marker"></i>Napoli, Pizarro 41/22</span></li>
                         </ul>
                       </div>
-                      <h5 className="stm-event__title"><a href="http://smartyschool.stylemixthemes.com/meeting/henry-cluster-council/">Henry Cluster Council</a></h5>
-                      <div className="stm-event__summary"><p>Discussion and community dialogue with school staff, parents and community members.</p>
-                      </div>
+                      <h5 className="stm-event__title">Henry Cluster Council</h5>
                     </div>
                   </div>
 
-                  <img src="../index/img/info/img24.jpg" />
+                  <img src="../index/img/info/img4.jpg" />
                 </div>
               </Slider>
             </div>

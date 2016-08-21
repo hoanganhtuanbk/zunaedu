@@ -23,9 +23,9 @@ export class AddProgram extends React.Component{
 
   }
   onChangeContent(content) {
-    this.setState({
-      content: content
-    });
+    if(typeof(content) == 'string'){
+      this.setState({content: content})
+    }
   }
   handleCreateProgram(e){
     var dateNow = new Date();

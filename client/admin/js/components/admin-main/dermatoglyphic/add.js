@@ -21,7 +21,9 @@ export class AddDermatoglyphic extends React.Component{
     this.onChangeContent = this.onChangeContent.bind(this);
   }
   onChangeContent(content){
+    if(typeof(content) == 'string'){
       this.setState({content: content})
+    }
   }
   handleCreateDermatoglyphic(e){
     var dateNow = new Date();

@@ -2,8 +2,16 @@ import React from 'react';
 import {render} from 'react-dom';
 import { Link, IndexLink } from 'react-router';
 import Stores from '../../../stores/stores'
-import Actions from '../../../actions/actions'
 
+import {
+  Editor,
+  EditorState,
+  Entity,
+  ContentState,
+  convertFromRaw,
+  convertToRaw
+} from 'draft-js';
+import ImageComponent from '../src/ImageComponent';
 
 class Header extends React.Component{
   render(){
@@ -22,9 +30,17 @@ export class SubParent extends React.Component{
     super();
     this.state = {
       parents : [],
-      parent: {}
+      parent: {},
+      editorState: EditorState.createEmpty()
     };
-    console.log(props)
+    this.blockRenderer = (block) => {
+      if (block.getType() === 'atomic') {
+        return {
+          component: ImageComponent
+        };
+      }
+      return null;
+    }
   }
   componentWillMount(){
     this.getParentDetail(this);
@@ -32,10 +48,11 @@ export class SubParent extends React.Component{
 
   }
   getParentDetail(t){
-    console.log('hi')
     Stores.findById('/parents', t.props.params.id, function(parent){
-      console.log(parent);
-      t.setState({parent: parent})
+      const jsObject = JSON.parse(parent.content);
+      const contentState = convertFromRaw(jsObject);
+      const editorState = EditorState.createWithContent(contentState);
+      t.setState({parent: parent,editorState:editorState})
     })
   }
   getParentCorners(t){
@@ -62,7 +79,9 @@ export class SubParent extends React.Component{
             <div className="col-md-9">
               {
                 this.state.parent ? <div className="news-v3 bg-color-white margin-bottom-30">
+                  <div className="bg-article">
                   <img className="img-responsive full-width" src={this.state.parent.url} alt=""/>
+                    </div>
                   <div className="news-v3-in">
                     <ul className="list-inline posted-info">
                       <li>By <a href="#">Alexander Jenni</a></li>
@@ -70,7 +89,11 @@ export class SubParent extends React.Component{
                       <li>Posted {this.state.parent.date}</li>
                     </ul>
                     <h2>{this.state.parent.title}</h2>
-                    < div dangerouslySetInnerHTML={{ __html: this.state.parent.content }}></div>
+                    <Editor
+                      blockRendererFn={this.blockRenderer}
+                      editorState={this.state.editorState}
+                      readOnly={true}
+                    />
 
                   </div>
                 </div> : null

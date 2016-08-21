@@ -22,9 +22,9 @@ export class AddParent extends React.Component{
 
   }
   onChangeContent(content) {
-    this.setState({
-      content: content
-    });
+    if(typeof(content) == 'string'){
+      this.setState({content: content})
+    }
   }
   handleCreateParent(e){
     var dateNow = new Date();

@@ -1,7 +1,6 @@
 import React from 'react';
 import {render} from 'react-dom';
 import { Link, IndexLink } from 'react-router';
-import Masonry from 'react-masonry-component';
 import Stores from '../../../stores/stores';
 
 import {
@@ -83,7 +82,9 @@ export class SubBook extends React.Component{
             <div className="col-md-9">
               {
                 this.state.book ? <div className="news-v3 bg-color-white margin-bottom-30">
+                  <div className="bg-article">
                   <img className="img-responsive full-width" src={this.state.book.url} alt=""/>
+                    </div>
                   <div className="news-v3-in">
                     <ul className="list-inline posted-info">
                       <li>By Admin</li>
