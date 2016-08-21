@@ -19,6 +19,8 @@ import {
 import SideToolbar from './SideToolbar';
 import InlineToolbar from '../components/InlineToolbar';
 import ImageComponent from '../components/ImageComponent';
+import Stores from '../../../../stores/stores'
+import Actions from '../../../../actions/actions'
 
 class RichEditor extends Component {
   constructor(props) {
@@ -26,7 +28,7 @@ class RichEditor extends Component {
     this.state = {
       editorState: EditorState.createEmpty(),
       inlineToolbar: { show: false },
-      content: ''
+
     };
 
     this.onChange = (editorState) => {
@@ -45,12 +47,12 @@ class RichEditor extends Component {
       } else {
         this.setState({ inlineToolbar: { show: false } });
       }
-
       this.setState({ editorState });
       const contentState1 = editorState.getCurrentContent();
       const contentState = convertToRaw(contentState1);
-      console.log(contentState,JSON.stringify(contentState));
+      this.run(JSON.stringify(contentState));
       setTimeout(this.updateSelection, 0);
+      setTimeout(this.props.onChangeContent, 0);
     };
     this.focus = () => this.refs.editor.focus();
     this.updateSelection = () => this._updateSelection();
@@ -76,6 +78,9 @@ class RichEditor extends Component {
     }
   }
 
+  run(contentState){
+    this.props.onChangeContent(contentState)
+  }
   _updateSelection() {
     const selectionRange = getSelectionRange();
     let selectedBlock;
@@ -117,6 +122,13 @@ class RichEditor extends Component {
   }
 
   _insertImage(file) {
+    const data = {
+      name: file.name,
+      type: file.type,
+    };
+    Actions.create('/files/upload',data,function(stt){
+      console.log(stt)
+    });
     const entityKey = Entity.create('atomic', 'IMMUTABLE', {src: URL.createObjectURL(file)});
 		this.onChange(AtomicBlockUtils.insertAtomicBlock(
         this.state.editorState,
@@ -127,6 +139,7 @@ class RichEditor extends Component {
 
   _handleFileInput(e) {
     const fileList = e.target.files;
+    console.log(fileList)
     const file = fileList[0];
     this.insertImage(file);
   }

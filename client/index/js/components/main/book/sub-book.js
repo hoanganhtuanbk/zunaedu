@@ -2,8 +2,17 @@ import React from 'react';
 import {render} from 'react-dom';
 import { Link, IndexLink } from 'react-router';
 import Masonry from 'react-masonry-component';
-import Stores from '../../../stores/stores'
+import Stores from '../../../stores/stores';
 
+import {
+  Editor,
+  EditorState,
+  Entity,
+  ContentState,
+  convertFromRaw,
+  convertToRaw
+} from 'draft-js';
+import ImageComponent from '../src/ImageComponent';
 class Header extends React.Component{
   render(){
     return(
@@ -22,9 +31,18 @@ export class SubBook extends React.Component{
     super();
     this.state = {
       books : [],
-      book: {}
+      book: {},
+      editorState: EditorState.createEmpty()
+
     };
-    console.log(props)
+    this.blockRenderer = (block) => {
+      if (block.getType() === 'atomic') {
+        return {
+          component: ImageComponent
+        };
+      }
+      return null;
+    }
   }
   componentWillMount(){
     this.getBookDetail(this);
@@ -33,8 +51,10 @@ export class SubBook extends React.Component{
   }
   getBookDetail(t){
     Stores.findById('/books', t.props.params.id, function(book){
-      console.log(book);
-      t.setState({book: book})
+      const jsObject = JSON.parse(book.content);
+      const contentState = convertFromRaw(jsObject);
+      const editorState = EditorState.createWithContent(contentState)
+      t.setState({book: book,editorState:editorState})
     })
   }
   getBook(t){
@@ -53,6 +73,8 @@ export class SubBook extends React.Component{
         </li>
       );
     });
+
+
     return (
       <div className="bg-color-light ">
         <Header />
@@ -68,7 +90,11 @@ export class SubBook extends React.Component{
                       <li>Posted {this.state.book.date}</li>
                     </ul>
                     <h2>{this.state.book.title}</h2>
-                    < div dangerouslySetInnerHTML={{ __html: this.state.book.content }}></div>
+                    <Editor
+                      blockRendererFn={this.blockRenderer}
+                      editorState={this.state.editorState}
+                      readOnly={true}
+                    />
                     <ul className="post-shares">
                       <li>
                         <a href="#">

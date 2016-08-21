@@ -19,35 +19,35 @@ export class Backgroud extends React.Component{
         <Slider {...settings}>
           <div className="carousel-content">
             <Link to="/van-tay-hoc" className="item active">
-              <img className="img-responsive" src="../index/img/bg-section1/vantay.jpg" alt=""/>
+              <img className="img-responsive" src="../index/img/bg-home/vantay.jpg" alt=""/>
               <div className="carousel-caption">
               </div>
             </Link>
           </div>
           <div className="carousel-content">
             <Link to="/chuong-trinh" className="item">
-              <img className="img-responsive" src="../index/img/bg-section1/chuongtrinh.jpg" alt=""/>
+              <img className="img-responsive" src="../index/img/bg-home/chuongtrinh.jpg" alt=""/>
               <div className="carousel-caption">
               </div>
             </Link>
           </div>
           <div className="carousel-content">
             <Link to="/su-kien" className="item">
-              <img className="img-responsive" src="../index/img/bg-section1/sukien.jpg" alt="" />
+              <img className="img-responsive" src="../index/img/bg-home/sukien.jpg" alt="" />
               <div className="carousel-caption">
               </div>
             </Link>
           </div>
           <div className="carousel-content">
             <Link to="/sach-giao-duc" className="item">
-              <img className="img-responsive" src="../index/img/bg-section1/sach.jpg" alt="" />
+              <img className="img-responsive" src="../index/img/bg-home/sach.jpg" alt="" />
               <div className="carousel-caption">
               </div>
             </Link>
           </div>
           <div className="carousel-content">
             <Link to="/goc-cha-me" className="item">
-              <img className="img-responsive" src="../index/img/bg-section1/gocchame.jpg" alt="" />
+              <img className="img-responsive" src="../index/img/bg-home/gocchame.jpg" alt="" />
               <div className="carousel-caption">
               </div>
             </Link>

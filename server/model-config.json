@@ -25,9 +25,6 @@
     "dataSource": "db",
     "public": false
   },
-  "Email": {
-    "dataSource": "Email"
-  },
   "RoleMapping": {
     "dataSource": "db",
     "public": false
@@ -56,6 +53,14 @@
     "public": true
   },
   "Dermatoglyphic": {
+    "dataSource": "db",
+    "public": true
+  },
+  "container": {
+    "dataSource": "storage",
+    "public": true
+  },
+  "file": {
     "dataSource": "db",
     "public": true
   }

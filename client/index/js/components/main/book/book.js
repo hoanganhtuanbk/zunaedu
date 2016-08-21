@@ -1,39 +1,46 @@
 import React from 'react';
 import {render} from 'react-dom';
-import { Link, IndexLink } from 'react-router';
+import {Link} from 'react-router';
 import Masonry from 'react-masonry-component';
 import Stores from '../../../stores/stores'
-
-class Header extends React.Component{
-  render(){
-    return(
-      <div className="breadcrumbs-v1">
-        <div className="container">
-          <span>Zuna Việt Nam</span>
-          <h1>Sách giáo dục</h1>
-        </div>
-      </div>
-    )
-  }
-}
+import {HeaderPage} from '../src/header-page'
+import {
+  Editor,
+  EditorState,
+  Entity,
+  ContentState,
+  convertFromRaw,
+  convertToRaw
+} from 'draft-js';
 
 export class Book extends React.Component {
   constructor(){
     super();
     this.state = {
-      books : []
+      books : [],
+      editorState: EditorState.createEmpty()
+    };
+    this.coverFromRaw= (content) =>{
+      const jsObject = JSON.parse(content);
+      const editorState = convertFromRaw(jsObject);
+      return editorState;
     }
   }
   componentWillMount(){
     this.getBooks(this);
   }
+
   getBooks(t){
     Stores.getAll('/books', function(books, status) {
       console.log(books);
       if (books) {
         t.setState({books: books});
-        console.log(t.state.books)
-      }
+      };
+      t.state.books.forEach(function(book){
+        const jsObject = JSON.parse(book.content);
+        const editorState = convertFromRaw(jsObject);
+        book.objContent = EditorState.createWithContent(editorState)
+      })
     });
   }
   render(){
@@ -41,6 +48,7 @@ export class Book extends React.Component {
       transitionDuration: 0
     };
     const childElements = this.state.books.map(function(book,stt){
+
       return (
         <li key={stt} className="col-md-4 image-element-class">
           <div className="masonry-main news-v3">
@@ -56,7 +64,10 @@ export class Book extends React.Component {
                 <li>|</li>
                 <li><a href="#"><i   className="fa fa-comments-o"></i> 06</a></li>
               </ul>
-              <div dangerouslySetInnerHTML={{ __html: book.content}}></div>
+              <Editor
+                editorState={this.state.editorState}
+                readOnly={true}
+              />
               <Link className="read-more" to={`/sach-giao-duc/${book.id}`}>Xem chi tiết</Link>
               <ul className="post-shares">
                 <li>
@@ -72,10 +83,10 @@ export class Book extends React.Component {
           </div>
         </li>
       );
-    });
+    }.bind(this));
     return(
       <div>
-        <Header />
+        <HeaderPage background={'../index/img/bg-components/sach-mini.jpg'} />
         <div className="container content masonry">
           <Masonry
             className={'row masonry'} // default ''

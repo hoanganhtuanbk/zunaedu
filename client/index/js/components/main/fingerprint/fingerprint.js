@@ -1,21 +1,9 @@
 import React from 'react';
 import {render} from 'react-dom';
-import { Link, IndexLink } from 'react-router';
+import {Link} from 'react-router';
 import Slider from 'react-slick'
+import {HeaderPage} from '../src/header-page'
 
-
-class Header extends React.Component{
-  render(){
-    return(
-      <div className="breadcrumbs-v1">
-        <div className="container">
-          <span>Zuna Việt Nam</span>
-          <h1>Vân tay học</h1>
-        </div>
-      </div>
-    )
-  }
-}
 class LeftNavButton extends React.Component {
   render() {
     return  <a onClick={this.props.onClick} className="left slick-control">
@@ -90,24 +78,12 @@ class Menu extends React.Component{
 }
 
 
-export class PricingPage extends React.Component{
-
-  constructor (){
-    super();
-    this.state = {selected: ''}
-  }
-
-  setMenuActive(menu) {
-    this.setState({selected  : menu})
-  }
-
-  isActive(value){
-    return ((value===this.state.selected) ?'active':'');
-  }
+export class FingerPage extends React.Component{
   render(){
+    const bg = "../index/img/bg-components/sinh-trac-mini.jpg"
     return (
       <section className="fingerprint">
-        <Header />
+        <HeaderPage background={bg} />
         <div className="bg-color-light">
           <div className="container content-sm">
             <div className="row">

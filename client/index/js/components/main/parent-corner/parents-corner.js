@@ -1,21 +1,8 @@
 import React from 'react';
 import {render} from 'react-dom';
-import { Link, IndexLink } from 'react-router';
+import {Link} from 'react-router';
 import Stores from '../../../stores/stores'
-import Actions from '../../../actions/actions'
-
-class Header extends React.Component{
-  render(){
-    return(
-      <div className="breadcrumbs-v1">
-        <div className="container">
-          <span>Zuna Việt Nam</span>
-          <h1>Góc cha mẹ</h1>
-        </div>
-      </div>
-    )
-  }
-}
+import {HeaderPage} from '../src/header-page'
 export class ParentsCorner extends React.Component{
   constructor(){
     super();
@@ -44,7 +31,7 @@ export class ParentsCorner extends React.Component{
     });
     return (
       <div className="bg-color-light ">
-        <Header />
+        <HeaderPage background={'../index/img/bg-components/goc-cha-me-mini.jpg'} />
         <div className="container content-sm">
           <div className="row">
             <div className="col-md-9">

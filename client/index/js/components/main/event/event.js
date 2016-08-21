@@ -1,25 +1,13 @@
 import React from 'react';
 import {render} from 'react-dom';
 import { Link, IndexLink } from 'react-router';
-
-class Header extends React.Component{
-  render(){
-    return(
-      <div className="breadcrumbs-v1">
-        <div className="container">
-          <span>Zuna Việt Nam</span>
-          <h1>Sự kiện </h1>
-        </div>
-      </div>
-    )
-  }
-}
+import {HeaderPage} from '../src/header-page'
 
 export class Event extends React.Component{
   render(){
     return(
       <div>
-        <Header />
+        <HeaderPage background={'../index/img/bg-components/su-kien-mini.jpg'} />
         <div className="container content">
           <ul className="timeline-v1">
             <li className="item-event">

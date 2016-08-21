@@ -5,7 +5,7 @@ import { Header } from './js/components/header/header';
 import { Footer} from './js/components/footer/footer';
 
 import { HomePage } from './js/components/main/home/home';
-import { PricingPage } from './js/components/main/fingerprint/fingerprint';
+import { FingerPage } from './js/components/main/fingerprint/fingerprint';
 import { Concept } from './js/components/main/fingerprint/concept';
 import { HistoryBegin } from './js/components/main/fingerprint/history-begin';
 import { Application } from './js/components/main/fingerprint/application';
@@ -44,7 +44,7 @@ render(
   <Router history={browserHistory}>
     <Route path="/" component={Index}>
       <IndexRoute component={HomePage}/>
-      <Route path="/van-tay-hoc" component={PricingPage}>
+      <Route path="/van-tay-hoc" component={FingerPage}>
         <IndexRoute component={Concept}/>
         <Route path="/van-tay-hoc/lich-su-hinh-thanh" component={HistoryBegin}/>
         <Route path="/van-tay-hoc/ung-dung" component={Application}/>
@@ -56,13 +56,11 @@ render(
 
       <Route path="/su-kien" component={Event}/>
 
-      <Route path="/sach-giao-duc" component = {Book} >
-        <Route path="/sach-giao-duc/:id" component = {SubBook} />
-      </Route>
+      <Route path="/sach-giao-duc" component = {Book} />
+      <Route path="/sach-giao-duc/:id" component = {SubBook} />
 
-      <Route path="/goc-cha-me" component = {ParentsCorner} >
-        <Route path="/goc-cha-me/:id" component = {SubParent} />
-      </Route>
+      <Route path="/goc-cha-me" component = {ParentsCorner} />
+      <Route path="/goc-cha-me/:id" component = {SubParent} />
 
       <Route path="/lien-he" component={Contact}/>
 

@@ -14,23 +14,18 @@ export class AddBook extends React.Component{
     super();
     this.state = {
       title: '',
-      content: {},
+      content: '',
       url: '',
       author: '',
       date: ''
     };
     this.handleCreateBook = this.handleCreateBook.bind(this);
-  }
-  updateContent(content) {
-    this.setState({
-      content
-    });
+    this.onChangeContent = this.onChangeContent.bind(this);
   }
   onChangeContent(content){
-    console.log(content);
-    return(
+    if(typeof(content) == 'string'){
       this.setState({content: content})
-    )
+    }
   }
   handleCreateBook(e){
     var dateNow = new Date();

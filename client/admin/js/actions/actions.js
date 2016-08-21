@@ -2,6 +2,14 @@ import Dispatcher from '../dispatcher/dispatcher.js';
 import Constants from '../constants/constants.js';
 
 export default {
+  upload(endpoint, data, callback){
+    Dispatcher.dispatch({
+      type: Constants.UPLOAD,
+      endpoint: endpoint,
+      data: data,
+      callback: callback
+    })
+  },
   create(endpoint, data, callback){
     Dispatcher.dispatch({
       type: Constants.CREATE,

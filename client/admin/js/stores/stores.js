@@ -44,6 +44,23 @@ var showErr = function(err){
   }
 };
 
+var upload =function(endpoint, data,  callback){
+  $.ajax({
+    method: 'POST',
+    url: APIURL + '/container'+ endpoint + '/files',
+    headers: {
+      "Authorization": access_token
+    },
+    data: data,
+    error: (config, status, error)=>{
+      showErr(config.responseJSON.error);
+    },
+    success: (data, status)=>{
+      Stores.emitChange(endpoint.split('/')[1]);
+      callback(data, status);
+    }
+  })
+};
 var create = function(endpoint, data, callback){
   $.ajax({
     method: 'POST',
@@ -130,19 +147,19 @@ var deleteById = function(endpoint, id, callback){
 };
 
 var getCurrentUser = function(callback){
-    $.ajax({
-      method: 'GET',
-      url: APIURL + '/users/' + userId,
-      headers: {
-        "Authorization": access_token
-      },
-      error: (config, status, error)=>{
-        showErr(config.responseJSON.error);
-      },
-      success: (data, status)=>{
-        callback(data, status);
-      }
-    })
+  $.ajax({
+    method: 'GET',
+    url: APIURL + '/users/' + userId,
+    headers: {
+      "Authorization": access_token
+    },
+    error: (config, status, error)=>{
+      showErr(config.responseJSON.error);
+    },
+    success: (data, status)=>{
+      callback(data, status);
+    }
+  })
 };
 
 var CHANGE_EVENT = 'change';
@@ -214,18 +231,21 @@ const Stores = new AppStores();
 
 Dispatcher.register(function(action){
   switch (action.type){
+    case Constants.UPLOAD:
+      upload(action.endpoint, action.data, action.callback);
+      break;
     case Constants.CREATE:
-          create(action.endpoint, action.data, action.callback);
-          break;
+      create(action.endpoint, action.data, action.callback);
+      break;
     case Constants.DELETEBYID:
-          deleteById(action.endpoint, action.id, action.callback);
-          break;
+      deleteById(action.endpoint, action.id, action.callback);
+      break;
     case Constants.UPDATE:
-          update(action.endpoint, action.id, action.data, action.callback);
-          break;
+      update(action.endpoint, action.id, action.data, action.callback);
+      break;
     case Constants.FIND:
-          query(action.endpoint, action.filter, action.callback);
-          break;
+      query(action.endpoint, action.filter, action.callback);
+      break;
   }
 });
 

@@ -2,25 +2,14 @@ import React from 'react';
 import {render} from 'react-dom';
 import { Link, IndexLink } from 'react-router';
 import Stores from '../../../stores/stores'
-class Header extends React.Component{
-  render(){
-    return(
-      <div className="breadcrumbs-v1">
-        <div className="container">
-          <span>Zuna Việt Nam</span>
-          <h1>Chương trình đào tạo</h1>
-        </div>
-      </div>
-    )
-  }
-}
+import {HeaderPage} from '../src/header-page'
 
 class Trending extends React.Component{
   render(){
     return(
     <li key={this.props.id}>
-      <h3><a href="#">{this.props.title}</a></h3>
-      <small>{this.props.date} <a href="#">Hi-Tech,</a> <a href="#">Technology</a></small>
+      <h3><Link to={`/chuong-trinh/${this.props.id}`}>{this.props.title}</Link></h3>
+      <small>{this.props.date} <a href="#">Admin</a></small>
     </li>
 
     )
@@ -61,6 +50,7 @@ class ListProgram extends React.Component{
     )
   }
 }
+
 export class Program extends React.Component{
   constructor(){
     super();
@@ -99,9 +89,10 @@ export class Program extends React.Component{
         url={item.url}
       />)
     });
+    const bg = '../index/img/bg-components/chuong-trinh-mini.jpg'
     return(
       <div className="">
-        <Header />
+        <HeaderPage background={bg} />
         <div className="container content-sm">
           <div className="row">
             <div className="col-md-9">
