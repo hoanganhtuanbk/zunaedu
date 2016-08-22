@@ -17,7 +17,7 @@ export class AddDermatoglyphic extends React.Component{
       author: '',
       date: ''
     };
-    this.handleCreateDermatoglyphic = this.handleCreateDermatoglyphic.bind(this);
+    this.handleCreateDermatoglyphic = this._handleCreateDermatoglyphic.bind(this);
     this.onChangeContent = this.onChangeContent.bind(this);
   }
   onChangeContent(content){
@@ -25,23 +25,49 @@ export class AddDermatoglyphic extends React.Component{
       this.setState({content: content})
     }
   }
-  handleCreateDermatoglyphic(e){
+  _handleCreateDermatoglyphic(e){
     var dateNow = new Date();
     var apps = {
       title: this.state.title,
       description: this.state.description,
       content: this.state.content,
-      url: this.state.url,
+      url: `/api/containers/files/download/${this.state.file.name}`,
       date: dateNow.toDateString()
     };
+    const data = new FormData();
+    data.append('file', this.state.file);
+    Actions.upload('/containers/files/upload',data,function(data, stt){
+      console.log(data, stt)
+    });
     Actions.create('/dermatoglyphics', apps, function(data){
       console.log(data);
       browserHistory.goBack();
     })
 
   }
+  _handleImageChange(e) {
+    e.preventDefault();
 
-  render(){
+    let reader = new FileReader();
+    let file = e.target.files[0];
+
+    reader.onloadend = () => {
+      this.setState({
+        file: file,
+        imagePreviewUrl: reader.result
+      });
+    };
+
+    reader.readAsDataURL(file)
+  }
+  render(){ let {imagePreviewUrl} = this.state;
+    let $imagePreview = null;
+    if (imagePreviewUrl) {
+      $imagePreview = (<img src={imagePreviewUrl} />);
+    } else {
+      $imagePreview = (<div className="previewText">Please select an Image for Preview</div>);
+    }
+
     return(
       <div className="panel">
        <PanelHeader
@@ -58,14 +84,17 @@ export class AddDermatoglyphic extends React.Component{
                     </div>
                     <div className="col-md-12">
                       <label>Description</label>
-                      <textarea className="form-control "  onChange={(e) =>{this.setState({description : e.target.value})}} ></textarea>
+                      <textarea className="form-control "  rows={8} onChange={(e) =>{this.setState({description : e.target.value})}} ></textarea>
                     </div>
                   </div>
                 </div>
                 <div className="col-md-6">
                   <div className="col-md-12">
                     <label>Url image</label>
-                    <input type="text" className="form-control "  onChange={(e) =>{this.setState({url : e.target.value})}} />
+                    <input type="file" className="form-control "  onChange={(e)=>this._handleImageChange(e)} />
+                  </div>
+                  <div className="col-md-12 previewImage" >
+                    {$imagePreview}
                   </div>
                 </div>
                 <div className="col-md-12">

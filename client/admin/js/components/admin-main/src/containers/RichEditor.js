@@ -77,6 +77,12 @@ class RichEditor extends Component {
       return null;
     }
   }
+  componentWillMount(t){
+    console.log(1)
+    if(this.props.initEditorState){
+      this.setState({editorState: this.props.initEditorState})
+    }
+  }
 
   run(contentState){
     this.props.onChangeContent(contentState)
@@ -122,14 +128,14 @@ class RichEditor extends Component {
   }
 
   _insertImage(file) {
-    const data = {
-      name: file.name,
-      type: file.type,
-    };
-    Actions.create('/files/upload',data,function(stt){
-      console.log(stt)
+    console.log(file);
+    const url = `/api/containers/files/download/${file.name}`;
+    const data = new FormData();
+    data.append('file', file);
+    Actions.upload('/containers/files/upload',data,function(data, stt){
+      console.log(data, stt)
     });
-    const entityKey = Entity.create('atomic', 'IMMUTABLE', {src: URL.createObjectURL(file)});
+    const entityKey = Entity.create('atomic', 'IMMUTABLE', {src: url});
 		this.onChange(AtomicBlockUtils.insertAtomicBlock(
         this.state.editorState,
         entityKey,
@@ -139,7 +145,7 @@ class RichEditor extends Component {
 
   _handleFileInput(e) {
     const fileList = e.target.files;
-    console.log(fileList)
+    console.log(fileList);
     const file = fileList[0];
     this.insertImage(file);
   }

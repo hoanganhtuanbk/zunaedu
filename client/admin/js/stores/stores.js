@@ -47,10 +47,12 @@ var showErr = function(err){
 var upload =function(endpoint, data,  callback){
   $.ajax({
     method: 'POST',
-    url: APIURL + '/container'+ endpoint + '/files',
+    url: APIURL + endpoint,
     headers: {
       "Authorization": access_token
     },
+    contentType: false,
+    processData: false,
     data: data,
     error: (config, status, error)=>{
       showErr(config.responseJSON.error);

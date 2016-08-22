@@ -1,9 +1,7 @@
 import React from 'react';
 import {render} from 'react-dom';
 import { Link, IndexLink } from 'react-router';
-import Masonry from 'react-masonry-component';
 import Stores from '../../../stores/stores'
-import {HeaderPage} from '../src/header-page'
 
 import {
   Editor,

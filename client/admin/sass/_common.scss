@@ -66,6 +66,16 @@ input {
   font-family: 'Hoefler Text', Georgia, serif;
   font-style: italic;
 }
+.previewImage{
+  padding-top: 25px;
+  height: 200px;
+  img{
+    height: 100%;
+    width: auto;
+    margin-left: auto;
+    margin-right: auto;
+  }
+}
 /**
  * @providesModule DraftEditor
  * @permanent
