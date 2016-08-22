@@ -4,30 +4,55 @@ import { Link, IndexLink, browserHistory } from 'react-router';
 import {PanelHeader} from '../../../../../sharedComponent/main/panel-header'
 import Stores from '../../../stores/stores';
 import Actions from '../../../actions/actions.js'
-
+import {
+  Editor,
+  EditorState,
+  Entity,
+  ContentState,
+  convertFromRaw,
+  convertToRaw
+} from 'draft-js';
+import ImageComponent from '../src/components/ImageComponent';
 export class EditParent extends React.Component{
   constructor() {
     super();
     this.state = {
-      title: '',
-      content: '',
-      url: ''
+      editorState: EditorState.createEmpty(),
+      url : ''
+    };
+    this.onChange = (editorState) => {
+      const contentState1 = editorState.getCurrentContent();
+      const contentState = convertToRaw(contentState1);
+      this.setState({ editorState,content: JSON.stringify(contentState) });
+
+    };
+    this.blockRenderer = (block) => {
+      if (block.getType() === 'atomic') {
+        return {
+          component: ImageComponent
+        };
+      }
+      return null;
     };
     this.save = this.save.bind(this);
+    this.onChangeContent = this.onChangeContent.bind(this);
   }
+
   componentWillMount(){
     this.findById(this);
   }
-  updateContent(content) {
-    this.setState({
-      content
-    });
+  onChangeContent(content){
+    if(typeof(content) == 'string'){
+      this.setState({content: content})
+    }
   }
   findById(t) {
     var id = window.location.pathname.split('/')[3];
     Stores.findById('/parents', this.props.params.id, function(parent, status) {
-      t.setState({title: parent.title, content: parent.content, url: parent.url});
-      console.log(t.state);
+      const jsObject = JSON.parse(parent.content);
+      const contentState = convertFromRaw(jsObject);
+      const editorState = EditorState.createWithContent(contentState);
+      t.setState({title: parent.title, editorState: editorState,content: parent.content,description: parent.description, url: parent.url});
     })
   }
   save(e) {
@@ -35,39 +60,75 @@ export class EditParent extends React.Component{
     const data = {
       title : this.state.title,
       content: this.state.content,
-      url: this.state.url
+
+      description: this.state.description
+    };
+    if(this.state.file){
+      data.url= `/api/containers/files/download/${this.state.file.name}`
     }
     Actions.update('/parents', this.props.params.id, data, function(result, status) {
-      console.log(result)
-      browserHistory.goBack();
+      if(status = 'success'){browserHistory.goBack()}else alert(status)
     })
   }
+  _handleImageChange(e) {
+    e.preventDefault();
+
+    let reader = new FileReader();
+    let file = e.target.files[0];
+
+    reader.onloadend = () => {
+      this.setState({
+        file: file,
+        imagePreviewUrl: reader.result
+      });
+    };
+    reader.readAsDataURL(file)
+
+  }
   render(){
+    let {imagePreviewUrl} = this.state;
+    let $imagePreview = null ;
+    if (imagePreviewUrl ) {
+      $imagePreview = (<img src={imagePreviewUrl} />);
+    }
     return(
       <div className="panel">
         <PanelHeader
           navigateBack = "true"
           name = "Edit a service"
-          />
+        />
         <div className="panel-body">
           <div className="row">
             <div className="col-md-6">
-              <div className="col-md-12">
-                <label>Title</label> *
-                <input type="text" value={this.state.title} className="form-control " onChange={(e)=>{this.setState({title: e.target.value })}}/>
-              </div>
-              <div className="col-md-12">
-                <label>Content</label>
-              </div>
+              <div className="form-group row">
 
+                <div className="col-md-12">
+                  <label>Title</label> *
+                  <input type="text" value={this.state.title} className="form-control " onChange={(e)=>{this.setState({title: e.target.value })}}/>
+                </div>
+                <div className="col-md-12">
+                  <label>Description</label>
+                  <textarea className="form-control " value={this.state.description} rows={8} onChange={(e) =>{this.setState({description : e.target.value})}} ></textarea>
+                </div>
+              </div>
             </div>
             <div className="col-md-6">
               <div className="col-md-12">
-                <label>Url</label> *
-                <input type="text" value={this.state.url} className="form-control " onChange={(e)=>{this.setState({url: e.target.value })}}/>
+                <label>Url image</label>
+                <input type="file" className="form-control "  onChange={(e)=>this._handleImageChange(e)} />
+              </div>
+              <div className="col-md-12 previewImage" >
+                {$imagePreview == null ? <img src={this.state.url} /> : <div>{$imagePreview} </div>}
               </div>
             </div>
-
+            <div className="col-md-12">
+              <label>Content</label>
+              <Editor
+                blockRendererFn={this.blockRenderer}
+                editorState={this.state.editorState}
+                onChange={this.onChange}
+              />
+            </div>
           </div>
         </div>
         <div className="panel-body panal-feature text-center" >

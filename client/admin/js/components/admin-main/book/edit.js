@@ -4,7 +4,6 @@ import { Link, IndexLink, browserHistory } from 'react-router';
 import {PanelHeader} from '../../../../../sharedComponent/main/panel-header'
 import Stores from '../../../stores/stores';
 import Actions from '../../../actions/actions.js'
-import RichEditor from '../src'
 import {
   Editor,
   EditorState,
@@ -18,13 +17,15 @@ export class EditBook extends React.Component{
   constructor() {
     super();
     this.state = {
-      title: '',
-      content: '',
-      url: '',
       editorState: EditorState.createEmpty(),
+      url : ''
+    };
+    this.onChange = (editorState) => {
+      const contentState1 = editorState.getCurrentContent();
+      const contentState = convertToRaw(contentState1);
+      this.setState({ editorState,content: JSON.stringify(contentState) });
 
     };
-    this.save = this.save.bind(this);
     this.blockRenderer = (block) => {
       if (block.getType() === 'atomic') {
         return {
@@ -33,6 +34,7 @@ export class EditBook extends React.Component{
       }
       return null;
     };
+    this.save = this.save.bind(this);
     this.onChangeContent = this.onChangeContent.bind(this);
   }
 
@@ -44,32 +46,28 @@ export class EditBook extends React.Component{
       this.setState({content: content})
     }
   }
-  updateContent(content) {
-    this.setState({
-      content
-    });
-  }
   findById(t) {
     var id = window.location.pathname.split('/')[3];
     Stores.findById('/books', this.props.params.id, function(book, status) {
       const jsObject = JSON.parse(book.content);
       const contentState = convertFromRaw(jsObject);
       const editorState = EditorState.createWithContent(contentState);
-      t.setState({title: book.title, editorState: editorState, url: book.url});
-      console.log(t.state);
+      t.setState({title: book.title, editorState: editorState,content: book.content,description: book.description, url: book.url});
     })
   }
   save(e) {
     e.preventDefault();
-
     const data = {
       title : this.state.title,
       content: this.state.content,
-      url: this.state.url
+
+      description: this.state.description
     };
+    if(this.state.file){
+     data.url= `/api/containers/files/download/${this.state.file.name}`
+    }
     Actions.update('/books', this.props.params.id, data, function(result, status) {
-      console.log(result);
-      browserHistory.goBack();
+      if(status = 'success'){browserHistory.goBack()}else alert(status)
     })
   }
   _handleImageChange(e) {
@@ -89,11 +87,9 @@ export class EditBook extends React.Component{
   }
   render(){
     let {imagePreviewUrl} = this.state;
-    let $imagePreview = this.state.url;
-    if (imagePreviewUrl) {
+    let $imagePreview = null ;
+    if (imagePreviewUrl ) {
       $imagePreview = (<img src={imagePreviewUrl} />);
-    } else {
-      $imagePreview = (<div className="previewText">Please select an Image for Preview</div>);
     }
     return(
       <div className="panel">
@@ -112,7 +108,7 @@ export class EditBook extends React.Component{
               </div>
               <div className="col-md-12">
                 <label>Description</label>
-                <textarea className="form-control " rows={8} onChange={(e) =>{this.setState({description : e.target.value})}} ></textarea>
+                <textarea className="form-control " value={this.state.description} rows={8} onChange={(e) =>{this.setState({description : e.target.value})}} ></textarea>
               </div>
 </div>
             </div>
@@ -122,12 +118,16 @@ export class EditBook extends React.Component{
                 <input type="file" className="form-control "  onChange={(e)=>this._handleImageChange(e)} />
               </div>
               <div className="col-md-12 previewImage" >
-                {$imagePreview}
+                {$imagePreview == null ? <img src={this.state.url} /> : <div>{$imagePreview} </div>}
               </div>
             </div>
             <div className="col-md-12">
               <label>Content</label>
-              <RichEditor onChangeContent = {this.onChangeContent} initEditorState = {this.state.editorState} />
+              <Editor
+                blockRendererFn={this.blockRenderer}
+                editorState={this.state.editorState}
+                onChange={this.onChange}
+              />
             </div>
           </div>
         </div>

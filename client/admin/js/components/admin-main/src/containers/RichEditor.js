@@ -28,9 +28,8 @@ class RichEditor extends Component {
     this.state = {
       editorState: EditorState.createEmpty(),
       inlineToolbar: { show: false },
-
     };
-
+    console.log(props)
     this.onChange = (editorState) => {
       if (!editorState.getSelection().isCollapsed()) {
         const selectionRange = getSelectionRange();
@@ -77,14 +76,17 @@ class RichEditor extends Component {
       return null;
     }
   }
-  componentWillMount(t){
-    console.log(1)
-    if(this.props.initEditorState){
-      this.setState({editorState: this.props.initEditorState})
-    }
+  componentWillMount(){
   }
-
+  runEditor(){
+    console.log(this.props.initEditorState)
+    const jsObject = JSON.parse(this.props.initEditorState);
+    const contentState = convertFromRaw(jsObject);
+    const editorState = EditorState.createWithContent(contentState);
+  this.setState({editorState: editorState})
+};
   run(contentState){
+
     this.props.onChangeContent(contentState)
   }
   _updateSelection() {
@@ -145,7 +147,7 @@ class RichEditor extends Component {
 
   _handleFileInput(e) {
     const fileList = e.target.files;
-    console.log(fileList);
+    console.log(fileList)
     const file = fileList[0];
     this.insertImage(file);
   }
