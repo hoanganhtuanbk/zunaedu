@@ -4,6 +4,7 @@ import { Link, IndexLink } from 'react-router';
 import Stores from '../../../stores/stores'
 import {HeaderPage} from '../src/header-page'
 
+
 class Trending extends React.Component{
   render(){
     return(
@@ -15,42 +16,6 @@ class Trending extends React.Component{
     )
   }
 }
-class ListProgram extends React.Component{
-  render(){
-    return(
-      <div>
-        <div className="row margin-bottom-20">
-          <div className="col-sm-5 sm-margin-bottom-20">
-            <Link to={`/chuong-trinh/${this.props.id}`}> <img className="img-responsive" src={this.props.url} /> </Link>
-          </div>
-
-          <div className="col-sm-7 news-v3">
-            <div className="news-v3-in-sm no-padding content-program">
-              <ul className="list-inline posted-info">
-                <li>By Admin</li>
-                <li>Posted {this.props.date}</li>
-              </ul>
-              <h2><Link to={`/chuong-trinh/${this.props.id}`}>{this.props.title}</Link></h2>
-              <p>{this.props.description}</p>
-              <Link className="read-more" to={`/chuong-trinh/${this.props.id}`}>Xem chi tiết</Link>
-              <ul className="post-shares">
-                <li>
-                  <a href="#">
-                    <i className="rounded-x icon-speech"></i>
-                    <span>5</span>
-                  </a>
-                </li>
-                <li><a href="#"><i className="rounded-x icon-share"></i></a></li>
-                <li><a href="#"><i className="rounded-x icon-heart"></i></a></li>
-              </ul>
-            </div>
-          </div>
-        </div>
-      </div>
-    )
-  }
-}
-
 export class Program extends React.Component{
   constructor(){
     super();
@@ -79,24 +44,14 @@ export class Program extends React.Component{
         date={item.date}
       />)
     });
-    const listPrograms = this.state.programs.map(function(item, id) {
-      return (<ListProgram
-        key={id}
-        id={item.id}
-        title={item.title}
-        date={item.date}
-        description={item.description}
-        url={item.url}
-      />)
-    });
-    const bg = '../index/img/bg-components/chuong-trinh-mini.jpg'
+
     return(
       <div className="">
-        <HeaderPage background={bg} />
+        <HeaderPage background={'../index/img/bg-components/chuong-trinh-mini.jpg'} />
         <div className="container content-sm">
           <div className="row">
             <div className="col-md-9">
-              {listPrograms}
+              {this.props.children}
               <div className="clearfix margin-bottom-20"><hr/></div>
               <ul className="pager pager-v3 pager-sm no-margin-bottom">
                 <li className="previous"><a href="#">← Older</a></li>

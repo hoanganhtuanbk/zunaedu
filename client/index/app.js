@@ -6,12 +6,11 @@ import { Footer} from './js/components/footer/footer';
 
 import { HomePage } from './js/components/main/home/home';
 import { FingerPage } from './js/components/main/fingerprint/fingerprint';
-import { Concept } from './js/components/main/fingerprint/concept';
-import { HistoryBegin } from './js/components/main/fingerprint/history-begin';
-import { Application } from './js/components/main/fingerprint/application';
-import { Feedback } from './js/components/main/fingerprint/feedback';
+import { SubFingerPrint } from './js/components/main/fingerprint/sub-fingerprint';
+
 import { Program } from './js/components/main/program/program'
 import { SubProgram } from './js/components/main/program/sub-program'
+import { InitProgram } from './js/components/main/program/init-program'
 
 import { Event } from './js/components/main/event/event'
 import { Book } from './js/components/main/book/book'
@@ -45,12 +44,11 @@ render(
     <Route path="/" component={Index}>
       <IndexRoute component={HomePage}/>
       <Route path="/van-tay-hoc" component={FingerPage}>
-        <IndexRoute component={Concept}/>
-        <Route path="/van-tay-hoc/lich-su-hinh-thanh" component={HistoryBegin}/>
-        <Route path="/van-tay-hoc/ung-dung" component={Application}/>
-        <Route path="/van-tay-hoc/phan-hoi" component={Feedback}/>
+        <IndexRedirect to="//van-tay-hoc/1" />
+        <Route path="/van-tay-hoc/:id" component={SubFingerPrint}/>
       </Route>
       <Route path="/chuong-trinh" component={Program}>
+        <IndexRoute component={InitProgram}/>
         <Route path="/chuong-trinh/:id" component={SubProgram}/>
       </Route>
 

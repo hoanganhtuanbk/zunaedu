@@ -50,11 +50,11 @@ export class Header extends React.Component{
               <li className={this.isActive('van-tay-hoc')} onClick={this.setMenuActive.bind(this, 'van-tay-hoc')}><a className="route-page">Sinh trắc vân tay</a>
                 {this.state.activeMenu == true ? <div className="fingerprint_menu" onMouseLeave={this.handleClose.bind(this)}>
                   <ul className="">
-                    <li><Link to="/van-tay-hoc" className={this.isActive('')} onClick={this.setMenuActive.bind(this, '')}>Khái niệm</Link></li>
+                    <li><Link to="/van-tay-hoc/1" className={this.isActive('')} onClick={this.setMenuActive.bind(this, '')}>Khái niệm</Link></li>
 
-                    <li><Link to="/van-tay-hoc/lich-su-hinh-thanh" className={this.isActive('history')} onClick={this.setMenuActive.bind(this, 'history')}>Lịch sử hình thành</Link></li>
-                    <li><Link to="/van-tay-hoc/ung-dung" className={this.isActive('application')} onClick={this.setMenuActive.bind(this, 'application')}>Ứng dụng</Link></li>
-                    <li><Link to="/van-tay-hoc/phan-hoi" className={this.isActive('feedback')} onClick={this.setMenuActive.bind(this, 'feedback')}>Phản hồi khách hàng</Link></li>
+                    <li><Link to="/van-tay-hoc/2" className={this.isActive('history')} onClick={this.setMenuActive.bind(this, 'history')}>Lịch sử hình thành</Link></li>
+                    <li><Link to="/van-tay-hoc/3" className={this.isActive('application')} onClick={this.setMenuActive.bind(this, 'application')}>Ứng dụng</Link></li>
+                    <li><Link to="/van-tay-hoc/4" className={this.isActive('feedback')} onClick={this.setMenuActive.bind(this, 'feedback')}>Phản hồi khách hàng</Link></li>
                   </ul>
                 </div>
                   : null}

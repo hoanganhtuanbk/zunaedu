@@ -2,6 +2,7 @@ import React from 'react';
 import {render} from 'react-dom';
 import { Link, IndexLink } from 'react-router';
 import Stores from '../../../stores/stores';
+import {HeaderPage} from '../src/header-page'
 
 import {
   Editor,
@@ -12,18 +13,7 @@ import {
   convertToRaw
 } from 'draft-js';
 import ImageComponent from '../src/ImageComponent';
-class Header extends React.Component{
-  render(){
-    return(
-      <div className="breadcrumbs-v1">
-        <div className="container">
-          <span>Zuna Việt Nam</span>
-          <h1>Sách giáo dục</h1>
-        </div>
-      </div>
-    )
-  }
-}
+
 
 export class SubBook extends React.Component{
   constructor(props){
@@ -76,15 +66,15 @@ export class SubBook extends React.Component{
 
     return (
       <div className="bg-color-light ">
-        <Header />
+        <HeaderPage background={'../index/img/bg-components/sach-mini.jpg'} />
         <div className="container content-sm">
           <div className="row">
             <div className="col-md-9">
               {
                 this.state.book ? <div className="news-v3 bg-color-white margin-bottom-30">
                   <div className="bg-article">
-                  <img className="img-responsive" src={this.state.book.url} alt=""/>
-                    </div>
+                    <img className="img-responsive" src={this.state.book.url} alt=""/>
+                  </div>
                   <div className="news-v3-in">
                     <ul className="list-inline posted-info">
                       <li>By Admin</li>

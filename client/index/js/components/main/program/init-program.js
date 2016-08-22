@@ -4,7 +4,6 @@ import { Link, IndexLink } from 'react-router';
 import Masonry from 'react-masonry-component';
 import Stores from '../../../stores/stores'
 import {HeaderPage} from '../src/header-page'
-
 import {
   Editor,
   EditorState,
@@ -14,7 +13,8 @@ import {
   convertToRaw
 } from 'draft-js';
 import ImageComponent from '../src/ImageComponent';
-export class SubProgram extends React.Component{
+
+export class InitProgram extends React.Component{
   constructor(props){
     super();
     this.state = {
@@ -35,7 +35,7 @@ export class SubProgram extends React.Component{
     this.getProgramDetail(this);
   }
   getProgramDetail(t){
-    Stores.findById('/programs', t.props.params.id, function(program){
+    Stores.findById('/programs', 1, function(program){
       console.log(program);
       const jsObject = JSON.parse(program.content);
       const contentState = convertFromRaw(jsObject);
@@ -52,7 +52,7 @@ export class SubProgram extends React.Component{
       <div>
         <div className="row margin-bottom-20">
           <div className="col-sm-5 sm-margin-bottom-20">
-           <img className="img-responsive" src={this.state.program.url} />
+            <img className="img-responsive" src={this.state.program.url} />
           </div>
 
           <div className="col-sm-7 news-v3">

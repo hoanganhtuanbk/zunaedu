@@ -2,6 +2,7 @@ import React from 'react';
 import {render} from 'react-dom';
 import { Link, IndexLink } from 'react-router';
 import Stores from '../../../stores/stores'
+import {HeaderPage} from '../src/header-page'
 
 import {
   Editor,
@@ -73,7 +74,7 @@ export class SubParent extends React.Component{
     });
     return (
       <div className="bg-color-light ">
-        <Header />
+        <HeaderPage background={'../index/img/bg-components/goc-cha-me-mini.jpg'} />
         <div className="container content-sm">
           <div className="row">
             <div className="col-md-9">

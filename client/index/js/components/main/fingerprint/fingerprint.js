@@ -24,8 +24,6 @@ class Menu extends React.Component{
       dots: false,
       infinite: true,
       speed: 1000,
-      autoplay: true,
-      lazyLoad: true,
     };
     return(
       <div className="col-md-4">
@@ -33,12 +31,12 @@ class Menu extends React.Component{
         <div className="video-hit">
           <Slider {...settings} prevArrow={ <LeftNavButton /> } nextArrow={<RightNavButton />}>
             <div className="slide-video">
-              <iframe height={250} src="https://www.youtube.com/embed/otsWFBYUZ10" frameBorder="0" allowFullScreen=""></iframe>
+              <iframe height={250} src="https://www.youtube.com/embed/otsWFBYUZ10" frameBorder="0" ></iframe>
             </div>
             <div className="slide-video">
-              <iframe height={250} src="https://www.youtube.com/embed/utS5Cvo3ILI" frameBorder="0" allowFullScreen=""></iframe>          </div>
+              <iframe height={250} src="https://www.youtube.com/embed/utS5Cvo3ILI" frameBorder="0"></iframe>          </div>
             <div className="slide-video">
-              <iframe height={250} src="https://www.youtube.com/embed/lt8CPvZ8y7E" frameBorder="0" allowFullScreen=""></iframe>
+              <iframe height={250} src="https://www.youtube.com/embed/lt8CPvZ8y7E" frameBorder="0" ></iframe>
             </div>
             <div className="slide-video">
               <iframe height={250} src="https://www.youtube.com/embed/FSJ6FEtIKfA" frameBorder="0"></iframe>
@@ -56,20 +54,20 @@ class Menu extends React.Component{
         <div className="headline-v2"><h2>Mục lục</h2></div>
         <ul className="list-unstyled blog-trending margin-bottom-50">
           <li>
-            <h3><Link to="/van-tay-hoc">Vân tay học là gì ?</Link></h3>
-            <small>23 Jan, 2015 / <Link to="/van-tay-hoc">Admin</Link></small>
+            <h3><Link to="/van-tay-hoc/1">Vân tay học là gì ?</Link></h3>
+            <small>23 Jan, 2015 / Admin</small>
           </li>
           <li>
-            <h3><Link to="/van-tay-hoc/lich-su-hinh-thanh">Lịch sử nghiên cứu sinh trắc học dấu vân tay.</Link></h3>
-            <small>22 Jan, 2015 / <Link to="/van-tay-hoc/lich-su-hinh-thanh">Admin</Link></small>
+            <h3><Link to="/van-tay-hoc/2">Lịch sử nghiên cứu sinh trắc học dấu vân tay.</Link></h3>
+            <small>22 Jan, 2015 / Admin</small>
           </li>
           <li>
-            <h3><Link to="/van-tay-hoc/ung-dung">Ứng dụng của vân tay học vào cuộc sống.</Link></h3>
-            <small>19 Jan, 2015 / <Link to="/van-tay-hoc/ung-dung">Admin</Link></small>
+            <h3><Link to="/van-tay-hoc/3">Ứng dụng của vân tay học vào cuộc sống.</Link></h3>
+            <small>19 Jan, 2015 / Admin</small>
           </li>
           <li>
-            <h3><Link to="/van-tay-hoc/phan-hoi">Cảm nhận </Link></h3>
-            <small>17 Jan, 2015 / <Link to="/van-tay-hoc/phan-hoi">Admin</Link></small>
+            <h3><Link to="/van-tay-hoc/4">Cảm nhận </Link></h3>
+            <small>17 Jan, 2015 /Admin</small>
           </li>
         </ul>
       </div>

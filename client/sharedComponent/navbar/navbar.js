@@ -20,7 +20,6 @@ export default class Navbar extends React.Component{
     var openTab = function(){
       $(".main-index").toggleClass("main-style");
       $(".sidebar").toggleClass("toggle-menu-transition");
-
     };
     var search = function(){
       $(".search-input").toggleClass("search-open");
