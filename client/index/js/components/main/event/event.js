@@ -12,12 +12,12 @@ class EventItem extends React.Component{
   render(){
     if(this.props.index % 2){
       return(
-        <li className="item-event timeline-inverted" key={this.props.id}>
+        <li className="item-event timeline-inverted">
           <div className="timeline-badge primary"><i className="fa fa-dot-circle-o invert"></i></div>
           <div className="timeline-panel">
-            <div className="timeline-heading">
-              <img className="img-responsive" src={this.props.url} alt="" />
-            </div>
+            <a Link={`/su-kien/${this.props.id}`} className="timeline-heading">
+              <img className="img-responsive" src={this.props.url} alt={this.props.title} />
+            </a>
             <div className="timeline-body text-justify">
               <h2 className="font-light"><a href="#">{this.props.title}</a></h2>
               <p>{this.props.description}</p>
@@ -33,12 +33,12 @@ class EventItem extends React.Component{
         </li>
       )
     } else return(
-    <li className="item-event" key={this.props.id}>
+    <li className="item-event">
       <div className="timeline-badge primary"><i className="fa fa-dot-circle-o"></i></div>
       <div className="timeline-panel">
-        <div className="timeline-heading">
-          <img className="img-responsive" src={this.props.url} alt="" />
-        </div>
+        <a Link={`/su-kien/${this.props.id}`} className="timeline-heading">
+          <img className="img-responsive" src={this.props.url} alt={this.props.title} />
+        </a>
         <div className="timeline-body text-justify">
           <h2 className="font-light"><a href="#">{this.props.title}</a></h2>
           <p>{this.props.description}</p>
@@ -76,6 +76,7 @@ export class Event extends React.Component{
   render(){
     const EventList = this.state.events.map(function(event,index){
       return(
+        <div key={index}>
           <EventItem
             index={index}
             id={event.id}
@@ -84,6 +85,8 @@ export class Event extends React.Component{
             url = {event.url}
             date = {event.date}
           />
+        </div>
+
         )
 
     })

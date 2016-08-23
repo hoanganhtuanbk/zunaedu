@@ -36,42 +36,7 @@ export class ParentsCorner extends React.Component{
         <div className="container content-sm">
           <div className="row">
             <div className="col-md-9">
-              {
-                (this.state.parents.length > 0 ) ? <div className="news-v3 bg-color-white margin-bottom-30">
-                  <div className="bg-article">
-                    <img className="img-responsive" src={this.state.parents[0].url} alt=""/>
-                  </div>
-                  <div className="news-v3-in">
-                    <ul className="list-inline posted-info">
-                      <li>By <a href="#">Admin</a></li>
-                      <li>Posted {this.state.parents[0].date}</li>
-                    </ul>
-                    <h2>{this.state.parents[0].title}</h2>
-                    <p>{this.state.parents[0].description}</p>
-                    <ul className="post-shares post-shares-lg">
-                      <li>
-                        <a href="#">
-                          <i className="rounded-x icon-speech"></i>
-                          <span>28</span>
-                        </a>
-                      </li>
-                      <li>
-                        <a href="#">
-                          <i className="rounded-x icon-share"></i>
-                          <span>35</span>
-                        </a>
-                      </li>
-                      <li>
-                        <a href="#">
-                          <i className="rounded-x icon-heart"></i>
-                          <span>17</span>
-                        </a>
-                      </li>
-                    </ul>
-                  </div>
-                </div> : null
-
-              }
+              {this.props.children}
             </div>
             <div className="col-md-3">
               <div className="headline-v2"><h2>Trending</h2></div>

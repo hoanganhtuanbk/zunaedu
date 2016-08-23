@@ -5,8 +5,10 @@ import { Header } from './js/components/header/header';
 import { Footer} from './js/components/footer/footer';
 
 import { HomePage } from './js/components/main/home/home';
+
 import { FingerPage } from './js/components/main/fingerprint/fingerprint';
 import { SubFingerPrint } from './js/components/main/fingerprint/sub-fingerprint';
+import { Feedback } from './js/components/main/fingerprint/feedback';
 
 import { Program } from './js/components/main/program/program'
 import { SubProgram } from './js/components/main/program/sub-program'
@@ -44,7 +46,7 @@ render(
     <Route path="/" component={Index}>
       <IndexRoute component={HomePage}/>
       <Route path="/van-tay-hoc" component={FingerPage}>
-        <IndexRedirect to="//van-tay-hoc/1" />
+        <IndexRedirect to="/van-tay-hoc/1" />
         <Route path="/van-tay-hoc/:id" component={SubFingerPrint}/>
       </Route>
       <Route path="/chuong-trinh" component={Program}>
@@ -57,8 +59,10 @@ render(
       <Route path="/sach-giao-duc" component = {Book} />
       <Route path="/sach-giao-duc/:id" component = {SubBook} />
 
-      <Route path="/goc-cha-me" component = {ParentsCorner} />
-      <Route path="/goc-cha-me/:id" component = {SubParent} />
+      <Route path="/goc-cha-me" component = {ParentsCorner} >
+        <IndexRedirect to="/goc-cha-me/1" />
+        <Route path="/goc-cha-me/:id" component = {SubParent} />
+      </Route>
 
       <Route path="/lien-he" component={Contact}/>
 

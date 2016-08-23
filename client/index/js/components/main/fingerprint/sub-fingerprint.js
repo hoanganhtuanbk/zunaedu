@@ -34,18 +34,35 @@ export class SubFingerPrint extends React.Component{
     this.getParentCorners(this);
   }
   getParentCorners(t){
-    Stores.findById('/dermatoglyphics', this.props.params.id, function(dermatoglyphic, status) {
-        console.log(dermatoglyphic);
-      if (dermatoglyphic) {
-        const jsObject = JSON.parse(dermatoglyphic.content);
-        const contentState = convertFromRaw(jsObject);
-        const editorState = EditorState.createWithContent(contentState);
-        t.setState({concept: dermatoglyphic,editorState:editorState});
-      }
-    });
+   if(this.props.params.id !== "phan-hoi"){
+     Stores.findById('/dermatoglyphics', this.props.params.id, function(dermatoglyphic, status) {
+       console.log(dermatoglyphic);
+       if (dermatoglyphic) {
+         const jsObject = JSON.parse(dermatoglyphic.content);
+         const contentState = convertFromRaw(jsObject);
+         const editorState = EditorState.createWithContent(contentState);
+         t.setState({concept: dermatoglyphic,editorState:editorState});
+       }
+     });
+   }
   }
   render(){
-    return(
+    if(this.props.params.id == "phan-hoi"){
+      return(
+        <div className="col-md-8 ">
+          <div className="testimonials-v4 feedback md-margin-bottom-50">
+            <div className="testimonials-v4-in">
+              <p>Tôi đánh giá cao công nghệ sinh trắc vân tay. Sau khi phân tích bài báo cáo phân tích cho bản thân, con trai và nhân viên, tôi càng hiểu rõ hơn về sự khác biệt ở mỗi các nhân. Đặc biệt, thông qua bài báo cáo giúp tôi biết được phong cách giao tiếp phù hợp với con mình hơn. Tôi rất hài lòng về dịch vụ này. Tôi đánh giá cao độ chính xác của bài báo cáo phân tích là 95%</p>
+            </div>
+            <img className="rounded-x" src="../index/img/feedback/img5.jpg" alt="thumb" />
+            <span className="testimonials-author">
+								Cảm nhận của Thầy Duy Hải<br/>
+								<em>Web Developer, <a href="#">Google Inc.</a></em>
+							</span>
+          </div>
+        </div>
+      )
+    } else return(
       <div className="col-md-8">
         <div className="news-v3 bg-color-white margin-bottom-60">
           <div className="bg-article">

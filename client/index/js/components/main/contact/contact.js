@@ -79,6 +79,7 @@ export class Contact extends React.Component{
       <div>
 
         <Header />
+        <Map />
 
         <div className="container content">
           <div className="row margin-bottom-30">
@@ -164,7 +165,6 @@ export class Contact extends React.Component{
             </div>
           </div>
         </div>
-        <Map />
 
       </div>
     )

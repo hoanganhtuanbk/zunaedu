@@ -22,12 +22,19 @@ body {
 *:before {
   box-sizing: inherit;
 }
-
+h2{
+  font-size: 24px;
+}
+p{
+  text-align: justify;
+}
 img {
   vertical-align: top;
   max-width: 100%;
 }
-
+li{
+  text-align: justify;
+}
 a {
   color: $xlight-black;
   outline: none;
@@ -108,7 +115,9 @@ label {
   margin-right: auto;
   margin-bottom: 40px;
 }
-
+.font-light {
+  font-weight: 200;
+}
 .form-control {
   box-shadow: none;
   border-radius: 0;

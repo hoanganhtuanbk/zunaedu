@@ -19,7 +19,7 @@ class RightNavButton extends React.Component {
   }
 }
 
-class DermatoglyphicsItem extends React.Component{
+class FingerPrintItem extends React.Component{
   render(){
     return(
       <li>
@@ -46,20 +46,25 @@ class Menu extends React.Component{
     })
   }
   render(){
-    const DermatoglyphicsList = this.state.dermatoglyphics.map(function(item){
+    const DermatoglyphicsList = this.state.dermatoglyphics.map(function(item,index){
       return(
-        <DermatoglyphicsItem
-          id = {item.id}
-          title = {item.title}
-          date = {item.date}
-        />
+        <div key={index}>
+          <FingerPrintItem
+            id = {item.id}
+            title = {item.title}
+            date = {item.date}
+          />
+        </div>
+
       )
-    })
+    });
     const settings = {
       dots: false,
       infinite: true,
       speed: 1000,
     };
+    const date = new Date();
+    const dateToString = date.toDateString();
     return(
       <div className="col-md-4">
         <div className="headline-v2"><h2>Video nổi bật</h2></div>
@@ -89,6 +94,10 @@ class Menu extends React.Component{
         <div className="headline-v2"><h2>Mục lục</h2></div>
         <ul className="list-unstyled blog-trending margin-bottom-50">
           {DermatoglyphicsList}
+          <li>
+            <h3><Link to={`/van-tay-hoc/phan-hoi`}>Cảm nhận từ khách hàng</Link></h3>
+            <small>{dateToString} / Admin</small>
+          </li>
         </ul>
       </div>
     )
@@ -98,7 +107,7 @@ class Menu extends React.Component{
 
 export class FingerPage extends React.Component{
   render(){
-    const bg = "../index/img/bg-components/sinh-trac-mini.jpg"
+    const bg = "../index/img/bg-components/sinh-trac-mini.jpg";
     return (
       <section className="fingerprint">
         <HeaderPage background={bg} />
@@ -106,11 +115,12 @@ export class FingerPage extends React.Component{
           <div className="container content-sm">
             <div className="row">
               <Menu />
-              {this.props.children}
+              <div>
+                {this.props.children}
+              </div>
             </div>
           </div>
         </div>
-
       </section>
     );
   }

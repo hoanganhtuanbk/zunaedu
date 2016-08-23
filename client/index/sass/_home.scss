@@ -19,6 +19,9 @@
     border-bottom: solid 1px #eee;
     background: url(../img/breadcrumbs.png) repeat;
     transition: all 0.5s;
+    p{
+      text-align: justify;
+    }
     span {
       color: #666;
       display: block;
@@ -497,6 +500,9 @@
             .btn-more {
               right: 10px!important;
             }
+          }
+          p{
+            text-align: justify;
           }
           h3 {
             margin: 6px 0 8px 0;
