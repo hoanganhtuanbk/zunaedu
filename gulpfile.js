@@ -11,6 +11,9 @@ var watch = require('gulp-watch');
 var batch = require('gulp-batch');
 var server = require( 'gulp-develop-server' );
 var livereload = require( 'gulp-livereload' );
+var jsmin = require('gulp-jsmin');
+
+
 
 var options = {
   path: 'server/server.js'
@@ -68,7 +71,18 @@ gulp.task('compileAdmin', function(){
     .pipe(source('bundle.js'))
     .pipe(gulp.dest('client/admin/js'));
 });
-
+gulp.task('minBundleAdmin', function () {
+  gulp.src('client/admin/js/bundle.js')
+    .pipe(jsmin())
+    .pipe(rename({suffix: '.min'}))
+    .pipe(gulp.dest('client/admin/js'));
+});
+gulp.task('minBundleIndex', function () {
+  gulp.src('client/index/js/bundle.js')
+    .pipe(jsmin())
+    .pipe(rename({suffix: '.min'}))
+    .pipe(gulp.dest('client/index/js'));
+});
 //build sass to css and min file
 gulp.task('sassIndex', function () {
   return gulp.src('client/index/sass/*.scss')
@@ -88,7 +102,10 @@ gulp.task('sassAdmin', function () {
     .pipe(gulp.dest('client/admin/css'));
 });
 
-gulp.task('build', ['compileIndex', 'compileAdmin','sassIndex','sassAdmin']);
+gulp.task('build', ['compileIndex','compileAdmin', 'sassIndex','sassAdmin']);
+
+//min file js bundle
+gulp.task('minBundle', ['minBundleAdmin','minBundleIndex']);
 
 //auto watch change file
 gulp.task('watch', function () {

@@ -102,6 +102,16 @@
     }
   }
 }
+.section-5 {
+  .our-clients{
+    padding-bottom: 40px;
+    height: 200px;
+  }
+  img {
+    width: 120px;
+    height: auto;
+  }
+}
 //For xs
 @media screen and (max-width: $tablet - 1) {
   .footer {

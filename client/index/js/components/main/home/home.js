@@ -17,7 +17,6 @@ export class HomePage extends React.Component{
         <WhatItAbout />
         <FeaturedNews />
         <WhatPeopleSay />
-        <OurClients />
       </div>
     );
   }

@@ -3,7 +3,7 @@ import {render} from 'react-dom';
 import {Link} from 'react-router';
 import Slider from 'react-slick'
 import {HeaderPage} from '../src/header-page'
-
+import Stores from '../../../stores/stores'
 class LeftNavButton extends React.Component {
   render() {
     return  <a onClick={this.props.onClick} className="left slick-control">
@@ -18,8 +18,43 @@ class RightNavButton extends React.Component {
       </a>
   }
 }
-class Menu extends React.Component{
+
+class DermatoglyphicsItem extends React.Component{
   render(){
+    return(
+      <li>
+        <h3><Link to={`/van-tay-hoc/${this.props.id}`}>{this.props.title}</Link></h3>
+        <small>{this.props.date} / Admin</small>
+      </li>
+    )
+  }
+}
+
+class Menu extends React.Component{
+  constructor(){
+    super();
+    this.state = {
+      dermatoglyphics: []
+    }
+  }
+  componentWillMount(){
+    this._handelGetDatas(this)
+  }
+  _handelGetDatas(t){
+    Stores.getAll('/dermatoglyphics', function(datas){
+      t.setState({dermatoglyphics: datas})
+    })
+  }
+  render(){
+    const DermatoglyphicsList = this.state.dermatoglyphics.map(function(item){
+      return(
+        <DermatoglyphicsItem
+          id = {item.id}
+          title = {item.title}
+          date = {item.date}
+        />
+      )
+    })
     const settings = {
       dots: false,
       infinite: true,
@@ -53,22 +88,7 @@ class Menu extends React.Component{
 
         <div className="headline-v2"><h2>Mục lục</h2></div>
         <ul className="list-unstyled blog-trending margin-bottom-50">
-          <li>
-            <h3><Link to="/van-tay-hoc/1">Vân tay học là gì ?</Link></h3>
-            <small>23 Jan, 2015 / Admin</small>
-          </li>
-          <li>
-            <h3><Link to="/van-tay-hoc/2">Lịch sử nghiên cứu sinh trắc học dấu vân tay.</Link></h3>
-            <small>22 Jan, 2015 / Admin</small>
-          </li>
-          <li>
-            <h3><Link to="/van-tay-hoc/3">Ứng dụng của vân tay học vào cuộc sống.</Link></h3>
-            <small>19 Jan, 2015 / Admin</small>
-          </li>
-          <li>
-            <h3><Link to="/van-tay-hoc/4">Cảm nhận </Link></h3>
-            <small>17 Jan, 2015 /Admin</small>
-          </li>
+          {DermatoglyphicsList}
         </ul>
       </div>
     )

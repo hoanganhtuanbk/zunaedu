@@ -8,6 +8,12 @@ import {AddProgram} from './js/components/admin-main/program/add'
 import {EditProgram} from './js/components/admin-main/program/edit'
 import {ListProgram} from './js/components/admin-main/program/list'
 
+import {EventManagement} from './js/components/admin-main/event/event'
+import {ViewEvent} from './js/components/admin-main/event/view'
+import {AddEvent} from './js/components/admin-main/event/add'
+import {EditEvent} from './js/components/admin-main/event/edit'
+import {ListEvent} from './js/components/admin-main/event/list'
+
 import {BookManagement} from './js/components/admin-main/book/book'
 import {ViewBook} from './js/components/admin-main/book/view'
 import {AddBook} from './js/components/admin-main/book/add'
@@ -69,6 +75,10 @@ export class AdminCenter extends React.Component{
         name: 'Programs',
         icon: 'fa fa-forumbee',
         link: '/admin/program'
+      }, {
+        name: 'Event',
+        icon: 'fa fa-forumbee',
+        link: '/admin/event'
       },
       {
         name: 'Books',
@@ -107,12 +117,21 @@ render(
         <IndexRoute component={ViewAdminProfile}/>
         <Route path="/admin/profile/edit" component={EditAdminProfile}/>
       </Route>
+
       <Route path="/admin/program" component={ProgramManagement} >
         <IndexRoute component={ListProgram} />
         <Route path="/admin/program/add" component={AddProgram} />
         <Route path="/admin/program/:id/edit" component={EditProgram}/>
         <Route path="/admin/program/:id" component={ViewProgram} />
       </Route>
+
+      <Route path="/admin/event" component={EventManagement} >
+        <IndexRoute component={ListEvent} />
+        <Route path="/admin/event/add" component={AddEvent} />
+        <Route path="/admin/event/:id/edit" component={EditEvent}/>
+        <Route path="/admin/event/:id" component={ViewEvent} />
+      </Route>
+
       <Route path="/admin/book" component={BookManagement} >
         <IndexRoute component={ListBook} />
         <Route path="/admin/book/add" component={AddBook} />
