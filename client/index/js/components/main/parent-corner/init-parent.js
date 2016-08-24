@@ -65,7 +65,7 @@ class ParentItem extends React.Component{
               </Link>
             </h2>
             <p>{this.props.description}</p>
-            <a className="read-more">Xem chi tiết</a>
+            <Link to={`/goc-cha-me/${this.props.keyNote}`} className="read-more">Xem chi tiết</Link>
             <ul className="post-shares">
               <li>
                 <a href="#">
