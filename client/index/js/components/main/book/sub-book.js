@@ -39,12 +39,19 @@ export class SubBook extends React.Component{
 
   }
   getBookDetail(t){
-    Stores.findById('/books', t.props.params.id, function(book){
-      const jsObject = JSON.parse(book.content);
-      const contentState = convertFromRaw(jsObject);
-      const editorState = EditorState.createWithContent(contentState)
-      t.setState({book: book,editorState:editorState})
-    })
+    Stores.find('/books',
+      {
+        where: {
+          key: this.props.params.key
+        },
+        limit: 1
+      }, function(book){
+        console.log(book[0]);
+        const jsObject = JSON.parse(book[0].content);
+        const contentState = convertFromRaw(jsObject);
+        const editorState = EditorState.createWithContent(contentState)
+        t.setState({book: book[0],editorState:editorState})
+      })
   }
   getBook(t){
     Stores.getAll('/books', function(books, status) {

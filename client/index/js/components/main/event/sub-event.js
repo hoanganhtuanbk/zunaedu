@@ -33,7 +33,7 @@ class EventDetail extends React.Component{
     return (
       <div className="news-v3 bg-color-white margin-bottom-30">
         <div className="bg-article">
-          <img className="img-responsive" src={this.props.url} alt=""/>
+          <img className="img-responsive" src={this.props.url} alt={this.props.title}/>
         </div>
         <div className="news-v3-in">
           <ul className="list-inline posted-info">
@@ -68,11 +68,15 @@ export class SubEvent extends React.Component{
 
   }
   getEventDetail(t){
-    Stores.findById('/events', t.props.params.id, function(event){
-      const jsObject = JSON.parse(event.content);
+    Stores.find('/events', {
+      where:{
+        key: t.props.params.key
+      }
+    }, function(event){
+      const jsObject = JSON.parse(event[0].content);
       const contentState = convertFromRaw(jsObject);
       const editorState = EditorState.createWithContent(contentState);
-      t.setState({event: event,editorState:editorState})
+      t.setState({event: event[0],editorState:editorState})
     })
   }
   getEventCorners(t){
@@ -87,8 +91,8 @@ export class SubEvent extends React.Component{
     const childElements = this.state.events.map(function(event,id){
       return (
         <li key={id}>
-          <h3><Link to={`/goc-cha-me/${event.id}`}>{event.title}</Link></h3>
-          <small>{event.date} <a href="#">Art,</a> <a href="#">Lifestyles</a></small>
+          <h3><Link to={`/su-kien/${event.key}`}>{event.title}</Link></h3>
+          <small>{event.date} <a href="#">Admin,</a> <a href="#">Lifestyles</a></small>
         </li>
       );
     });

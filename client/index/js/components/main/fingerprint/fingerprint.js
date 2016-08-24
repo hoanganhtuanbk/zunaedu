@@ -23,7 +23,7 @@ class FingerPrintItem extends React.Component{
   render(){
     return(
         <div>
-          <h3><Link to={`/van-tay-hoc/${this.props.id}`}>{this.props.title}</Link></h3>
+          <h3><Link to={`/van-tay-hoc/${this.props.keyNote}`}>{this.props.title}</Link></h3>
           <small>{this.props.date} / Admin</small>
         </div>
     )
@@ -50,7 +50,7 @@ class Menu extends React.Component{
       return(
         <li key={index} >
           <FingerPrintItem
-            id = {item.id}
+            keyNote = {item.key}
             title = {item.title}
             date = {item.date}
           />

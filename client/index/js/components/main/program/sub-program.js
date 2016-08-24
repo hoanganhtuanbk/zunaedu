@@ -17,8 +17,7 @@ export class SubProgram extends React.Component{
     super();
     this.state = {
       program: {},
-      editorState: EditorState.createEmpty(),
-      editorActive: true
+      editorState: EditorState.createEmpty()
     };
     this.blockRenderer = (block) => {
       if (block.getType() === 'atomic') {
@@ -34,12 +33,16 @@ export class SubProgram extends React.Component{
   }
   getProgramDetail(t){
    try{
-     Stores.findById('/programs', t.props.params.id, function(program){
-       console.log(program);
-       const jsObject = JSON.parse(program.content);
+     Stores.find('/programs', {
+       where:{
+         key: t.props.params.key
+       }
+     }, function(program){
+       console.log(program[0]);
+       const jsObject = JSON.parse(program[0].content);
        const contentState = convertFromRaw(jsObject);
        const editorState = EditorState.createWithContent(contentState);
-       t.setState({program: program,editorState:editorState})
+       t.setState({program: program[0],editorState:editorState})
      })
    } catch(error){
      console.log(error)

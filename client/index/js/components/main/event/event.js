@@ -11,13 +11,13 @@ class EventItem extends React.Component{
   render(){
     return(
       <div className="timeline-panel">
-        <Link to={`/su-kien/${this.props.id}`} className="timeline-heading">
+        <Link to={`/su-kien/${this.props.keyNote}`} className="timeline-heading">
           <img className="img-responsive" src={this.props.url} alt={this.props.title} />
         </Link>
         <div className="timeline-body text-justify">
-          <h2 className="font-light"><a href="#">{this.props.title}</a></h2>
+          <h2 className="font-light"><Link to={`/su-kien/${this.props.keyNote}`}>{this.props.title}</Link></h2>
           <p>{this.props.description}</p>
-          <a className="btn-u btn-u-sm" href="#">Read More</a>
+          <Link to={`/su-kien/${this.props.keyNote}`} className="btn-u btn-u-sm">Read More</Link>
         </div>
         <div className="timeline-footer">
           <ul className="list-unstyled list-inline blog-info">
@@ -53,7 +53,7 @@ export class Event extends React.Component{
             <div className="timeline-badge primary"><i className="fa fa-dot-circle-o invert"></i></div>
             <EventItem
               index={index}
-              id={event.id}
+              keyNote={event.key}
               title = {event.title}
               description = {event.description}
               url = {event.url}
@@ -66,7 +66,7 @@ export class Event extends React.Component{
           <div className="timeline-badge primary"><i className="fa fa-dot-circle-o"></i></div>
           <EventItem
             index={index}
-            id={event.id}
+            keyNote={event.key}
             title = {event.title}
             description = {event.description}
             url = {event.url}

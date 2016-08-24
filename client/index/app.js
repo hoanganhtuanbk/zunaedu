@@ -22,6 +22,7 @@ import { SubBook } from './js/components/main/book/sub-book'
 
 import {ParentsCorner} from './js/components/main/parent-corner/parents-corner'
 import {SubParent} from './js/components/main/parent-corner/sub-parent'
+import {InitParent} from './js/components/main/parent-corner/init-parent'
 
 import { Contact } from './js/components/main/contact/contact';
 
@@ -54,22 +55,22 @@ render(
       <IndexRoute component={HomePage}/>
       <Route path="/van-tay-hoc" component={FingerPage}>
         <IndexRedirect to="/van-tay-hoc/1" />
-        <Route path="/van-tay-hoc/:id" component={SubFingerPrint}/>
+        <Route path="/van-tay-hoc/:key" component={SubFingerPrint}/>
       </Route>
       <Route path="/chuong-trinh" component={Program}>
         <IndexRoute component={InitProgram}/>
-        <Route path="/chuong-trinh/:id" component={SubProgram}/>
+        <Route path="/chuong-trinh/:key" component={SubProgram}/>
       </Route>
 
       <Route path="/su-kien" component={Event}/>
-      <Route path="/su-kien/:id" component={SubEvent}/>
+      <Route path="/su-kien/:key" component={SubEvent}/>
 
       <Route path="/sach-giao-duc" component = {Book} />
-      <Route path="/sach-giao-duc/:id" component = {SubBook} />
+      <Route path="/sach-giao-duc/:key" component = {SubBook} />
 
       <Route path="/goc-cha-me" component = {ParentsCorner} >
-        <IndexRedirect to="/goc-cha-me/1" />
-        <Route path="/goc-cha-me/:id" component = {SubParent} />
+        <IndexRoute component={InitParent}/>
+        <Route path="/goc-cha-me/:key" component = {SubParent} />
       </Route>
 
       <Route path="/lien-he" component={Contact}/>

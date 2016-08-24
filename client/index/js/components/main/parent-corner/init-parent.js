@@ -1,35 +1,35 @@
 import React from 'react';
 import {render} from 'react-dom';
-import { Link } from 'react-router';
+import { Link, IndexLink } from 'react-router';
 import Stores from '../../../stores/stores'
 
-export class InitProgram extends React.Component{
+export class InitParent extends React.Component{
   constructor(props){
     super();
     this.state = {
-      programs: []
+     parents: []
     };
   }
   componentWillMount(){
-    this.getPrograms(this);
+    this.getParents(this);
   }
-  getPrograms(t){
-    Stores.find('/programs',{limit: 5}, function(programs){
-      console.log(programs);
-      t.setState({programs: programs})
+  getParents(t){
+    Stores.find('/parents',{limit: 5}, function(parents){
+      console.log(parents);
+      t.setState({parents: parents})
     })
   }
 
   render(){
-   const ProgramList = this.state.programs.map(function(program,index){
+   const ParentList = this.state.parents.map(function(parent,index){
      return(
        <div key={index}>
-         <ProgramItem
-           keyNote={program.key}
-           title={program.title}
-           description={program.description}
-           date={program.date}
-           url={program.url}
+         <ParentItem
+           keyNote={parent.key}
+           title={parent.title}
+           description={parent.description}
+           date={parent.date}
+           url={parent.url}
          />
          <div className="clearfix margin-bottom-20"><hr/></div>
        </div>
@@ -38,17 +38,17 @@ export class InitProgram extends React.Component{
    });
     return (
       <div>
-        {ProgramList}
+        {ParentList}
       </div>
     );
   }
 }
-class ProgramItem extends React.Component{
+class ParentItem extends React.Component{
   render(){
     return(
       <div className="row margin-bottom-20">
         <div className="col-sm-5 sm-margin-bottom-20">
-          <Link to={`/chuong-trinh/${this.props.keyNote}`} >
+          <Link to={`/goc-cha-me/${this.props.keyNote}`} >
             <img className="img-responsive" src={this.props.url} />
           </Link>
         </div>
@@ -60,7 +60,7 @@ class ProgramItem extends React.Component{
               <li>Posted {this.props.date}</li>
             </ul>
             <h2>
-              <Link to={`/chuong-trinh/${this.props.keyNote}`} >
+              <Link to={`/goc-cha-me/${this.props.keyNote}`} >
                 {this.props.title}
               </Link>
             </h2>

@@ -34,18 +34,22 @@ export class SubParent extends React.Component{
 
   }
   getParentDetail(t){
-    Stores.findById('/parents', t.props.params.id, function(parent){
-      const jsObject = JSON.parse(parent.content);
+    Stores.find('/parents', {
+      where:{
+        key: t.props.params.key
+      }
+    }, function(parent){
+      const jsObject = JSON.parse(parent[0].content);
       const contentState = convertFromRaw(jsObject);
       const editorState = EditorState.createWithContent(contentState);
-      t.setState({parent: parent,editorState:editorState})
+      t.setState({parent: parent[0],editorState:editorState})
     })
   }
   render(){
     return (
       <div className="news-v3 bg-color-white margin-bottom-30">
         <div className="bg-article">
-          <img className="img-responsive" src={this.state.parent.url} alt=""/>
+          <img className="img-responsive" src={this.state.parent.url} alt={this.state.parent.title}/>
         </div>
         <div className="news-v3-in">
           <ul className="list-inline posted-info">

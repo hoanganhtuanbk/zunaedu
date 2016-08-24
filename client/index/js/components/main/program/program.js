@@ -52,7 +52,6 @@ export class Program extends React.Component{
           <div className="row">
             <div className="col-md-9">
               {this.props.children}
-              <div className="clearfix margin-bottom-20"><hr/></div>
               <ul className="pager pager-v3 pager-sm no-margin-bottom">
                 <li className="previous"><a href="#">← Older</a></li>
                 <li className="page-amount">1 of 7</li>

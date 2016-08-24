@@ -34,20 +34,24 @@ export class SubFingerPrint extends React.Component{
     this.getParentCorners(this);
   }
   getParentCorners(t){
-   if(this.props.params.id !== "phan-hoi"){
-     Stores.findById('/dermatoglyphics', this.props.params.id, function(dermatoglyphic, status) {
-       console.log(dermatoglyphic);
-       if (dermatoglyphic) {
-         const jsObject = JSON.parse(dermatoglyphic.content);
+   if(this.props.params.key !== "phan-hoi"){
+     Stores.find('/dermatoglyphics', {
+       where:{
+         key : this.props.params.key
+       }
+     }, function(dermatoglyphic, status) {
+       console.log(dermatoglyphic[0]);
+       if (dermatoglyphic[0]) {
+         const jsObject = JSON.parse(dermatoglyphic[0].content);
          const contentState = convertFromRaw(jsObject);
          const editorState = EditorState.createWithContent(contentState);
-         t.setState({concept: dermatoglyphic,editorState:editorState});
+         t.setState({concept: dermatoglyphic[0],editorState:editorState});
        }
      });
    }
   }
   render(){
-    if(this.props.params.id == "phan-hoi"){
+    if(this.props.params.key == "phan-hoi"){
       return(
         <div className="col-md-8 ">
           <div className="testimonials-v4 feedback md-margin-bottom-50">
@@ -66,7 +70,7 @@ export class SubFingerPrint extends React.Component{
       <div className="col-md-8">
         <div className="news-v3 bg-color-white margin-bottom-60">
           <div className="bg-article">
-          <img className="img-responsive" src={this.state.concept.url} alt="" />
+          <img className="img-responsive" src={this.state.concept.url} alt={this.state.concept.title} />
             </div>
           <div className="news-v3-in">
             <ul className="list-inline posted-info">
