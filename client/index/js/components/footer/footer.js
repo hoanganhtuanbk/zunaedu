@@ -42,7 +42,7 @@ export class Footer extends React.Component{
                 </div>
 
                 <div className="col-md-3 md-margin-bottom-40">
-                  <div className="headline"><h2>Useful Links</h2></div>
+                  <div className="headline"><h2>Liên kết hữu ích</h2></div>
                   <ul className="list-unstyled link-list">
                     <li><Link to="/">Trang chủ</Link><i className="fa fa-angle-right"></i></li>
                     <li><Link to="/van-tay-hoc">Vân tay học</Link><i className="fa fa-angle-right"></i></li>
@@ -55,7 +55,7 @@ export class Footer extends React.Component{
                 </div>
 
                 <div className="col-md-3 map-img md-margin-bottom-40">
-                  <div className="headline"><h2>Contact Us</h2></div>
+                  <div className="headline"><h2>Liên hệ</h2></div>
                   <address className="md-margin-bottom-40">
                     25, Lorem Lis Street, Orange<br />
                     California, US<br />
