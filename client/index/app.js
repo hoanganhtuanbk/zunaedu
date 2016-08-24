@@ -15,6 +15,8 @@ import { SubProgram } from './js/components/main/program/sub-program'
 import { InitProgram } from './js/components/main/program/init-program'
 
 import { Event } from './js/components/main/event/event'
+import { SubEvent } from './js/components/main/event/sub-event'
+
 import { Book } from './js/components/main/book/book'
 import { SubBook } from './js/components/main/book/sub-book'
 
@@ -60,6 +62,7 @@ render(
       </Route>
 
       <Route path="/su-kien" component={Event}/>
+      <Route path="/su-kien/:id" component={SubEvent}/>
 
       <Route path="/sach-giao-duc" component = {Book} />
       <Route path="/sach-giao-duc/:id" component = {SubBook} />
