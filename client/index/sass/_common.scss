@@ -70,6 +70,38 @@ label {
   margin-bottom: 5px;
   font-weight: 700;
 }
+#topcontrol {
+  color: #fff;
+  z-index: 99;
+  width: 30px;
+  height: 30px;
+  font-size: 20px;
+  background: #222;
+  right: 14px !important;
+  bottom: 11px !important;
+  border-radius: 3px !important;
+  &:after {
+    top: -2px;
+    left: 8.5px;
+    content: "\f106";
+    position: absolute;
+    text-align: center;
+    font-family: FontAwesome;
+  }
+  &:hover {
+    color: #fff;
+    background: #72c02c;
+    transition: all 0.3s ease-in-out;
+  }
+}
+.returnTop{
+  position: fixed;
+  bottom: 5px;
+  right: 5px;
+  opacity: 1;
+  cursor: pointer;
+}
+
 div{
   display: block;
 }

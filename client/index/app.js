@@ -33,10 +33,14 @@ import { ForgotPassword } from './js/components/reset-password/forgot-password.j
 
 class Index extends React.Component {
   render () {
+    const returnTop = function(){
+      $('html, body').animate({ scrollTop: 0 }, 'slow');
+    }
     return (
     	<div className="wrapper">
       	<Header />
         {this.props.children}
+        <div id="topcontrol" className="returnTop" onClick={returnTop} title="Scroll Back to Top" ></div>
       	<Footer />
     	</div>
     	)

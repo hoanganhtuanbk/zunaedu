@@ -5,6 +5,7 @@ import {OurClients} from '../main/home/our-clients'
 
 export class Footer extends React.Component{
   render (){
+
     return (
       <div>
         <OurClients />
@@ -101,6 +102,6 @@ export class Footer extends React.Component{
         </div>
       </div>
 
-  );
+    );
   }
-  }
+}
