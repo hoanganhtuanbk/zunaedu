@@ -7,42 +7,16 @@ import Stores from '../../../stores/stores'
 class EventItem extends React.Component{
   constructor(props){
     super(props);
-    console.log(this.props)
   }
   render(){
-    if(this.props.index % 2){
-      return(
-        <li className="item-event timeline-inverted">
-          <div className="timeline-badge primary"><i className="fa fa-dot-circle-o invert"></i></div>
-          <div className="timeline-panel">
-            <a Link={`/su-kien/${this.props.id}`} className="timeline-heading">
-              <img className="img-responsive" src={this.props.url} alt={this.props.title} />
-            </a>
-            <div className="timeline-body text-justify">
-              <h2 className="font-light"><a href="#">{this.props.title}</a></h2>
-              <p>{this.props.description}</p>
-
-              <a className="btn-u btn-u-sm" href="#">Read More</a>
-            </div>
-            <div className="timeline-footer">
-              <ul className="list-unstyled list-inline blog-info">
-                <li><i className="fa fa-clock-o"></i> {this.props.date}</li>
-              </ul>
-            </div>
-          </div>
-        </li>
-      )
-    } else return(
-    <li className="item-event">
-      <div className="timeline-badge primary"><i className="fa fa-dot-circle-o"></i></div>
+    return(
       <div className="timeline-panel">
-        <a Link={`/su-kien/${this.props.id}`} className="timeline-heading">
+        <Link to={`/su-kien/${this.props.id}`} className="timeline-heading">
           <img className="img-responsive" src={this.props.url} alt={this.props.title} />
-        </a>
+        </Link>
         <div className="timeline-body text-justify">
           <h2 className="font-light"><a href="#">{this.props.title}</a></h2>
           <p>{this.props.description}</p>
-
           <a className="btn-u btn-u-sm" href="#">Read More</a>
         </div>
         <div className="timeline-footer">
@@ -51,10 +25,7 @@ class EventItem extends React.Component{
           </ul>
         </div>
       </div>
-    </li>
-
     )
-
   }
 }
 export class Event extends React.Component{
@@ -68,6 +39,7 @@ export class Event extends React.Component{
   componentWillMount(){
     this._handelGetDatas(this)
   }
+
   _handelGetDatas(t){
     Stores.getAll('/events',function(datas){
       t.setState({events: datas})
@@ -75,8 +47,23 @@ export class Event extends React.Component{
   }
   render(){
     const EventList = this.state.events.map(function(event,index){
-      return(
-        <div key={index}>
+      if(index % 2 == 1){
+        return(
+          <li key={event.id} className="item-event timeline-inverted">
+            <div className="timeline-badge primary"><i className="fa fa-dot-circle-o invert"></i></div>
+            <EventItem
+              index={index}
+              id={event.id}
+              title = {event.title}
+              description = {event.description}
+              url = {event.url}
+              date = {event.date}
+            />
+          </li>
+        )
+      } else return(
+        <li key={event.id} className="item-event">
+          <div className="timeline-badge primary"><i className="fa fa-dot-circle-o"></i></div>
           <EventItem
             index={index}
             id={event.id}
@@ -85,11 +72,9 @@ export class Event extends React.Component{
             url = {event.url}
             date = {event.date}
           />
-        </div>
-
-        )
-
-    })
+        </li>
+      )
+    });
     return(
       <div>
         <HeaderPage background={'../index/img/bg-components/su-kien-mini.jpg'} />

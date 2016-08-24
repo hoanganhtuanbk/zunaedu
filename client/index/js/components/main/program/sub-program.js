@@ -33,13 +33,17 @@ export class SubProgram extends React.Component{
     this.getProgramDetail(this);
   }
   getProgramDetail(t){
-    Stores.findById('/programs', t.props.params.id, function(program){
-      console.log(program);
-      const jsObject = JSON.parse(program.content);
-      const contentState = convertFromRaw(jsObject);
-      const editorState = EditorState.createWithContent(contentState);
-      t.setState({program: program,editorState:editorState})
-    })
+   try{
+     Stores.findById('/programs', t.props.params.id, function(program){
+       console.log(program);
+       const jsObject = JSON.parse(program.content);
+       const contentState = convertFromRaw(jsObject);
+       const editorState = EditorState.createWithContent(contentState);
+       t.setState({program: program,editorState:editorState})
+     })
+   } catch(error){
+     console.log(error)
+   }
   }
 
   render(){

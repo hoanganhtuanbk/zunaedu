@@ -17,6 +17,7 @@ import { InitProgram } from './js/components/main/program/init-program'
 import { Event } from './js/components/main/event/event'
 import { Book } from './js/components/main/book/book'
 import { SubBook } from './js/components/main/book/sub-book'
+
 import {ParentsCorner} from './js/components/main/parent-corner/parents-corner'
 import {SubParent} from './js/components/main/parent-corner/sub-parent'
 

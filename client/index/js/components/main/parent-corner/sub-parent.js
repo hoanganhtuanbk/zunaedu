@@ -17,6 +17,7 @@ export class SubParent extends React.Component{
   constructor(props){
     super();
     this.state = {
+      parent: {},
       editorState: EditorState.createEmpty()
     };
     this.blockRenderer = (block) => {
