@@ -20,7 +20,6 @@ export class SubFingerPrint extends React.Component{
       editorState: EditorState.createEmpty()
 
     };
-    console.log(this.props)
     this.blockRenderer = (block) => {
       if (block.getType() === 'atomic') {
         return {
@@ -34,7 +33,6 @@ export class SubFingerPrint extends React.Component{
     this.getParentCorners(this);
   }
   getParentCorners(t){
-   if(this.props.params.key !== "phan-hoi"){
      Stores.find('/dermatoglyphics', {
        where:{
          key : this.props.params.key
@@ -48,7 +46,6 @@ export class SubFingerPrint extends React.Component{
          t.setState({concept: dermatoglyphic[0],editorState:editorState});
        }
      });
-   }
   }
   render(){
     if(this.props.params.key == "phan-hoi"){

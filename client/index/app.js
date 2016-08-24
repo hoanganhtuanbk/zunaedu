@@ -54,7 +54,6 @@ render(
     <Route path="/" component={Index}>
       <IndexRoute component={HomePage}/>
       <Route path="/van-tay-hoc" component={FingerPage}>
-        <IndexRedirect to="/van-tay-hoc/1" />
         <Route path="/van-tay-hoc/:key" component={SubFingerPrint}/>
       </Route>
       <Route path="/chuong-trinh" component={Program}>
