@@ -54,42 +54,23 @@ export class SubProgram extends React.Component{
       this.setState({editorActive : !this.state.editorActive})
     }.bind(this);
     return (
-      <div>
-        <div className="row margin-bottom-20">
-          <div className="col-sm-5 sm-margin-bottom-20">
-           <img className="img-responsive" src={this.state.program.url} />
-          </div>
+      <div className="news-v3 bg-color-white margin-bottom-30">
+        <div className="bg-article">
+          <img className="img-responsive" src={this.state.program.url} alt={this.state.program.title}/>
+        </div>
+        <div className="news-v3-in">
+          <ul className="list-inline posted-info">
+            <li>By <a href="#">Alexander Jenni</a></li>
+            <li>In <a href="#">Design</a></li>
+            <li>Posted {this.state.program.date}</li>
+          </ul>
+          <h2>{this.state.program.title}</h2>
+          <Editor
+            blockRendererFn={this.blockRenderer}
+            editorState={this.state.editorState}
+            readOnly={true}
+          />
 
-          <div className="col-sm-7 news-v3">
-            <div className="news-v3-in-sm no-padding content-program">
-              <ul className="list-inline posted-info">
-                <li>By Admin</li>
-                <li>Posted {this.state.program.date}</li>
-              </ul>
-              <h2>{this.state.program.title}</h2>
-              {
-                this.state.editorActive == true ? <p>{this.state.program.description}</p> : <div>
-                  <Editor
-                    blockRendererFn={this.blockRenderer}
-                    editorState={this.state.editorState}
-                    readOnly={true}
-                  />
-                </div>
-
-              }
-              <a className="read-more" onClick={activeEditor}>Xem chi tiết</a>
-              <ul className="post-shares">
-                <li>
-                  <a href="#">
-                    <i className="rounded-x icon-speech"></i>
-                    <span>5</span>
-                  </a>
-                </li>
-                <li><a href="#"><i className="rounded-x icon-share"></i></a></li>
-                <li><a href="#"><i className="rounded-x icon-heart"></i></a></li>
-              </ul>
-            </div>
-          </div>
         </div>
       </div>
     );
