@@ -9,7 +9,7 @@ class Trending extends React.Component{
   render(){
     return(
     <li key={this.props.id}>
-      <h3><Link to={`/chuong-trinh/${this.props.id}`}>{this.props.title}</Link></h3>
+      <h3><Link to={`/chuong-trinh/${this.props.key}`}>{this.props.title}</Link></h3>
       <small>{this.props.date} <a href="#">Admin</a></small>
     </li>
 

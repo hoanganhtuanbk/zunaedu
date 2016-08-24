@@ -25,7 +25,7 @@ export class ParentsCorner extends React.Component{
     const childElements = this.state.parents.map(function(parent,id){
       return (
         <li key={id}>
-          <h3><Link to={`/goc-cha-me/${parent.id}`}>{parent.title}</Link></h3>
+          <h3><Link to={`/goc-cha-me/${parent.key}`}>{parent.title}</Link></h3>
           <small>{parent.date} <a href="#">Art,</a> <a href="#">Lifestyles</a></small>
         </li>
       );
