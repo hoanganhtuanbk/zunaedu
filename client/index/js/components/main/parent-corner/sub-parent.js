@@ -18,8 +18,10 @@ export class SubParent extends React.Component{
     super();
     this.state = {
       parent: {},
-      editorState: EditorState.createEmpty()
+      editorState: EditorState.createEmpty(),
+      key: ''
     };
+    console.log('hi')
     this.blockRenderer = (block) => {
       if (block.getType() === 'atomic') {
         return {
@@ -33,6 +35,23 @@ export class SubParent extends React.Component{
     this.getParentDetail(this);
 
   }
+  componentWillReceiveProps(nextProps){ //Function nay chay mỗi khi có thay đổi props
+    console.log(nextProps.params.key)
+    this.getParentDetailPlus(this,nextProps.params.key)
+  }
+  getParentDetailPlus(t,key){
+    Stores.find('/parents', {
+      where:{
+        key: key
+      }
+    }, function(parent){
+      const jsObject = JSON.parse(parent[0].content);
+      const contentState = convertFromRaw(jsObject);
+      const editorState = EditorState.createWithContent(contentState);
+      console.log(parent[0])
+      t.setState({parent: parent[0],editorState:editorState})
+    })
+  }
   getParentDetail(t){
     Stores.find('/parents', {
       where:{
@@ -42,6 +61,7 @@ export class SubParent extends React.Component{
       const jsObject = JSON.parse(parent[0].content);
       const contentState = convertFromRaw(jsObject);
       const editorState = EditorState.createWithContent(contentState);
+      console.log(parent[0])
       t.setState({parent: parent[0],editorState:editorState})
     })
   }

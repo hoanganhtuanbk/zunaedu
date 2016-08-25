@@ -8,8 +8,8 @@ import {HeaderPage} from '../src/header-page'
 class Trending extends React.Component{
   render(){
     return(
-    <li key={this.props.id}>
-      <h3><Link to={`/chuong-trinh/${this.props.key}`}>{this.props.title}</Link></h3>
+    <li >
+      <h3><Link to={`/chuong-trinh/${this.props.keyNote}`}>{this.props.title}</Link></h3>
       <small>{this.props.date} <a href="#">Admin</a></small>
     </li>
 
@@ -36,13 +36,15 @@ export class Program extends React.Component{
     });
   }
   render(){
-    const programs = this.state.programs.map(function(item, id) {
-      return (<Trending
-        key={id}
-        id={item.id}
-        title={item.title}
-        date={item.date}
-      />)
+    const programs = this.state.programs.map(function(item, index) {
+      return (
+        <div key={index}>
+          <Trending
+            keyNote={item.key}
+            title={item.title}
+            date={item.date}
+          />
+        </div>)
     });
 
     return(

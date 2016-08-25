@@ -67,6 +67,22 @@ export class SubEvent extends React.Component{
     this.getEventDetail(this);
 
   }
+  componentWillReceiveProps(nextProps){ //Function nay chay mỗi khi có thay đổi props
+    this.getEventDetailPlus(this,nextProps.params.key)
+  }
+  getEventDetailPlus(t,key){
+    Stores.find('/events', {
+      where:{
+        key: key
+      }
+    }, function(event){
+      const jsObject = JSON.parse(event[0].content);
+      const contentState = convertFromRaw(jsObject);
+      const editorState = EditorState.createWithContent(contentState);
+      console.log(event[0])
+      t.setState({event: event[0],editorState:editorState})
+    })
+  }
   getEventDetail(t){
     Stores.find('/events', {
       where:{

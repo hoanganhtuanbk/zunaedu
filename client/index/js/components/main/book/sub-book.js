@@ -38,6 +38,22 @@ export class SubBook extends React.Component{
     this.getBook(this);
 
   }
+  componentWillReceiveProps(nextProps){ //Function nay chay mỗi khi có thay đổi props
+    this.getBookDetailPlus(this,nextProps.params.key)
+  }
+  getBookDetailPlus(t,key){
+    Stores.find('/books', {
+      where:{
+        key: key
+      }
+    }, function(book){
+      const jsObject = JSON.parse(book[0].content);
+      const contentState = convertFromRaw(jsObject);
+      const editorState = EditorState.createWithContent(contentState);
+      console.log(book[0])
+      t.setState({book: book[0],editorState:editorState})
+    })
+  }
   getBookDetail(t){
     Stores.find('/books',
       {
@@ -64,7 +80,7 @@ export class SubBook extends React.Component{
     const childElements = this.state.books.map(function(book,id){
       return (
         <li key={id}>
-          <h3><Link to={`/sach-giao-duc/${book.id}`}>{book.title}</Link></h3>
+          <h3><Link to={`/sach-giao-duc/${book.key}`}>{book.title}</Link></h3>
           <small>{book.date}, Admin</small>
         </li>
       );

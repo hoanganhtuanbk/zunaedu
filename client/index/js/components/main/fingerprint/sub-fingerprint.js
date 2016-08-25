@@ -30,15 +30,30 @@ export class SubFingerPrint extends React.Component{
     };
   }
   componentWillMount(){
-    this.getParentCorners(this);
+    this.getDermatoglyphicCorners(this);
   }
-  getParentCorners(t){
+  componentWillReceiveProps(nextProps){ //Function nay chay mỗi khi có thay đổi props
+    this.getDermatoglyphicDetailPlus(this,nextProps.params.key)
+  }
+  getDermatoglyphicDetailPlus(t,key){
+    Stores.find('/dermatoglyphics', {
+      where:{
+        key: key
+      }
+    }, function(dermatoglyphic){
+      const jsObject = JSON.parse(dermatoglyphic[0].content);
+      const contentState = convertFromRaw(jsObject);
+      const editorState = EditorState.createWithContent(contentState);
+      console.log(dermatoglyphic[0])
+      t.setState({concept: dermatoglyphic[0],editorState:editorState})
+    })
+  }
+  getDermatoglyphicCorners(t){
      Stores.find('/dermatoglyphics', {
        where:{
          key : this.props.params.key
        }
      }, function(dermatoglyphic, status) {
-       console.log(dermatoglyphic[0]);
        if (dermatoglyphic[0]) {
          const jsObject = JSON.parse(dermatoglyphic[0].content);
          const contentState = convertFromRaw(jsObject);

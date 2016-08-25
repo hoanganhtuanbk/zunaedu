@@ -31,6 +31,23 @@ export class SubProgram extends React.Component{
   componentWillMount(){
     this.getProgramDetail(this);
   }
+  componentWillReceiveProps(nextProps){ //Function nay chay mỗi khi có thay đổi props
+    console.log(nextProps.params.key)
+    this.getParentDetailPlus(this,nextProps.params.key)
+  }
+  getParentDetailPlus(t,key){
+    Stores.find('/programs', {
+      where:{
+        key: key
+      }
+    }, function(program){
+      const jsObject = JSON.parse(program[0].content);
+      const contentState = convertFromRaw(jsObject);
+      const editorState = EditorState.createWithContent(contentState);
+      console.log(program[0])
+      t.setState({program: program[0],editorState:editorState})
+    })
+  }
   getProgramDetail(t){
    try{
      Stores.find('/programs', {

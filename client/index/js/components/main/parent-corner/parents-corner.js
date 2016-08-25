@@ -1,18 +1,23 @@
 import React from 'react';
-import {render} from 'react-dom';
-import {Link} from 'react-router';
+import {render,forceUpdate} from 'react-dom';
+import {Link,browserHistory} from 'react-router';
 import Stores from '../../../stores/stores'
 import {HeaderPage} from '../src/header-page'
 export class ParentsCorner extends React.Component{
-  constructor(){
+  constructor(props){
     super();
     this.state = {
-      parents : []
-    }
+      parents : [],
+      test: false
+    };
+    console.log(3,props)
   }
   componentWillMount(){
     this.getParentCorners(this);
   }
+  componentWillReceiveProps(nextProps){ //Function nay chay mỗi khi có thay đổi props
+  this.setState({key:nextProps.params.key>this.props.params.key})
+}
   getParentCorners(t){
     Stores.getAll('/parents', function(parents, status) {
       console.log(parents);
@@ -21,11 +26,12 @@ export class ParentsCorner extends React.Component{
       }
     });
   }
+
   render(){
     const childElements = this.state.parents.map(function(parent,id){
       return (
         <li key={id}>
-          <h3><Link to={`/goc-cha-me/${parent.key}`}>{parent.title}</Link></h3>
+          <h3><Link to={`/goc-cha-me/${parent.key}`} >{parent.title}</Link></h3>
           <small>{parent.date} <a href="#">Art,</a> <a href="#">Lifestyles</a></small>
         </li>
       );
