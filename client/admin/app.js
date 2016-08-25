@@ -31,7 +31,8 @@ import {ViewDermatoglyphic} from './js/components/admin-main/dermatoglyphic/view
 import {AddDermatoglyphic} from './js/components/admin-main/dermatoglyphic/add'
 import {EditDermatoglyphic} from './js/components/admin-main/dermatoglyphic/edit'
 import {ListDermatoglyphic} from './js/components/admin-main/dermatoglyphic/list'
-
+import {AdminProfile, EditAdminProfile, ViewAdminProfile} from './js/components/admin-main/profile/profile.js';
+import {DashBoard} from './js/components/admin-main/dashboard/dashboard'
 import SideBar from '../sharedComponent/sidebar/sidebar';
 
 import Stores from './js/stores/stores'
