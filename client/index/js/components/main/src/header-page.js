@@ -9,10 +9,8 @@ export class HeaderPage extends React.Component{
     const st = this.props.background;
     const bg = {'background': `url(${st})`};
     return(
-      <div className="breadcrumbs-v1" style={bg}>
-        <div className="container">
-
-        </div>
+      <div className="breadcrumbs-v1">
+        <img src={st} />
       </div>
     )
   }

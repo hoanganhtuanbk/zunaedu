@@ -19,35 +19,35 @@ export class Backgroud extends React.Component{
         <Slider {...settings}>
           <div className="carousel-content">
             <Link to="/van-tay-hoc" className="item active">
-              <img className="img-responsive" src="../index/img/bg-home/vantay.jpg" alt=""/>
+              <img className="img-responsive" src="../index/img/bg-components/sinh-trac-mini.jpg" alt="van-tay-hoc-viet-nam"/>
               <div className="carousel-caption">
               </div>
             </Link>
           </div>
           <div className="carousel-content">
             <Link to="/chuong-trinh" className="item">
-              <img className="img-responsive" src="../index/img/bg-home/chuongtrinh.jpg" alt=""/>
+              <img className="img-responsive" src="../index/img/bg-components/chuong-trinh-mini.jpg" alt="van-tay-hoc-viet-nam"/>
               <div className="carousel-caption">
               </div>
             </Link>
           </div>
           <div className="carousel-content">
             <Link to="/su-kien" className="item">
-              <img className="img-responsive" src="../index/img/bg-home/sukien.jpg" alt="" />
+              <img className="img-responsive" src="../index/img/bg-components/su-kien-mini.jpg" alt="van-tay-hoc-viet-nam" />
               <div className="carousel-caption">
               </div>
             </Link>
           </div>
           <div className="carousel-content">
             <Link to="/sach-giao-duc" className="item">
-              <img className="img-responsive" src="../index/img/bg-home/sach.jpg" alt="" />
+              <img className="img-responsive" src="../index/img/bg-components/sach-mini.jpg" alt="van-tay-hoc-viet-nam" />
               <div className="carousel-caption">
               </div>
             </Link>
           </div>
           <div className="carousel-content">
             <Link to="/goc-cha-me" className="item">
-              <img className="img-responsive" src="../index/img/bg-home/gocchame.jpg" alt="" />
+              <img className="img-responsive" src="../index/img/bg-components/goc-cha-me-mini.jpg" alt="van-tay-hoc-viet-nam" />
               <div className="carousel-caption">
               </div>
             </Link>

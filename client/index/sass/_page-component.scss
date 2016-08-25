@@ -2,39 +2,11 @@
   background-color: #f7f7f7 !important;
 }
 .breadcrumbs-v1 {
-  padding: 100px 0;
   position: relative;
-  background-size: cover;
   transition: all 0.8s ease-in-out;
-  margin-top: $gutter * 4;
-  height: 318px;
-  span{
-    font-size: 24px;
-    font-weight: 400;
-    margin-bottom: 5px;
-    display: inline-block;
-    color: #fff;
-    z-index: 1;
-    position: relative;
-  }
-
-  h1 {
-    color: #fff;
-    z-index: 1;
-    position: relative;
-    font-size: 50px;
-    margin-bottom: 0;
-    line-height: 55px;
-    text-transform: uppercase;
-  }
-  &:after {
-    top: 0;
-    left: 0;
+  margin-top: $gutter * 3;
+  img{
     width: 100%;
-    height: 100%;
-    content: " ";
-    position: absolute;
-    background: rgba(0,0,0,0.15);
   }
 }
 .content-sm {
@@ -314,7 +286,6 @@ blockquote
 @include responsive_320{
   .breadcrumbs-v1{
     background-size: cover!important;
-    padding: 40px 0;
     height: auto;
   }
   .content-sm {
@@ -330,7 +301,6 @@ blockquote
 @include responsive_375{
   .breadcrumbs-v1{
     background-size: cover!important;
-    padding: 65px 0;
     height: auto;
   }
   .content-sm {
