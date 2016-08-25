@@ -33,11 +33,7 @@ import {EditDermatoglyphic} from './js/components/admin-main/dermatoglyphic/edit
 import {ListDermatoglyphic} from './js/components/admin-main/dermatoglyphic/list'
 
 import SideBar from '../sharedComponent/sidebar/sidebar';
-import AdminNavbar from './js/components/admin-main/navbar/navbar.js';
 
-import {AdminProfile, EditAdminProfile, ViewAdminProfile} from './js/components/admin-main/profile/profile.js';
-
-import {DashBoard} from './js/components/admin-main/dashboard/dashboard'
 import Stores from './js/stores/stores'
 
 export class AdminCenter extends React.Component{

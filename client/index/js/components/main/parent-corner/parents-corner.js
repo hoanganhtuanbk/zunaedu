@@ -45,7 +45,7 @@ export class ParentsCorner extends React.Component{
               {this.props.children}
             </div>
             <div className="col-md-3">
-              <div className="headline-v2 bg-color-light"><h2>Trending</h2></div>
+              <div className="headline-v2 bg-color-light"><h2>Dòng thời gian</h2></div>
               <ul className="list-unstyled blog-trending margin-bottom-50">
                 {childElements}
               </ul>

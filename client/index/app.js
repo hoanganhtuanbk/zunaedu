@@ -8,7 +8,6 @@ import { HomePage } from './js/components/main/home/home';
 
 import { FingerPage } from './js/components/main/fingerprint/fingerprint';
 import { SubFingerPrint } from './js/components/main/fingerprint/sub-fingerprint';
-import { Feedback } from './js/components/main/fingerprint/feedback';
 
 import { Program } from './js/components/main/program/program'
 import { SubProgram } from './js/components/main/program/sub-program'
@@ -16,9 +15,11 @@ import { InitProgram } from './js/components/main/program/init-program'
 
 import { Event } from './js/components/main/event/event'
 import { SubEvent } from './js/components/main/event/sub-event'
+import { InitEvent } from './js/components/main/event/init-event'
 
 import { Book } from './js/components/main/book/book'
 import { SubBook } from './js/components/main/book/sub-book'
+import { InitBook } from './js/components/main/book/init-book'
 
 import {ParentsCorner} from './js/components/main/parent-corner/parents-corner'
 import {SubParent} from './js/components/main/parent-corner/sub-parent'
@@ -38,15 +39,15 @@ class Index extends React.Component {
   render () {
     const returnTop = function(){
       $('html, body').animate({ scrollTop: 0 }, 'slow');
-    }
+    };
     return (
-    	<div className="wrapper">
-      	<Header />
+      <div className="wrapper">
+        <Header />
         {this.props.children}
         <div id="topcontrol" className="returnTop" onClick={returnTop} title="Scroll Back to Top" ></div>
-      	<Footer />
-    	</div>
-    	)
+        <Footer />
+      </div>
+    )
   }
 }
 render(
@@ -56,16 +57,21 @@ render(
       <Route path="/van-tay-hoc" component={FingerPage}>
         <Route path="/van-tay-hoc/:key" component={SubFingerPrint}/>
       </Route>
+
       <Route path="/chuong-trinh" component={Program}>
         <IndexRoute component={InitProgram}/>
         <Route path="/chuong-trinh/:key" component={SubProgram}/>
       </Route>
 
-      <Route path="/su-kien" component={Event}/>
-      <Route path="/su-kien/:key" component={SubEvent}/>
+      <Route path="/su-kien" component={Event}>
+        <IndexRoute component={InitEvent}/>
+        <Route path="/su-kien/:key" component={SubEvent}/>
+      </Route>
 
-      <Route path="/sach-giao-duc" component = {Book} />
-      <Route path="/sach-giao-duc/:key" component = {SubBook} />
+      <Route path="/sach-giao-duc" component = {Book} >
+        <IndexRoute component={InitBook}/>
+        <Route path="/sach-giao-duc/:key" component = {SubBook} />
+      </Route>
 
       <Route path="/goc-cha-me" component = {ParentsCorner} >
         <IndexRoute component={InitParent}/>

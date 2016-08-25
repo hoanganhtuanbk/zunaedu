@@ -15,6 +15,9 @@ export class Header extends React.Component{
     this.setState({selected  : menu});
     if(menu =="van-tay-hoc"){
       this.setState({activeMenu: !this.state.activeMenu})
+    } else {
+      $(".navbar-collapse").toggleClass("in");
+      $('html, body').animate({ scrollTop: 0 }, 'slow');
     }
   }
 
@@ -45,7 +48,7 @@ export class Header extends React.Component{
             <div className="user-feature">
               <Link to="/login">Login</Link>
             </div>
-            <ul className="nav navbar-nav" >
+            <ul className="nav navbar-nav">
               <li className={this.isActive('')} onClick={this.setMenuActive.bind(this, '')}><Link className="route-page" to="/">Trang chủ</Link></li>
               <li className={this.isActive('van-tay-hoc')} onClick={this.setMenuActive.bind(this, 'van-tay-hoc')}><a className="route-page">Sinh trắc vân tay</a>
                 {this.state.activeMenu == true ? <div className="fingerprint_menu" onMouseLeave={this.handleClose.bind(this)}>

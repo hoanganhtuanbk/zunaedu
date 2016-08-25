@@ -91,7 +91,7 @@ class Menu extends React.Component{
           </Slider>
         </div>
 
-        <div className="headline-v2"><h2>Mục lục</h2></div>
+        <div className="headline-v2"><h2>Dòng thời gian</h2></div>
         <ul className="list-unstyled blog-trending margin-bottom-50">
           {DermatoglyphicsList}
           <li>
@@ -114,10 +114,10 @@ export class FingerPage extends React.Component{
         <div className="bg-color-light">
           <div className="container content-sm">
             <div className="row">
-              <Menu />
               <div>
                 {this.props.children}
               </div>
+              <Menu />
             </div>
           </div>
         </div>

@@ -1,90 +1,57 @@
 import React from 'react';
-import {render} from 'react-dom';
-import { Link, IndexLink } from 'react-router';
-import {HeaderPage} from '../src/header-page'
+import {render,forceUpdate} from 'react-dom';
+import {Link,browserHistory} from 'react-router';
 import Stores from '../../../stores/stores'
-
-class EventItem extends React.Component{
-  constructor(props){
-    super(props);
-  }
-  render(){
-    return(
-      <div className="timeline-panel">
-        <Link to={`/su-kien/${this.props.keyNote}`} className="timeline-heading">
-          <img className="img-responsive" src={this.props.url} alt={this.props.title} />
-        </Link>
-        <div className="timeline-body text-justify">
-          <h2 className="font-light"><Link to={`/su-kien/${this.props.keyNote}`}>{this.props.title}</Link></h2>
-          <p>{this.props.description}</p>
-          <Link to={`/su-kien/${this.props.keyNote}`} className="btn-u btn-u-sm">Read More</Link>
-        </div>
-        <div className="timeline-footer">
-          <ul className="list-unstyled list-inline blog-info">
-            <li><i className="fa fa-clock-o"></i> {this.props.date}</li>
-          </ul>
-        </div>
-      </div>
-    )
-  }
-}
+import {HeaderPage} from '../src/header-page'
 export class Event extends React.Component{
-  constructor(){
+  constructor(props){
     super();
     this.state = {
-      events : []
-    }
+      events : [],
+      test: false
+    };
   }
-
   componentWillMount(){
-    this._handelGetDatas(this)
+    this.getEventDatas(this);
+  }
+  componentWillReceiveProps(nextProps){ //Function nay chay mỗi khi có thay đổi props
+    this.setState({key:nextProps.params.key>this.props.params.key})
+  }
+  getEventDatas(t){
+    Stores.getAll('/events', function(events, status) {
+      console.log(events);
+      if (events) {
+        t.setState({events: events});
+      }
+    });
   }
 
-  _handelGetDatas(t){
-    Stores.getAll('/events',function(datas){
-      t.setState({events: datas})
-    })
-  }
   render(){
-    const EventList = this.state.events.map(function(event,index){
-      if(index % 2 == 1){
-        return(
-          <li key={event.id} className="item-event timeline-inverted">
-            <div className="timeline-badge primary"><i className="fa fa-dot-circle-o invert"></i></div>
-            <EventItem
-              index={index}
-              keyNote={event.key}
-              title = {event.title}
-              description = {event.description}
-              url = {event.url}
-              date = {event.date}
-            />
-          </li>
-        )
-      } else return(
-        <li key={event.id} className="item-event">
-          <div className="timeline-badge primary"><i className="fa fa-dot-circle-o"></i></div>
-          <EventItem
-            index={index}
-            keyNote={event.key}
-            title = {event.title}
-            description = {event.description}
-            url = {event.url}
-            date = {event.date}
-          />
+    const childElements = this.state.events.map(function(event,id){
+      return (
+        <li key={id}>
+          <h3><Link to={`/su-kien/${event.key}`} >{event.title}</Link></h3>
+          <small>{event.date} <a href="#">Art,</a> <a href="#">Lifestyles</a></small>
         </li>
-      )
+      );
     });
-    return(
-      <div>
+    return (
+      <div className="">
         <HeaderPage background={'../index/img/bg-components/su-kien-mini.jpg'} />
-        <div className="container content">
-          <ul className="timeline-v1">
-            {EventList}
-            <li className="clearfix"></li>
-          </ul>
+        <div className="container content-sm">
+          <div className="row">
+            <div className="col-md-9">
+              {this.props.children}
+            </div>
+            <div className="col-md-3">
+              <div className="headline-v2 bg-color-light"><h2>Dòng thời gian</h2></div>
+              <ul className="list-unstyled blog-trending margin-bottom-50">
+                {childElements}
+              </ul>
+            </div>
+          </div>
         </div>
       </div>
-    )
+    );
   }
 }
