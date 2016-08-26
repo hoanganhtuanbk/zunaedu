@@ -16,7 +16,7 @@
 
 .slick-slide { float: left; min-height: 1px; display: none; }
 [dir="rtl"] .slick-slide { float: right; }
-.slick-slide img { display: block;margin-left: auto; margin-right: auto; }
+.slick-slide img { display: block;margin-left: auto; margin-right: auto;width: 100% }
 .slick-slide.slick-loading img { display: none; }
 .slick-slide.dragging img { pointer-events: none; }
 .slick-initialized .slick-slide { display: block; }

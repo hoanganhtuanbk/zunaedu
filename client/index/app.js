@@ -41,7 +41,7 @@ class Index extends React.Component {
       $('html, body').animate({ scrollTop: 0 }, 'slow');
     };
     return (
-      <div className="wrapper">
+      <div className="wrapper ">
         <Header />
         {this.props.children}
         <div id="topcontrol" className="returnTop" onClick={returnTop} title="Scroll Back to Top" ></div>

@@ -99,8 +99,8 @@ export class SubFingerPrint extends React.Component{
               </div>
               </div>
               <div className="blog-post-quote bg-color-white margin-bottom-60">
-              <p>Look deep into nature, and then you will understand everything better.</p>
-              <span>- Albert Einstein</span>
+                <p>"Bạn không thể giúp người khác thành công, bạn chỉ có thể TẠO ĐIỀU KIỆN và KHÍCH LỆ để người MUỐN THÀNH CÔNG thành công. </p>
+                <small>C- John Maxwell</small>
               </div>
               </div>
               )

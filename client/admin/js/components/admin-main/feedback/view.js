@@ -1,23 +1,19 @@
 import React from 'react';
 import {render} from 'react-dom';
-import { Link, IndexLink } from 'react-router';
-import Actions from '../../../actions/actions.js'
 import Stores from '../../../stores/stores.js'
 import {PanelHeader} from '../../../../../sharedComponent/main/panel-header'
 
-export class ViewEvent extends React.Component{
+export class ViewFeedback extends React.Component{
   constructor() {
     super();
     this.state = {
-      event : {}
+      feedback : {}
     };
   }
   componentWillMount(){
-    Stores.findById('/events', this.props.params.id, function(event, status) {
-      this.setState({event: event});
-      console.log(event)
+    Stores.findById('/feedbacks', this.props.params.id, function(feedback, status) {
+      this.setState({feedback: feedback});
     }.bind(this));
-    console.log(this.state.event)
   }
 	render(){
 		return(
@@ -25,13 +21,13 @@ export class ViewEvent extends React.Component{
         <div className="fleet-feature">
           <PanelHeader
             navigateBack = "true"
-            linkEdit={`/admin/event/${this.props.params.id}/edit`}
+            linkEdit={`/admin/feedback/${this.props.params.id}/edit`}
             />
         </div>
         <div className="panel-body">
-          <img src={this.state.event.url} />
-          <h3> {this.state.event.title}</h3>
-          <div dangerouslySetInnerHTML={{ __html: this.state.event.content }} ></div>
+          <img src={this.state.feedback.url} />
+          <h3> {this.state.feedback.title}</h3>
+          <div dangerouslySetInnerHTML={{ __html: this.state.feedback.content }} ></div>
         </div>
       </div>
     )

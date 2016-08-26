@@ -13,7 +13,7 @@ import {
   convertToRaw
 } from 'draft-js';
 import ImageComponent from '../src/components/ImageComponent';
-export class EditEvent extends React.Component{
+export class EditFeedback extends React.Component{
   constructor() {
     super();
     this.state = {
@@ -48,11 +48,11 @@ export class EditEvent extends React.Component{
   }
   findById(t) {
     var id = window.location.pathname.split('/')[3];
-    Stores.findById('/events', this.props.params.id, function(event, status) {
-      const jsObject = JSON.parse(event.content);
+    Stores.findById('/feedbacks', this.props.params.id, function(feedback, status) {
+      const jsObject = JSON.parse(feedback.content);
       const contentState = convertFromRaw(jsObject);
       const editorState = EditorState.createWithContent(contentState);
-      t.setState({title: event.title, editorState: editorState,content: event.content,description: event.description, url: event.url});
+      t.setState({title: feedback.title, editorState: editorState,content: feedback.content,description: feedback.description, url: feedback.url});
     })
   }
   save(e) {
@@ -66,7 +66,7 @@ export class EditEvent extends React.Component{
     if(this.state.file){
       data.url= `/api/containers/files/download/${this.state.file.name}`
     }
-    Actions.update('/events', this.props.params.id, data, function(result, status) {
+    Actions.update('/feedbacks', this.props.params.id, data, function(result, status) {
       if(status = 'success'){browserHistory.goBack()}else alert(status)
     })
   }

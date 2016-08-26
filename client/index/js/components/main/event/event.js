@@ -36,7 +36,7 @@ export class Event extends React.Component{
       );
     });
     return (
-      <div className="">
+      <div className="bg-color-light">
         <HeaderPage background={'../index/img/bg-components/su-kien-mini.jpg'} />
         <div className="container content-sm">
           <div className="row">

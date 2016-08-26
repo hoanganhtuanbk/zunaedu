@@ -7,7 +7,7 @@ import Actions from '../../../actions/actions.js'
 import Stores from '../../../stores/stores.js'
 import RichEditor from '../src'
 
-export class AddEvent extends React.Component{
+export class AddFeedback extends React.Component{
   constructor(props){
     super();
     this.state = {
@@ -18,7 +18,7 @@ export class AddEvent extends React.Component{
       author: '',
       date: ''
     };
-    this.handleCreateEvent = this._handleCreateEvent.bind(this);
+    this.handleCreateFeedback = this._handleCreateFeedback.bind(this);
     this.onChangeContent = this.onChangeContent.bind(this);
 
   }
@@ -27,7 +27,7 @@ export class AddEvent extends React.Component{
       this.setState({content: content})
     }
   }
-  _handleCreateEvent(e){
+  _handleCreateFeedback(e){
     const dateNow = new Date();
     const apps = {
       title: this.state.title,
@@ -41,7 +41,7 @@ export class AddEvent extends React.Component{
     Actions.upload('/containers/files/upload',data,function(data, stt){
       console.log(data, stt)
     });
-    Actions.create('/events', apps, function(data){
+    Actions.create('/feedbacks', apps, function(data){
       console.log(data);
       browserHistory.goBack();
     })
@@ -110,7 +110,7 @@ export class AddEvent extends React.Component{
               <button type="button" className="btn btn-default  btn-form-left" onClick = {(e)=>{browserHistory.goBack()}}>
                 Cancel
               </button>
-              <button type="button" className="btn btn-primary btn-success btn-form-right" onClick={this.handleCreateEvent} >Save</button>
+              <button type="button" className="btn btn-primary btn-success btn-form-right" onClick={this.handleCreateFeedback} >Save</button>
             </div>
       </div>
 

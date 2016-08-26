@@ -26,6 +26,12 @@ import {AddParent} from './js/components/admin-main/parent/add'
 import {EditParent} from './js/components/admin-main/parent/edit'
 import {ListParent} from './js/components/admin-main/parent/list'
 
+import {FeedbackManagement} from './js/components/admin-main/feedback/feedback'
+import {ViewFeedback} from './js/components/admin-main/feedback/view'
+import {AddFeedback} from './js/components/admin-main/feedback/add'
+import {EditFeedback} from './js/components/admin-main/feedback/edit'
+import {ListFeedback} from './js/components/admin-main/feedback/list'
+
 import {Dermatoglyphics} from './js/components/admin-main/dermatoglyphic/dermatoglyphic'
 import {ViewDermatoglyphic} from './js/components/admin-main/dermatoglyphic/view'
 import {AddDermatoglyphic} from './js/components/admin-main/dermatoglyphic/add'
@@ -88,6 +94,11 @@ export class AdminCenter extends React.Component{
         link: '/admin/parent'
       },
       {
+        name: 'Feedback',
+        icon: 'fa fa-forumbee',
+        link: '/admin/feedback'
+      },
+      {
         name: 'Profile',
         icon: 'fa fa-user',
         link: '/admin/profile'
@@ -135,12 +146,21 @@ render(
         <Route path="/admin/book/:id/edit" component={EditBook}/>
         <Route path="/admin/book/:id" component={ViewBook} />
       </Route>
+
       <Route path="/admin/parent" component={ParentManagement} >
         <IndexRoute component={ListParent} />
         <Route path="/admin/parent/add" component={AddParent} />
         <Route path="/admin/parent/:id/edit" component={EditParent}/>
         <Route path="/admin/parent/:id" component={ViewParent} />
       </Route>
+
+      <Route path="/admin/feedback" component={FeedbackManagement} >
+        <IndexRoute component={ListFeedback} />
+        <Route path="/admin/feedback/add" component={AddFeedback} />
+        <Route path="/admin/feedback/:id/edit" component={EditFeedback}/>
+        <Route path="/admin/feedback/:id" component={ViewFeedback} />
+      </Route>
+
       <Route path="/admin/dermatoglyphic" component={Dermatoglyphics} >
       <IndexRoute component={ListDermatoglyphic} />
       <Route path="/admin/dermatoglyphic/add" component={AddDermatoglyphic} />

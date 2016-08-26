@@ -5,10 +5,10 @@ import Actions from '../../../actions/actions.js'
 import Stores from '../../../stores/stores.js'
 import {PanelHeader} from '../../../../../sharedComponent/main/panel-header'
 
-class EventsView extends React.Component{
-  deleteEvent(t){
+class FeedbacksView extends React.Component{
+  deleteFeedback(t){
     console.log(t);
-    Actions.deleteById('/events', t.props.id, function(resutl){
+    Actions.deleteById('/feedbacks', t.props.id, function(resutl){
     })
   }
   render() {
@@ -18,13 +18,13 @@ class EventsView extends React.Component{
         <td >{this.props.title}</td>
         <td>
           <span className="btn-group">
-            <Link className="btn btn-xs btn-default" to={`/admin/event/${this.props.id}`}>
+            <Link className="btn btn-xs btn-default" to={`/admin/feedback/${this.props.id}`}>
               <i className="fa fa-eye"></i>
             </Link>
-            <Link to={`/admin/event/${this.props.id}/edit`} className="btn btn-xs btn-default" >
+            <Link to={`/admin/feedback/${this.props.id}/edit`} className="btn btn-xs btn-default" >
               <i className="fa fa-pencil"></i>
             </Link>
-            <a className="btn btn-xs btn-default" onClick={this.deleteEvent.bind(this.props.id,this)} >
+            <a className="btn btn-xs btn-default" onClick={this.deleteFeedback.bind(this.props.id,this)} >
               <i className="fa fa-times"></i>
             </a>
           </span>
@@ -34,11 +34,11 @@ class EventsView extends React.Component{
   }
 }
 
-export class ListEvent extends React.Component{
+export class ListFeedback extends React.Component{
   constructor() {
     super();
     this.state = {
-      events: []
+      feedbacks: []
     };
     this.onChange = this.onChange.bind(this);
   }
@@ -46,27 +46,27 @@ export class ListEvent extends React.Component{
     this.getAll(this);
   }
   componentDidMount(){
-    Stores.addChangeListener('events', this.onChange);
+    Stores.addChangeListener('feedbacks', this.onChange);
   }
   componentWillUnmount(){
-    Stores.removeChangeListener('events', this.onChange)
+    Stores.removeChangeListener('feedbacks', this.onChange)
   }
   onChange(){
     this.getAll(this);
   }
   getAll(t) {
-    Stores.getAll('/events', function(events, status) {
-      console.log(events);
-      if (events) {
-        t.setState({events: events})
+    Stores.getAll('/feedbacks', function(feedbacks, status) {
+      console.log(feedbacks);
+      if (feedbacks) {
+        t.setState({feedbacks: feedbacks})
       }
     });
   }
 
   render(){
 
-    const events = this.state.events.map(function(item, id) {
-      return (<EventsView
+    const feedbacks = this.state.feedbacks.map(function(item, id) {
+      return (<FeedbacksView
         key={id}
         id={item.id}
         title={item.title}
@@ -75,8 +75,8 @@ export class ListEvent extends React.Component{
     return(
       <div className="panel">
       <PanelHeader
-              name = "Events"
-              link = "/admin/event/add"
+              name = "Feedbacks"
+              link = "/admin/feedback/add"
         />
 
         <div className="table-responsive">
@@ -89,7 +89,7 @@ export class ListEvent extends React.Component{
             </tr>
             </thead>
             <tbody>
-              {events}
+              {feedbacks}
             </tbody>
           </table>
         </div>
