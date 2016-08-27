@@ -80,7 +80,7 @@ export class SubFingerPrint extends React.Component{
       )
     } else return(
       <div className="col-md-8">
-        <div className="news-v3 bg-color-white margin-bottom-60">
+        <div className="news-v3 bg-content-detail margin-bottom-60">
           <div className="bg-article">
           <img className="img-responsive" src={this.state.concept.url} alt={this.state.concept.title} />
             </div>
@@ -98,7 +98,7 @@ export class SubFingerPrint extends React.Component{
 
               </div>
               </div>
-              <div className="blog-post-quote bg-color-white margin-bottom-60">
+              <div className="blog-post-quote bg-content-detail margin-bottom-60">
                 <p>"Bạn không thể giúp người khác thành công, bạn chỉ có thể TẠO ĐIỀU KIỆN và KHÍCH LỆ để người MUỐN THÀNH CÔNG thành công. </p>
                 <small>C- John Maxwell</small>
               </div>

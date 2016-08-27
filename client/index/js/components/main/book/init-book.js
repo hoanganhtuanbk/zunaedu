@@ -26,16 +26,6 @@ class BookItem extends React.Component{
             </h2>
             <p>{this.props.description}</p>
             <Link to={`/goc-cha-me/${this.props.keyNote}`} className="read-more">Xem chi tiết</Link>
-            <ul className="post-shares">
-              <li>
-                <a href="#">
-                  <i className="rounded-x icon-speech"></i>
-                  <span>5</span>
-                </a>
-              </li>
-              <li><a href="#"><i className="rounded-x icon-share"></i></a></li>
-              <li><a href="#"><i className="rounded-x icon-heart"></i></a></li>
-            </ul>
           </div>
         </div>
       </div>
