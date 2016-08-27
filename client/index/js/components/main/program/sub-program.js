@@ -71,7 +71,7 @@ export class SubProgram extends React.Component{
       this.setState({editorActive : !this.state.editorActive})
     }.bind(this);
     return (
-      <div className="news-v3 bg-color-white margin-bottom-30">
+      <div className="news-v3 bg-content-detail margin-bottom-30">
         <div className="bg-article">
           <img className="img-responsive" src={this.state.program.url} alt={this.state.program.title}/>
         </div>

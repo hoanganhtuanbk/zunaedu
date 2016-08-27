@@ -67,7 +67,7 @@ export class SubEvent extends React.Component{
   }
   render(){
     return (
-      <div className="news-v3 bg-color-white margin-bottom-30">
+      <div className="news-v3 bg-content-detail margin-bottom-30">
         <div className="bg-article">
           <img className="img-responsive" src={this.state.event.url} alt={this.state.event.title}/>
         </div>

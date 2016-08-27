@@ -168,7 +168,16 @@ div{
   text-decoration: none;
 }
 .bg-color-white {
-  background-color: #fff !important;
+  background-color: #f7f7f7 !important;
+}
+.bg-trending{
+  background: white;
+}
+.bg-content-detail{
+  background: white;
+  .news-v3-in{
+    padding: 15px;
+  }
 }
 .btn-u-sm, a.btn-u-sm {
   padding: 3px 12px;
@@ -241,5 +250,15 @@ div{
       color: #72c02c;
       text-decoration: none;
     }
+  }
+}
+.feature-item{
+  background: #fff;
+  .feature-image{
+    padding-top: 15px;
+  }
+  .content-program{
+    padding-top: 15px;
+    padding-bottom: 15px;
   }
 }

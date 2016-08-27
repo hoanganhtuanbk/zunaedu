@@ -6,15 +6,15 @@ import Stores from '../../../stores/stores'
 class EventItem extends React.Component{
   render(){
     return(
-      <div className="row margin-bottom-20">
-        <div className="col-sm-5 sm-margin-bottom-20">
+      <div className="row margin-bottom-20 feature-item">
+        <div className="col-sm-5 sm-margin-bottom-20 feature-image">
           <Link to={`/goc-cha-me/${this.props.keyNote}`} >
             <img className="img-responsive" src={this.props.url} />
           </Link>
         </div>
 
         <div className="col-sm-7 news-v3">
-          <div className="news-v3-in-sm no-padding content-program">
+          <div className="news-v3-in no-padding content-program">
             <ul className="list-inline posted-info">
               <li>By Admin</li>
               <li>Posted {this.props.date}</li>

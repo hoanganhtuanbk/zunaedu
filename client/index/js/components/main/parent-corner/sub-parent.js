@@ -67,7 +67,7 @@ export class SubParent extends React.Component{
   }
   render(){
     return (
-      <div className="news-v3 bg-color-white margin-bottom-30">
+      <div className="news-v3 bg-content-detail margin-bottom-30">
         <div className="bg-article">
           <img className="img-responsive" src={this.state.parent.url} alt={this.state.parent.title}/>
         </div>
