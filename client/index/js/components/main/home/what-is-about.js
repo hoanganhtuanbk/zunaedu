@@ -2,19 +2,84 @@ import React from 'react';
 import {render} from 'react-dom';
 import Slider from 'react-slick'
 import { Link, browserHistory } from 'react-router';
+import Stores from '../../../stores/stores'
 
+
+class LeftNavButton extends React.Component {
+  render() {
+    return  <a onClick={this.props.onClick} className="left slick-control">
+      <i className="fa fa-angle-left"></i>
+    </a>
+  }
+}
+class RightNavButton extends React.Component {
+  render() {
+    return <a onClick={this.props.onClick} className="right slick-control">
+      <i className="fa fa-angle-right"></i>
+    </a>
+  }
+}
 export class WhatItAbout extends React.Component{
+  constructor(){
+    super();
+    this.state = {
+      events : []
+    }
+  }
+
+  componentWillMount(){
+    this.getEventDatas(this)
+  }
+
+  getEventDatas(t){
+    Stores.find('/events',{
+      order: 'id DESC',
+      limit: 3 },function(datas){
+        console.log(datas);
+      t.setState({events: datas})
+    })
+  }
+
   render(){
     var settings = {
       dots: false,
-      speed: 3000,
+      speed: 1000,
       autoplay: true,
-      lazyLoad: true,
+      fade: true,
+      infinite: true,
       slidesToShow: 1,
       slidesToScroll: 1,
-      arrows: false,
       pauseOnHover: true
     };
+    const childEvents = this.state.events.map(function(event,index){
+      return(
+        <Link to={`/su-kien/${event.key}`} key={index} className="upcoming-event">
+          <div className="stm-event__body">
+            <div className="stm-event__left">
+              <div className="stm-event__date">
+                <div className="stm-event__date-day">{event.date}</div>
+                <div className="stm-event__date-month">{event.month}</div>
+              </div>
+            </div>
+            <div className="stm-event__content">
+              <div className="stm-event__meta">
+                <ul>
+                  <li>
+											<span className="stm-event__time"><i className="fa fa-clock-o"></i>
+                        {event.time}										</span>
+                  </li>
+                  <li><span className="stm-event__venue"><i className="fa fa-map-marker"></i>{event.address}</span></li>
+                </ul>
+              </div>
+              <h5 className="stm-event__title">{event.title}</h5>
+            </div>
+          </div>
+
+          <img src={event.url} />
+        </Link>
+
+      )
+    })
     return(
       <section className="section-2">
         <div className="container">
@@ -48,81 +113,10 @@ export class WhatItAbout extends React.Component{
               </blockquote>
             </div>
 
-            <div className="col-md-4">
+            <div className="col-md-4 slide-event">
               <div className="headline"><h2>Upcoming Event</h2></div>
-              <Slider {...settings}>
-                <div className="upcoming-event">
-                  <div className="stm-event__body">
-                    <div className="stm-event__left">
-                      <div className="stm-event__date">
-                        <div className="stm-event__date-day">15</div>
-                        <div className="stm-event__date-month">April</div>
-                      </div>
-                    </div>
-                    <div className="stm-event__content">
-                      <div className="stm-event__meta">
-                        <ul>
-                          <li>
-											<span className="stm-event__time"><i className="fa fa-clock-o"></i>
-											4:30 pm											</span>
-                          </li>
-                          <li><span className="stm-event__venue"><i className="fa fa-map-marker"></i>Napoli, Pizarro 41/22</span></li>
-                        </ul>
-                      </div>
-                      <h5 className="stm-event__title">Henry Cluster Council</h5>
-                    </div>
-                  </div>
-
-                  <img src="../index/img/info/img4.jpg" />
-                </div>
-                <div className="upcoming-event">
-                  <div className="stm-event__body">
-                    <div className="stm-event__left">
-                      <div className="stm-event__date">
-                        <div className="stm-event__date-day">15</div>
-                        <div className="stm-event__date-month">April</div>
-                      </div>
-                    </div>
-                    <div className="stm-event__content">
-                      <div className="stm-event__meta">
-                        <ul>
-                          <li>
-											<span className="stm-event__time"><i className="fa fa-clock-o"></i>
-											4:30 pm											</span>
-                          </li>
-                          <li><span className="stm-event__venue"><i className="fa fa-map-marker"></i>Napoli, Pizarro 41/22</span></li>
-                        </ul>
-                      </div>
-                      <h5 className="stm-event__title">Henry Cluster Council</h5>
-                    </div>
-                  </div>
-
-                  <img src="../index/img/info/img4.jpg" />
-                </div>
-                <div className="upcoming-event">
-                  <div className="stm-event__body">
-                    <div className="stm-event__left">
-                      <div className="stm-event__date">
-                        <div className="stm-event__date-day">15</div>
-                        <div className="stm-event__date-month">April</div>
-                      </div>
-                    </div>
-                    <div className="stm-event__content">
-                      <div className="stm-event__meta">
-                        <ul>
-                          <li>
-											<span className="stm-event__time"><i className="fa fa-clock-o"></i>
-											4:30 pm											</span>
-                          </li>
-                          <li><span className="stm-event__venue"><i className="fa fa-map-marker"></i>Napoli, Pizarro 41/22</span></li>
-                        </ul>
-                      </div>
-                      <h5 className="stm-event__title">Henry Cluster Council</h5>
-                    </div>
-                  </div>
-
-                  <img src="../index/img/info/img4.jpg" />
-                </div>
+              <Slider {...settings} prevArrow={ <LeftNavButton /> } nextArrow={<RightNavButton />}>
+                {childEvents}
               </Slider>
             </div>
           </div>

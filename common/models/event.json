@@ -18,6 +18,15 @@
     "date": {
       "type": "string"
     },
+    "month": {
+      "type": "string"
+    },
+    "time": {
+      "type": "string"
+    },
+    "address": {
+      "type": "string"
+    },
     "author": {
       "type": "string"
     },

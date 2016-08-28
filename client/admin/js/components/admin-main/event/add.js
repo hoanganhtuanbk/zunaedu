@@ -16,7 +16,11 @@ export class AddEvent extends React.Component{
       content: '',
       url: '',
       author: '',
-      date: ''
+      dateCreate: '',
+      date: '',
+      time: '',
+      month: '',
+      address: ''
     };
     this.handleCreateEvent = this._handleCreateEvent.bind(this);
     this.onChangeContent = this.onChangeContent.bind(this);
@@ -31,11 +35,15 @@ export class AddEvent extends React.Component{
     const dateNow = new Date();
     const apps = {
       title: this.state.title,
+      time: this.state.time,
+      date: this.state.date,
+      month: this.state.month,
+      address: this.state.address,
       key: this._changeToSlug(this.state.title),
       description: this.state.description,
       content: this.state.content,
       url: `/api/containers/files/download/${this.state.file.name}`,
-      date: dateNow.toDateString()
+      dateCreate: dateNow.toDateString()
     };
     const data = new FormData();
     data.append('file', this.state.file);
@@ -118,6 +126,22 @@ export class AddEvent extends React.Component{
                   </div>
                 </div>
                 <div className="col-md-6">
+                  <div className="col-md-4">
+                    <label>Time</label>
+                    <input type="text" className="form-control "  onChange={(e) =>{this.setState({time : e.target.value})}} />
+                  </div>
+                  <div className="col-md-4">
+                    <label>Date</label>
+                    <input type="text" className="form-control "  onChange={(e) =>{this.setState({date : e.target.value})}} />
+                  </div>
+                  <div className="col-md-4">
+                    <label>Month</label>
+                    <input type="text" className="form-control "  onChange={(e) =>{this.setState({month : e.target.value})}} />
+                  </div>
+                  <div className="col-md-12">
+                    <label>Address</label>
+                    <input type="text" className="form-control "  onChange={(e) =>{this.setState({address : e.target.value})}} />
+                  </div>
                   <div className="col-md-12">
                     <label>Url image</label>
                     <input type="file" className="form-control "  onChange={(e)=>this._handleImageChange(e)} />

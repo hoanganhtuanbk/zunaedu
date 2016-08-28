@@ -52,7 +52,17 @@ export class EditEvent extends React.Component{
       const jsObject = JSON.parse(event.content);
       const contentState = convertFromRaw(jsObject);
       const editorState = EditorState.createWithContent(contentState);
-      t.setState({title: event.title, editorState: editorState,content: event.content,description: event.description, url: event.url});
+      t.setState({
+        title: event.title,
+        editorState: editorState,
+        content: event.content,
+        description: event.description,
+        url: event.url,
+        time: event.time,
+        date: event.date,
+        month: event.month,
+        address: event.address
+      });
     })
   }
   save(e) {
@@ -61,7 +71,11 @@ export class EditEvent extends React.Component{
       title : this.state.title,
       content: this.state.content,
       key: this._changeToSlug(this.state.title),
-      description: this.state.description
+      description: this.state.description,
+      time: this.state.time,
+      date: this.state.date,
+      month: this.state.month,
+      address: this.state.address,
     };
     if(this.state.file){
       data.url= `/api/containers/files/download/${this.state.file.name}`
@@ -139,9 +153,25 @@ export class EditEvent extends React.Component{
               </div>
             </div>
             <div className="col-md-6">
+              <div className="col-md-4">
+                <label>Time</label>
+                <input type="text" className="form-control "  value={this.state.time} onChange={(e) =>{this.setState({time : e.target.value})}} />
+              </div>
+              <div className="col-md-4">
+                <label>Date</label>
+                <input type="text" className="form-control " value={this.state.date} onChange={(e) =>{this.setState({date : e.target.value})}} />
+              </div>
+              <div className="col-md-4">
+                <label>Month</label>
+                <input type="text" className="form-control " value={this.state.month} onChange={(e) =>{this.setState({month : e.target.value})}} />
+              </div>
+              <div className="col-md-12">
+                <label>Address</label>
+                <input type="text" className="form-control " value={this.state.address} onChange={(e) =>{this.setState({address : e.target.value})}} />
+              </div>
               <div className="col-md-12">
                 <label>Url image</label>
-                <input type="file" className="form-control "  onChange={(e)=>this._handleImageChange(e)} />
+                <input type="file" className="form-control " onChange={(e)=>this._handleImageChange(e)} />
               </div>
               <div className="col-md-12 previewImage" >
                 {$imagePreview == null ? <img src={this.state.url} /> : <div>{$imagePreview} </div>}

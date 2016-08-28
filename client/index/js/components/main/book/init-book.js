@@ -2,33 +2,23 @@ import React from 'react';
 import {render} from 'react-dom';
 import { Link, IndexLink } from 'react-router';
 import Stores from '../../../stores/stores'
+import Masonry from 'react-masonry-component'
 
 class BookItem extends React.Component{
   render(){
     return(
-      <div className="row margin-bottom-20 feature-item">
-        <div className="col-sm-5 sm-margin-bottom-20 feature-image">
-          <Link to={`/goc-cha-me/${this.props.keyNote}`} >
-            <img className="img-responsive" src={this.props.url} />
-          </Link>
-        </div>
-
-        <div className="col-sm-7 news-v3">
-          <div className="news-v3-in no-padding content-program">
-            <ul className="list-inline posted-info">
-              <li>By Admin</li>
-              <li>Posted {this.props.date}</li>
-            </ul>
-            <h2>
-              <Link to={`/goc-cha-me/${this.props.keyNote}`} >
-                {this.props.title}
-              </Link>
-            </h2>
-            <p>{this.props.description}</p>
-            <Link to={`/goc-cha-me/${this.props.keyNote}`} className="read-more">Xem chi tiết</Link>
+          <div className="thumbnails thumbnail-style thumbnail-kenburn">
+            <div className="thumbnail-img">
+              <div className="overflow-hidden">
+                <img className="img-responsive" src={this.props.url} alt="" />
+              </div>
+              <Link className="btn-more hover-effect" to={`/sach-giao-duc/${this.props.keyNote}`}>Xem thêm +</Link>
+            </div>
+            <div className="caption">
+              <h3><Link className="hover-effect" to={`/sach-giao-duc/${this.props.keyNote}`}>{this.props.title}</Link></h3>
+              <p>{this.props.description}</p>
+            </div>
           </div>
-        </div>
-      </div>
     )
   }
 }
@@ -52,7 +42,7 @@ export class InitBook extends React.Component{
   render(){
    const BookList = this.state.books.map(function(book,index){
      return(
-       <div key={index}>
+       <div className="col-md-3 col-sm-6" key={index}>
          <BookItem
            keyNote={book.key}
            title={book.title}
@@ -65,8 +55,8 @@ export class InitBook extends React.Component{
        )
    });
     return (
-      <div>
-        {BookList}
+      <div className="feature-new row margin-bottom-20">
+      {BookList}
       </div>
     );
   }
