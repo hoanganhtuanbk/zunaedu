@@ -65,7 +65,10 @@ export class Purchase extends React.Component{
           <div className="row">
             <div className="col-md-9 animated fadeInLeft">
               <span>Zuna là đơn vị hàng đầu trong lĩnh vực Đào tạo - Phát triển con người .</span>
-              <p>Với phương châm hoạt động “Hãy là người tiên phong” mục tiêu của chúng tôi là khai sáng, hỗ trợ, phát triển tiềm năng của trẻ nhỏ, bằng các chương trình đào tạo đặc biệt, các phương pháp kiểm tra khoa học mang tính ứng dụng thực tiễn cao.</p>
+              <p>Trở thành một tổ chức hàng đầu Việt Nam trong lĩnh vực Đào tạo kỹ năng - Phát triển tiềm năng con người -
+                Tư vấn định hướng giáo dục, nghề nghiệp. Với phương châm hoạt động “Hãy là người cho đi trước” chúng tôi đặt mục tiêu giúp đỡ,
+                hỗ trợ, phát triển năng lực nội tại của mỗi trẻ em trên toàn Việt Nam bằng các chương trình đào tạo đặc biệt, các phương pháp
+                 kiểm tra khoa học mang tính ứng dụng thực tiễn cao.</p>
             </div>
             <div className="col-md-3 btn-buy animated fadeInRight">
               <a href="#" className="btn-u btn-u-lg"><i className="fa fa-graduation-cap"></i> Tham gia ngay</a>

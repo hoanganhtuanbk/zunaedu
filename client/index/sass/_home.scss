@@ -554,7 +554,9 @@
     &.margin-bottom-20{
       margin-bottom: 20px;
     }
-
+    .new-item{
+      height: 300px;
+    }
 
     .thumbnail-style {
       padding: 7px;
@@ -621,9 +623,4 @@
     }
   }
 
-}
-.my-gallery-class{
-  .new-item{
-    height: 300px;
-  }
 }

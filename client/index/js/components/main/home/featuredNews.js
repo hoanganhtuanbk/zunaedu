@@ -101,14 +101,7 @@ export class FeaturedNews extends React.Component {
           <Link to="/home" className="title-text"><h2>Thông tin mới nhất</h2></Link>
         </div>
         <div className="feature-new row margin-bottom-20">
-          <Masonry
-            className={'my-gallery-class'} // default ''
-            options={masonryOptions} // default {}
-            disableImagesLoaded={false} // default false
-            updateOnEachImageLoad={false} // default false and works only if disableImagesLoaded is false
-          >
             {realNews}
-          </Masonry>
         </div>
       </div>
     </section>
