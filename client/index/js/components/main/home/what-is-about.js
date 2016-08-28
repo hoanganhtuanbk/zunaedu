@@ -35,7 +35,6 @@ export class WhatItAbout extends React.Component{
     Stores.find('/events',{
       order: 'id DESC',
       limit: 3 },function(datas){
-        console.log(datas);
       t.setState({events: datas})
     })
   }

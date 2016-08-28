@@ -14,8 +14,7 @@ export class InitProgram extends React.Component{
     this.getPrograms(this);
   }
   getPrograms(t){
-    Stores.find('/programs',{limit: 5}, function(programs){
-      console.log(programs);
+    Stores.find('/programs',{order: 'id DESC'}, function(programs){
       t.setState({programs: programs})
     })
   }

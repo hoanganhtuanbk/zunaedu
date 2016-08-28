@@ -21,7 +21,7 @@ export class WhatPeopleSay extends React.Component{
     return (
       <section className="section-4">
         <div className="container">
-          <div className="headline"><h2>Cảm nhận khách hàng</h2></div>
+          <div className="headline"><h2></h2></div>
           <div className="row">
             <Slider {...settings}>
               <div className="feedback">

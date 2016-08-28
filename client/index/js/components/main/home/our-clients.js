@@ -18,7 +18,7 @@ export class OurClients extends React.Component{
     return (
       <section className="section-5">
         <div className="container our-clients">
-          <div className="headline"><h2>Our Clients</h2></div>
+          <div className="headline"><h2>Đối tác</h2></div>
           <Slider {...settings}>
             <div >
               <img src="../index/img/ourClients/1.png" />

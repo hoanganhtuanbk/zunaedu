@@ -18,8 +18,7 @@ export class Event extends React.Component{
     this.setState({key:nextProps.params.key>this.props.params.key})
   }
   getEventDatas(t){
-    Stores.getAll('/events', function(events, status) {
-      console.log(events);
+    Stores.find('/events',{order: 'id DESC'}, function(events, status) {
       if (events) {
         t.setState({events: events});
       }

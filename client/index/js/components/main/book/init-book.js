@@ -33,7 +33,7 @@ export class InitBook extends React.Component{
     this.getBooks(this);
   }
   getBooks(t){
-    Stores.find('/books',{limit: 5}, function(books){
+    Stores.find('/books',{order: 'id DESC'}, function(books){
       console.log(books);
       t.setState({books: books})
     })

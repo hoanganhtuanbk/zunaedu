@@ -14,8 +14,7 @@ export class InitParent extends React.Component{
     this.getParents(this);
   }
   getParents(t){
-    Stores.find('/parents',{limit: 5}, function(parents){
-      console.log(parents);
+    Stores.find('/parents',{order: 'id DESC'}, function(parents){
       t.setState({parents: parents})
     })
   }

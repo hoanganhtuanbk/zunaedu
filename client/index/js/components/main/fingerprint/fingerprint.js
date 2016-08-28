@@ -41,7 +41,7 @@ class Menu extends React.Component{
     this._handelGetDatas(this)
   }
   _handelGetDatas(t){
-    Stores.getAll('/dermatoglyphics', function(datas){
+    Stores.find('/dermatoglyphics',{order: 'id DESC'}, function(datas){
       t.setState({dermatoglyphics: datas})
     })
   }

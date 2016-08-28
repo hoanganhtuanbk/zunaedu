@@ -43,8 +43,7 @@ export class InitEvent extends React.Component{
     this.getEvents(this);
   }
   getEvents(t){
-    Stores.find('/events',{limit: 5}, function(events){
-      console.log(events);
+    Stores.find('/events',{order:'id DESC'}, function(events){
       t.setState({events: events})
     })
   }

@@ -37,19 +37,18 @@ export class SubBook extends React.Component{
 
   }
   componentWillReceiveProps(nextProps){ //Function nay chay mỗi khi có thay đổi props
-    console.log(nextProps.params.key)
     this.getBookDetailPlus(this,nextProps.params.key)
   }
   getBookDetailPlus(t,key){
     Stores.find('/books', {
       where:{
         key: key
-      }
+      },
+      order: 'id DESC'
     }, function(book){
       const jsObject = JSON.parse(book[0].content);
       const contentState = convertFromRaw(jsObject);
       const editorState = EditorState.createWithContent(contentState);
-      console.log(book[0])
       t.setState({book: book[0],editorState:editorState})
     })
   }
@@ -62,13 +61,11 @@ export class SubBook extends React.Component{
       const jsObject = JSON.parse(book[0].content);
       const contentState = convertFromRaw(jsObject);
       const editorState = EditorState.createWithContent(contentState);
-      console.log(book[0])
       t.setState({book: book[0],editorState:editorState})
     })
   }
   getBookDatas(t){
-    Stores.getAll('/books', function(books, status) {
-      console.log(books);
+    Stores.find('/books',{order: 'id DESC'}, function(books, status) {
       if (books) {
         t.setState({books: books});
       }

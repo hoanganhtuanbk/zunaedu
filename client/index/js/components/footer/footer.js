@@ -14,11 +14,10 @@ export class Footer extends React.Component{
             <div className="container">
               <div className="row">
                 <div className="col-md-3 md-margin-bottom-40">
-                  <a href="index.html">Zuna Edu</a>
+                  <a href="index.html"> Công ty TNHH Đầu Tư Phát Triển Giáo Dục ZuNa</a>
                   <p>Tầm nhìn:</p>
 
                   <p> Trở thành một tổ chức hàng đầu Việt Nam trong lĩnh vực Đào tạo kỹ năng - Phát triển tiềm năng con người - Tư vấn định hướng giáo dục, nghề nghiệp.</p>
-                  <p>Với phương châm hoạt động “Hãy là người cho đi trước” chúng tôi đặt mục tiêu giúp đỡ, hỗ trợ, phát triển tiềm năng của mỗi trẻ em trên toàn Việt Nam.</p>
 
                 </div>
                 <div className="col-md-3 md-margin-bottom-40">
@@ -56,12 +55,13 @@ export class Footer extends React.Component{
 
                 <div className="col-md-3 map-img md-margin-bottom-40">
                   <div className="headline"><h2>Liên hệ</h2></div>
+
                   <address className="md-margin-bottom-40">
-                    25, Lorem Lis Street, Orange<br />
-                    California, US<br />
-                    Phone: 800 123 3456<br />
-                    Fax: 800 123 3456<br />
-                    Email: <a href="mailto:info@anybiz.com" className="">info@anybiz.com</a>
+                    Số XX Hùng Vương
+                    <br />
+                    Đông Hà, Quảng Trị, Việt Nam<br />
+                    Phone: 0935746886  –  0913905355<br />
+                    Email: <a href="mailto:info@anybiz.com" className="">Zunavietnam@gmail.com</a>
                   </address>
                 </div>
               </div>

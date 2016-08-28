@@ -27,8 +27,7 @@ export class Program extends React.Component{
     this.getPrograms(this);
   }
   getPrograms(t){
-    Stores.getAll('/programs', function(programs, status) {
-      console.log(programs);
+    Stores.find('/programs', {order:'id DESC'}, function(programs, status) {
       if (programs) {
         t.setState({programs: programs});
         console.log(t.state.programs)

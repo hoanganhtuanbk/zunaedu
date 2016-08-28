@@ -10,7 +10,6 @@ export class ParentsCorner extends React.Component{
       parents : [],
       test: false
     };
-    console.log(3,props)
   }
   componentWillMount(){
     this.getParentCorners(this);
@@ -19,8 +18,7 @@ export class ParentsCorner extends React.Component{
   this.setState({key:nextProps.params.key>this.props.params.key})
 }
   getParentCorners(t){
-    Stores.getAll('/parents', function(parents, status) {
-      console.log(parents);
+    Stores.find('/parents',{order: 'id DESC'}, function(parents, status) {
       if (parents) {
         t.setState({parents: parents});
       }
