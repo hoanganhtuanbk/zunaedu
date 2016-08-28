@@ -2,6 +2,8 @@ import React from 'react';
 import {render} from 'react-dom';
 import { Link, IndexLink } from 'react-router';
 import Stores from '../../../stores/stores'
+import Masonry from 'react-masonry-component'
+
 export class FeaturedNews extends React.Component {
   constructor(){
     super();
@@ -59,17 +61,16 @@ export class FeaturedNews extends React.Component {
         });
       });
     });
-
-
-
-
-
   }
   render(){
+    const masonryOptions = {
+      transitionDuration: 0
+    };
+    const limitDescription = 100;
+    const limitTitle = 50;
     const realNews = this.state.news.map(function(data,index){
-      console.log(data);
       return(
-        <div key={index} className="col-md-3 col-sm-6">
+        <div key={index} className="col-md-3 col-sm-6 new-item">
           <div className="thumbnails thumbnail-style thumbnail-kenburn">
             <div className="thumbnail-img">
               <div className="overflow-hidden">
@@ -78,8 +79,16 @@ export class FeaturedNews extends React.Component {
               <Link to={`${data.src}/${data.key}`} className="btn-more hover-effect">read more +</Link>
             </div>
             <div className="caption">
-              <h3><Link to={`${data.src}/${data.key}`} className="hover-effect">{data.title}</Link></h3>
-              <p>Donec id elit non mi porta gravida at eget metus. Fusce dapibus, justo sit amet risus etiam porta sem.</p>
+              <h3><Link to={`${data.src}/${data.key}`} className="hover-effect">
+                {
+                data.title.length > 50 ? `${data.title.substr(0, limitTitle)}...` : `${data.title}`
+              }
+              </Link></h3>
+            <p>
+              {
+                data.description.length >100 ? `${data.description.substr(0, limitDescription)}...` : `${data.description}`
+            }
+                </p>
             </div>
           </div>
         </div>
@@ -92,7 +101,14 @@ export class FeaturedNews extends React.Component {
           <Link to="/home" className="title-text"><h2>Thông tin mới nhất</h2></Link>
         </div>
         <div className="feature-new row margin-bottom-20">
-          {realNews}
+          <Masonry
+            className={'my-gallery-class'} // default ''
+            options={masonryOptions} // default {}
+            disableImagesLoaded={false} // default false
+            updateOnEachImageLoad={false} // default false and works only if disableImagesLoaded is false
+          >
+            {realNews}
+          </Masonry>
         </div>
       </div>
     </section>

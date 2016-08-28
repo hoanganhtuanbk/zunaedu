@@ -50,7 +50,6 @@ export class InitBook extends React.Component{
            date={book.date}
            url={book.url}
          />
-         <div className="clearfix margin-bottom-20"><hr/></div>
        </div>
        )
    });

@@ -170,3 +170,15 @@
     }
   }
 }
+
+@include responsive_768{
+  .header{
+    .navbar-collapse {
+      a {
+        font-size: 14px;
+        padding: 0px 5px;
+      }
+    }
+  }
+
+}

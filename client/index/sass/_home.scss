@@ -592,6 +592,8 @@
           margin-left: -10px;
           position: relative;
           transition: all 0.8s ease-in-out;
+          height: 165px;
+          width: 100%;
         }
         .btn-more {
           right: -10px;
@@ -619,4 +621,9 @@
     }
   }
 
+}
+.my-gallery-class{
+  .new-item{
+    height: 300px;
+  }
 }

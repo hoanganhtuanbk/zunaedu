@@ -34,7 +34,7 @@ export class Header extends React.Component{
             </button>
           </div>
         </div>
-        <div className="navbar-collapse mega-menu navbar-responsive-collapse collapse ">
+        <div className="navbar-collapse mega-menu navbar-responsive-collapse collapse menu-nav">
           <div className="container">
             <div className="user-feature">
               <Link to="/login">Login</Link>
