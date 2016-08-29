@@ -20,20 +20,6 @@ export class EditFeedback extends React.Component{
       editorState: EditorState.createEmpty(),
       url : ''
     };
-    this.onChange = (editorState) => {
-      const contentState1 = editorState.getCurrentContent();
-      const contentState = convertToRaw(contentState1);
-      this.setState({ editorState,content: JSON.stringify(contentState) });
-
-    };
-    this.blockRenderer = (block) => {
-      if (block.getType() === 'atomic') {
-        return {
-          component: ImageComponent
-        };
-      }
-      return null;
-    };
     this.save = this.save.bind(this);
     this.onChangeContent = this.onChangeContent.bind(this);
   }
@@ -41,18 +27,10 @@ export class EditFeedback extends React.Component{
   componentWillMount(){
     this.findById(this);
   }
-  onChangeContent(content){
-    if(typeof(content) == 'string'){
-      this.setState({content: content})
-    }
-  }
   findById(t) {
     var id = window.location.pathname.split('/')[3];
     Stores.findById('/feedbacks', this.props.params.id, function(feedback, status) {
-      const jsObject = JSON.parse(feedback.content);
-      const contentState = convertFromRaw(jsObject);
-      const editorState = EditorState.createWithContent(contentState);
-      t.setState({title: feedback.title, editorState: editorState,content: feedback.content,description: feedback.description, url: feedback.url});
+      t.setState({title: feedback.title,content: feedback.content, url: feedback.url});
     })
   }
   save(e) {
@@ -60,8 +38,6 @@ export class EditFeedback extends React.Component{
     const data = {
       title : this.state.title,
       content: this.state.content,
-
-      description: this.state.description
     };
     if(this.state.file){
       data.url= `/api/containers/files/download/${this.state.file.name}`
@@ -107,27 +83,19 @@ export class EditFeedback extends React.Component{
                   <input type="text" value={this.state.title} className="form-control " onChange={(e)=>{this.setState({title: e.target.value })}}/>
                 </div>
                 <div className="col-md-12">
-                  <label>Description</label>
-                  <textarea className="form-control " value={this.state.description} rows={8} onChange={(e) =>{this.setState({description : e.target.value})}} ></textarea>
+                  <label>Content</label>
+                  <textarea className="form-control " value={this.state.content} rows={8} onChange={(e) =>{this.setState({content : e.target.value})}} ></textarea>
                 </div>
               </div>
             </div>
             <div className="col-md-6">
               <div className="col-md-12">
-                <label>Url image</label>
+                <label>Avatar</label>
                 <input type="file" className="form-control "  onChange={(e)=>this._handleImageChange(e)} />
               </div>
               <div className="col-md-12 previewImage" >
                 {$imagePreview == null ? <img src={this.state.url} /> : <div>{$imagePreview} </div>}
               </div>
-            </div>
-            <div className="col-md-12">
-              <label>Content</label>
-              <Editor
-                blockRendererFn={this.blockRenderer}
-                editorState={this.state.editorState}
-                onChange={this.onChange}
-              />
             </div>
           </div>
         </div>

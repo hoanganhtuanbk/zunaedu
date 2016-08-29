@@ -16,8 +16,8 @@ class EventItem extends React.Component{
         <div className="col-sm-7 news-v3">
           <div className="news-v3-in no-padding content-program">
             <ul className="list-inline posted-info">
-              <li>By Admin</li>
-              <li>Posted {this.props.date}</li>
+              <li>Đăng bởi Admin</li>
+              <li>/ Ngày đăng {this.props.date}</li>
             </ul>
             <h2>
               <Link to={`/goc-cha-me/${this.props.keyNote}`} >

@@ -30,7 +30,7 @@ export class Event extends React.Component{
       return (
         <li key={id}>
           <h3><Link to={`/su-kien/${event.key}`} >{event.title}</Link></h3>
-          <small>{event.date} <a href="#">Art,</a> <a href="#">Lifestyles</a></small>
+          <small>{event.date} <a href="#">Art,</a> <a href="#">Admin</a></small>
         </li>
       );
     });

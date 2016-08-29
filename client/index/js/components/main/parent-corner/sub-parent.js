@@ -73,9 +73,8 @@ export class SubParent extends React.Component{
         </div>
         <div className="news-v3-in">
           <ul className="list-inline posted-info">
-            <li>By <a href="#">Alexander Jenni</a></li>
-            <li>In <a href="#">Design</a></li>
-            <li>Posted {this.state.parent.date}</li>
+            <li>Đăng bởi <a href="#">Alexander Jenni</a></li>
+            <li>/ Ngày đăng {this.state.parent.date}</li>
           </ul>
           <h2>{this.state.parent.title}</h2>
           <Editor

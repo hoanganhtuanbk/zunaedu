@@ -76,7 +76,7 @@ export class SubBook extends React.Component{
       return (
         <li key={id}>
           <h3><Link to={`/sach-giao-duc/${book.key}`} >{book.title}</Link></h3>
-          <small>{book.date} <a href="#">Art,</a> <a href="#">Lifestyles</a></small>
+          <small>{book.date} <a href="#">Art,</a> <a href="#">Admin</a></small>
         </li>
       );
     });
@@ -89,8 +89,7 @@ export class SubBook extends React.Component{
           </div>
           <div className="news-v3-in">
             <ul className="list-inline posted-info">
-              <li>By <a href="#">Alexander Jenni</a></li>
-              <li>In <a href="#">Design</a></li>
+              <li>By <a href="#">Admin</a></li>
               <li>Posted {this.state.book.date}</li>
             </ul>
             <h2>{this.state.book.title}</h2>

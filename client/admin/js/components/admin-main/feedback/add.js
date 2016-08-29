@@ -12,26 +12,17 @@ export class AddFeedback extends React.Component{
     super();
     this.state = {
       title: '',
-      description: '',
       content: '',
       url: '',
       author: '',
       date: ''
     };
     this.handleCreateFeedback = this._handleCreateFeedback.bind(this);
-    this.onChangeContent = this.onChangeContent.bind(this);
-
-  }
-  onChangeContent(content) {
-    if(typeof(content) == 'string'){
-      this.setState({content: content})
-    }
   }
   _handleCreateFeedback(e){
     const dateNow = new Date();
     const apps = {
       title: this.state.title,
-      description: this.state.description,
       content: this.state.content,
       url: `/api/containers/files/download/${this.state.file.name}`,
       date: dateNow.toDateString()
@@ -74,7 +65,7 @@ export class AddFeedback extends React.Component{
       <div className="panel">
        <PanelHeader
               navigateBack = "true"
-              name = "Add new a service"
+              name = "Add new a feedback"
         />
             <div className="panel-body">
               <div className="row">
@@ -85,24 +76,19 @@ export class AddFeedback extends React.Component{
                       <input type="text" className="form-control "  onChange={(e) =>{this.setState({title : e.target.value})}} />
                     </div>
                     <div className="col-md-12">
-                      <label>Description</label>
-                      <textarea className="form-control " rows={8} onChange={(e) =>{this.setState({description : e.target.value})}} ></textarea>
+                      <label>Content</label>
+                      <textarea className="form-control " rows={8} onChange={(e) =>{this.setState({content : e.target.value})}} ></textarea>
                     </div>
                   </div>
                 </div>
                 <div className="col-md-6">
                   <div className="col-md-12">
-                    <label>Url image</label>
+                    <label>Avatar feedbacker</label>
                     <input type="file" className="form-control "  onChange={(e)=>this._handleImageChange(e)} />
                   </div>
                   <div className="col-md-12 previewImage" >
                     {$imagePreview}
                   </div>
-                </div>
-                <div className="col-md-12">
-                  <label>Content</label>
-                  <RichEditor onChangeContent = {this.onChangeContent} />
-
                 </div>
               </div>
             </div>

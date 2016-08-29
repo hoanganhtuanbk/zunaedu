@@ -76,7 +76,7 @@ export class FeaturedNews extends React.Component {
               <div className="overflow-hidden">
                 <img className="img-responsive" src={data.url} alt={data.title} />
               </div>
-              <Link to={`${data.src}/${data.key}`} className="btn-more hover-effect">read more +</Link>
+              <Link to={`${data.src}/${data.key}`} className="btn-more hover-effect">Xem thêm +</Link>
             </div>
             <div className="caption">
               <h3><Link to={`${data.src}/${data.key}`} className="hover-effect">
@@ -100,7 +100,7 @@ export class FeaturedNews extends React.Component {
         <div className="headline">
           <Link to="/home" className="title-text"><h2>Thông tin mới nhất</h2></Link>
         </div>
-        <div className="feature-new row margin-bottom-20">
+        <div className="feature-new row">
             {realNews}
         </div>
       </div>

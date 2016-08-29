@@ -86,8 +86,8 @@ export class SubFingerPrint extends React.Component{
             </div>
           <div className="news-v3-in">
             <ul className="list-inline posted-info">
-              <li>By <a href="#">Admin</a></li>
-              <li>Posted {this.state.concept.date}</li>
+              <li>Đăng bởi <a href="#">Admin</a></li>
+              <li>/ Ngày đăng {this.state.concept.date}</li>
             </ul>
             <h2>{this.state.concept.title}</h2>
             <Editor

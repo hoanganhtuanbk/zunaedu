@@ -52,7 +52,8 @@ export class WhatItAbout extends React.Component{
       pauseOnHover: true
     };
     var settings1 = {
-      speed: 3000,
+      speed: 1000,
+      autoplaySpeed: 3000,
       autoplay: true,
       fade: true,
       arrows: false,
@@ -92,7 +93,7 @@ export class WhatItAbout extends React.Component{
           <div className="row margin-bottom-30">
 
             <div className="col-md-8 md-margin-bottom-40">
-              <div className="headline"><h2>Đến với Zuna Education</h2></div>
+              <div className="headline"><h2>Giới thiệu về Zuna</h2></div>
               <div className="row">
                 <div className="col-sm-4">
                   <img className="img-responsive" src="../index/img/info/giatricotloi.png" alt=""/>
@@ -136,7 +137,7 @@ export class WhatItAbout extends React.Component{
             </div>
 
             <div className="col-md-4 slide-event">
-              <div className="headline"><h2>Upcoming Event</h2></div>
+              <div className="headline"><h2>Sự kiện nổi bật</h2></div>
               <Slider {...settings} prevArrow={ <LeftNavButton /> } nextArrow={<RightNavButton />}>
                 {childEvents}
               </Slider>

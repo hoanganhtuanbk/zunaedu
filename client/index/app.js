@@ -58,9 +58,9 @@ render(
         <Route path="/van-tay-hoc/:key" component={SubFingerPrint}/>
       </Route>
 
-      <Route path="/chuong-trinh" component={Program}>
+      <Route path="/dao-tao" component={Program}>
         <IndexRoute component={InitProgram}/>
-        <Route path="/chuong-trinh/:key" component={SubProgram}/>
+        <Route path="/dao-tao/:key" component={SubProgram}/>
       </Route>
 
       <Route path="/su-kien" component={Event}>

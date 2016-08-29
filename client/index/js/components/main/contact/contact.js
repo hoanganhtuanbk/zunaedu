@@ -9,7 +9,7 @@ class Header extends React.Component{
     return(
       <div className="breadcrumbs">
         <div className="container">
-          <h1 className="pull-left">Our Contacts</h1>
+          <h1 className="pull-left">Thông tin liên hệ</h1>
         </div>
       </div>
     )
@@ -84,15 +84,14 @@ export class Contact extends React.Component{
         <div className="container content">
           <div className="row margin-bottom-30">
             <div className="col-md-9 mb-margin-bottom-30">
-              <div className="headline"><h2>Contact Form</h2></div>
-              <p>At vero eos et accusamus et iusto odio dignissimos ducimus qui blanditiis praesentium voluptatum deleniti atque corrupti quos dolores et quas feugiat. Et harum quidem rerum facilis est et expedita distinctio lorem ipsum dolor sit amet, consectetur adipiscing elit landitiis.</p>
-              <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut non libero magna. Sed et quam lacus qui blanditiis praesentium voluptatum deleniti atque corrupti quos dolores et quas feugiat.</p><br/>
+              <div className="headline"><h2>Mẫu liên hệ</h2></div>
+              <p>Hãy cho chúng tôi biết cảm nhận của khách hàng khi sau khi tham gia trải nghiệm các chương trình đào tạo tại Zuna. Mỗi ý kiến đóng góp sẽ là động lực giúp Zuna ngày càng phát triển và nâng cao chất lượng đào tạo, công hiến nhiều hơn cho cộng đồng.</p>
 
               <form method="post" id="sky-form3" className="sky-form sky-changes-3" novalidate="novalidate">
                 <fieldset>
                   <div className="row">
                     <section className="col col-6">
-                      <label className="label">Name</label>
+                      <label className="label">Tên khách hàng</label>
                       <label className="input">
                         <i className="icon-append fa fa-user"></i>
                         <input type="text" name="name" id="name" />
@@ -108,7 +107,7 @@ export class Contact extends React.Component{
                   </div>
 
                   <section>
-                    <label className="label">Subject</label>
+                    <label className="label">Chủ đề</label>
                     <label className="input">
                       <i className="icon-append fa fa-tag"></i>
                       <input type="text" name="subject" id="subject"/>
@@ -116,20 +115,16 @@ export class Contact extends React.Component{
                   </section>
 
                   <section>
-                    <label className="label">Message</label>
+                    <label className="label">Tin nhắn</label>
                     <label className="textarea">
                       <i className="icon-append fa fa-comment"></i>
                       <textarea rows="4" name="message" id="message"></textarea>
                     </label>
                   </section>
-
-                  <section>
-                    <label className="checkbox"><input type="checkbox" name="copy"/><i></i>Send a copy to my e-mail address</label>
-                  </section>
                 </fieldset>
 
                 <footer>
-                  <button type="submit" className="btn-u">Send message</button>
+                  <button type="submit" className="btn-u">Gửi tin nhắn</button>
                 </footer>
 
                 <div className="message">
@@ -140,19 +135,18 @@ export class Contact extends React.Component{
             </div>
 
             <div className="col-md-3">
-              <div className="headline"><h2>Contacts</h2></div>
+              <div className="headline"><h2>Liên hệ</h2></div>
               <ul className="list-unstyled who margin-bottom-30">
-                <li><a href="#"><i className="fa fa-home"></i>5B Streat, City 50987 New Town US</a></li>
-                <li><a href="#"><i className="fa fa-envelope"></i>info@example.com</a></li>
-                <li><a href="#"><i className="fa fa-phone"></i>1(222) 5x86 x97x</a></li>
-                <li><a href="#"><i className="fa fa-globe"></i>http://www.example.com</a></li>
+                <li><a href="#"><i className="fa fa-home"></i>Số XX Hùng Vương</a></li>
+                <li><a href="#"><i className="fa fa-envelope"></i>Đông Hà, Quảng Trị, Việt Nam</a></li>
+                <li><a href="#"><i className="fa fa-phone"></i>Phone: 0935746886 – 0913905355</a></li>
+                <li><a href="#"><i className="fa fa-globe"></i>Email: Zunavietnam@gmail.com</a></li>
               </ul>
 
-              <div className="headline"><h2>Business Hours</h2></div>
+              <div className="headline"><h2>Thời gian làm việc</h2></div>
               <ul className="list-unstyled margin-bottom-30">
-                <li><strong>Monday-Friday:</strong> 10am to 8pm</li>
-                <li><strong>Saturday:</strong> 11am to 3pm</li>
-                <li><strong>Sunday:</strong> Closed</li>
+                <li><strong>Thứ 2 - Thứ 6:</strong> 8:00 - 18:00</li>
+                <li><strong>Thứ 7:</strong> 8:00 - 11:30</li>
               </ul>
 
               <div className="headline"><h2>Why we are?</h2></div>

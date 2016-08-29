@@ -25,7 +25,7 @@ export class Backgroud extends React.Component{
             </Link>
           </div>
           <div className="carousel-content">
-            <Link to="/chuong-trinh" className="item">
+            <Link to="/dao-tao" className="item">
               <img className="img-responsive" src="../index/img/bg-components/chuong-trinh-mini.jpg" alt="van-tay-hoc-viet-nam"/>
               <div className="carousel-caption">
               </div>

@@ -77,9 +77,8 @@ export class SubProgram extends React.Component{
         </div>
         <div className="news-v3-in">
           <ul className="list-inline posted-info">
-            <li>By <a href="#">Alexander Jenni</a></li>
-            <li>In <a href="#">Design</a></li>
-            <li>Posted {this.state.program.date}</li>
+            <li>Đăng bởi <a href="#">Alexander Jenni</a></li>
+            <li>/ Ngày đăng {this.state.program.date}</li>
           </ul>
           <h2>{this.state.program.title}</h2>
           <Editor
