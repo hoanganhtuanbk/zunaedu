@@ -71,7 +71,7 @@ export class Purchase extends React.Component{
                  kiểm tra khoa học mang tính ứng dụng thực tiễn cao.</p>
             </div>
             <div className="col-md-3 btn-buy animated fadeInRight">
-              <a href="#" className="btn-u btn-u-lg"><i className="fa fa-graduation-cap"></i> Tham gia ngay</a>
+              <Link to="/dao-tao" className="btn-u btn-u-lg"><i className="fa fa-graduation-cap"></i> Tham gia ngay</Link>
             </div>
           </div>
         </div>

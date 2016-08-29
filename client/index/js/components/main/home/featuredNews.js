@@ -17,25 +17,25 @@ export class FeaturedNews extends React.Component {
   }
   getNews(t,news){
 
-    Stores.find('/dermatoglyphics',{
+    Stores.find('/programs',{
       order: 'id DESC',
       limit: 2
     }, function(result1){
-      result1[0].src = '/van-tay-hoc';
-      result1[1].src = '/van-tay-hoc';
+      result1[0].src = '/chuong-trinh';
+      result1[1].src = '/chuong-trinh';
       news.push(result1[0],result1[1]);
-      Stores.find('/events',{
+      Stores.find('/dermatoglyphics',{
         order: 'id DESC',
-        limit: 1
+        limit: 2
       }, function(result2){
-        result2[0].src = '/su-kien';
-
-        news.push(result2[0]);
-        Stores.find('/programs',{
+        result2[0].src = '/van-tay-hoc';
+        result2[1].src = '/van-tay-hoc';
+        news.push(result2[0],result2[1]);
+        Stores.find('/events',{
           order: 'id DESC',
           limit: 1
         }, function(result3){
-          result3[0].src = '/chuong-trinh';
+          result3[0].src = '/su-kien';
 
           news.push(result3[0]);
           Stores.find('/books',{
@@ -43,8 +43,7 @@ export class FeaturedNews extends React.Component {
             limit: 2
           }, function(result4){
             result4[0].src = '/sach-giao-duc';
-            result4[1].src = '/sach-giao-duc';
-            news.push(result4[0],result4[1]);
+            news.push(result4[0]);
 
             Stores.find('/parents',{
               order: 'id DESC',

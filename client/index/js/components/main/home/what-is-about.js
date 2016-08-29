@@ -53,7 +53,7 @@ export class WhatItAbout extends React.Component{
     };
     var settings1 = {
       speed: 1000,
-      autoplaySpeed: 3000,
+      autoplaySpeed: 5000,
       autoplay: true,
       fade: true,
       arrows: false,

@@ -8,16 +8,26 @@ class BookItem extends React.Component{
   render(){
     return(
           <div className="thumbnails thumbnail-style thumbnail-kenburn">
-            <div className="thumbnail-img">
-              <div className="overflow-hidden">
-                <img className="img-responsive" src={this.props.url} alt="" />
+            {
+              this.props.url ? <div>
+                <div className="thumbnail-img">
+                  <div className="overflow-hidden">
+                    <img className="img-responsive" src={this.props.url} alt="" />
+                  </div>
+                  <Link className="btn-more hover-effect" to={`/sach-giao-duc/${this.props.keyNote}`}>Xem thêm +</Link>
+                </div>
+                <div className="caption">
+                  <h3><Link className="hover-effect" to={`/sach-giao-duc/${this.props.keyNote}`}>{this.props.title}</Link></h3>
+                  <p>{this.props.description}</p>
+                </div>
+              </div>: <div className="blog-post-quote-book">
+                <div className="blog-post-quote-item">
+                  <p>{`"${this.props.title}"`} </p>
+                  <small>{`- ${this.props.description} -`}</small>
+                </div>
+
               </div>
-              <Link className="btn-more hover-effect" to={`/sach-giao-duc/${this.props.keyNote}`}>Xem thêm +</Link>
-            </div>
-            <div className="caption">
-              <h3><Link className="hover-effect" to={`/sach-giao-duc/${this.props.keyNote}`}>{this.props.title}</Link></h3>
-              <p>{this.props.description}</p>
-            </div>
+            }
           </div>
     )
   }
@@ -53,9 +63,21 @@ export class InitBook extends React.Component{
        </div>
        )
    });
+    var masonryOptions = {
+      transitionDuration: 0
+    };
     return (
       <div className="feature-new row margin-bottom-20">
-      {BookList}
+        <Masonry
+          className={'my-gallery-class'} // default ''
+          elementType={'ul'} // default 'div'
+          options={masonryOptions} // default {}
+          disableImagesLoaded={false} // default false
+          updateOnEachImageLoad={false} // default false and works only if disableImagesLoaded is false
+        >
+          {BookList}
+
+        </Masonry>
       </div>
     );
   }

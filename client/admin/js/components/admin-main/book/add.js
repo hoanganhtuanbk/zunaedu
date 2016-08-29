@@ -33,9 +33,16 @@ export class AddBook extends React.Component{
       key: this._changeToSlug(this.state.title),
       description: this.state.description,
       content: this.state.content,
-      url: `/api/containers/files/download/${this.state.file.name}`,
+
       date: dateNow.toDateString()
     };
+    try{
+      if(this.state.file.name){
+        apps.url =  `/api/containers/files/download/${this.state.file.name}`
+      }
+    } catch(e){
+      console.log(e)
+    }
     const data = new FormData();
     data.append('file', this.state.file);
     Actions.upload('/containers/files/upload',data,function(data, stt){

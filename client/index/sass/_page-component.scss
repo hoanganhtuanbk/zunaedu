@@ -289,6 +289,21 @@ blockquote
     font-weight: 200;
   }
 }
+.blog-post-quote-book{
+  text-align: center;
+  padding: 10px;
+  color: white;
+  background: #1abc9c !important;
+  p {
+    color: white;
+    font-size: 17px;
+    font-weight: 200;
+    position: relative;
+    text-align: center!important;
+    font-family: "Open Sans",Arial,sans-serif;
+    text-transform: uppercase;
+  }
+}
 @include responsive_320{
   .breadcrumbs-v1{
     background-size: cover!important;

@@ -67,7 +67,7 @@ export class SubFingerPrint extends React.Component{
   render(){
     var settings = {
       speed: 1000,
-      autoplaySpeed: 3000,
+      autoplaySpeed: 7000,
       autoplay: true,
       fade: true,
       arrows: false,
