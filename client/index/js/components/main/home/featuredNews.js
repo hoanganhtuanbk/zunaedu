@@ -63,9 +63,6 @@ export class FeaturedNews extends React.Component {
     });
   }
   render(){
-    const masonryOptions = {
-      transitionDuration: 0
-    };
     const limitDescription = 100;
     const limitTitle = 50;
     const realNews = this.state.news.map(function(data,index){
@@ -74,6 +71,7 @@ export class FeaturedNews extends React.Component {
           <div className="thumbnails thumbnail-style thumbnail-kenburn">
             <div className="thumbnail-img">
               <div className="overflow-hidden">
+                <div className="easy-bg-v2 rgba-default">New</div>
                 <img className="img-responsive" src={data.url} alt={data.title} />
               </div>
               <Link to={`${data.src}/${data.key}`} className="btn-more hover-effect">Xem thêm +</Link>

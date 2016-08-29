@@ -43,7 +43,7 @@ export class Header extends React.Component{
               <li className={this.isActive('')} onClick={this.setMenuActive.bind(this, '')}><Link className="route-page" to="/">Trang chủ</Link></li>
               <li className={this.isActive('van-tay-hoc')} onClick={this.setMenuActive.bind(this, 'van-tay-hoc')}><Link to="/van-tay-hoc/dermatoglyphics-la-gi" className="route-page">Sinh trắc vân tay</Link> </li>
               <li className={this.isActive('dao-tao')} onClick={this.setMenuActive.bind(this, 'dao-tao')}><Link className="route-page" to="/dao-tao">Đào tạo</Link></li>
-              <li className={this.isActive('su-kien')} onClick={this.setMenuActive.bind(this, 'su-kien')}><Link className="route-page" to="/su-kien">Sự kiện</Link></li>
+              <li className={this.isActive('su-kien')} onClick={this.setMenuActive.bind(this, 'su-kien')}><Link className="route-page" to="/su-kien">ự kiện</Link></li>
               <li className={this.isActive('sach-giao-duc')} onClick={this.setMenuActive.bind(this, 'sach-giao-duc')}><Link  className="route-page" to="/sach-giao-duc">Sách giáo dục</Link></li>
               <li className={this.isActive('goc-cha-me')} onClick={this.setMenuActive.bind(this, 'goc-cha-me')}><Link className="route-page" to="/goc-cha-me">Góc cha mẹ</Link></li>
               <li className={this.isActive('lien-he')} onClick={this.setMenuActive.bind(this, 'lien-he')}><Link className="route-page" to="/lien-he">Liên hệ</Link></li>

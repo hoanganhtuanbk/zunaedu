@@ -41,8 +41,8 @@ class Map extends React.Component{
 
   render(){
     const coords = {
-      lat: 16.047116,
-      lng: 108.199885
+      lat: 16.8112768,
+      lng: 107.0846848
     };
     return(
       <Gmaps
@@ -137,7 +137,7 @@ export class Contact extends React.Component{
             <div className="col-md-3">
               <div className="headline"><h2>Liên hệ</h2></div>
               <ul className="list-unstyled who margin-bottom-30">
-                <li><a href="#"><i className="fa fa-home"></i>Số XX Hùng Vương</a></li>
+                <li><a href="#"><i className="fa fa-home"></i>Số 88 Hùng Vương</a></li>
                 <li><a href="#"><i className="fa fa-envelope"></i>Đông Hà, Quảng Trị, Việt Nam</a></li>
                 <li><a href="#"><i className="fa fa-phone"></i>Phone: 0935746886 – 0913905355</a></li>
                 <li><a href="#"><i className="fa fa-globe"></i>Email: Zunavietnam@gmail.com</a></li>

@@ -3,6 +3,8 @@ import {render} from 'react-dom';
 import { Link, IndexLink } from 'react-router';
 import Stores from '../../../stores/stores'
 import Actions from '../../../actions/actions'
+import Slider from 'react-slick'
+
 import {
   Editor,
   EditorState,
@@ -49,20 +51,27 @@ export class SubFingerPrint extends React.Component{
     })
   }
   getDermatoglyphicCorners(t){
-     Stores.find('/dermatoglyphics', {
-       where:{
-         key : this.props.params.key
-       }
-     }, function(dermatoglyphic, status) {
-       if (dermatoglyphic[0]) {
-         const jsObject = JSON.parse(dermatoglyphic[0].content);
-         const contentState = convertFromRaw(jsObject);
-         const editorState = EditorState.createWithContent(contentState);
-         t.setState({concept: dermatoglyphic[0],editorState:editorState});
-       }
-     });
+    Stores.find('/dermatoglyphics', {
+      where:{
+        key : this.props.params.key
+      }
+    }, function(dermatoglyphic, status) {
+      if (dermatoglyphic[0]) {
+        const jsObject = JSON.parse(dermatoglyphic[0].content);
+        const contentState = convertFromRaw(jsObject);
+        const editorState = EditorState.createWithContent(contentState);
+        t.setState({concept: dermatoglyphic[0],editorState:editorState});
+      }
+    });
   }
   render(){
+    var settings = {
+      speed: 1000,
+      autoplaySpeed: 3000,
+      autoplay: true,
+      fade: true,
+      arrows: false,
+    };
     if(this.props.params.key == "phan-hoi"){
       return(
         <div className="col-md-8 ">
@@ -82,8 +91,8 @@ export class SubFingerPrint extends React.Component{
       <div className="col-md-8">
         <div className="news-v3 bg-content-detail margin-bottom-60">
           <div className="bg-article">
-          <img className="img-responsive" src={this.state.concept.url} alt={this.state.concept.title} />
-            </div>
+            <img className="img-responsive" src={this.state.concept.url} alt={this.state.concept.title} />
+          </div>
           <div className="news-v3-in">
             <ul className="list-inline posted-info">
               <li>Đăng bởi <a href="#">Admin</a></li>
@@ -96,13 +105,40 @@ export class SubFingerPrint extends React.Component{
               readOnly={true}
             />
 
-              </div>
-              </div>
-              <div className="blog-post-quote bg-content-detail margin-bottom-60">
-                <p>"Bạn không thể giúp người khác thành công, bạn chỉ có thể TẠO ĐIỀU KIỆN và KHÍCH LỆ để người MUỐN THÀNH CÔNG thành công. </p>
-                <small>C- John Maxwell</small>
-              </div>
-              </div>
-              )
-            }
-            }
+          </div>
+        </div>
+        <Slider {...settings}>
+          <div className="blog-post-quote bg-content-detail margin-bottom-60">
+            <p>"Trẻ con là những kẻ bắt chước bẩm sinh hành động giống như cha mẹ mình bất chấp mọi nỗ lực để dạy chúng cách xử thế." </p>
+            <small>- Khuyết danh -</small>
+          </div>
+          <div className="blog-post-quote bg-content-detail margin-bottom-60">
+            <p>"Trẻ nhỏ sẽ không nhớ bạn vì vật chất bạn cho chúng, mà vì tình cảm bạn dành cho chúng." </p>
+            <small>- Richard L Evans -</small>
+          </div>
+          <div className="blog-post-quote bg-content-detail margin-bottom-60">
+            <p>"Tôi nhận ra một điều rằng cuộc sống không có nghĩa gì nhiều nếu bạn không sẵn lòng đóng góp phần nhỏ bé của mình nhằm để lại cho con cháu chúng ta - tất cả con cháu chúng ta - một thế giới tốt đẹp hơn. Kẻ ngốc nào cũng có thể có con. Điều đó không khiến bạn trở thành một người cha. Chính lòng can đảm trong việc nuôi dạy đứa trẻ mới khiến bạn là một người cha." </p>
+            <small>- Barack Obama -</small>
+          </div>
+          <div className="blog-post-quote bg-content-detail margin-bottom-60">
+            <p>"Mỗi người sẽ sớm học được mình hiểu biết ít đến thế nào khi con trẻ bắt đầu đặt câu hỏi." </p>
+            <small>- Richard L Evans -</small>
+          </div>
+          <div className="blog-post-quote bg-content-detail margin-bottom-60">
+            <p>"Chẳng bao giờ có loại thuốc bổ chữa được những căn bệnh xã hội hữu hiệu tốt hơn một mái ấm khỏe khoắn và hạnh phúc. Chẳng bao giờ có nguồn ổn định xã hội lớn hơn một gia đình yêu thương và biết cảm thông. Chẳng bao giờ có cách giúp trẻ em hạnh phúc tốt hơn lời tâm tình của bậc cha mẹ sáng suốt và trìu mến." </p>
+            <small>- Richard L Evans -</small>
+          </div>
+          <div className="blog-post-quote bg-content-detail margin-bottom-60">
+          <p>"Trẻ nhỏ vừa là hy vọng, vừa là lời hứa hẹn của nhân loại." </p>
+          <small>- Maria Montessori -</small>
+        </div>
+          <div className="blog-post-quote bg-content-detail margin-bottom-60">
+          <p>"Đừng bao giờ giúp đứa trẻ với việc mà nó cảm thấy mình có thể thành công." </p>
+          <small>- Maria Montessori -</small>
+        </div>
+        </Slider>
+
+      </div>
+    )
+  }
+}

@@ -57,7 +57,7 @@ export class Footer extends React.Component{
                   <div className="headline"><h2>Liên hệ</h2></div>
 
                   <address className="md-margin-bottom-40">
-                    Số XX Hùng Vương
+                    Số 88 Hùng Vương
                     <br />
                     Đông Hà, Quảng Trị, Việt Nam<br />
                     Phone: 0935746886  –  0913905355<br />

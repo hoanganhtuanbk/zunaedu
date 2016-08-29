@@ -48,6 +48,9 @@ class ProgramItem extends React.Component{
       <div className="row margin-bottom-20 feature-item">
         <div className="col-sm-5 sm-margin-bottom-20 feature-image">
           <Link to={`/dao-tao/${this.props.keyNote}`} >
+            {
+
+            }
             <img className="img-responsive" src={this.props.url} />
           </Link>
         </div>

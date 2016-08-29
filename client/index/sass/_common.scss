@@ -257,6 +257,24 @@ div{
   .feature-image{
     padding-top: 15px;
     padding-bottom: 15px;
+    overflow: hidden;
+    position: relative;
+    .easy-bg-v2 {
+      top: 5px;
+      color: #fff;
+      width: 100px;
+      padding: 5px;
+      left: -32px;
+      font-size: 13px;
+      position: absolute;
+      text-align: center;
+      letter-spacing: 2px;
+      transform: rotate(-45deg);
+      z-index: 1;
+    }
+    .rgba-default {
+      background-color: rgba(114,192,44,0.8);
+    }
   }
   .content-program{
     padding-top: 15px;
@@ -266,5 +284,7 @@ div{
 .book{
   .thumbnail-style{
     box-shadow: 0 0 8px #ddd;
+    background: white;
+    height: auto!important;
   }
 }
