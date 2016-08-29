@@ -257,6 +257,12 @@ blockquote
   padding: 35px 60px;
   background: #fff;
   text-align: center;
+  display: table!important;
+  height: 360px;
+  .blog-post-quote-item{
+    display: table-cell;
+    vertical-align: middle;
+  }
   p {
     color: #555;
     font-size: 21px;
@@ -265,6 +271,7 @@ blockquote
     position: relative;
     margin-bottom: 20px;
     font-family: "Open Sans", Arial, sans-serif;
+
     &:after {
       top: -3px;
       font-size: 30px;

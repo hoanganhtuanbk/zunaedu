@@ -109,32 +109,53 @@ export class SubFingerPrint extends React.Component{
         </div>
         <Slider {...settings}>
           <div className="blog-post-quote bg-content-detail margin-bottom-60">
-            <p>"Trẻ con là những kẻ bắt chước bẩm sinh hành động giống như cha mẹ mình bất chấp mọi nỗ lực để dạy chúng cách xử thế." </p>
-            <small>- Khuyết danh -</small>
+            <div className="blog-post-quote-item">
+              <p>"Trẻ con là những kẻ bắt chước bẩm sinh hành động giống như cha mẹ mình bất chấp mọi nỗ lực để dạy chúng cách xử thế." </p>
+              <small>- Khuyết danh -</small>
+            </div>
+
           </div>
           <div className="blog-post-quote bg-content-detail margin-bottom-60">
-            <p>"Trẻ nhỏ sẽ không nhớ bạn vì vật chất bạn cho chúng, mà vì tình cảm bạn dành cho chúng." </p>
-            <small>- Richard L Evans -</small>
+            <div className="blog-post-quote-item">
+              <p>"Trẻ nhỏ sẽ không nhớ bạn vì vật chất bạn cho chúng, mà vì tình cảm bạn dành cho chúng." </p>
+              <small>- Richard L Evans -</small>
+              </div>
+
           </div>
           <div className="blog-post-quote bg-content-detail margin-bottom-60">
-            <p>"Tôi nhận ra một điều rằng cuộc sống không có nghĩa gì nhiều nếu bạn không sẵn lòng đóng góp phần nhỏ bé của mình nhằm để lại cho con cháu chúng ta - tất cả con cháu chúng ta - một thế giới tốt đẹp hơn. Kẻ ngốc nào cũng có thể có con. Điều đó không khiến bạn trở thành một người cha. Chính lòng can đảm trong việc nuôi dạy đứa trẻ mới khiến bạn là một người cha." </p>
-            <small>- Barack Obama -</small>
+            <div className="blog-post-quote-item">
+              <p>"Tôi nhận ra một điều rằng cuộc sống không có nghĩa gì nhiều nếu bạn không sẵn lòng đóng góp phần nhỏ bé của mình nhằm để lại cho con cháu chúng ta - tất cả con cháu chúng ta - một thế giới tốt đẹp hơn. Kẻ ngốc nào cũng có thể có con. Điều đó không khiến bạn trở thành một người cha. Chính lòng can đảm trong việc nuôi dạy đứa trẻ mới khiến bạn là một người cha." </p>
+              <small>- Barack Obama -</small>
+            </div>
+
           </div>
           <div className="blog-post-quote bg-content-detail margin-bottom-60">
-            <p>"Mỗi người sẽ sớm học được mình hiểu biết ít đến thế nào khi con trẻ bắt đầu đặt câu hỏi." </p>
-            <small>- Richard L Evans -</small>
+            <div className="blog-post-quote-item">
+              <p>"Mỗi người sẽ sớm học được mình hiểu biết ít đến thế nào khi con trẻ bắt đầu đặt câu hỏi." </p>
+              <small>- Richard L Evans -</small>
+            </div>
+
           </div>
           <div className="blog-post-quote bg-content-detail margin-bottom-60">
-            <p>"Chẳng bao giờ có loại thuốc bổ chữa được những căn bệnh xã hội hữu hiệu tốt hơn một mái ấm khỏe khoắn và hạnh phúc. Chẳng bao giờ có nguồn ổn định xã hội lớn hơn một gia đình yêu thương và biết cảm thông. Chẳng bao giờ có cách giúp trẻ em hạnh phúc tốt hơn lời tâm tình của bậc cha mẹ sáng suốt và trìu mến." </p>
-            <small>- Richard L Evans -</small>
+            <div className="blog-post-quote-item">
+              <p>"Chẳng bao giờ có loại thuốc bổ chữa được những căn bệnh xã hội hữu hiệu tốt hơn một mái ấm khỏe khoắn và hạnh phúc. Chẳng bao giờ có nguồn ổn định xã hội lớn hơn một gia đình yêu thương và biết cảm thông. Chẳng bao giờ có cách giúp trẻ em hạnh phúc tốt hơn lời tâm tình của bậc cha mẹ sáng suốt và trìu mến." </p>
+              <small>- Richard L Evans -</small>
+            </div>
+
           </div>
           <div className="blog-post-quote bg-content-detail margin-bottom-60">
-          <p>"Trẻ nhỏ vừa là hy vọng, vừa là lời hứa hẹn của nhân loại." </p>
-          <small>- Maria Montessori -</small>
+            <div className="blog-post-quote-item">
+              <p>"Trẻ nhỏ vừa là hy vọng, vừa là lời hứa hẹn của nhân loại." </p>
+              <small>- Maria Montessori -</small>
+            </div>
+
         </div>
           <div className="blog-post-quote bg-content-detail margin-bottom-60">
-          <p>"Đừng bao giờ giúp đứa trẻ với việc mà nó cảm thấy mình có thể thành công." </p>
-          <small>- Maria Montessori -</small>
+            <div className="blog-post-quote-item">
+              <p>"Đừng bao giờ giúp đứa trẻ với việc mà nó cảm thấy mình có thể thành công." </p>
+              <small>- Maria Montessori -</small>
+            </div>
+
         </div>
         </Slider>
 
