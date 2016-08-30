@@ -69,7 +69,7 @@ export class ListFeedback extends React.Component{
       return (<FeedbacksView
         key={id}
         id={item.id}
-        title={item.title}
+        title={item.name}
         />)
     });
     return(

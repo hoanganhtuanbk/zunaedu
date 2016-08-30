@@ -26,8 +26,8 @@ export class ViewFeedback extends React.Component{
         </div>
         <div className="panel-body">
           <img src={this.state.feedback.url} />
-          <h3> {this.state.feedback.title}</h3>
-          <div dangerouslySetInnerHTML={{ __html: this.state.feedback.content }} ></div>
+          <h3> {this.state.feedback.name}</h3>
+          <p>{this.state.feedback.content}</p>
         </div>
       </div>
     )

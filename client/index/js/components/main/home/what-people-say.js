@@ -22,7 +22,7 @@ export class WhatPeopleSay extends React.Component{
     })
   }
   render(){
-    var settings = {
+    const settings = {
       dots: true,
       infinite: true,
       speed: 1500,
@@ -33,7 +33,8 @@ export class WhatPeopleSay extends React.Component{
       slidesToShow: 3,
       responsive: [ { breakpoint: 768, settings: { slidesToShow: 1 } }, { breakpoint: 1024, settings: { slidesToShow: 2 } }, { breakpoint: 1200, settings: 3 } ]
     };
-    var childFeedback = this.state.feedbacks.map(function(result, index){
+    const limitContent= 330;
+    const childFeedback = this.state.feedbacks.map(function(result, index){
       return(
         <div key={index} className="instructor">
           <div  className="instructor-item">
@@ -44,7 +45,9 @@ export class WhatPeopleSay extends React.Component{
               <h4 className="name">{result.name}</h4>
               <p className="job">{result.job}</p>
             </div>
-            <div className="description">{result.content}</div><Link to="/van-tay-hoc/phan-hoi" className="readmore">Read More</Link>
+            <div className="description">{
+              result.content.length > 50 ? `${result.content.substr(0, limitContent)}...` : `${result.content}`
+            }</div><Link to="/van-tay-hoc/phan-hoi" className="readmore">Read More</Link>
           </div>
         </div>
 

@@ -28,8 +28,8 @@ export class ViewBook extends React.Component{
         </div>
         <div className="panel-body">
           <img src={this.state.book.url} />
-         <h3> {this.state.book.title}</h3>
-          <div dangerouslySetInnerHTML={{ __html: this.state.book.content }} ></div>
+         <h3> {this.state.book.name}</h3>
+         
         </div>
 
       </div>
