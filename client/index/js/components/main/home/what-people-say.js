@@ -33,7 +33,7 @@ export class WhatPeopleSay extends React.Component{
       slidesToShow: 3,
       responsive: [ { breakpoint: 768, settings: { slidesToShow: 1 } }, { breakpoint: 1024, settings: { slidesToShow: 2 } }, { breakpoint: 1200, settings: 3 } ]
     };
-    const limitContent= 330;
+    const limitContent= 315;
     const childFeedback = this.state.feedbacks.map(function(result, index){
       return(
         <div key={index} className="instructor">

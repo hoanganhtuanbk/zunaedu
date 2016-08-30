@@ -29,7 +29,7 @@ export class ViewBook extends React.Component{
         <div className="panel-body">
           <img src={this.state.book.url} />
          <h3> {this.state.book.name}</h3>
-         
+
         </div>
 
       </div>
