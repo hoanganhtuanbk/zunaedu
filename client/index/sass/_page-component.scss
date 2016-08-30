@@ -7,7 +7,9 @@
   transition: all 0.8s ease-in-out;
   margin-top: $gutter * 3;
   img{
-    width: 100%;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
   }
 }
 .content-sm {
