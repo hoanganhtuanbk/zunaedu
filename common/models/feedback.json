@@ -9,7 +9,7 @@
     "content": {
       "type": "string"
     },
-    "customerName": {
+    "name": {
       "type": "string"
     },
     "job": {

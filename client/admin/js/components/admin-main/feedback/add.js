@@ -11,7 +11,8 @@ export class AddFeedback extends React.Component{
   constructor(props){
     super();
     this.state = {
-      title: '',
+      name: '',
+      job: '',
       content: '',
       url: '',
       author: '',
@@ -22,7 +23,7 @@ export class AddFeedback extends React.Component{
   _handleCreateFeedback(e){
     const dateNow = new Date();
     const apps = {
-      title: this.state.title,
+      name: this.state.name,job: this.state.job,
       content: this.state.content,
       url: `/api/containers/files/download/${this.state.file.name}`,
       date: dateNow.toDateString()
@@ -72,8 +73,12 @@ export class AddFeedback extends React.Component{
                 <div className="col-md-6">
                   <div className="form-group row">
                     <div className="col-md-12">
-                      <label>Title</label>
-                      <input type="text" className="form-control "  onChange={(e) =>{this.setState({title : e.target.value})}} />
+                      <label>Name</label>
+                      <input type="text" className="form-control "  onChange={(e) =>{this.setState({name : e.target.value})}} />
+                    </div>
+                    <div className="col-md-12">
+                      <label>Job</label>
+                      <input type="text" className="form-control "  onChange={(e) =>{this.setState({job : e.target.value})}} />
                     </div>
                     <div className="col-md-12">
                       <label>Content</label>

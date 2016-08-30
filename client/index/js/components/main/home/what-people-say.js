@@ -2,70 +2,62 @@ import React from 'react';
 import {render} from 'react-dom';
 import Slider from 'react-slick'
 import { Link, browserHistory } from 'react-router';
+import Stores from '../../../stores/stores'
 
 export class WhatPeopleSay extends React.Component{
+  constructor(){
+    super();
+    this.state = {
+      feedbacks: []
+    }
+  }
 
+  componentWillMount(){
+    this.getFeedbackDatas(this)
+  }
+  getFeedbackDatas(t){
+    Stores.find('/feedbacks',{order:'id DESC',limit: 5}, function(feedbacks){
+      console.log(feedbacks);
+      t.setState({feedbacks: feedbacks})
+    })
+  }
   render(){
     var settings = {
       dots: true,
       infinite: true,
       speed: 1500,
       autoplay: true,
-      slidesToShow: 1,
       slidesToScroll: 1,
-      centerMode: true,
       arrows: false,
-      pauseOnHover: true
-
+      pauseOnHover: true,
+      slidesToShow: 3,
+      responsive: [ { breakpoint: 768, settings: { slidesToShow: 1 } }, { breakpoint: 1024, settings: { slidesToShow: 2 } }, { breakpoint: 1200, settings: 3 } ]
     };
+    var childFeedback = this.state.feedbacks.map(function(result, index){
+      return(
+        <div key={index} className="instructor">
+          <div  className="instructor-item">
+            <div className="avatar">
+              <img alt="" src={result.url}  className="avatar avatar-65 photo" height="65" width="65"/>
+            </div>
+            <div className="instructor-info">
+              <h4 className="name">{result.name}</h4>
+              <p className="job">{result.job}</p>
+            </div>
+            <div className="description">{result.content}</div><Link to="/van-tay-hoc/phan-hoi" className="readmore">Read More</Link>
+          </div>
+        </div>
+
+      )
+    });
     return (
       <section className="section-4">
         <div className="container">
           <div className="headline"><h2></h2></div>
+
           <div className="row">
             <Slider {...settings}>
-              <div className="feedback">
-                <div className="carousel-header">
-                  <img className="rounded-x img-bordered" src="../index/img/feedback/bill.jpg" />
-                  <div className="testimonials-v3-title">
-                    <p>David Case</p>
-                    <span>Web Developer, Google</span>
-                  </div>
-                </div>
-                <div className="carousel-content">
-                  <p>I just wanted to tell you how much I like to use Unify - <strong>it's so sleek and elegant!</strong>
-                    The customisation options you implemented are countless, and I feel sorry I can't use them all. Good job, and keep going! </p>
-                </div>
-
-              </div>
-              <div className="feedback">
-                <div className="carousel-header">
-                  <img className="rounded-x img-bordered" src="../index/img/feedback/dan.jpg" />
-                  <div className="testimonials-v3-title">
-                    <p>David Case</p>
-                    <span>Web Developer, Google</span>
-                  </div>
-                </div>
-                <div className="carousel-content">
-                  <p>I just wanted to tell you how much I like to use Unify - <strong>it's so sleek and elegant!</strong>
-                    The customisation options you implemented are countless, and I feel sorry I can't use them all. Good job, and keep going! </p>
-                </div>
-
-              </div>
-              <div className="feedback">
-                <div className="carousel-header">
-                  <img className="rounded-x img-bordered" src="../index/img/feedback/eric.png" />
-                  <div className="testimonials-v3-title">
-                    <p>David Case</p>
-                    <span>Web Developer, Google</span>
-                  </div>
-                </div>
-                <div className="carousel-content">
-                  <p>I just wanted to tell you how much I like to use Unify - <strong>it's so sleek and elegant!</strong>
-                    The customisation options you implemented are countless, and I feel sorry I can't use them all. Good job, and keep going! </p>
-                </div>
-
-              </div>
+              {childFeedback}
             </Slider>
           </div>
         </div>

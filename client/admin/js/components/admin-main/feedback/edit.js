@@ -17,11 +17,9 @@ export class EditFeedback extends React.Component{
   constructor() {
     super();
     this.state = {
-      editorState: EditorState.createEmpty(),
       url : ''
     };
     this.save = this.save.bind(this);
-    this.onChangeContent = this.onChangeContent.bind(this);
   }
 
   componentWillMount(){
@@ -30,13 +28,14 @@ export class EditFeedback extends React.Component{
   findById(t) {
     var id = window.location.pathname.split('/')[3];
     Stores.findById('/feedbacks', this.props.params.id, function(feedback, status) {
-      t.setState({title: feedback.title,content: feedback.content, url: feedback.url});
+      t.setState({name: feedback.name,job: feedback.job,content: feedback.content, url: feedback.url});
     })
   }
   save(e) {
     e.preventDefault();
     const data = {
-      title : this.state.title,
+      name : this.state.name,
+      job : this.state.job,
       content: this.state.content,
     };
     if(this.state.file){
@@ -79,9 +78,13 @@ export class EditFeedback extends React.Component{
               <div className="form-group row">
 
                 <div className="col-md-12">
-                  <label>Title</label> *
-                  <input type="text" value={this.state.title} className="form-control " onChange={(e)=>{this.setState({title: e.target.value })}}/>
+                  <label>Name</label> *
+                  <input type="text" value={this.state.name} className="form-control " onChange={(e)=>{this.setState({name: e.target.value })}}/>
                 </div>
+                <div className="col-md-12">
+                <label>Job</label> *
+                <input type="text" value={this.state.job} className="form-control " onChange={(e)=>{this.setState({job: e.target.value })}}/>
+              </div>
                 <div className="col-md-12">
                   <label>Content</label>
                   <textarea className="form-control " value={this.state.content} rows={8} onChange={(e) =>{this.setState({content : e.target.value})}} ></textarea>

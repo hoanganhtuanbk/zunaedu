@@ -19,6 +19,7 @@ export class SubFingerPrint extends React.Component{
     super(props);
     this.state = {
       concept : {},
+      feedbacks: [],
       editorState: EditorState.createEmpty()
 
     };
@@ -33,6 +34,7 @@ export class SubFingerPrint extends React.Component{
   }
   componentWillMount(){
     this.getDermatoglyphicCorners(this);
+    this.getFeedbackDatas(this)
   }
   componentWillReceiveProps(nextProps){ //Function nay chay mỗi khi có thay đổi props
     this.getDermatoglyphicDetailPlus(this,nextProps.params.key)
@@ -46,8 +48,13 @@ export class SubFingerPrint extends React.Component{
       const jsObject = JSON.parse(dermatoglyphic[0].content);
       const contentState = convertFromRaw(jsObject);
       const editorState = EditorState.createWithContent(contentState);
-      console.log(dermatoglyphic[0])
+      console.log(dermatoglyphic[0]);
       t.setState({concept: dermatoglyphic[0],editorState:editorState})
+    })
+  }
+  getFeedbackDatas(t){
+    Stores.find('/feedbacks',{order:'id DESC',limit: 5}, function(feedbacks){
+      t.setState({feedbacks: feedbacks})
     })
   }
   getDermatoglyphicCorners(t){
@@ -72,19 +79,24 @@ export class SubFingerPrint extends React.Component{
       fade: true,
       arrows: false,
     };
+    var childFeedback = this.state.feedbacks.map(function(result,index){
+      return(
+        <div  key={index} className="testimonials-v4 feedback md-margin-bottom-50">
+          <div className="testimonials-v4-in">
+            <p>{result.content}</p>
+          </div>
+          <img className="rounded-x" src={result.url} alt="thumb" />
+          <span className="testimonials-author">
+								Cảm nhận của {result.name}<br/>
+								<em>{result.job}</em>
+							</span>
+        </div>
+      )
+    });
     if(this.props.params.key == "phan-hoi"){
       return(
         <div className="col-md-8 ">
-          <div className="testimonials-v4 feedback md-margin-bottom-50">
-            <div className="testimonials-v4-in">
-              <p>Tôi đánh giá cao công nghệ sinh trắc vân tay. Sau khi phân tích bài báo cáo phân tích cho bản thân, con trai và nhân viên, tôi càng hiểu rõ hơn về sự khác biệt ở mỗi các nhân. Đặc biệt, thông qua bài báo cáo giúp tôi biết được phong cách giao tiếp phù hợp với con mình hơn. Tôi rất hài lòng về dịch vụ này. Tôi đánh giá cao độ chính xác của bài báo cáo phân tích là 95%</p>
-            </div>
-            <img className="rounded-x" src="../index/img/feedback/img5.jpg" alt="thumb" />
-            <span className="testimonials-author">
-								Cảm nhận của Thầy Duy Hải<br/>
-								<em>Web Developer, <a href="#">Google Inc.</a></em>
-							</span>
-          </div>
+          {childFeedback}
         </div>
       )
     } else return(
@@ -119,7 +131,7 @@ export class SubFingerPrint extends React.Component{
             <div className="blog-post-quote-item">
               <p>"Trẻ nhỏ sẽ không nhớ bạn vì vật chất bạn cho chúng, mà vì tình cảm bạn dành cho chúng." </p>
               <small>- Richard L Evans -</small>
-              </div>
+            </div>
 
           </div>
           <div className="blog-post-quote bg-content-detail margin-bottom-60">
@@ -149,14 +161,14 @@ export class SubFingerPrint extends React.Component{
               <small>- Maria Montessori -</small>
             </div>
 
-        </div>
+          </div>
           <div className="blog-post-quote bg-content-detail margin-bottom-60">
             <div className="blog-post-quote-item">
               <p>"Đừng bao giờ giúp đứa trẻ với việc mà nó cảm thấy mình có thể thành công." </p>
               <small>- Maria Montessori -</small>
             </div>
 
-        </div>
+          </div>
         </Slider>
 
       </div>
