@@ -41,7 +41,7 @@
         }
         &.btn-u {
           border: 0;
-          color: #fff;
+          color: #fff!important;
           font-size: 14px;
           cursor: pointer;
           font-weight: 400;
@@ -51,6 +51,7 @@
           white-space: nowrap;
           display: inline-block;
           text-decoration: none;
+
         }
         i {
           margin-right: 5px;
@@ -622,9 +623,10 @@
           overflow: hidden;
           position: relative;
           .easy-bg-v2 {
-            top: 12px;
+            top: 5px;
             color: #fff;
-            width: 128px;
+            width: 100px;
+
             padding: 5px;
             left: -32px;
             font-size: 13px;

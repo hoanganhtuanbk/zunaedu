@@ -23,19 +23,19 @@ export class WhatItAbout extends React.Component{
   constructor(){
     super();
     this.state = {
-      events : []
+      programs : []
     }
   }
 
   componentWillMount(){
-    this.getEventDatas(this)
+    this.getProgramDatas(this)
   }
 
-  getEventDatas(t){
-    Stores.find('/events',{
+  getProgramDatas(t){
+    Stores.find('/programs',{
       order: 'id DESC',
       limit: 3 },function(datas){
-      t.setState({events: datas})
+      t.setState({programs: datas})
     })
   }
 
@@ -58,31 +58,25 @@ export class WhatItAbout extends React.Component{
       fade: true,
       arrows: false,
     };
-    const childEvents = this.state.events.map(function(event,index){
+    const childPrograms = this.state.programs.map(function(program,index){
+
       return(
-        <Link to={`/su-kien/${event.key}`} key={index} className="upcoming-event">
+        <Link to={`/su-kien/${program.key}`} key={index} className="upcoming-event">
           <div className="stm-event__body">
             <div className="stm-event__left">
               <div className="stm-event__date">
-                <div className="stm-event__date-day">{event.date}</div>
-                <div className="stm-event__date-month">{event.month}</div>
+                <div className="stm-event__date-day">{program.date.substr(8,2)}</div>
+                <div className="stm-event__date-month">{program.date.substr(4,3)}</div>
               </div>
             </div>
             <div className="stm-event__content">
               <div className="stm-event__meta">
-                <ul>
-                  <li>
-											<span className="stm-event__time"><i className="fa fa-clock-o"></i>
-                        {event.time}										</span>
-                  </li>
-                  <li><span className="stm-event__venue"><i className="fa fa-map-marker"></i>{event.address}</span></li>
-                </ul>
               </div>
-              <h5 className="stm-event__title">{event.title}</h5>
+              <h5 className="stm-event__title">{program.title}</h5>
             </div>
           </div>
 
-          <img src={event.url} />
+          <img src={program.url} />
         </Link>
 
       )
@@ -136,10 +130,10 @@ export class WhatItAbout extends React.Component{
               </blockquote>
             </div>
 
-            <div className="col-md-4 slide-event">
+            <div className="col-md-4 slide-Program">
               <div className="headline"><h2>Sự kiện nổi bật</h2></div>
               <Slider {...settings} prevArrow={ <LeftNavButton /> } nextArrow={<RightNavButton />}>
-                {childEvents}
+                {childPrograms}
               </Slider>
             </div>
           </div>

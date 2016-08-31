@@ -47,10 +47,9 @@ export class WhatPeopleSay extends React.Component{
             </div>
             <div className="description">{
               result.content.length > 50 ? `${result.content.substr(0, limitContent)}...` : `${result.content}`
-            }</div><Link to="/van-tay-hoc/phan-hoi" className="readmore">Read More</Link>
+            }</div><Link to="/van-tay-hoc/phan-hoi" className="readmore btn-u btn-u-sm">Read More</Link>
           </div>
         </div>
-
       )
     });
     return (
