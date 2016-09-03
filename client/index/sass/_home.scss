@@ -477,65 +477,61 @@
   }
   .section-3{
     padding-top: 60px;
-
-
   }
+}
 
-  .section-4{
-    padding-top: 60px;
-    .instructor{
-        padding-left: 20px;
-        padding-right: 20px;
-        padding-bottom: 45px;
-      .instructor-item {
-        background: #fff;
-        padding: 30px;
-        overflow: hidden;
-        .avatar {
-          width: 62px;
-          float: left;
-          margin-right: 20px;
-          img {
-            width: 100%;
-            border-radius: 50%;
-          }
-        }
-        .instructor-info {
-          width: calc(100% - 82px);
-          width: -webkit-calc(100% - 82px);
-          width: -moz-calc(100% - 82px);
-          float: right;
-          .name {
-            text-transform: capitalize;
-            line-height: 25px;
-            margin: 12px 0 -2px;
-          }
-          .job {
-            font-style: italic;
-            color: #999;
-            font-size: 13px;
-            line-height: 20px;
-          }
-        }
-        .description {
-          clear: both;
-          color: #999;
-          padding: 29px 0 16px;
-          line-height: 25px;
-          display: block;
-          display: -webkit-box;
+.section-4{
+  padding-top: 60px;
+  .instructor{
+    padding-left: 20px;
+    padding-right: 20px;
+    padding-bottom: 45px;
+    .instructor-item {
+      background: #fff;
+      padding: 30px;
+      overflow: hidden;
+      .avatar {
+        width: 62px;
+        float: left;
+        margin-right: 20px;
+        img {
           width: 100%;
-          margin: 0 auto;
-          overflow: hidden;
+          border-radius: 50%;
         }
-
       }
-    }
+      .instructor-info {
+        width: calc(100% - 82px);
+        width: -webkit-calc(100% - 82px);
+        width: -moz-calc(100% - 82px);
+        float: right;
+        .name {
+          text-transform: capitalize;
+          line-height: 25px;
+          margin: 12px 0 -2px;
+        }
+        .job {
+          font-style: italic;
+          color: #999;
+          font-size: 13px;
+          line-height: 20px;
+        }
+      }
+      .description {
+        clear: both;
+        color: #999;
+        padding: 29px 0 16px;
+        line-height: 25px;
+        display: block;
+        display: -webkit-box;
+        width: 100%;
+        margin: 0 auto;
+        overflow: hidden;
+      }
 
+    }
   }
 
 }
-
 .who {
   li {
     margin-bottom: 6px;

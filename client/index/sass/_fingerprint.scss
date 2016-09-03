@@ -11,6 +11,16 @@
 }
 
 .fingerprint{
+  .content-sm{
+    padding-bottom: 0;
+    .blog-post-quote{
+      padding-bottom: 0;
+    }
+  }
+  .bg-green{
+    background: #f7f7f7!important;
+    padding-top: 0;
+  }
   .video-hit{
     margin-bottom: 20px;
     iframe{

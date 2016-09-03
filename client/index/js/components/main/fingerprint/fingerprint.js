@@ -4,6 +4,8 @@ import {Link} from 'react-router';
 import Slider from 'react-slick'
 import {HeaderPage} from '../src/header-page'
 import Stores from '../../../stores/stores'
+import {WhatPeopleSay} from '../home/what-people-say'
+
 class LeftNavButton extends React.Component {
   render() {
     return  <a onClick={this.props.onClick} className="left slick-control">
@@ -121,6 +123,7 @@ export class FingerPage extends React.Component{
             </div>
           </div>
         </div>
+        <WhatPeopleSay />
       </section>
     );
   }
