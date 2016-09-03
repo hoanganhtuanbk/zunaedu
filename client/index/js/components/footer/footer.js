@@ -72,8 +72,8 @@ export class Footer extends React.Component{
               <div className="row">
                 <div className="col-md-6">
                   <p>
-                    2016 © All Rights Reserved.
-                    <a href="#">Privacy Policy</a> | <a href="#">Terms of Service</a>
+                    Zunaedu.com © Copyright 2016.
+                    <a href="#">Thiết kế bởi QTN Silicon </a> | <a href="#">Chapter của QTN Global</a>
                   </p>
                 </div>
 
