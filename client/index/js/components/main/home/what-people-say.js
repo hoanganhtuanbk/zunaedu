@@ -52,10 +52,8 @@ export class WhatPeopleSay extends React.Component{
       )
     });
     return (
-      <section className="section-4">
+      <section className="section-4 bg-green">
         <div className="container">
-          <div className="headline"><h2></h2></div>
-
           <div className="row">
             <Slider {...settings}>
                 {childFeedback}

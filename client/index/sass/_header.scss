@@ -2,7 +2,7 @@
 .header {
   height: $gutter * 3;
   border-bottom: 1px $xxlight-gray solid;
-  position: fixed;
+  position: absolute;
   z-index: 100;
   background: white;
   width: 100%;

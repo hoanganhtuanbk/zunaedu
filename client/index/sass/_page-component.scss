@@ -246,6 +246,7 @@ blockquote
     font-size: 12px;
   }
 }
+
 .blog-newsletter {
   p {
     color: #555;
@@ -306,6 +307,17 @@ blockquote
     text-transform: uppercase;
   }
 }
+.input-group-addon{
+  color: #b3b3b3;
+  font-size: 14px;
+  background: #fff;
+  border-radius: 0;
+  &:first-child {
+    border-right: 0;
+  }
+}
+
+
 @include responsive_320{
   .breadcrumbs-v1{
     background-size: cover!important;

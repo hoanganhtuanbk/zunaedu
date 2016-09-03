@@ -126,8 +126,20 @@ div{
 .gray {
   background-color: $dark-white;
 }
+.g-bg-lightblue {
+  background: #eef2f7;
+}
+.bg-green {
+  background: #72c02c;
+}
 .margin-bottom-30 {
   margin-bottom: 30px;
+}
+.margin-bottom-10 {
+  margin-bottom: 10px;
+}
+.margin-bottom-20 {
+  margin-bottom: 20px;
 }
 .overflow-h {
   overflow: hidden;
@@ -140,6 +152,19 @@ div{
 }
 .margin-bottom-60 {
   margin-bottom: 60px;
+}
+.padding-bottom-50 {
+  padding-bottom: 50px;
+}
+.padding-top-50 {
+  padding-top: 50px;
+}
+.margin-right-20 {
+  margin-right: 20px;
+}
+
+.margin-bottom-0 {
+  margin-bottom: 0;
 }
 .medium-width{
   width: 70%;

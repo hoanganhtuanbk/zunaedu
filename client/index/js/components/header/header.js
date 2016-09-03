@@ -36,9 +36,6 @@ export class Header extends React.Component{
         </div>
         <div className="navbar-collapse mega-menu navbar-responsive-collapse collapse menu-nav">
           <div className="container">
-            <div className="user-feature">
-              <Link to="/login">Login</Link>
-            </div>
             <ul className="nav navbar-nav">
               <li className={this.isActive('')} onClick={this.setMenuActive.bind(this, '')}><Link className="route-page" to="/">Trang chủ</Link></li>
               <li className={this.isActive('van-tay-hoc')} onClick={this.setMenuActive.bind(this, 'van-tay-hoc')}><Link to="/van-tay-hoc/sinh-trac-van-tay-dermatoglyphics-la-gi" className="route-page">Sinh trắc vân tay</Link> </li>
