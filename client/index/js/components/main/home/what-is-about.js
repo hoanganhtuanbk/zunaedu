@@ -104,7 +104,7 @@ export class WhatItAbout extends React.Component{
                       </li>
                     </ul>
                     <ul className="list-unstyled margin-bottom-20">
-                      <li style={{'text-align': 'center'}}>“TÂM – TÍN – TRÍ – NHÂN - TỐC”</li>
+                      <li className="text-center">“TÂM – TÍN – TRÍ – NHÂN - TỐC”</li>
                       <li><i className="fa fa-check color-green"></i><strong>Tâm</strong>: Xây dựng và phát triển công ty từ TÂM, mỗi nhân viên phải có đạo đức kinh doanh, lấy khách hàng làm trung tâm.
                       </li>
                       <li><i className="fa fa-check color-green"></i><strong>Tín</strong>: Bảo vệ chữ TÍN được đặt lên hàng đầu, luôn chuẩn bị đầy đủ và nỗ lực hết mình để đảm bảo đúng cam kết, lời nói phải đi đôi với hành động.

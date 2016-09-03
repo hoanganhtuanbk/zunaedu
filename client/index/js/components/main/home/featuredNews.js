@@ -53,7 +53,6 @@ export class FeaturedNews extends React.Component {
               result5[1].src = '/goc-cha-me';
 
               news.push(result5[0],result5[1]);
-              console.log(news);
               t.setState({news: news})
             });
           });

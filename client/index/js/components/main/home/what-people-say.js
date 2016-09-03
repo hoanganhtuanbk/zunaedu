@@ -17,7 +17,6 @@ export class WhatPeopleSay extends React.Component{
   }
   getFeedbackDatas(t){
     Stores.find('/feedbacks',{order:'id DESC',limit: 5}, function(feedbacks){
-      console.log(feedbacks);
       t.setState({feedbacks: feedbacks})
     })
   }
@@ -36,7 +35,7 @@ export class WhatPeopleSay extends React.Component{
     const limitContent= 315;
     const childFeedback = this.state.feedbacks.map(function(result, index){
       return(
-        <div key={index} className="instructor">
+        <div key={result.id} className="instructor">
           <div  className="instructor-item">
             <div className="avatar">
               <img alt="" src={result.url}  className="avatar avatar-65 photo" height="65" width="65"/>
@@ -59,7 +58,7 @@ export class WhatPeopleSay extends React.Component{
 
           <div className="row">
             <Slider {...settings}>
-              {childFeedback}
+                {childFeedback}
             </Slider>
           </div>
         </div>

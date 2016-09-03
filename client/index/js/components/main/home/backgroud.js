@@ -59,6 +59,7 @@ export class Backgroud extends React.Component{
 }
 export class Purchase extends React.Component{
   render(){
+
     return(
       <div className="purchase">
         <div className="container overflow-h">
@@ -69,6 +70,8 @@ export class Purchase extends React.Component{
                 Tư vấn định hướng giáo dục, nghề nghiệp. Với phương châm hoạt động “Hãy là người cho đi trước” chúng tôi đặt mục tiêu giúp đỡ,
                 hỗ trợ, phát triển năng lực nội tại của mỗi trẻ em trên toàn Việt Nam bằng các chương trình đào tạo đặc biệt, các phương pháp
                  kiểm tra khoa học mang tính ứng dụng thực tiễn cao.</p>
+
+
             </div>
             <div className="col-md-3 btn-buy animated fadeInRight">
               <Link to="/dao-tao" className="btn-u btn-u-lg"><i className="fa fa-graduation-cap"></i> Tham gia ngay</Link>
