@@ -20,6 +20,7 @@ export class InitProgram extends React.Component{
   }
 
   render(){
+    const lenghData = this.state.programs.length;
    const ProgramList = this.state.programs.map(function(program,index){
      return(
        <div key={index}>
@@ -30,7 +31,10 @@ export class InitProgram extends React.Component{
            date={program.date}
            url={program.url}
          />
-         <div className="clearfix margin-bottom-20"><hr/></div>
+         {
+           index != (lenghData -1) ?  <div className="clearfix margin-bottom-20"><hr/></div> : null
+         }
+
        </div>
 
        )
@@ -48,9 +52,6 @@ class ProgramItem extends React.Component{
       <div className="row margin-bottom-20 feature-item">
         <div className="col-sm-5 sm-margin-bottom-20 feature-image">
           <Link to={`/dao-tao/${this.props.keyNote}`} >
-            {
-
-            }
             <img className="img-responsive" src={this.props.url} />
           </Link>
         </div>

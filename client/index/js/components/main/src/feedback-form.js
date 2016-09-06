@@ -10,8 +10,8 @@ export class FeedbackForm extends React.Component{
   }
   render(){
     return(
-      <div className="container padding-bottom-50" style={{'background':'#72c02c'}}>
-        <div className="headline"><h2 style={{'color':'white'}}>Cảm nhận khách hàng</h2></div>
+      <div className="feedback-form padding-bottom-50">
+        <div className="headline"><h2></h2></div>
         <div className="row">
           <div className="col-sm-6">
             <div className="input-group margin-bottom-10">

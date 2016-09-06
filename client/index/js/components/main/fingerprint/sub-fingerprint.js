@@ -120,7 +120,7 @@ export class SubFingerPrint extends React.Component{
           </div>
         </div>
         <Slider {...settings}>
-          <div className="blog-post-quote bg-content-detail margin-bottom-60">
+          <div className="blog-post-quote bg-quote margin-bottom-60">
             <div className="blog-post-quote-item">
               <p>"Trẻ con là những kẻ bắt chước bẩm sinh hành động giống như cha mẹ mình bất chấp mọi nỗ lực để dạy chúng cách xử thế." </p>
               <small>- Khuyết danh -</small>

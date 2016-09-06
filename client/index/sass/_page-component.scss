@@ -307,6 +307,55 @@ blockquote
     text-transform: uppercase;
   }
 }
+.hover-effect {
+  transition: all 0.4s ease-in-out;
+}
+.blog-photos {
+  li {
+    display: inline;
+    img {
+      width: 58px;
+      height: 58px;
+      margin: 0 2px 8px;
+      &:hover {
+        box-shadow: 0 0 0 2px #72c02c;
+      }
+    }
+  }
+
+}
+.trending{
+  -webkit-animation: tredingMove 1s linear ; /* Chrome, Safari, Opera */
+  animation: trendingMove 1s linear;
+  &:hover{
+    cursor: pointer;
+    .trending-img{
+      img{
+        border: solid 1px $base-color;
+      }
+    }
+    .trending-title{
+      a, small{
+        color: $base-color!important;
+      }
+
+
+    }
+  }
+    .trending-img{
+    img{
+      width: 60px;
+      height: 60px;
+      padding: 2px;
+      margin-top: 2px;
+      border: solid 1px #ddd;
+      max-width: none
+    }
+  }
+  .trending-title{
+  }
+}
+
 .input-group-addon{
   color: #b3b3b3;
   font-size: 14px;
@@ -317,48 +366,56 @@ blockquote
   }
 }
 
-
-@include responsive_320{
-  .breadcrumbs-v1{
-    background-size: cover!important;
-    height: auto;
-  }
-  .content-sm {
-    padding-top: 15px;
-
-  }
-  .content{
-    padding-top: 15px!important;
-    padding-left: 15px!important;
+.pager {
+  li {
+    a {
+      border-radius: 0;
+      transition: all 0.1s ease-in-out;
+    }
   }
 }
+  @include responsive_320{
+    .breadcrumbs-v1{
+      background-size: cover!important;
+      height: auto;
+    }
+    .content-sm {
+      padding-top: 15px;
 
-@include responsive_375{
-  .breadcrumbs-v1{
-    background-size: cover!important;
-    height: auto;
+    }
+    .content{
+      padding-top: 15px!important;
+      padding-left: 15px!important;
+    }
   }
-  .content-sm {
-    padding-top: 15px;
 
+  @include responsive_375{
+    .breadcrumbs-v1{
+      background-size: cover!important;
+      height: auto;
+    }
+    .content-sm {
+      padding-top: 15px;
+
+    }
+    .content{
+      padding-top: 15px!important;
+      padding-left: 15px!important;
+    }
   }
-  .content{
-    padding-top: 15px!important;
-    padding-left: 15px!important;
+
+  @include responsive_425{
   }
-}
 
-@include responsive_425{
-}
+  @include responsive_768{
+  }
 
-@include responsive_768{
-}
+  @include responsive_992{
+  }
 
-@include responsive_992{
-}
+  @include responsive_1024{
+  }
 
-@include responsive_1024{
-}
+  @include responsive_1200{
+  }
 
-@include responsive_1200{
-}

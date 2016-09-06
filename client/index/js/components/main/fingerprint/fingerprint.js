@@ -24,7 +24,7 @@ class RightNavButton extends React.Component {
 class FingerPrintItem extends React.Component{
   render(){
     return(
-      <div className="row treding">
+      <div className="row trending">
         <div className="col-md-3 trending-img">
           <img src={this.props.url} />
         </div>
@@ -64,7 +64,7 @@ class Menu extends React.Component{
     })
   }
   _handelGetBooks(t){
-    Stores.find('/books',{where: {url: { neq: null} },order: 'id DESC', limit: 10}, function(datas){
+    Stores.find('/books',{where: {url: { neq: null} },order: 'id DESC', limit: 12}, function(datas){
       console.log(datas);
       t.setState({books: datas})
     })

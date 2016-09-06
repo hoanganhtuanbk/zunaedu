@@ -8,10 +8,16 @@ import {FeedbackForm} from '../src/feedback-form'
 class Trending extends React.Component{
   render(){
     return(
-      <li >
-        <h3><Link to={`/dao-tao/${this.props.keyNote}`}>{this.props.title}</Link></h3>
-        <small>{this.props.date} <a href="#">Admin</a></small>
-      </li>
+        <div className="row trending">
+          <div className="col-md-3 trending-img">
+            <img src={this.props.url} />
+          </div>
+          <div className="col-md-9 trending-title">
+            <h3><Link to={`/van-tay-hoc/${this.props.keyNote}`}>{this.props.title}</Link></h3>
+            <small>{this.props.date} / Admin</small>
+          </div>
+        </div>
+
 
     )
   }
@@ -37,13 +43,14 @@ export class Program extends React.Component{
   render(){
     const programs = this.state.programs.map(function(item, index) {
       return (
-        <div key={index}>
+        <li key={index}>
           <Trending
             keyNote={item.key}
             title={item.title}
             date={item.date}
+            url={item.url}
           />
-        </div>)
+        </li>)
     });
 
     return(
@@ -58,15 +65,16 @@ export class Program extends React.Component{
                 <li className="page-amount">1 of 7</li>
                 <li className="next"><a href="#">Newer →</a></li>
               </ul>
+              <FeedbackForm/>
             </div>
             <div className="col-md-3">
-              <div className="headline-v2 bg-trending"><h2>Dòng thời gian</h2></div>
+              <div className="headline-v2 bg-trending"><h2>Bài đăng mới nhất</h2></div>
               <ul className="list-unstyled blog-trending margin-bottom-50">
                 {programs}
               </ul>
             </div>
           </div>
-        <FeedbackForm/>
+
         </div>
       </div>
     )
