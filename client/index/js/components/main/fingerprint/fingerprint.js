@@ -24,10 +24,24 @@ class RightNavButton extends React.Component {
 class FingerPrintItem extends React.Component{
   render(){
     return(
-        <div>
+      <div className="row treding">
+        <div className="col-md-3 trending-img">
+          <img src={this.props.url} />
+        </div>
+        <div className="col-md-9 trending-title">
           <h3><Link to={`/van-tay-hoc/${this.props.keyNote}`}>{this.props.title}</Link></h3>
           <small>{this.props.date} / Admin</small>
         </div>
+      </div>
+
+    )
+  }
+}
+
+class BookItem extends React.Component{
+  render(){
+    return(
+      <Link to={`/sach-giao-duc/${this.props.keyNote}`}><img className="hover-effect" alt={this.props.title} src={this.props.url}/></Link>
     )
   }
 }
@@ -36,15 +50,23 @@ class Menu extends React.Component{
   constructor(){
     super();
     this.state = {
-      dermatoglyphics: []
+      dermatoglyphics: [],
+      books: []
     }
   }
   componentWillMount(){
-    this._handelGetDatas(this)
+    this._handelGetDatas(this);
+    this._handelGetBooks(this)
   }
   _handelGetDatas(t){
-    Stores.find('/dermatoglyphics',{order: 'id DESC'}, function(datas){
+    Stores.find('/dermatoglyphics',{order: 'id DESC', limit: 5}, function(datas){
       t.setState({dermatoglyphics: datas})
+    })
+  }
+  _handelGetBooks(t){
+    Stores.find('/books',{where: {url: { neq: null} },order: 'id DESC', limit: 10}, function(datas){
+      console.log(datas);
+      t.setState({books: datas})
     })
   }
   render(){
@@ -55,6 +77,19 @@ class Menu extends React.Component{
             keyNote = {item.key}
             title = {item.title}
             date = {item.date}
+            url = {item.url}
+          />
+        </li>
+
+      )
+    });
+    const BooksList = this.state.books.map(function(item,index){
+      return(
+        <li key={index} >
+          <BookItem
+            keyNote = {item.key}
+            title = {item.title}
+            url = {item.url}
           />
         </li>
 
@@ -93,13 +128,17 @@ class Menu extends React.Component{
           </Slider>
         </div>
 
-        <div className="headline-v2"><h2>Dòng thời gian</h2></div>
+        <div className="headline-v2"><h2>Bài đăng mới nhất</h2></div>
         <ul className="list-unstyled blog-trending margin-bottom-50">
           {DermatoglyphicsList}
           <li>
             <h3><Link to={`/van-tay-hoc/phan-hoi`}>Cảm nhận từ khách hàng</Link></h3>
             <small>{dateToString} / Admin</small>
           </li>
+        </ul>
+        <div className="headline-v2"><h2>Sách hay cho ngày mới</h2></div>
+        <ul className="list-unstyled blog-photos margin-bottom-50">
+          {BooksList}
         </ul>
       </div>
     )
@@ -110,6 +149,9 @@ class Menu extends React.Component{
 export class FingerPage extends React.Component{
   render(){
     const bg = "../index/img/bg-components/sinh-trac-mini.jpg";
+    $(document).mousemove(function(e){
+      console.log(e.pageX,e.pageY);
+    });
     return (
       <section className="fingerprint">
         <HeaderPage background={bg} />

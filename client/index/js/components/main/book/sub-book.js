@@ -12,6 +12,7 @@ import {
   convertToRaw
 } from 'draft-js';
 import ImageComponent from '../src/ImageComponent';
+import {FeedbackForm} from '../src/feedback-form'
 
 export class SubBook extends React.Component{
   constructor(props){
@@ -110,25 +111,8 @@ export class SubBook extends React.Component{
             </ul>
           </div>
         </div>
-        <div className="container padding-bottom-50">
-          <div className="headline"><h2>Cảm nhận khách hàng</h2></div>
-          <div className="row">
-            <div className="col-sm-6">
-              <div className="input-group margin-bottom-10">
-                <span className="input-group-addon"><i className="fa fa-user"></i></span>
-                <input type="name" placeholder="Tên khách hàng" className="form-control"/>
-              </div>
-            </div>
-            <div className="col-sm-6">
-              <div className="input-group margin-bottom-20">
-                <span className="input-group-addon"><i className="fa fa-envelope"></i></span>
-                <input type="email" placeholder="Email" className="form-control"/>
-              </div>
-            </div>
-          </div>
-          <textarea rows="5" className="form-control margin-bottom-20" placeholder="Nội dung..."></textarea>
-          <button className="btn-u btn-u-sm pull-right" type="button">Gửi cảm nhận</button>
-        </div>
+        <FeedbackForm/>
+
       </div>
 
 

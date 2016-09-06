@@ -92,31 +92,31 @@ export class WhatItAbout extends React.Component{
                 <div className="col-sm-4">
                   <img className="img-responsive" src="../index/img/info/giatricotloi.png" alt=""/>
                 </div>
-                <div className="col-sm-8">
+                <div className="col-sm-8 my-info">
                   <Slider {...settings1}>
                     <ul className="list-unstyled margin-bottom-20">
-                      <li><strong>Sứ mệnh:</strong></li>
-                      <li><i className="fa fa-check color-green"></i>    Mang chất lượng dịch vụ, sản phẩm và xây dựng một nền tảng vững chắc cân bằng về Tâm – Thân – Trí cho khách hàng.
+                      <li style={{'padding-bottom':'20px'}}><strong>Sứ mệnh:</strong></li>
+                      <li><i className="fa fa-plane color-green"></i>    Mang chất lượng dịch vụ, sản phẩm và xây dựng một nền tảng vững chắc cân bằng về Tâm – Thân – Trí cho khách hàng.
                       </li>
-                      <li><i className="fa fa-check color-green"></i>    Xây dựng môi trường làm việc chuyên nghiệp, năng động, sáng tạo và nhân văn; tạo điều kiện thu nhập cao và cơ hội phát triển công bằng cho tất cả thành viên trong đại gia đình ZuNa.
+                      <li><i className="fa fa-plane color-green"></i>    Xây dựng môi trường làm việc chuyên nghiệp, năng động, sáng tạo và nhân văn; tạo điều kiện thu nhập cao và cơ hội phát triển công bằng cho tất cả thành viên trong đại gia đình ZuNa.
                       </li>
-                      <li><i className="fa fa-check color-green"></i>    Hài hòa lợi ích doanh nghiệp với lợi ích xã hội; đóng góp tích cực vào các hoạt động hướng về cộng đồng, thể hiện tinh thần trách nhiệm công dân, lòng tự hào dân tộc.
+                      <li><i className="fa fa-plane color-green"></i>    Hài hòa lợi ích doanh nghiệp với lợi ích xã hội; đóng góp tích cực vào các hoạt động hướng về cộng đồng, thể hiện tinh thần trách nhiệm công dân, lòng tự hào dân tộc.
                       </li>
                     </ul>
                     <ul className="list-unstyled margin-bottom-20">
                       <li className="text-center">“TÂM – TÍN – TRÍ – NHÂN - TỐC”</li>
-                      <li><i className="fa fa-check color-green"></i><strong>Tâm</strong>: Xây dựng và phát triển công ty từ TÂM, mỗi nhân viên phải có đạo đức kinh doanh, lấy khách hàng làm trung tâm.
+                      <li><i className="fa fa-plane color-green"></i><strong>Tâm</strong>: Xây dựng và phát triển công ty từ TÂM, mỗi nhân viên phải có đạo đức kinh doanh, lấy khách hàng làm trung tâm.
                       </li>
-                      <li><i className="fa fa-check color-green"></i><strong>Tín</strong>: Bảo vệ chữ TÍN được đặt lên hàng đầu, luôn chuẩn bị đầy đủ và nỗ lực hết mình để đảm bảo đúng cam kết, lời nói phải đi đôi với hành động.
+                      <li><i className="fa fa-plane color-green"></i><strong>Tín</strong>: Bảo vệ chữ TÍN được đặt lên hàng đầu, luôn chuẩn bị đầy đủ và nỗ lực hết mình để đảm bảo đúng cam kết, lời nói phải đi đôi với hành động.
                       </li>
-                      <li><i className="fa fa-check color-green"></i><strong>Trí</strong>: Xem SÁNG TẠO là sức sống, là đòn bẩy phát triển, đề cao tinh thần dám nghĩ, dám làm, tư duy tích cực, chủ trương xây dựng doanh nghiệp là một ngôi trường, mỗi nhân viên là một học trò cũng là một người thầy.  .
+                      <li><i className="fa fa-plane color-green"></i><strong>Trí</strong>: Xem SÁNG TẠO là sức sống, là đòn bẩy phát triển, đề cao tinh thần dám nghĩ, dám làm, tư duy tích cực, chủ trương xây dựng doanh nghiệp là một ngôi trường, mỗi nhân viên là một học trò cũng là một người thầy.  .
                       </li>
 
                     </ul>
                     <ul className="list-unstyled margin-bottom-20">
-                      <li><i className="fa fa-check color-green"></i><strong>Nhân</strong>: Xây dựng các mối quan hệ với tinh thần nhân văn, là tài sản quý giá nhất.
+                      <li><i className="fa fa-plane color-green"></i><strong>Nhân</strong>: Xây dựng các mối quan hệ với tinh thần nhân văn, là tài sản quý giá nhất.
                       </li>
-                      <li><i className="fa fa-check color-green"></i><strong>Tốc</strong>: Suy nghĩ nhanh - Quyết định nhanh – Hành động nhanh .
+                      <li><i className="fa fa-plane color-green"></i><strong>Tốc</strong>: Suy nghĩ nhanh - Quyết định nhanh – Hành động nhanh .
                       </li>
                     </ul>
                   </Slider>
