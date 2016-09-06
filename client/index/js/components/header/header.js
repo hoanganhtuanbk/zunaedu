@@ -20,9 +20,6 @@ export class Header extends React.Component{
     return ((value===this.state.selected) ?'active':'');
   }
   render (){
-    const myWidth = window.innerWidth;
-    const  myHeight = window.innerHeight;
-    console.log(myWidth,myHeight)
     const activeNavbar = function(){
       $(".navbar-collapse").toggleClass("in");
     };

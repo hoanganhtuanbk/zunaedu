@@ -4,6 +4,7 @@ import { Link, IndexLink } from 'react-router';
 import Stores from '../../../stores/stores'
 import {HeaderPage} from '../src/header-page'
 import {FeedbackForm} from '../src/feedback-form'
+import {HitBooks} from '../src/hit-books'
 
 class Trending extends React.Component{
   render(){
@@ -72,6 +73,7 @@ export class Program extends React.Component{
               <ul className="list-unstyled blog-trending margin-bottom-50">
                 {programs}
               </ul>
+              <HitBooks/>
             </div>
           </div>
 

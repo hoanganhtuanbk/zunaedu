@@ -1,8 +1,7 @@
 import React from 'react';
 import {render} from 'react-dom';
 import { Link, IndexLink } from 'react-router';
-import Stores from '../../../stores/stores'
-
+import Stores from '../../../stores/stores';
 import {
   Editor,
   EditorState,
@@ -66,7 +65,7 @@ export class SubBook extends React.Component{
     })
   }
   getBookDatas(t){
-    Stores.find('/books',{order: 'id DESC'}, function(books, status) {
+    Stores.find('/books',{order: 'id DESC', limit: 5}, function(books, status) {
       if (books) {
         t.setState({books: books});
       }
@@ -103,6 +102,7 @@ export class SubBook extends React.Component{
 
               </div>
             </div>
+            <FeedbackForm/>
           </div>
           <div className="col-md-3">
             <div className="headline-v2 bg-trending"><h2>Dòng thời gian</h2></div>
@@ -111,11 +111,7 @@ export class SubBook extends React.Component{
             </ul>
           </div>
         </div>
-        <FeedbackForm/>
-
       </div>
-
-
     );
   }
 }

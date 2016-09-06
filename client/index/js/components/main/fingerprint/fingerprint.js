@@ -5,7 +5,7 @@ import Slider from 'react-slick'
 import {HeaderPage} from '../src/header-page'
 import Stores from '../../../stores/stores'
 import {WhatPeopleSay} from '../home/what-people-say'
-
+import {HitBooks} from '../src/hit-books'
 class LeftNavButton extends React.Component {
   render() {
     return  <a onClick={this.props.onClick} className="left slick-control">
@@ -50,25 +50,18 @@ class Menu extends React.Component{
   constructor(){
     super();
     this.state = {
-      dermatoglyphics: [],
-      books: []
+      dermatoglyphics: []
     }
   }
   componentWillMount(){
     this._handelGetDatas(this);
-    this._handelGetBooks(this)
   }
   _handelGetDatas(t){
     Stores.find('/dermatoglyphics',{order: 'id DESC', limit: 5}, function(datas){
       t.setState({dermatoglyphics: datas})
     })
   }
-  _handelGetBooks(t){
-    Stores.find('/books',{where: {url: { neq: null} },order: 'id DESC', limit: 12}, function(datas){
-      console.log(datas);
-      t.setState({books: datas})
-    })
-  }
+
   render(){
     const DermatoglyphicsList = this.state.dermatoglyphics.map(function(item,index){
       return(
@@ -83,18 +76,7 @@ class Menu extends React.Component{
 
       )
     });
-    const BooksList = this.state.books.map(function(item,index){
-      return(
-        <li key={index} >
-          <BookItem
-            keyNote = {item.key}
-            title = {item.title}
-            url = {item.url}
-          />
-        </li>
 
-      )
-    });
     const settings = {
       dots: false,
       infinite: true,
@@ -136,10 +118,7 @@ class Menu extends React.Component{
             <small>{dateToString} / Admin</small>
           </li>
         </ul>
-        <div className="headline-v2"><h2>Sách hay cho ngày mới</h2></div>
-        <ul className="list-unstyled blog-photos margin-bottom-50">
-          {BooksList}
-        </ul>
+        <HitBooks />
       </div>
     )
   }
@@ -149,9 +128,6 @@ class Menu extends React.Component{
 export class FingerPage extends React.Component{
   render(){
     const bg = "../index/img/bg-components/sinh-trac-mini.jpg";
-    $(document).mousemove(function(e){
-      console.log(e.pageX,e.pageY);
-    });
     return (
       <section className="fingerprint">
         <HeaderPage background={bg} />

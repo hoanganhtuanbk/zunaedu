@@ -4,6 +4,7 @@ import {Link,browserHistory} from 'react-router';
 import Stores from '../../../stores/stores'
 import {HeaderPage} from '../src/header-page'
 import {FeedbackForm} from '../src/feedback-form'
+import {HitBooks} from '../src/hit-books'
 
 export class Event extends React.Component{
   constructor(props){
@@ -43,16 +44,23 @@ export class Event extends React.Component{
           <div className="row">
             <div className="col-md-9">
               {this.props.children}
+              <ul className="pager pager-v3 pager-sm no-margin-bottom">
+                <li className="previous"><a href="#">← Older</a></li>
+                <li className="page-amount">1 of 7</li>
+                <li className="next"><a href="#">Newer →</a></li>
+              </ul>
+              <FeedbackForm/>
+
             </div>
             <div className="col-md-3">
               <div className="headline-v2 bg-trending"><h2>Dòng thời gian</h2></div>
               <ul className="list-unstyled blog-trending margin-bottom-50">
                 {childElements}
               </ul>
+              <HitBooks/>
             </div>
           </div>
         </div>
-        <FeedbackForm/>
       </div>
     );
   }
