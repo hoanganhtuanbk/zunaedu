@@ -1,9 +1,19 @@
 .fingerprint{
   p{
     color: #666666;
-
+    font-size: 15px;
+    line-height: 26px;
   }
   h5{
+    color: #666666;
+    font-weight: 500;
+    font-size: 20px;
+    line-height: 32px;
+  }
+  h2{
+    font-weight: 500;
+    font-size: 40px;
+    line-height: 58px;
     color: #666666;
   }
   img{
@@ -13,11 +23,6 @@
     padding: 50px 40px;
     .column-inner{
       margin-bottom: 35px;
-      p{
-        font-size: 15px;
-        line-height: 26px;
-      }
-
       .btn-active{
         background: #ea1d2e;
         border-color: #ea1d2e;
@@ -79,6 +84,7 @@
         iframe {
           width: 100%;
           height: 100%;
+          max-height: 388px;
           display: block;
           margin: 0;
           top: 0;
@@ -122,24 +128,16 @@
     }
     .session-5{
       p{
-        font-size: 15px;
-        line-height: 26px;
         margin-bottom: 30px;
       }
     }
     .session-6{
       .title-ss-6{
         padding-top: 20px;
-        h5{
-          font-weight: 600;
-          font-size: 20px;
-          line-height: 32px;
-        }
+
       }
       .content-ss-6{
         p{
-          font-size: 15px;
-          line-height: 26px;
           margin-bottom: 30px;
         }
       }
@@ -155,10 +153,236 @@
       }
       .content-ss-7{
         p{
-          font-size: 15px;
-          line-height: 26px;
           margin-bottom: 30px;
         }
+      }
+    }
+    .session-8{
+      background: rgb(214, 29, 37);
+      margin-top: 40px;
+      margin-left: -40px;
+      margin-right: -40px;
+      .register-now{
+        padding:50px 0;
+        .step_line{
+          border-bottom: 1px solid #EBEBEB;
+          border-top: 1px solid #EBEBEB;
+          height: 3px;
+        }
+        a{
+          font-weight: 500;
+          font-size: 20px;
+          line-height: 32px;
+          color: white;
+          padding: 15px;
+          border: 2px solid white;
+        }
+      }
+
+      .content-ss-8{
+        padding: 30px 100px;
+        .icon-ss-8{
+          float: left;
+          padding: 27px 10px 27px 0;
+
+        }
+        .wrap-ss-8{
+          border: 2px solid white;
+          padding: 0px 20px;
+          i{
+            color: white;
+            font-size: 25px;
+            margin-top: 29px;
+            float: left;
+            margin-left: 20px;
+            margin-right: 20px;
+          }
+          h5{
+            color: white;
+          }
+        }
+
+      }
+    }
+    .session-9{
+      padding-left: 100px;
+      padding-right: 100px;
+      margin-left: -40px;
+      margin-right: -40px;
+      background-color: rgb(242, 243, 245);
+      .title-ss-9{
+        padding-top: 35px;
+        h5{
+          font-weight: 600;
+          font-size: 30px;
+          line-height: 46px;
+        }
+      }
+      .content-ss-9{
+        .around-icon{
+          color: rgb(255, 255, 255);
+          font-size: 50px;
+          display: inline-block;
+          top: -100px;
+          background: rgb(234, 29, 46);
+          -webkit-border-radius: 50%;
+          border-radius: 50%;
+          height: 100px;
+          width: 100px;
+          line-height: 100px;
+          box-sizing: content-box!important;
+          margin: 0 auto;
+          i{
+            padding-top: 25px;
+
+          }
+        }
+
+        .description-ss-9{
+          p{
+            font-size: 15px;
+            line-height: 26px;
+            margin-bottom: 30px;
+          }
+        }
+
+      }
+      .sub-title-ss-9{
+        font-weight: bold;
+        font-size: 25px;
+      }
+      .square-ss-9{
+        border-color:#ea1d2e;
+        border-style:dotted;
+        border-width:2px;
+        margin-bottom: 35px;
+        .header-ss-9{
+          padding: 0 5%;
+          h3{
+            font-weight:bold
+          }
+        }
+        .description{
+          padding: 0 5% 1em 5%;
+        }
+      }
+      .step-items{
+        margin-top: 5px ;
+        .text-center{
+          margin-top: 15px;
+
+        }
+        .step-img{
+          font-size: 150px;
+
+          .img-icon {
+            width: 1em;
+            max-width: 100%!important;
+            -webkit-border-radius: 0!important;
+            border-radius: 0!important;
+            -webkit-box-shadow: none!important;
+            box-shadow: none!important;
+            display: block;
+            font-size: inherit;
+            margin: 0 auto;
+
+          }
+        }
+
+      }
+    }
+    .session-10{
+      margin-top: 40px;
+      .promotion{
+        background-color: #c4ee91;
+        color: #4d7615;
+        border: 2px solid #7ad03a;
+        display: table;
+        border-left: 5px solid #7ad03a;
+        padding-left: 0;
+        .ts-info-panel-info-icon{
+          width: 60px;
+          display: table-cell;
+          vertical-align: middle;
+          padding: 10px 20px 10px 20px;
+          margin: 10px 0;
+          i{
+            font-size: 60px;
+            line-height: 60px;
+            color: #7ad03a;
+            float: left;
+            margin: 0;
+            padding: 0;
+          }
+        }
+        .ts-info-panel-info-desc{
+          display: table-cell;
+          vertical-align: middle;
+          padding: 10px 0;
+          margin: 10px 0;
+
+          .ts-info-panel-info-title {
+            font-weight: 700;
+            font-size: 18px;
+            margin: 10px 0;
+            padding: 0 10px;
+          }
+          .ts-info-panel-info-main {
+            margin: 0;
+            padding: 0 10px;
+            p {
+              margin: 5px 0;
+              padding: 0;
+              font-size: 15px;
+              line-height: 26px;
+              margin-bottom: 30px;
+            }
+          }
+        }
+      }
+      .select-address{
+        .uvc-sub-heading{
+          margin-bottom: 30px;
+        }
+        .btn-address{
+          margin-bottom: 5px;
+          padding: 10px;
+          width: 215px;
+          background: #dd0000;
+          color: white;
+          font-size: 18px;
+          font-weight: 500;
+        }
+      }
+      .img-feedback{
+        margin-top: 32px;
+      }
+      .feedback{
+        margin-top: 50px;
+        .testimonials-v4-in{
+          background: rgb(242, 243, 245);
+        }
+        .testimonials-author{
+          margin-left: 10px;
+        }
+        img{
+          height: 60px!important;
+        }
+        .testimonials-author{
+          padding-left: 10px;
+        }
+      }
+
+    }
+    .session-11{
+      background-color: rgb(242, 243, 245);
+      padding-top: 30px;
+      margin-left: -40px;
+      margin-right: -40px;
+      padding-left: 100px;
+      padding-right: 100px;
+      .commitment{
+
       }
     }
   }

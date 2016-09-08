@@ -95,7 +95,7 @@ export class WhatItAbout extends React.Component{
                 <div className="col-sm-8 my-info">
                   <Slider {...settings1}>
                     <ul className="list-unstyled margin-bottom-20">
-                      <li style={{'padding-bottom':'20px'}}><strong>Sứ mệnh:</strong></li>
+                      <li style={{paddingBottom:20}}><strong>Sứ mệnh:</strong></li>
                       <li><i className="fa fa-plane color-green"></i>    Mang chất lượng dịch vụ, sản phẩm và xây dựng một nền tảng vững chắc cân bằng về Tâm – Thân – Trí cho khách hàng.
                       </li>
                       <li><i className="fa fa-plane color-green"></i>    Xây dựng môi trường làm việc chuyên nghiệp, năng động, sáng tạo và nhân văn; tạo điều kiện thu nhập cao và cơ hội phát triển công bằng cho tất cả thành viên trong đại gia đình ZuNa.
