@@ -99,23 +99,30 @@ class DoiTuongDichVu extends React.Component{
           <div className="title-ss-4">
             <h3 className="text-center">Dịch vụ này dành cho độ tuổi nào?</h3>
           </div>
-          <div className="description-ss-4">
-            <div className="column-inner">
-              <h5 className="text-center">Với trẻ em, kỹ thuật Sinh Trắc Vân Tay Đa Trí Thông Minh (DMIT) sẽ:</h5>
-            </div>
-          </div>
+
         </div>
         <div className="session-5">
+          <div className="title-ss-5">
+            <div className="column-inner">
+              <h5 className="text-center">Với trẻ em, kỹ thuật <strong>Trắc Vân Tay Đa Trí Thông Minh (DMIT)</strong> sẽ:</h5>
+            </div>
+          </div>
+          <span className="line-style"><span className="sub-line"></span></span>
           <div className="row">
             <div className="col-md-4">
               <ul>
                 <li>
+                  <i className="fa fa-chevron-circle-right" aria-hidden="true"></i>
                   <p className="text-justify">Giúp cha mẹ <strong>khám phá được những tài năng thiên bẩm</strong> của con và bắt đầu định hướng phát triển từ sớm.</p>
                 </li>
                 <li>
+                  <i className="fa fa-chevron-circle-right" aria-hidden="true"></i>
+
                   <p className="text-justify">Giúp cha mẹ hiểu được tương quan giữa các chỉ số liên quan mật thiết đến thành công <strong>IQ, EQ, AQ, CQ</strong> mà con sở hữu.</p>
                 </li>
                 <li>
+                  <i className="fa fa-chevron-circle-right" aria-hidden="true"></i>
+
                   <p className="text-justify">Giúp cha mẹ dựa vào <strong>mô hình 8 loại trí thông minh</strong> của Giáo sư Howard Garner xác định loại thông minh của con và định hướng sớm, đặc biệt là trong giai đoạn trước 18 tuổi.</p>
                 </li>
               </ul>
@@ -128,9 +135,13 @@ class DoiTuongDichVu extends React.Component{
             <div className="col-md-4">
               <ul>
                 <li>
+                  <i className="fa fa-chevron-circle-right" aria-hidden="true"></i>
+
                   <p className="text-justify">Giúp cha mẹ xác định các chỉ số đặc biệt khác của con như là: <strong>TFRC</strong> (thể hiện mật độ tế bào thần kinh trên vỏ não), <strong>VAK</strong> (phương pháp tiếp nhận thông tin hiệu quả), <strong>ATD</strong> (tốc độ tiếp thu nhanh chậm), cấu trúc thùy não (thùy trước trán, thùy đỉnh, thùy chẩm, thùy trán, thùy thái dương).</p>
                 </li>
                 <li>
+                  <i className="fa fa-chevron-circle-right" aria-hidden="true"></i>
+
                   <p className="text-justify">Giúp cha mẹ <strong>hiểu và có phương pháp</strong> nuôi dạy con phù hợp hơn ngay từ sớm.</p>
                 </li>
               </ul>
@@ -138,42 +149,54 @@ class DoiTuongDichVu extends React.Component{
             </div>
           </div>
         </div>
-        <div className="session-6">
-          <div className="title-ss-6">
+        <div className="session-5">
+          <div className="title-ss-5">
             <div className="column-inner">
               <h5 className="text-center">Với người trưởng thành, kỹ thuật <strong>Sinh Trắc Vân Tay Đa Trí Thông Minh (DMIT)</strong> sẽ:</h5>
             </div>
           </div>
-          <div className="content-ss-6">
+          <div className="content-ss-5">
             <div className="row">
               <div className="col-md-4">
                 <ul>
                   <li>
+                    <i className="fa fa-chevron-circle-right" aria-hidden="true"></i>
+
                     <p className="text-justify">Giúp hiểu rõ điểm yếu và <strong>điểm mạnh</strong> của bản thân để định hướng sự nghiệp.</p>
                   </li>
                   <li>
+                    <i className="fa fa-chevron-circle-right" aria-hidden="true"></i>
+
                     <p className="text-justify">Giúp phát triển điểm mạnh để đạt được <strong>sự tự tin và chuyên nghiệp</strong> cao nhất.</p>
                   </li>
                   <li>
+                    <i className="fa fa-chevron-circle-right" aria-hidden="true"></i>
+
                     <p className="text-justify">Giúp <strong>tự tin phát huy những tố chất sẵn có</strong> của mình để vươn đến những tầm cao mới trong công việc lẫn cuộc sống.</p>
                   </li>
                 </ul>
               </div>
               <div className="col-md-4">
-                <div className="img-ss-6 text-center">
+                <div className="img-ss-5 text-center">
                   <img width="315" height="315" src="../index/img/van-tay-hoc/nguoi-truong-thanh.png" className="vc_single_image-img attachment-large" alt="DMIT_anh2" />
 
-                </div>/home/tuanpham/Downloads/1.png
+                </div>
               </div>
               <div className="col-md-4">
                 <ul>
                   <li>
+                    <i className="fa fa-chevron-circle-right" aria-hidden="true"></i>
+
                     <p className="text-justify">Giúp <strong>vạch ra mục tiêu rõ ràng hơn</strong> và tin tưởng, tập trung vào mục tiêu của bản thân hơn.</p>
                   </li>
                   <li>
+                    <i className="fa fa-chevron-circle-right" aria-hidden="true"></i>
+
                     <p className="text-justify">Giúp<strong> lý giải những mâu thuẫn</strong> trong tính cách khiến bạn băn khoăn bấy lâu nay.</p>
                   </li>
                   <li>
+                    <i className="fa fa-chevron-circle-right" aria-hidden="true"></i>
+
                     <p className="text-justify">Giúp <strong>xây dựng các mối quan hệ tốt hơn</strong> với người xung quanh thông qua việc thấu hiểu cách tư duy và hành động của&nbsp;bản thân bạn.</p>
                   </li>
                 </ul>
@@ -181,28 +204,30 @@ class DoiTuongDichVu extends React.Component{
             </div>
           </div>
         </div>
-        <div className="session-6">
-          <div className="title-ss-6">
+        <div className="session-5">
+          <div className="title-ss-5">
             <div className="column-inner">
               <h5 className="text-center">Với gia đình:<strong>Sinh Trắc Vân Tay Đa Trí Thông Minh (DMIT)</strong> sẽ:</h5>
             </div>
           </div>
-          <div className="content-ss-6">
+          <div className="content-ss-5">
             <div className="row">
               <div className="col-md-4">
                 <ul>
                   <li>
+                    <i className="fa fa-chevron-circle-right" aria-hidden="true"></i>
 
                     <p className="text-justify">Giúp cha mẹ thấu hiểu các <strong>năng khiếu bẩm sinh</strong> điểm manh và điểm yếu của con em mình.</p>
                   </li>
                   <li>
+                    <i className="fa fa-chevron-circle-right" aria-hidden="true"></i>
                     <p className="text-justify">Giúp định hướng trẻ phát huy tối đa <strong>tiềm năng</strong></p>
                   </li>
 
                 </ul>
               </div>
               <div className="col-md-4">
-                <div className="img-ss-6 text-center">
+                <div className="img-ss-5 text-center">
                   <img width="315" height="315" src="../index/img/van-tay-hoc/gia-dinh.png" className="vc_single_image-img attachment-large" alt="DMIT_anh2" />
 
                 </div>
@@ -211,9 +236,11 @@ class DoiTuongDichVu extends React.Component{
                 <ul>
 
                   <li>
+                    <i className="fa fa-chevron-circle-right" aria-hidden="true"></i>
                     <p className="text-justify">Giúp <strong>tư vấn cải thiện </strong> các bất đồng quan điểm giữa cha mẹ và con trẻ..</p>
                   </li>
                   <li>
+                    <i className="fa fa-chevron-circle-right" aria-hidden="true"></i>
                     <p className="text-justify">Giúp<strong> thấu hiểu </strong> lẫn nhau – Nâng cao giá trị gia đình.</p>
                   </li>
                 </ul>
@@ -221,30 +248,33 @@ class DoiTuongDichVu extends React.Component{
             </div>
           </div>
         </div>
-        <div className="session-6">
-          <div className="title-ss-6">
+        <div className="session-5">
+          <div className="title-ss-5">
             <div className="column-inner">
               <h5 className="text-center">Với tổ chức, cơ quan, doanh nghiệp:<strong>Sinh Trắc Vân Tay Đa Trí Thông Minh (DMIT)</strong> sẽ:</h5>
             </div>
           </div>
-          <div className="content-ss-6">
+          <div className="content-ss-5">
             <div className="row">
               <div className="col-md-4">
                 <ul>
                   <li>
+                    <i className="fa fa-chevron-circle-right" aria-hidden="true"></i>
 
                     <p className="text-justify">Giúp doanh nghiệp <strong>sàng lọc trong tuyển dụng</strong>. Đánh giá năng lực thực hiện công việc và phong cách của ứng viên.</p>
                   </li>
                   <li>
+                    <i className="fa fa-chevron-circle-right" aria-hidden="true"></i>
                     <p className="text-justify">Giúp <strong>khám phá tiềm năng</strong> của nhân viên nhằm bố trí đúng người vào đúng vị trí.</p>
                   </li>
                   <li>
+                    <i className="fa fa-chevron-circle-right" aria-hidden="true"></i>
                     <p className="text-justify">Giúp <strong>phát huy tiềm năng</strong> nhân viên tạo <strong>đột phá</strong> cho doanh nghiệp.</p>
                   </li>
                 </ul>
               </div>
               <div className="col-md-4">
-                <div className="img-ss-6 text-center">
+                <div className="img-ss-5 text-center">
                   <img width="315" height="315" src="../index/img/van-tay-hoc/doanh-nghiep.png" className="vc_single_image-img attachment-large" alt="DMIT_anh2" />
 
                 </div>
@@ -255,12 +285,15 @@ class DoiTuongDichVu extends React.Component{
 
 
                   <li>
+                    <i className="fa fa-chevron-circle-right" aria-hidden="true"></i>
                     <p className="text-justify">Giúp <strong>tư vấn củng cố nguồn nhân lực. Tìm ra các lãnh đạo tài ba.</strong></p>
                   </li>
                   <li>
+                    <i className="fa fa-chevron-circle-right" aria-hidden="true"></i>
                     <p className="text-justify">Giúp<strong>tư vấn đào tạo</strong>  và <strong>phát triển</strong> nhân sự.</p>
                   </li>
                   <li>
+                    <i className="fa fa-chevron-circle-right" aria-hidden="true"></i>
                     <p className="text-justify">Giúp<strong>tối ưu hóa</strong> chi phí tuyển dụng, đào tạo nhân sự.</p>
                   </li>
                 </ul>
@@ -614,10 +647,10 @@ class HoiDapTruyenHinh extends React.Component{
   render(){
     const listVideo = [
       {
-      name : 'Cơ sở khoa học của dịch vụ Sinh Trắc Vân Tay?',
-      link: 'https://www.youtube.com/embed/Zs4QXq_zmtQ?rel=0',
-      number: 1
-    },
+        name : 'Cơ sở khoa học của dịch vụ Sinh Trắc Vân Tay?',
+        link: 'https://www.youtube.com/embed/Zs4QXq_zmtQ?rel=0',
+        number: 1
+      },
       {
         name : 'Phân tích Sinh Trắc Vân Tay để làm gì?',
         link: 'https://www.youtube.com/embed/eMAbwlPCcqA?rel=0',
@@ -663,23 +696,23 @@ class HoiDapTruyenHinh extends React.Component{
     }.bind(this);
     const showVideo = listVideo.map(function(data,index){
       return(
-          <li key={index}>
-            <div className="video-item">
-              <div className="vc_toggle_title" onClick={()=>{change(data.number)}}>
-                {
-                  display == data.number ? <i className="fa fa-minus-square-o" aria-hidden="true"></i> : <i className="fa fa-plus-square-o" aria-hidden="true"></i>
-
-                }
-                <h4>{data.name}</h4>
-              </div>
+        <li key={index}>
+          <div className="video-item">
+            <div className="vc_toggle_title" onClick={()=>{change(data.number)}}>
               {
-                display == data.number ?  <div className=""><iframe src={data.link} width={640} height={360} frameBorder={0} ></iframe>
-                </div> : null
-              }
+                display == data.number ? <i className="fa fa-minus-square-o" aria-hidden="true"></i> : <i className="fa fa-plus-square-o" aria-hidden="true"></i>
 
+              }
+              <h4>{data.name}</h4>
             </div>
-          </li>
-        )
+            {
+              display == data.number ?  <div className="text-center" style={{'padding':'20px 0'}}><iframe src={data.link} width={640} height={360} frameBorder={0} ></iframe>
+              </div> : null
+            }
+
+          </div>
+        </li>
+      )
 
     })
     return(
@@ -691,9 +724,9 @@ class HoiDapTruyenHinh extends React.Component{
         </div>
 
         <div className="video-hoi-dap">
-        <ul>
-          {showVideo}
-        </ul>
+          <ul>
+            {showVideo}
+          </ul>
         </div>
       </div>
     )
