@@ -539,7 +539,7 @@ class UuDaiDangKy extends React.Component{
             </div>
             <div className="col-md-6">
               <div className="img-feedback">
-                <img width="570" height="300" src="https://tgm.cdn.vccloud.vn/wp-content/uploads/2016/06/Testimonial_575x300_xanh.png" class="vc_single_image-img attachment-large" alt="Testimonial_575x300_xanh" />
+                <img width="570" height="300" src="https://tgm.cdn.vccloud.vn/wp-content/uploads/2016/06/Testimonial_575x300_xanh.png" className="vc_single_image-img attachment-large" alt="Testimonial_575x300_xanh" />
               </div>
             </div>
             <div className="col-md-6">
@@ -560,7 +560,7 @@ class CamKet extends React.Component{
       <div>
         <div className="session-11">
           <div className="commitment text-center">
-            <img width="500" height="228" src="https://tgm.cdn.vccloud.vn/wp-content/uploads/2016/06/CamketDMIT.png" class="vc_single_image-img attachment-full" alt="CamketDMIT" />
+            <img width="500" height="228" src="https://tgm.cdn.vccloud.vn/wp-content/uploads/2016/06/CamketDMIT.png" alt="CamketDMIT" />
           </div>
           <div className="row">
             <div className="col-md-4">
@@ -596,7 +596,92 @@ class CamKet extends React.Component{
   }
 }
 class HoiDapTruyenHinh extends React.Component{
+  constructor(){
+    super();
+    this.state = {
+      displayVideo : 0
+    };
+    this.changeDisplayVideo = this._changeDisplayVideo.bind(this)
+  }
+
+  _changeDisplayVideo(number) {
+    if (this.state.displayVideo == number) {
+      this.setState({displayVideo: 0})
+    } else {
+      this.setState({displayVideo: number})
+    }
+  }
   render(){
+    const listVideo = [
+      {
+      name : 'Cơ sở khoa học của dịch vụ Sinh Trắc Vân Tay?',
+      link: 'https://www.youtube.com/embed/Zs4QXq_zmtQ?rel=0',
+      number: 1
+    },
+      {
+        name : 'Phân tích Sinh Trắc Vân Tay để làm gì?',
+        link: 'https://www.youtube.com/embed/eMAbwlPCcqA?rel=0',
+        number: 2
+      },
+      {
+        name : 'Ý nghĩa của việc thực hiện Sinh Trắc Vân Tay?',
+        link: 'https://www.youtube.com/embed/r_3MbxqiuH4?rel=0',
+        number: 3
+      },
+      {
+        name : 'Nội dung bản báo cáo Sinh Trắc Vân Tay bao gồm những gì?',
+        link: 'https://www.youtube.com/embed/N5NY8zzT-os?rel=0',
+        number: 4
+      },
+      {
+        name : 'Có tất cả bao nhiêu chủng vân tay?',
+        link: 'https://www.youtube.com/embed/PEPISvTj-KA?rel=0',
+        number: 5
+      },
+      {
+        name : 'Mối liên hệ giữa vân tay và não bộ?',
+        link: 'https://www.youtube.com/embed/ZBmQ_h3IUuc?rel=0',
+        number: 6
+      },
+      {
+        name : 'Độ tuổi nào phù hợp làm Sinh Trắc Vân Tay?',
+        link: 'https://www.youtube.com/embed/kRjlPyIzp-8?rel=0',
+        number: 7
+      },{
+        name : 'Người trưởng thành có làm Sinh Trắc Vân Tay được không?',
+        link: 'https://www.youtube.com/embed/tdxjdOnPVf0?rel=0',
+        number: 8
+      },{
+        name : 'Sinh Trắc Vân Tay có phải bói toán thời hiện đại?',
+        link: 'https://www.youtube.com/embed/yZTahXWZcb0?rel=0',
+        number: 9
+      },
+    ];
+    const display = this.state.displayVideo;
+    const change = function(number){
+      this.changeDisplayVideo(number)
+    }.bind(this);
+    const showVideo = listVideo.map(function(data,index){
+      return(
+          <li key={index}>
+            <div className="video-item">
+              <div className="vc_toggle_title" onClick={()=>{change(data.number)}}>
+                {
+                  display == data.number ? <i className="fa fa-minus-square-o" aria-hidden="true"></i> : <i className="fa fa-plus-square-o" aria-hidden="true"></i>
+
+                }
+                <h4>{data.name}</h4>
+              </div>
+              {
+                display == data.number ?  <div className=""><iframe src={data.link} width={640} height={360} frameBorder={0} ></iframe>
+                </div> : null
+              }
+
+            </div>
+          </li>
+        )
+
+    })
     return(
       <div className="session-1" style={{'margin-top': '35px'}}>
         <div className="text-center">
@@ -607,9 +692,7 @@ class HoiDapTruyenHinh extends React.Component{
 
         <div className="video-hoi-dap">
         <ul>
-          <li>
-            
-          </li>
+          {showVideo}
         </ul>
         </div>
       </div>
