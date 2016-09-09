@@ -22,6 +22,9 @@
   li{
     list-style: none;
   }
+  ul{
+    padding-left: 0;
+  }
   .line-style{
     height: 1px;
     position: relative;
@@ -51,7 +54,6 @@
     }
   }
   .content-sm{
-    padding: 50px 40px;
     .column-inner{
       margin-bottom: 35px;
       .btn-active{
@@ -108,14 +110,29 @@
           }
         }
       }
+      .video-format{
+        padding-top: 56.25%!important;
+        position: relative;
+        iframe {
+          width: 100%;
+          height: 100%;
+          display: block;
+          margin: 0;
+          position: absolute;
+          top: 0;
+          left: 0;
+          -webkit-box-sizing: border-box;
+          -moz-box-sizing: border-box;
+          box-sizing: border-box;
+        }
+      }
+
     }
     .session-2{
       .title-ss-2{
         padding-top: 5px;
         padding-bottom: 25px;
         background-color: #b10180;
-        margin-left: -40px;
-        margin-right: -40px;
         h3{
           font-size: 30px;
           line-height: 46px;
@@ -124,7 +141,11 @@
 
         }
       }
-      .description-ss-2{
+
+    }
+    .session-3{
+      color: #888888;
+      .title-ss-3{
         padding-top: 20px;
         h5{
           font-weight: 600;
@@ -132,20 +153,15 @@
           line-height: 32px;
         }
       }
-    }
-    .session-3{
-      color: #888888;
-      display: -webkit-flex;
-      display: -ms-flexbox;
-      display: flex;
       .video-ss-3{
-        margin-bottom: 35px;
+        padding-top: 56.25%;
+        position: relative;
         iframe {
           width: 100%;
           height: 100%;
-          max-height: 388px;
           display: block;
           margin: 0;
+          position: absolute;
           top: 0;
           left: 0;
           -webkit-box-sizing: border-box;
@@ -157,7 +173,6 @@
       .text-big{
         font-size: 15px;
         line-height: 26px;
-        padding-top: 35px;
       }
       .quote{
       }
@@ -167,8 +182,6 @@
         padding-top: 5px;
         padding-bottom: 25px;
         background-color: #b10180;
-        margin-left: -40px;
-        margin-right: -40px;
         h3{
           font-size: 30px;
           line-height: 46px;
@@ -180,20 +193,31 @@
     .session-5{
       .title-ss-5{
         padding-top: 20px;
-
       }
+    .icon-ss{
+      font-size: 10px;
+      border-style: none;
+      background: #ff9d02;
+      color: #ffffff;
+      border-radius: 50%;
+      width: 3em;
+      height: 3em;
+      text-align: center;
+      float: left;
+      display: table;
       i{
-        float: left;
-        padding-top: 0px;
-        padding-right: 0px;
-        font-size: 27px;
-        margin-left: 0;
-        color: #f8e407;
+        font-size: 20px;
+        display: table-cell;
+        vertical-align: middle;
       }
-      p{
+    }
+      .text-ss{
+        display: -webkit-box;
+        padding-left: 15px;
+        margin-bottom: 15px;
+      }
+      .img-ss{
         margin-bottom: 30px;
-        margin-left: 45px;
-
       }
     }
     .session-7{
@@ -207,7 +231,7 @@
       }
       .content-ss-7{
         li{
-          
+
         }
         p{
           margin-bottom: 30px;
@@ -217,8 +241,6 @@
     .session-8{
       background: rgb(214, 29, 37);
       margin-top: 40px;
-      margin-left: -40px;
-      margin-right: -40px;
       .register-now{
         padding:50px 0;
         .step_line{
@@ -237,7 +259,7 @@
       }
 
       .content-ss-8{
-        padding: 30px 100px;
+        padding: 30px 10px;
         .icon-ss-8{
           float: left;
           padding: 27px 10px 27px 0;
@@ -262,11 +284,8 @@
       }
     }
     .session-9{
-      padding-left: 100px;
-      padding-right: 100px;
-      margin-left: -40px;
-      margin-right: -40px;
       background-color: rgb(242, 243, 245);
+      padding-bottom: 30px;
       .title-ss-9{
         padding-top: 35px;
         h5{
@@ -349,7 +368,7 @@
       }
     }
     .session-10{
-      margin-top: 40px;
+      margin-top: 30px;
       .promotion{
         background-color: #c4ee91;
         color: #4d7615;
@@ -398,6 +417,13 @@
         }
       }
       .select-address{
+        margin-bottom: 30px;
+        .uvc-heading-spacer{
+         i{
+           font-size: 30px;
+          }
+        }
+
         .uvc-sub-heading{
           margin-bottom: 30px;
         }
@@ -410,6 +436,9 @@
           font-size: 18px;
           font-weight: 500;
         }
+      }
+      .slick-dots{
+        bottom: 0!important;
       }
       .img-feedback{
         margin-bottom: 32px;
@@ -435,10 +464,7 @@
     .session-11{
       background-color: rgb(242, 243, 245);
       padding-top: 30px;
-      margin-left: -40px;
-      margin-right: -40px;
-      padding-left: 100px;
-      padding-right: 100px;
+      padding-bottom: 30px;
       .commitment{
 
       }
@@ -455,4 +481,65 @@
 @keyframes trendingMove {
   from {left: 20px;}
   to {left: 0px;}
+}
+@include responsive_320{
+  .ts-info-panel-info-icon{
+    display: none!important;
+  }
+  .promotion{
+    padding-left: 15px!important;
+  }
+  .icon-ss-8{
+    display: none!important;
+  }
+  .video-item {
+    h4{
+      font-size: 16px!important;
+    }
+  }
+}
+
+@include responsive_375{
+  .ts-info-panel-info-icon{
+    display: none!important;
+  }
+  .promotion{
+    padding-left: 15px!important;
+  }
+  .icon-ss-8{
+    display: none!important;
+  }
+}
+
+@include responsive_425{
+  .ts-info-panel-info-icon{
+    display: none!important;
+  }
+  .promotion{
+    padding-left: 15px!important;
+  }
+  .icon-ss-8{
+    display: none!important;
+  }
+}
+
+@include responsive_768{
+  .ts-info-panel-info-icon{
+    display: none!important;
+  }
+  .promotion{
+    padding-left: 15px!important;
+  }
+  .icon-ss-8{
+    display: none!important;
+  }
+}
+
+@include responsive_992{
+}
+
+@include responsive_1024{
+}
+
+@include responsive_1200{
 }
