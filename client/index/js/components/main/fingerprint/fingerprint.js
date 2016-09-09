@@ -399,7 +399,7 @@ class DiemKhacBiet extends React.Component{
           <div className="title-ss-7">
             <div className="column-inner">
               <h3 className="text-center">Những điểm <span><strong>ĐẶC BIỆT và KHÁC BIỆT</strong></span> khi làm<strong><br/>
-                Sinh Trắc Vân Tay Đa Trí Thông Minh (DMIT)</strong> với TGM:</h3>
+                Sinh Trắc Vân Tay Đa Trí Thông Minh (DMIT)</strong> với Zuna:</h3>
             </div>
           </div>
           <div className="content-ss-7">
@@ -407,13 +407,13 @@ class DiemKhacBiet extends React.Component{
               <div className="col-md-6">
                 <ul>
                   <li>
-                    <p className="text-justify">Vốn đã nổi tiếng ở Việt Nam hơn 6 năm qua với việc đầu tư vào chất lượng sản phẩm, từ việc xuất bản sách chất lượng cao đến các khóa đào tạo hàng đầu, TGM tiếp tục <strong>cam kết chất lượng cao nhất cho dịch vụ Sinh Trắc Vân Tay Đa Trí Thông Minh (DMIT)</strong> của mình.</p>
+                    <p className="text-justify">Vốn đã nổi tiếng ở Việt Nam hơn 6 năm qua với việc đầu tư vào chất lượng sản phẩm, từ việc xuất bản sách chất lượng cao đến các khóa đào tạo hàng đầu, Zuna  tiếp tục <strong>cam kết chất lượng cao nhất cho dịch vụ Sinh Trắc Vân Tay Đa Trí Thông Minh (DMIT)</strong> của mình.</p>
                   </li>
                   <li>
-                    <p className="text-justify">Mặc dù trong sinh trắc vân tay thì <strong>khâu tư vấn sau khi có kết quả là khâu quan trọng nhất</strong>, nhưng TGM vẫn đầu tư bài bản cho khâu phân tích vân tay bằng cách kết hợp với đối tác có chuyên môn cao trong việc phân tích dấu vân tay sử dụng thiết bị, phần mềm và công nghệ được chuyển giao từ Trung Tâm Nghiên Cứu Sinh Trắc Vân Tay Châu Á <strong>(Asian Dermatoglyphics Research Centre – ADRC)</strong> để cho ra kết quả phân tích chính xác nhất. Từ đó đảm bảo<strong> tư vấn kết quả không chỉ chuyên nghiệp mà còn chính xác và cá nhân hóa.</strong></p>
+                    <p className="text-justify">Mặc dù trong sinh trắc vân tay thì <strong>khâu tư vấn sau khi có kết quả là khâu quan trọng nhất</strong>, nhưng Zuna  vẫn đầu tư bài bản cho khâu phân tích vân tay bằng cách kết hợp với đối tác có chuyên môn cao trong việc phân tích dấu vân tay sử dụng thiết bị, phần mềm và công nghệ được chuyển giao từ Trung Tâm Nghiên Cứu Sinh Trắc Vân Tay Châu Á <strong>(Asian Dermatoglyphics Research Centre – ADRC)</strong> để cho ra kết quả phân tích chính xác nhất. Từ đó đảm bảo<strong> tư vấn kết quả không chỉ chuyên nghiệp mà còn chính xác và cá nhân hóa.</strong></p>
                   </li>
                   <li>
-                    <p className="text-justify">Không những vậy, máy móc dù hiện đại đến đâu luôn có những giới hạn nhất định. Cho nên với TGM, <strong>kết quả phân tích của máy sẽ được kiểm tra một lần nữa kỹ lưỡng bởi con người, để đảm bảo kết quả chính xác nhất cho bạn.</strong></p>
+                    <p className="text-justify">Không những vậy, máy móc dù hiện đại đến đâu luôn có những giới hạn nhất định. Cho nên với Zuna , <strong>kết quả phân tích của máy sẽ được kiểm tra một lần nữa kỹ lưỡng bởi con người, để đảm bảo kết quả chính xác nhất cho bạn.</strong></p>
                   </li>
                 </ul>
               </div>
@@ -429,7 +429,7 @@ class DiemKhacBiet extends React.Component{
           <div className="content-ss-8">
             <div className="wrap-ss-8">
               <i className="fa fa-get-pocket" aria-hidden="true"></i>
-              <h5 className="text-justify"><strong>TGM CAM KẾT VỀ VIỆC BẢO MẬT THÔNG TIN DẤU VÂN TAY CHO KHÁCH HÀNG. CÁC MẪU VÂN TAY SAU KHI PHÂN TÍCH SẼ ĐƯỢC TIÊU HỦY ĐỂ ĐẢM BẢO TÍNH BẢO MẬT&nbsp;VÀ SỰ AN TOÀN&nbsp;THÔNG TIN CÁ NHÂN.</strong></h5>
+              <h5 className="text-justify"><strong>Zuna CAM KẾT VỀ VIỆC BẢO MẬT THÔNG TIN DẤU VÂN TAY CHO KHÁCH HÀNG. CÁC MẪU VÂN TAY SAU KHI PHÂN TÍCH SẼ ĐƯỢC TIÊU HỦY ĐỂ ĐẢM BẢO TÍNH BẢO MẬT&nbsp;VÀ SỰ AN TOÀN&nbsp;THÔNG TIN CÁ NHÂN.</strong></h5>
             </div>
 
           </div>
@@ -447,7 +447,7 @@ class QuyTrinh extends React.Component{
           <div className="title-ss-9">
             <div className="column-inner">
               <h3 className="text-center">Quy trình làm dịch vụ<br/>
-                <strong>Sinh Trắc Vân Tay Đa Trí Thông Minh (DMIT)</strong> tại TGM:</h3>
+                <strong>Sinh Trắc Vân Tay Đa Trí Thông Minh (DMIT)</strong> tại Zuna :</h3>
             </div>
           </div>
           <div className="content-ss-9">
@@ -459,7 +459,7 @@ class QuyTrinh extends React.Component{
 
                 <h3 className="sub-title-ss-9 ult-responsive">Bước 1</h3>
                 <div className="description-ss-9 ult-responsive" ><p></p>
-                  <p className="text-center">Khách hàng<strong> lấy dấu vân tay tại văn phòng TGM</strong>&nbsp;bằng máy scan ở Hà Nội hoặc TP.HCM.<br/>
+                  <p className="text-center">Khách hàng<strong> lấy dấu vân tay tại văn phòng Zuna </strong>&nbsp;bằng máy scan ở Hà Nội hoặc TP.HCM.<br/>
                     (1 tuần)</p>
                   <p></p>
                 </div>
@@ -495,7 +495,7 @@ class QuyTrinh extends React.Component{
                 </div>
                 <h3 className="sub-title-ss-9 ult-responsive">Bước 4</h3>
                 <div className="description-ss-9 ult-responsive"><p></p>
-                  <p className="text-center;"><strong>Tư vấn trực tiếp 1-1 với &nbsp;Professional Coach của TGM</strong> để hiểu rõ về kết quả&nbsp;và ứng dụng.<br/>
+                  <p className="text-center;"><strong>Tư vấn trực tiếp 1-1 với &nbsp;Professional Coach của Zuna </strong> để hiểu rõ về kết quả&nbsp;và ứng dụng.<br/>
                     (1 giờ tiêu chuẩn)</p>
                   <p></p></div>
               </div>
@@ -565,7 +565,7 @@ class UuDaiDangKy extends React.Component{
     var settings = {
       speed: 1000,
       autoplaySpeed: 7000,
-      autoplay: false,
+      autoplay: true,
       fade: true,
       arrows: false,
       dots: true,
@@ -618,7 +618,7 @@ class UuDaiDangKy extends React.Component{
                 <div className="ts-info-panel-info-title">ƯU ĐÃI ĐẶC BIỆT CHO NGƯỜI HIỂU ĐƯỢC GIÁ TRỊ</div>
                 <div className="ts-info-panel-info-main">
                   <p></p>
-                  <p className="text-justify">Để khuyến khích và ưu đãi cho những bạn hiểu được giá trị của dịch vụ<strong>&nbsp;Sinh Trắc Vân Tay Đa Trí Thông Minh (DMIT) </strong>và muốn khám phá bản thân mình càng sớm càng tốt, TGM xin dành <span style={{'color': '#ff0000'}}><strong>25 suất ưu đãi</strong></span>&nbsp;<span style={{'color': '#ff0000'}}><strong>GIẢM 25%</strong></span>&nbsp;(từ <strong><del>4.000.000</del><sup>đ&nbsp;</sup></strong>chỉ còn&nbsp;<span style={{'color': '#ff0000'}}><strong>3.000.000<sup>đ</sup></strong></span>&nbsp;– giúp bạn tiết kiệm được&nbsp;<strong>1.000.000<sup>đ</sup></strong>) nếu bạn đăng ký trước ngày <strong>10/09/2016</strong>.</p>
+                  <p className="text-justify">Để khuyến khích và ưu đãi cho những bạn hiểu được giá trị của dịch vụ<strong>&nbsp;Sinh Trắc Vân Tay Đa Trí Thông Minh (DMIT) </strong>và muốn khám phá bản thân mình càng sớm càng tốt, Zuna  xin dành <span style={{'color': '#ff0000'}}><strong>25 suất ưu đãi</strong></span>&nbsp;<span style={{'color': '#ff0000'}}><strong>GIẢM 25%</strong></span>&nbsp;(từ <strong><del>4.000.000</del><sup>đ&nbsp;</sup></strong>chỉ còn&nbsp;<span style={{'color': '#ff0000'}}><strong>3.000.000<sup>đ</sup></strong></span>&nbsp;– giúp bạn tiết kiệm được&nbsp;<strong>1.000.000<sup>đ</sup></strong>) nếu bạn đăng ký trước ngày <strong>10/09/2016</strong>.</p>
                   <p></p>
                 </div>
               </div>
@@ -687,10 +687,10 @@ class CamKet extends React.Component{
             </div>
             <div className="row">
               <div className="col-md-4">
-                <p className="text-justify">Với phương châm <em>“do người Việt, vì người Việt”</em> hướng đến mục tiêu <em>“1 triệu người Việt Nam hạnh phúc và thành công hơn”</em>, TGM sẵn sàng nhận hết rủi ro về phần mình để tạo cho bạn cơ hội tham gia các chương trình đào tạo chất lượng cao của TGM.</p>
+                <p className="text-justify">Với phương châm <em>“do người Việt, vì người Việt”</em> hướng đến mục tiêu <em>“1 triệu người Việt Nam hạnh phúc và thành công hơn”</em>, Zuna sẵn sàng nhận hết rủi ro về phần mình để tạo cho bạn cơ hội tham gia các chương trình đào tạo chất lượng cao của Zuna.</p>
               </div>
               <div className="col-md-4">
-                <p className="text-justify">Chính vì thế, sau khi tham gia đầy đủ 100%, nếu bạn cảm thấy dịch vụ phân tích và tư vấn kết quả sinh trắc vân tay không làm bạn hài lòng,<strong> bạn có thể yêu cầu hoàn lại 100% phí&nbsp;</strong>qua bộ phận Tư vấn của TGM&nbsp;mà không cần phải chứng minh gì cả.</p>
+                <p className="text-justify">Chính vì thế, sau khi tham gia đầy đủ 100%, nếu bạn cảm thấy dịch vụ phân tích và tư vấn kết quả sinh trắc vân tay không làm bạn hài lòng,<strong> bạn có thể yêu cầu hoàn lại 100% phí&nbsp;</strong>qua bộ phận Tư vấn của Zuna &nbsp;mà không cần phải chứng minh gì cả.</p>
 
               </div>
               <div className="col-md-4">
