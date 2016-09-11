@@ -407,13 +407,27 @@ class DiemKhacBiet extends React.Component{
               <div className="col-md-6">
                 <ul>
                   <li>
-                    <p className="text-justify">Vốn đã nổi tiếng ở Việt Nam hơn 6 năm qua với việc đầu tư vào chất lượng sản phẩm, từ việc xuất bản sách chất lượng cao đến các khóa đào tạo hàng đầu, Zuna  tiếp tục <strong>cam kết chất lượng cao nhất cho dịch vụ Sinh Trắc Vân Tay Đa Trí Thông Minh (DMIT)</strong> của mình.</p>
+                    <p className="text-justify">Là người đi tiên phong về lĩnh vực sinh trắc vân tay và đào tạo kỹ năng sống cho trẻ tại Miền Trung, ZuNa tiếp tục <strong>cam kết chất lượng cao nhất cho dịch vụ Sinh Trắc Vân Tay Đa Trí Thông Minh (DMIT)</strong> của mình.</p>
                   </li>
                   <li>
-                    <p className="text-justify">Mặc dù trong sinh trắc vân tay thì <strong>khâu tư vấn sau khi có kết quả là khâu quan trọng nhất</strong>, nhưng Zuna  vẫn đầu tư bài bản cho khâu phân tích vân tay bằng cách kết hợp với đối tác có chuyên môn cao trong việc phân tích dấu vân tay sử dụng thiết bị, phần mềm và công nghệ được chuyển giao từ Trung Tâm Nghiên Cứu Sinh Trắc Vân Tay Châu Á <strong>(Asian Dermatoglyphics Research Centre – ADRC)</strong> để cho ra kết quả phân tích chính xác nhất. Từ đó đảm bảo<strong> tư vấn kết quả không chỉ chuyên nghiệp mà còn chính xác và cá nhân hóa.</strong></p>
+                    <p className="text-justify">Mặc dù trong sinh trắc vân tay thì <strong>khâu tư vấn sau khi có kết quả là khâu quan trọng nhất</strong>, nhưng Zuna vẫn đầu tư bài bản cho khâu phân tích vân tay bằng cách kết hợp với đối tác có chuyên môn cao trong việc phân tích dấu vân tay sử dụng thiết bị, phần mềm và công nghệ được chuyển giao từ Trung Tâm Nghiên Cứu Sinh Trắc Vân Tay Châu Á <strong>(Asian Dermatoglyphics Research Centre – ADRC)</strong>, để cho ra kết quả phân tích chính xác nhất. Đảm bảo <strong>tư vấn kết quả không chỉ chuyên nghiệp mà còn chính xác và cá nhân hóa.</strong></p>
                   </li>
                   <li>
-                    <p className="text-justify">Không những vậy, máy móc dù hiện đại đến đâu luôn có những giới hạn nhất định. Cho nên với Zuna , <strong>kết quả phân tích của máy sẽ được kiểm tra một lần nữa kỹ lưỡng bởi con người, để đảm bảo kết quả chính xác nhất cho bạn.</strong></p>
+                    <p className="text-justify">Không những vậy, máy móc dù hiện đại đến đâu luôn có những giới hạn nhất định. Cho nên với Zuna , <strong>kết quả phân tích của máy sẽ được kiểm tra một lần nữa kỹ lưỡng bởi con người, để đảm bảo kết quả chính xác nhất cho bạn.</strong></p>
+                  </li>
+                  <li>
+                    <p> Khách hàng sẽ được <strong>bảo hành tư vấn miễn phí trọn đời</strong> về báo cáo Sinh Trắc của chính mình.</p>
+</li>
+                  <li>
+                    <p>
+                      Bên cạnh đó chúng tôi còn xây dựng các chương trình để giúp các con có môi trường có thể <strong>kích hoạt, tối ưu năng lực của chính mình.</strong>
+                    </p>
+                    </li>
+                  <li>
+                    <p>
+                      <strong>Với chi phí để làm 1 bài báo cáo thấp nhất tại tp Hồ Chí Minh và Hà Nội sẽ là 3.200.000 vnđ</strong>, nhưng với nỗ lực và sự hỗ trợ từ Zuna, chúng tôi quyết định sản phẩm đưa về Miền Trung thân yêu chỉ còn <strong>2.800.000 vnđ</strong>, để giúp bạn dễ dàng tiếp cận hơn với <strong>công nghệ Sinh Trắc Vân Tay</strong>?
+
+                    </p>
                   </li>
                 </ul>
               </div>
@@ -459,7 +473,7 @@ class QuyTrinh extends React.Component{
 
                 <h3 className="sub-title-ss-9 ult-responsive">Bước 1</h3>
                 <div className="description-ss-9 ult-responsive" ><p></p>
-                  <p className="text-center">Khách hàng<strong> lấy dấu vân tay tại văn phòng Zuna </strong>&nbsp;bằng máy scan ở Hà Nội hoặc TP.HCM.<br/>
+                  <p className="text-center">Khách hàng<strong> lấy dấu vân tay tại văn phòng Zuna </strong>&nbsp;bằng máy scan.<br/>
                     (1 tuần)</p>
                   <p></p>
                 </div>
@@ -472,7 +486,7 @@ class QuyTrinh extends React.Component{
 
                 <h3 className="sub-title-ss-9 ult-responsive">Bước 2</h3>
                 <div className="description-ss-9 ult-responsive"><p></p>
-                  <p className="text-center">Các chuyên viên<strong>&nbsp;phân tích dấu vân tay bằng hệ thống</strong> máy tính và phần mềm mới nhất.<br/>
+                  <p className="text-center">Các chuyên viên<strong>&nbsp;phân tích dấu vân tay bằng hệ thống</strong> máy tính và phần mềm mới nhất.(5 – 7 ngày)<br/>
                     (1 tuần)</p>
                   <p></p>
                 </div>
@@ -495,7 +509,7 @@ class QuyTrinh extends React.Component{
                 </div>
                 <h3 className="sub-title-ss-9 ult-responsive">Bước 4</h3>
                 <div className="description-ss-9 ult-responsive"><p></p>
-                  <p className="text-center;"><strong>Tư vấn trực tiếp 1-1 với &nbsp;Professional Coach của Zuna </strong> để hiểu rõ về kết quả&nbsp;và ứng dụng.<br/>
+                  <p className="text-center;"><strong>Tư vấn trực tiếp 1-1 với &nbsp;Professional Coach của Zuna </strong> để hiểu rõ về kết quả&nbsp;và ứng dụng.(1 giờ tiêu chuẩn)<br/>
                     (1 giờ tiêu chuẩn)</p>
                   <p></p></div>
               </div>
@@ -507,7 +521,7 @@ class QuyTrinh extends React.Component{
             </div>
             <div className="description"><p></p>
               <p className="text-justify">Sau buổi tư vấn, khách hàng sẽ nhận được <strong>bản báo cáo giấy</strong> (được in như một quyển sách dành riêng cho bạn), <strong>file mềm PDF</strong> và <strong>file ghi âm toàn bộ buổi tư vấn</strong> qua email. Đồng thời, dịch vụ sẽ được <strong>bảo hành trọn đời</strong> thông qua email trao đổi với chuyên viên tư vấn sinh trắc vân tay của bạn. Mọi thắc mắc liên quan đều sẽ được trả lời một cách nhiệt tình để đảm bảo hiệu quả cao nhất cho bạn.</p>
-              <p className="text-justify">Như vậy, từ khi bạn đóng phí dịch vụ cho đến khi hoàn thành dịch vụ <strong>cần khoảng 3-4 tuần để đảm bảo chất lượng.</strong> Nếu bạn muốn tăng tốc thì bạn có thể sắp xếp thời gian để lấy dấu vân tay càng sớm càng tốt, cũng như sắp xếp lịch hẹn càng sớm càng tốt ngay sau khi có thông báo kết quả sinh trắc vân tay của bạn đã sẵn sàng.</p>
+              <p className="text-justify">Như vậy, từ khi bạn đóng phí dịch vụ cho đến khi hoàn thành dịch vụ <strong>cần khoảng 7 đến 10 ngày để đảm bảo chất lượng.</strong> Nếu bạn muốn tăng tốc thì bạn có thể sắp xếp thời gian để lấy dấu vân tay càng sớm càng tốt, cũng như sắp xếp lịch hẹn càng sớm càng tốt ngay sau khi có thông báo kết quả sinh trắc vân tay của bạn đã sẵn sàng.</p>
               <p></p>
             </div>
           </div>
@@ -618,8 +632,10 @@ class UuDaiDangKy extends React.Component{
                 <div className="ts-info-panel-info-title">ƯU ĐÃI ĐẶC BIỆT CHO NGƯỜI HIỂU ĐƯỢC GIÁ TRỊ</div>
                 <div className="ts-info-panel-info-main">
                   <p></p>
-                  <p className="text-justify">Để khuyến khích và ưu đãi cho những bạn hiểu được giá trị của dịch vụ<strong>&nbsp;Sinh Trắc Vân Tay Đa Trí Thông Minh (DMIT) </strong>và muốn khám phá bản thân mình càng sớm càng tốt, Zuna  xin dành <span style={{'color': '#ff0000'}}><strong>25 suất ưu đãi</strong></span>&nbsp;<span style={{'color': '#ff0000'}}><strong>GIẢM 25%</strong></span>&nbsp;(từ <strong><del>4.000.000</del><sup>đ&nbsp;</sup></strong>chỉ còn&nbsp;<span style={{'color': '#ff0000'}}><strong>3.000.000<sup>đ</sup></strong></span>&nbsp;– giúp bạn tiết kiệm được&nbsp;<strong>1.000.000<sup>đ</sup></strong>) nếu bạn đăng ký trước ngày <strong>10/09/2016</strong>.</p>
-                  <p></p>
+                  <p className="text-justify">
+                    Nhân dịp lễ Trung Thu, chúng tôi dành những phần quà đặc biệt cho những bạn hiểu được giá trị của dịch vụ <strong>&nbsp;Sinh Trắc Vân Tay Đa Trí Thông Minh (DMIT)</strong> và muốn khám phá bản thân mình càng sớm càng tốt, Zuna xin dành <span style={{'color': '#ff0000'}}><strong>25 suất ưu đãi GIẢM 25%</strong></span>&nbsp; (từ <strong>2.800.000 vnđ</strong> chỉ còn <span style={{'color': '#ff0000'}}><strong>2.200.000đ</strong></span>&nbsp; – giúp bạn tiết kiệm được <strong>1.000.000đ</strong>) nếu bạn đăng ký trước ngày <strong>20/09/2016</strong>.
+
+                    </p><p></p>
                 </div>
               </div>
             </div>
@@ -661,7 +677,7 @@ class UuDaiDangKy extends React.Component{
             </div>
             <div className="col-md-6">
               <div className="img-feedback">
-                <img width="570" height="300" src="https://tgm.cdn.vccloud.vn/wp-content/uploads/2016/06/Testimonial_575x300_xanh.png" className="vc_single_image-img attachment-large" alt="Testimonial_575x300_xanh" />
+                <img width="570" height="300" src="../index/img/van-tay-hoc/Like.png" className="vc_single_image-img attachment-large" alt="Testimonial_575x300_xanh" />
               </div>
             </div>
             <div className="col-md-6">
@@ -687,7 +703,7 @@ class CamKet extends React.Component{
             </div>
             <div className="row">
               <div className="col-md-4">
-                <p className="text-justify">Với phương châm <em>“do người Việt, vì người Việt”</em> hướng đến mục tiêu <em>“1 triệu người Việt Nam hạnh phúc và thành công hơn”</em>, Zuna sẵn sàng nhận hết rủi ro về phần mình để tạo cho bạn cơ hội tham gia các chương trình đào tạo chất lượng cao của Zuna.</p>
+                <p className="text-justify">Với phương châm <em>“lấy khách hàng làm trọng tâm”</em>, Zuna sẵn sàng nhận hết rủi ro về phần mình để tạo cho bạn cơ hội tham gia các chương trình đào tạo chất lượng cao của Zuna.</p>
               </div>
               <div className="col-md-4">
                 <p className="text-justify">Chính vì thế, sau khi tham gia đầy đủ 100%, nếu bạn cảm thấy dịch vụ phân tích và tư vấn kết quả sinh trắc vân tay không làm bạn hài lòng,<strong> bạn có thể yêu cầu hoàn lại 100% phí&nbsp;</strong>qua bộ phận Tư vấn của Zuna &nbsp;mà không cần phải chứng minh gì cả.</p>
