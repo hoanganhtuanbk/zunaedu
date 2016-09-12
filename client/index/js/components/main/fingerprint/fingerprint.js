@@ -433,7 +433,7 @@ class DiemKhacBiet extends React.Component{
               </div>
               <div className="col-md-6">
                 <div className="img-ss-7 text-center">
-                  <img src="https://tgm.cdn.vccloud.vn/wp-content/uploads/2016/02/Sinh-Trac-Van-Tay-TGM-550x480.jpg" className="vc_single_image-img attachment-large" alt="Sinh-Trac-Van-Tay-TGM-550x480"/>
+                  <img src="../index/img/van-tay-hoc/why-zuna.png" className="vc_single_image-img attachment-large" alt="Sinh-Trac-Van-Tay-TGM-550x480"/>
                 </div>
               </div>
             </div>
@@ -473,8 +473,8 @@ class QuyTrinh extends React.Component{
 
                 <h3 className="sub-title-ss-9 ult-responsive">Bước 1</h3>
                 <div className="description-ss-9 ult-responsive" ><p></p>
-                  <p className="text-center">Khách hàng<strong> lấy dấu vân tay tại văn phòng Zuna </strong>&nbsp;bằng máy scan.<br/>
-                    (1 tuần)</p>
+                  <p className="text-center">Khách hàng<strong> lấy dấu vân tay tại văn phòng Zuna </strong>bằng máy scan.<br/>
+                  </p>
                   <p></p>
                 </div>
               </div>
@@ -486,8 +486,7 @@ class QuyTrinh extends React.Component{
 
                 <h3 className="sub-title-ss-9 ult-responsive">Bước 2</h3>
                 <div className="description-ss-9 ult-responsive"><p></p>
-                  <p className="text-center">Các chuyên viên<strong>&nbsp;phân tích dấu vân tay bằng hệ thống</strong> máy tính và phần mềm mới nhất.(5 – 7 ngày)<br/>
-                    (1 tuần)</p>
+                  <p className="text-center">Các chuyên viên<strong>&nbsp;phân tích dấu vân tay bằng hệ thống</strong> máy tính và phần mềm mới nhất.<br/>(5 – 7 ngày)</p>
                   <p></p>
                 </div>
               </div>
@@ -498,8 +497,7 @@ class QuyTrinh extends React.Component{
                 </div>
                 <h3 className="sub-title-ss-9 ult-responsive">Bước 3</h3>
                 <div className="description-ss-9 ult-responsive" ><p></p>
-                  <p className="text-center"><strong>Chuyên viên phân tích kiểm tra lại lần nữa</strong> để đảm bảo kết quả chính xác nhất.<br/>
-                    (1 tuần)</p>
+                  <p className="text-center"><strong>Chuyên viên phân tích kiểm tra lại lần nữa</strong> để đảm bảo kết quả chính xác nhất.</p>
                   <p></p></div>
               </div>
               <div className="col-md-3 text-center">
@@ -509,8 +507,7 @@ class QuyTrinh extends React.Component{
                 </div>
                 <h3 className="sub-title-ss-9 ult-responsive">Bước 4</h3>
                 <div className="description-ss-9 ult-responsive"><p></p>
-                  <p className="text-center;"><strong>Tư vấn trực tiếp 1-1 với &nbsp;Professional Coach của Zuna </strong> để hiểu rõ về kết quả&nbsp;và ứng dụng.(1 giờ tiêu chuẩn)<br/>
-                    (1 giờ tiêu chuẩn)</p>
+                  <p className="text-center;"><strong>Tư vấn trực tiếp 1-1 với &nbsp;Professional Coach của Zuna </strong> để hiểu rõ về kết quả&nbsp;và ứng dụng.<br/>(1 giờ tiêu chuẩn)</p>
                   <p></p></div>
               </div>
             </div>
