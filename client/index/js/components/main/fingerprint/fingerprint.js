@@ -630,7 +630,8 @@ class UuDaiDangKy extends React.Component{
                 <div className="ts-info-panel-info-main">
                   <p></p>
                   <p className="text-justify">
-                    Nhân dịp lễ Trung Thu, chúng tôi dành những phần quà đặc biệt cho những bạn hiểu được giá trị của dịch vụ <strong>&nbsp;Sinh Trắc Vân Tay Đa Trí Thông Minh (DMIT)</strong> và muốn khám phá bản thân mình càng sớm càng tốt, Zuna xin dành <span style={{'color': '#ff0000'}}><strong>25 suất ưu đãi GIẢM 25%</strong></span>&nbsp; (từ <strong>2.800.000 vnđ</strong> chỉ còn <span style={{'color': '#ff0000'}}><strong>2.200.000đ</strong></span>&nbsp; – giúp bạn tiết kiệm được <strong>1.000.000đ</strong>) nếu bạn đăng ký trước ngày <strong>20/09/2016</strong>.
+                    ƯU ĐÃI ĐẶC BIỆT CHO CÁC THIÊN THẦN NHỎ NHÂN DỊP TRUNG THU<br/>
+                    Nhân dịp lễ Trung Thu, chúng tôi dành những phần quà đặc biệt cho những bạn hiểu được giá trị của dịch vụ <strong>&nbsp;Sinh Trắc Vân Tay Đa Trí Thông Minh (DMIT)</strong> và muốn khám phá bản thân mình càng sớm càng tốt, Zuna xin dành <span style={{'color': '#ff0000'}}><strong>15 suất ưu đãi GIẢM 25%</strong></span>&nbsp; (từ <strong>2.800.000 vnđ</strong> chỉ còn <span style={{'color': '#ff0000'}}><strong>2.200.000đ</strong></span>&nbsp; – giúp bạn tiết kiệm được <strong>600.000đ</strong>) nếu bạn đăng ký trước ngày <strong>20/09/2016</strong>.
 
                     </p><p></p>
                 </div>
@@ -752,45 +753,45 @@ class HoiDapTruyenHinh extends React.Component{
     const listVideo = [
       {
         name : 'Cơ sở khoa học của dịch vụ Sinh Trắc Vân Tay?',
-        link: 'https://www.youtube.com/embed/Zs4QXq_zmtQ?rel=0',
+        link: 'https://www.youtube.com/embed/hgwZOJbs0cA',
         number: 1
       },
       {
         name : 'Phân tích Sinh Trắc Vân Tay để làm gì?',
-        link: 'https://www.youtube.com/embed/eMAbwlPCcqA?rel=0',
+        link: 'https://www.youtube.com/embed/_MjaWKY3UnM',
         number: 2
       },
       {
         name : 'Ý nghĩa của việc thực hiện Sinh Trắc Vân Tay?',
-        link: 'https://www.youtube.com/embed/r_3MbxqiuH4?rel=0',
+        link: 'https://www.youtube.com/embed/gZHW8WP-ZJ0',
         number: 3
       },
       {
         name : 'Nội dung bản báo cáo Sinh Trắc Vân Tay bao gồm những gì?',
-        link: 'https://www.youtube.com/embed/N5NY8zzT-os?rel=0',
+        link: 'https://www.youtube.com/embed/PIUncAKcPFw',
         number: 4
       },
       {
         name : 'Có tất cả bao nhiêu chủng vân tay?',
-        link: 'https://www.youtube.com/embed/PEPISvTj-KA?rel=0',
+        link: 'https://www.youtube.com/embed/zvZbwy8TVrg',
         number: 5
       },
       {
         name : 'Mối liên hệ giữa vân tay và não bộ?',
-        link: 'https://www.youtube.com/embed/ZBmQ_h3IUuc?rel=0',
+        link: '"https://www.youtube.com/embed/1Jj4bs7Zwuc',
         number: 6
       },
       {
         name : 'Độ tuổi nào phù hợp làm Sinh Trắc Vân Tay?',
-        link: 'https://www.youtube.com/embed/kRjlPyIzp-8?rel=0',
+        link: 'https://www.youtube.com/embed/5UL1330-L6A',
         number: 7
       },{
         name : 'Người trưởng thành có làm Sinh Trắc Vân Tay được không?',
-        link: 'https://www.youtube.com/embed/tdxjdOnPVf0?rel=0',
+        link: 'https://www.youtube.com/embed/hl8CaKQNQZw',
         number: 8
       },{
         name : 'Sinh Trắc Vân Tay có phải bói toán thời hiện đại?',
-        link: 'https://www.youtube.com/embed/yZTahXWZcb0?rel=0',
+        link: 'https://www.youtube.com/embed/-F3eFKCOjvU',
         number: 9
       },
     ];
