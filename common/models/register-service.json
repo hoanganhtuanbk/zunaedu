@@ -1,0 +1,41 @@
+{
+  "name": "RegisterService",
+  "base": "PersistedModel",
+  "idInjection": true,
+  "options": {
+    "validateUpsert": true
+  },
+  "properties": {
+    "nameParent": {
+      "type": "string"
+    },
+    "phone": {
+      "type": "string"
+    },
+    "email": {
+      "type": "string"
+    },
+    "address": {
+      "type": "string"
+    },
+    "nameChildren": {
+      "type": "string"
+    },
+    "oldChildren": {
+      "type": "string"
+    },
+    "sexChildren": {
+      "type": "string"
+    },
+    "media": {
+      "type": "string"
+    },
+    "content": {
+      "type": "string"
+    }
+  },
+  "validations": [],
+  "relations": {},
+  "acls": [],
+  "methods": {}
+}

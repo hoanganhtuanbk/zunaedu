@@ -63,5 +63,9 @@
   "Feedback": {
     "dataSource": "db",
     "public": true
+  },
+  "RegisterService": {
+    "dataSource": "db",
+    "public": true
   }
 }

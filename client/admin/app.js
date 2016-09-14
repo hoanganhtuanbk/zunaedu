@@ -14,6 +14,10 @@ import {AddEvent} from './js/components/admin-main/event/add'
 import {EditEvent} from './js/components/admin-main/event/edit'
 import {ListEvent} from './js/components/admin-main/event/list'
 
+import {ServiceManagement} from './js/components/admin-main/service/service'
+import {ViewService} from './js/components/admin-main/service/view'
+import {ListService} from './js/components/admin-main/service/list'
+
 import {BookManagement} from './js/components/admin-main/book/book'
 import {ViewBook} from './js/components/admin-main/book/view'
 import {AddBook} from './js/components/admin-main/book/add'
@@ -70,6 +74,11 @@ export class AdminCenter extends React.Component{
       icon: 'fa fa-envira',
       link: '/admin/dashBoard'
     },
+      {
+        name: 'Register Service',
+        icon: 'fa fa-forumbee',
+        link: '/admin/service'
+      },
       {
         name: 'Dermatoglyphics',
         icon: 'fa fa-forumbee',
@@ -138,6 +147,10 @@ render(
         <Route path="/admin/event/add" component={AddEvent} />
         <Route path="/admin/event/:id/edit" component={EditEvent}/>
         <Route path="/admin/event/:id" component={ViewEvent} />
+      </Route>
+      <Route path="/admin/service" component={ServiceManagement} >
+        <IndexRoute component={ListService} />
+        <Route path="/admin/service/:id" component={ViewService} />
       </Route>
 
       <Route path="/admin/book" component={BookManagement} >

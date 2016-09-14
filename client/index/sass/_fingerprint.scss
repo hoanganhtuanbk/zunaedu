@@ -363,9 +363,9 @@
     .session-10{
       margin-top: 30px;
       .promotion{
-        background-color: #c4ee91;
+        background-color: rgb(248, 228, 7);
         color: #4d7615;
-        border: 2px solid #7ad03a;
+        border: 2px solid rgb(248, 228, 7);
         display: table;
         border-left: 5px solid #7ad03a;
         padding-left: 0;
@@ -465,7 +465,18 @@
   }
 
 }
+.subTitle{
+  font-size: 33px;
+  line-height: 58px;
+  font-weight: 600;
+  background: -webkit-gradient(linear,left top,right top,color-stop(32%,#008cd1),color-stop(100%,#338d43));
+  background: -webkit-linear-gradient(left,#008cd1 32%,#338d43 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  display: inline-block;
+  color: #008cd1;
 
+}
 @-webkit-keyframes trendingMove {
   from {left: 20px;}
   to {left: 0px;}

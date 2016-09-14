@@ -4,10 +4,59 @@ import {Link} from 'react-router';
 import {HeaderPage} from '../src/header-page'
 import Stores from '../../../stores/stores'
 import Slider from 'react-slick'
-
-
+import Modal from 'react-modal'
+import {UuDaiDangKy} from './UuDaiDangKy'
 class VideoGioiThieu extends React.Component{
+  constructor(){
+    super();
+    this.state = {
+      modalIsOpen: false
+    };
+    this.openModal = this.openModal.bind(this);
+    this.closeModal = this.closeModal.bind(this);
+    this.afterOpenModal = this.afterOpenModal.bind(this);
+  }
+
+  openModal(t) {
+  this.setState({modalIsOpen: true});
+};
+
+  afterOpenModal(t) {
+  // references are now sync'd and can be accessed.
+  this.refs.subtitle.style.color = '#f00';
+};
+
+  closeModal(t) {
+  this.setState({modalIsOpen: false});
+};
   render(){
+    const customStyles ={
+        overlay : {
+        position          : 'fixed',
+        top               : 0,
+        left              : 0,
+        right             : 0,
+        bottom            : 0,
+        backgroundColor   : 'rgba(0, 0, 0, 0.29)'
+      },
+      content : {
+        position                   : 'absolute',
+        top                        : '100px',
+        width                      : '500px',
+        margin                     : '100px auto',
+        bottom                     : '100px',
+        border                     : '1px solid #ccc',
+        background                 : '#fff',
+        overflow                   : 'auto',
+        WebkitOverflowScrolling    : 'touch',
+        borderRadius               : '4px',
+        outline                    : 'none',
+        padding                    : '20px',
+        transition                 : 'all 1s ease-in'
+
+
+  }
+    };
     return(
       <div className="container ">
         <div className="watch-video-intro">
@@ -16,12 +65,29 @@ class VideoGioiThieu extends React.Component{
             </div>
             <div className="col-md-4">
               <div className="column-inner">
-                <button className="btn btn-active" >XEM VIDEO CLIP GIỚI THIỆU</button>
+                <button className="btn btn-active" onClick={this.openModal}>XEM VIDEO CLIP GIỚI THIỆU</button>
               </div>
             </div>
             <div className="col-md-4">
             </div>
           </div>
+          <Modal
+            isOpen={this.state.modalIsOpen}
+            onAfterOpen={this.afterOpenModal}
+            onRequestClose={this.closeModal}
+            style={customStyles} >
+
+            <h2 ref="subtitle">Hello</h2>
+            <button onClick={this.closeModal}>close</button>
+            <div>I am a modal</div>
+            <form>
+              <input />
+              <button>tab navigation</button>
+              <button>stays</button>
+              <button>inside</button>
+              <button>the modal</button>
+            </form>
+          </Modal>
         </div>
       </div>
 
@@ -554,139 +620,6 @@ class QuyTrinh extends React.Component{
 
       </div>
 
-    )
-  }
-}
-class UuDaiDangKy extends React.Component{
-  constructor(){
-    super();
-    this.state ={
-      feedbacks: []
-    }
-  }
-  componentWillMount(){
-    this.getFeedbackDatas(this)
-  }
-  getFeedbackDatas(t){
-    Stores.find('/feedbacks',{order:'id DESC',limit: 5}, function(feedbacks){
-      t.setState({feedbacks: feedbacks})
-    })
-  }
-  render(){
-    var settings = {
-      speed: 1000,
-      autoplaySpeed: 7000,
-      autoplay: true,
-      fade: true,
-      arrows: false,
-      dots: true,
-      infinite: true,
-
-    };
-    const limitContent= 315;
-    var childFeedback = this.state.feedbacks.map(function(result,index){
-      return(
-        <div  key={index} className="testimonials-v4 feedback md-margin-bottom-50">
-          <div className="testimonials-v4-in">
-            <p>{
-              result.content.length > 350 ? `${result.content.substr(0, limitContent)}...` : `${result.content}`
-            }</p>
-          </div>
-          <img className="rounded-x" src={result.url} alt="thumb" />
-          <span className="testimonials-author">
-								Cảm nhận của {result.name}<br/>
-								<em>{result.job}</em>
-							</span>
-        </div>
-      )
-    });
-    return(
-      <div>
-        <div className="session-8" style={{'margin-top':'0'}}>
-          <div className="register-now">
-            <div className="row">
-              <div className="col-md-4">
-                <span className="step_line"></span>
-              </div>
-              <div className="col-md-4 text-center">
-                <a className="text-justify"><strong>ĐĂNG KÝ NGAY</strong></a>
-              </div>
-              <div className="col-md-4">
-                <span className="step_line"></span>
-              </div>
-
-            </div>
-          </div>
-
-        </div>
-        <div className="session-10 container">
-          <div className="row ">
-            <div className="col-md-6 promotion">
-              <div className="ts-info-panel-info-icon">
-                <i className="fa fa-diamond" aria-hidden="true"></i>
-              </div>
-              <div className=" ts-info-panel-info-desc">
-                <div className="ts-info-panel-info-title">ƯU ĐÃI ĐẶC BIỆT CHO NGƯỜI HIỂU ĐƯỢC GIÁ TRỊ</div>
-                <div className="ts-info-panel-info-main">
-                  <p></p>
-                  <p className="text-justify">
-                    ƯU ĐÃI ĐẶC BIỆT CHO CÁC THIÊN THẦN NHỎ NHÂN DỊP TRUNG THU<br/>
-                    Nhân dịp lễ Trung Thu, chúng tôi dành những phần quà đặc biệt cho những bạn hiểu được giá trị của dịch vụ <strong>&nbsp;Sinh Trắc Vân Tay Đa Trí Thông Minh (DMIT)</strong> và muốn khám phá bản thân mình càng sớm càng tốt, Zuna xin dành <span style={{'color': '#ff0000'}}><strong>15 suất ưu đãi GIẢM 25%</strong></span>&nbsp; (từ <strong>2.800.000 vnđ</strong> chỉ còn <span style={{'color': '#ff0000'}}><strong>2.200.000đ</strong></span>&nbsp; – giúp bạn tiết kiệm được <strong>600.000đ</strong>) nếu bạn đăng ký trước ngày <strong>20/09/2016</strong>.
-
-                    </p><p></p>
-                </div>
-              </div>
-            </div>
-            <div className="col-md-6 select-address text-center">
-              <div className="uvc-heading " >
-                <div className="uvc-main-heading ult-responsive">
-                  <h2 fontWeight={'normal'}>Chọn vùng miền phù hợp</h2></div><div className="uvc-heading-spacer line_with_icon">
-                <div className="ult-just-icon-wrapper  ">
-                  <div className="align-icon text-center">
-                    <div className="aio-icon">
-                      <i className="fa fa-shield" aria-hidden="true"></i>
-                    </div>
-                  </div>
-                </div>
-              </div>
-                <div className="uvc-sub-heading ult-responsive">
-                  <p></p>
-                  <p className="text-center"><span style={{'color': '#ff0000'}}>
-                        <strong>CAM KẾT HOÀN TIỀN 100% NẾU BẠN KHÔNG HÀI LÒNG VỚI CHẤT LƯỢNG<br/></strong></span></p>
-                  <p></p>
-                </div>
-                <div className="row" style={{'padding':'0'}} >
-                  <div className="text-center col-md-6">
-                    <button className="btn btn-address btn-default">Đăng ký tại Quảng Trị</button>
-                  </div>
-                  <div className="text-center col-md-6">
-                    <button className="btn btn-address  btn-default">Đăng ký tại Quảng Bình</button>
-                  </div>
-                  <div className="text-center col-md-6">
-                    <button className="btn btn-address btn-default">Đăng ký tại Huế </button>
-                  </div>
-                  <div className="text-center col-md-6">
-                    <button className="btn btn-address btn-default">Đăng ký tại Đà Nẵng</button>
-                  </div>
-                </div>
-
-
-              </div>
-            </div>
-            <div className="col-md-6">
-              <div className="img-feedback">
-                <img width="570" height="300" src="../index/img/van-tay-hoc/Like.png" className="vc_single_image-img attachment-large" alt="Testimonial_575x300_xanh" />
-              </div>
-            </div>
-            <div className="col-md-6">
-              <Slider {...settings}>
-                {childFeedback}
-
-              </Slider>
-            </div>
-          </div>
-        </div>
-      </div>
     )
   }
 }

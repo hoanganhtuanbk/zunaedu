@@ -1,6 +1,3 @@
-/**
- * Created by duyhung on 04/07/2016.
- */
 module.exports = function(app) {
 
   var users = [{
@@ -19,7 +16,6 @@ module.exports = function(app) {
   var User = app.models.user;
   users.forEach(function(user) {
     User.create(user, function(err, result) {
-      console.log(result)
       if (err) console.log(err);
     })
   })
