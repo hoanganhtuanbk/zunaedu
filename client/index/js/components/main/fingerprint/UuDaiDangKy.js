@@ -18,8 +18,8 @@ export class UuDaiDangKy extends React.Component{
       address: '',
       nameChildren: '',
       oldChildren: '',
-      sexChildren: '',
-      media: '',
+      sexChildren: 'Nam',
+      media: 'Facebook',
       content: ''
 
     }
@@ -50,7 +50,7 @@ export class UuDaiDangKy extends React.Component{
   closeModal(t){
     this.setState({modalIsOpen: false});
   };
-  _handleRegisterService(){
+  _handleRegisterService(t){
     const dateNow = new Date();
     const apps = {
       nameParent: this.state.nameParent,
@@ -60,13 +60,14 @@ export class UuDaiDangKy extends React.Component{
       nameChilden: this.state.nameChildren,
       oldChilden: this.state.oldChildren,
       sexChilden: this.state.sexChildren,
+      media: this.state.media,
       content: this.state.content,
       dateCreate: dateNow.toDateString()
     };
     Actions.create('/RegisterServices', apps, function(data){
       console.log(data);
-      browserHistory.goBack();
-    })
+    });
+    t.setState({modalIsOpen:false})
   }
   render(){
     var settings = {
@@ -250,21 +251,21 @@ export class UuDaiDangKy extends React.Component{
                           </section>
                           <section className="col col-6">
                             <label className="label">Giới tính </label>
-                            <label className="select" onChange={e=>{this.setState({sexChildren: e.target.value})}}>
-                              <select id="state">
-                                <option>Nam</option>
-                                <option>Nữ</option>
+                            <label className="select" >
+                              <select id="state" onChange={e=>{console.log(e.target.value)}}>
+                                <option value="Nam">Nam</option>
+                                <option value="Nữ">Nữ</option>
                               </select>
                             </label>
                           </section>
                           <section className="col col-6">
                             <label className="label">Bạn biết chương trình này thông qua kênh nào?</label>
                             <label className="select">
-                              <select id="state" onChange={e=>{this.setState({media: e.target.value})}}>
-                                <option>Facebook</option>
-                                <option>Bạn bè giới thiệu</option>
-                                <option>Đã từng tham dự chương trình trước</option>
-                                <option>Khác</option>
+                              <select onChange={e=>{this.setState({media: e.target.value})}}>
+                                <option value="Facebook">Facebook</option>
+                                <option value="Bạn bè giới thiệu">Bạn bè giới thiệu</option>
+                                <option value="Đã từng tham dự chương trình trước">Đã từng tham dự chương trình trước</option>
+                                <option value="Khác">Khác</option>
                               </select>
                             </label>
                           </section>

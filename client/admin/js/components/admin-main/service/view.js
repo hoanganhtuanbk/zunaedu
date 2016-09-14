@@ -13,19 +13,71 @@ export class ViewService extends React.Component{
     };
   }
   componentWillMount(){
-    Stores.findById('/RegisterService', this.props.params.id, function(service, status) {
-      this.setState({service: service});
+    this.getDetailService(this);
+  }
+  getDetailService(t){
+    console.log(t)
+    Stores.findById('/RegisterServices', t.props.params.id, function(service, status) {
+      t.setState({service: service});
       console.log(service)
-    }.bind(this));
-    console.log(this.state.service)
+    })
   }
 	render(){
 		return(
       <div className="panel">
         <div className="panel-body">
-          <img src={this.state.service.url} />
-          <h3> {this.state.service.title}</h3>
-          <p>{this.state.service.content}</p>
+          <table className="table">
+            <thead>
+            <tr>
+              <th>#</th>
+              <th>Infomation</th>
+            </tr>
+            </thead>
+            <tbody>
+            <tr>
+              <td>id</td>
+              <td>{this.state.service.id}</td>
+              </tr>
+            <tr>
+              <td>Name Parent</td>
+              <td>{this.state.service.nameParent}</td>
+              </tr>
+            <tr>
+              <td>Email</td>
+              <td>{this.state.service.email}</td>
+              </tr>
+
+            <tr>
+              <td>Phone</td>
+              <td>{this.state.service.phone}</td>
+
+            </tr>
+            <tr>
+              <td>Address</td>
+              <td>{this.state.service.address}</td>
+            </tr>
+            <tr>
+              <td>Name Childen</td>
+              <td>{this.state.service.nameChilden}</td>
+            </tr>
+            <tr>
+              <td>Old</td>
+              <td>{this.state.service.oldChilden}</td>
+            </tr>
+            <tr>
+              <td>Sex</td>
+              <td>{this.state.service.sexChilden}</td>
+            </tr>
+            <tr>
+              <td>Media</td>
+              <td>{this.state.service.media}</td>
+            </tr>
+              <tr>
+                <td>Content</td>
+              <td>{this.state.service.content}</td>
+            </tr>
+            </tbody>
+          </table>
         </div>
       </div>
     )

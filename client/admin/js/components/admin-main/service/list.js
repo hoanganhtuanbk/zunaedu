@@ -27,9 +27,6 @@ class ServicesView extends React.Component{
             <Link className="btn btn-xs btn-default" to={`/admin/service/${this.props.id}`}>
               <i className="fa fa-eye"></i>
             </Link>
-            <Link to={`/admin/event/${this.props.id}/edit`} className="btn btn-xs btn-default" >
-              <i className="fa fa-pencil"></i>
-            </Link>
             <a className="btn btn-xs btn-default" onClick={this.deleteService.bind(this.props.id,this)} >
               <i className="fa fa-times"></i>
             </a>
