@@ -234,6 +234,9 @@ class DoiTuongDichVu extends React.Component{
             </div>
           </div>
         </div>
+        <div className="container ">
+          <div className="headline"></div>
+        </div>
         <div className="session-5 container">
           <div className="title-ss-5">
             <div className="column-inner">
@@ -312,6 +315,9 @@ class DoiTuongDichVu extends React.Component{
             </div>
           </div>
         </div>
+        <div className="container ">
+          <div className="headline"></div>
+        </div>
         <div className="session-5 container">
           <div className="title-ss-5">
             <div className="column-inner">
@@ -374,6 +380,9 @@ class DoiTuongDichVu extends React.Component{
               </div>
             </div>
           </div>
+        </div>
+        <div className="container ">
+          <div className="headline"></div>
         </div>
         <div className="session-5 container">
           <div className="title-ss-5">
@@ -453,6 +462,9 @@ class DoiTuongDichVu extends React.Component{
             </div>
           </div>
         </div>
+        <div className="container ">
+          <div className="headline"></div>
+        </div>
       </div>
     )
   }
@@ -461,14 +473,12 @@ class DiemKhacBiet extends React.Component{
   render(){
     return(
       <div>
-        <div className="session-7 container">
+        <div className="session-7">
           <div className="title-ss-7">
-            <div className="column-inner">
-              <h3 className="text-center">Những điểm <span><strong>ĐẶC BIỆT và KHÁC BIỆT</strong></span> khi làm<strong><br/>
-                Sinh Trắc Vân Tay Đa Trí Thông Minh (DMIT)</strong> với Zuna:</h3>
-            </div>
+            <h3 className="text-center">Những điểm <span><strong>ĐẶC BIỆT và KHÁC BIỆT</strong></span> khi làm<strong><br/>
+              Sinh Trắc Vân Tay Đa Trí Thông Minh (DMIT)</strong> với Zuna:</h3>
           </div>
-          <div className="content-ss-7">
+          <div className="content-ss-7 container">
             <div className="row">
               <div className="col-md-6">
                 <ul>

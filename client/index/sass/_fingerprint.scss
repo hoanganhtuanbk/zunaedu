@@ -191,7 +191,6 @@
     }
     .session-5{
       .title-ss-5{
-        padding-top: 20px;
       }
       .icon-ss{
         font-size: 10px;
@@ -222,15 +221,19 @@
       }
     }
     .session-7{
-      .title-ss-7{
-        padding-top: 35px;
-        h5{
-          font-weight: 600;
+      .title-ss-7 {
+        padding-top: 5px;
+        padding-bottom: 10px;
+        background-color: #b10180;
+        h3 {
           font-size: 30px;
           line-height: 46px;
+          font-weight: 600;
+          color: white
         }
       }
       .content-ss-7{
+        margin-top: 30px;
         li{
 
         }
@@ -362,6 +365,7 @@
     }
     .session-10{
       margin-top: 30px;
+      margin-bottom: 30px;
       .promotion{
         background-color: rgb(248, 228, 7);
         color: #4d7615;

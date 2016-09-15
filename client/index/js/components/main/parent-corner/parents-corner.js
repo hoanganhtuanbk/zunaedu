@@ -2,6 +2,8 @@ import React from 'react';
 import {render,forceUpdate} from 'react-dom';
 import {Link,browserHistory} from 'react-router';
 import Stores from '../../../stores/stores'
+import Actions from '../../../actions/actions'
+
 import {HeaderPage} from '../src/header-page'
 import {FeedbackForm} from '../src/feedback-form'
 import {HitBooks} from '../src/hit-books'
@@ -11,11 +13,13 @@ export class ParentsCorner extends React.Component{
     super();
     this.state = {
       parents : [],
-      test: false
+      test: false,
+      url: ''
     };
   }
   componentWillMount(){
     this.getParentCorners(this);
+    this.getBackground(this)
   }
   componentWillReceiveProps(nextProps){ //Function nay chay mỗi khi có thay đổi props
   this.setState({key:nextProps.params.key>this.props.params.key})
@@ -27,7 +31,19 @@ export class ParentsCorner extends React.Component{
       }
     });
   }
-
+  getBackground(t){
+    Actions.find('backgrounds',{
+      where:
+      {
+      feature: 'parent-corner'
+    },
+    order: 'id DESC'},
+      function (background) {
+      if(background){
+        t.setState({url: background.url})
+      }
+    })
+  }
   render(){
     const childElements = this.state.parents.map(function(parent,id){
       return (
@@ -39,7 +55,7 @@ export class ParentsCorner extends React.Component{
     });
     return (
       <div className="bg-color-white">
-        <HeaderPage background={'../index/img/bg-components/goc-cha-me-mini.jpg'} />
+        <HeaderPage background={this.state.url} />
         <div className="container content-sm">
           <div className="row">
             <div className="col-md-9">

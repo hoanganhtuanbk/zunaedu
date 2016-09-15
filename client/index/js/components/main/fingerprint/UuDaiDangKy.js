@@ -1,9 +1,7 @@
 import React from 'react';
 import {render} from 'react-dom';
-import { Link, IndexLink,browserHistory } from 'react-router';
 import Stores from '../../../stores/stores'
 import Actions from '../../../actions/actions'
-import Slider from 'react-slick'
 import Modal from 'react-modal'
 
 export class UuDaiDangKy extends React.Component{
@@ -70,17 +68,6 @@ export class UuDaiDangKy extends React.Component{
     t.setState({modalIsOpen:false})
   }
   render(){
-    var settings = {
-      speed: 1000,
-      autoplaySpeed: 7000,
-      autoplay: true,
-      fade: true,
-      arrows: false,
-      dots: true,
-      infinite: true,
-
-    };
-    const limitContent= 315;
     const customStyles = {
       overlay: {
         position: 'fixed',
@@ -106,22 +93,7 @@ export class UuDaiDangKy extends React.Component{
 
       }
     };
-    var childFeedback = this.state.feedbacks.map(function(result,index){
-      return(
-        <div  key={index} className="testimonials-v4 feedback md-margin-bottom-50">
-          <div className="testimonials-v4-in">
-            <p>{
-              result.content.length > 350 ? `${result.content.substr(0, limitContent)}...` : `${result.content}`
-            }</p>
-          </div>
-          <img className="rounded-x" src={result.url} alt="thumb" />
-          <span className="testimonials-author">
-								Cảm nhận của {result.name}<br/>
-								<em>{result.job}</em>
-							</span>
-        </div>
-      )
-    });
+
     return(
       <div>
         <div className="session-8" style={{'margin-top':'0'}}>
@@ -154,7 +126,7 @@ export class UuDaiDangKy extends React.Component{
                     <p></p>
                     <p className="text-justify">
                       ƯU ĐÃI ĐẶC BIỆT CHO CÁC THIÊN THẦN NHỎ NHÂN DỊP TRUNG THU<br/>
-                      Nhân dịp lễ Trung Thu, chúng tôi dành những phần quà đặc biệt cho những bạn hiểu được giá trị của dịch vụ <strong>&nbsp;Sinh Trắc Vân Tay Đa Trí Thông Minh (DMIT)</strong> và muốn khám phá bản thân mình càng sớm càng tốt, Zuna xin dành <span style={{'color': '#ff0000'}}><strong>15 suất ưu đãi GIẢM 25%</strong></span>&nbsp; (từ <strong>2.800.000 vnđ</strong> chỉ còn <span style={{'color': '#ff0000'}}><strong>2.200.000đ</strong></span>&nbsp; – giúp bạn tiết kiệm được <strong>600.000đ</strong>) nếu bạn đăng ký trước ngày <strong>20/09/2016</strong>.
+                      Nhân dịp lễ Trung Thu, chúng tôi dành những phần quà đặc biệt cho những bạn hiểu được giá trị của dịch vụ <strong>&nbsp;Sinh Trắc Vân Tay Đa Trí Thông Minh (DMIT)</strong> và muốn khám phá bản thân mình càng sớm càng tốt, Zuna xin dành <span style={{'color': '#ff0000'}}><strong>15 suất ưu đãi GIẢM 25%</strong></span>&nbsp; (từ <strong>2.800.000 vnđ</strong> chỉ còn <span style={{'color': '#ff0000'}}><strong>2.200.000đ</strong></span>&nbsp; – giúp bạn tiết kiệm được <strong>600.000đ</strong>) nếu bạn đăng ký trước ngày <strong>30/09/2016</strong>.
 
                     </p><p></p>
                   </div>
@@ -282,10 +254,10 @@ export class UuDaiDangKy extends React.Component{
 
                       <footer>
                         <section className="col col-6 text-center">
-                          <button type="button" className="btn-u" onClick={this.handleRegisterService}>Đăng ký</button>
+                          <button type="button" className="btn-form-left btn" onClick={this.handleRegisterService}>Đăng ký</button>
                         </section>
                         <section className="col col-6 text-center" >
-                          <button type="button" className="btn-u" onClick={this.closeModal}>Thoát</button>
+                          <button type="button" className="btn-form-right btn" onClick={this.closeModal}>Thoát</button>
                         </section>
                       </footer>
 
@@ -297,19 +269,6 @@ export class UuDaiDangKy extends React.Component{
                   </Modal>
 
                 </div>
-              </div>
-            </div>
-            <div className="col-md-12">
-              <div className="col-md-6">
-                <div className="img-feedback">
-                  <img width="570" height="300" src="../index/img/van-tay-hoc/Like.png" className="vc_single_image-img attachment-large" alt="Testimonial_575x300_xanh" />
-                </div>
-              </div>
-              <div className="col-md-6">
-                <Slider {...settings}>
-                  {childFeedback}
-
-                </Slider>
               </div>
             </div>
           </div>
