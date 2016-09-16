@@ -65,6 +65,7 @@ export class ListBackground extends React.Component{
     const backgrounds = this.state.backgrounds.map(function(item, id) {
       return (<BackgroundsView
         key={id}
+        id={item.id}
         url={item.url}
         feature={item.feature}
         />)

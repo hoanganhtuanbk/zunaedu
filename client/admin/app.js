@@ -36,6 +36,11 @@ import {AddFeedback} from './js/components/admin-main/feedback/add'
 import {EditFeedback} from './js/components/admin-main/feedback/edit'
 import {ListFeedback} from './js/components/admin-main/feedback/list'
 
+import {BackgroundManagement} from './js/components/admin-main/background/background'
+import {AddBackground} from './js/components/admin-main/background/add'
+import {EditBackground} from './js/components/admin-main/background/edit'
+import {ListBackground} from './js/components/admin-main/background/list'
+
 import {Dermatoglyphics} from './js/components/admin-main/dermatoglyphic/dermatoglyphic'
 import {ViewDermatoglyphic} from './js/components/admin-main/dermatoglyphic/view'
 import {AddDermatoglyphic} from './js/components/admin-main/dermatoglyphic/add'
@@ -108,6 +113,11 @@ export class AdminCenter extends React.Component{
         link: '/admin/feedback'
       },
       {
+        name: 'Background',
+        icon: 'fa fa-forumbee',
+        link: '/admin/background'
+      },
+      {
         name: 'Profile',
         icon: 'fa fa-user',
         link: '/admin/profile'
@@ -172,6 +182,12 @@ render(
         <Route path="/admin/feedback/add" component={AddFeedback} />
         <Route path="/admin/feedback/:id/edit" component={EditFeedback}/>
         <Route path="/admin/feedback/:id" component={ViewFeedback} />
+      </Route>
+
+      <Route path="/admin/background" component={BackgroundManagement} >
+        <IndexRoute component={ListBackground} />
+        <Route path="/admin/background/add" component={AddBackground} />
+        <Route path="/admin/background/:id/edit" component={EditBackground}/>
       </Route>
 
       <Route path="/admin/dermatoglyphic" component={Dermatoglyphics} >

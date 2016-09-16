@@ -5,17 +5,21 @@ import Stores from '../../../stores/stores'
 import {HeaderPage} from '../src/header-page'
 import {FeedbackForm} from '../src/feedback-form'
 import {HitBooks} from '../src/hit-books'
+import Actions from '../../../actions/actions'
 
 export class Event extends React.Component{
   constructor(props){
     super();
     this.state = {
       events : [],
-      test: false
+      url: ''
+
     };
   }
   componentWillMount(){
     this.getEventDatas(this);
+    this.getBackground(this)
+
   }
   componentWillReceiveProps(nextProps){ //Function nay chay mỗi khi có thay đổi props
     this.setState({key:nextProps.params.key>this.props.params.key})
@@ -27,7 +31,20 @@ export class Event extends React.Component{
       }
     });
   }
-
+  getBackground(t){
+    Actions.find('/backgrounds',{
+        where:
+        {
+          feature: 'event'
+        },
+        order: 'id DESC'},
+      function (background) {
+        console.log(background);
+        if(background[0]){
+          t.setState({url: background[0].url})
+        }
+      })
+  }
   render(){
     const childElements = this.state.events.map(function(event,id){
       return (
@@ -39,7 +56,7 @@ export class Event extends React.Component{
     });
     return (
       <div className="bg-color-light">
-        <HeaderPage background={'../index/img/bg-components/su-kien-mini.jpg'} />
+        <HeaderPage background={this.state.url} />
         <div className="container content-sm">
           <div className="row">
             <div className="col-md-9">

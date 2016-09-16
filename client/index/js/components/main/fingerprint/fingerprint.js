@@ -6,6 +6,8 @@ import Stores from '../../../stores/stores'
 import Slider from 'react-slick'
 import Modal from 'react-modal'
 import {UuDaiDangKy} from './UuDaiDangKy'
+import Actions from '../../../actions/actions'
+
 class VideoGioiThieu extends React.Component{
   constructor(){
     super();
@@ -528,7 +530,6 @@ class DiemKhacBiet extends React.Component{
     )
   }
 }
-
 class QuyTrinh extends React.Component{
   render(){
     return(
@@ -781,14 +782,34 @@ class HoiDapTruyenHinh extends React.Component{
   }
 }
 export class FingerPage extends React.Component{
-
+  constructor(){
+    super();
+    this.state = {
+      url: ''
+    };
+  }
+  componentWillMount(){
+    this.getBackground(this)
+  }
+  getBackground(t){
+    Actions.find('/backgrounds',{
+        where:
+        {
+          feature: 'dmit'
+        },
+        order: 'id DESC'},
+      function (background) {
+        console.log(background);
+        if(background[0]){
+          t.setState({url: background[0].url})
+        }
+      })
+  }
 
   render(){
-    const bg = "../index/img/bg-components/sinh-trac-mini.jpg";
-
     return (
       <section className="fingerprint">
-        <HeaderPage background={bg} />
+        <HeaderPage background={this.state.url} />
         <div className="">
           <div className="content-sm">
             <VideoGioiThieu />

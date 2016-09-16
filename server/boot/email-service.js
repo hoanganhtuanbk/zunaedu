@@ -1,6 +1,3 @@
-/**
- * Created by duyhung on 05/07/2016.
- */
 module.exports = function(app) {
 
   app.use(app.loopback.token({

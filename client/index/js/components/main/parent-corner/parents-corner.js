@@ -13,7 +13,6 @@ export class ParentsCorner extends React.Component{
     super();
     this.state = {
       parents : [],
-      test: false,
       url: ''
     };
   }
@@ -32,15 +31,16 @@ export class ParentsCorner extends React.Component{
     });
   }
   getBackground(t){
-    Actions.find('backgrounds',{
+    Actions.find('/backgrounds',{
       where:
       {
       feature: 'parent-corner'
     },
     order: 'id DESC'},
       function (background) {
-      if(background){
-        t.setState({url: background.url})
+      console.log(background);
+      if(background[0]){
+        t.setState({url: background[0].url})
       }
     })
   }

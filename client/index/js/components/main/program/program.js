@@ -5,6 +5,7 @@ import Stores from '../../../stores/stores'
 import {HeaderPage} from '../src/header-page'
 import {FeedbackForm} from '../src/feedback-form'
 import {HitBooks} from '../src/hit-books'
+import Actions from '../../../actions/actions'
 
 class Trending extends React.Component{
   render(){
@@ -27,11 +28,15 @@ export class Program extends React.Component{
   constructor(){
     super();
     this.state = {
-      programs: []
+      programs: [],
+      url: ''
+
     };
   }
   componentWillMount(){
     this.getPrograms(this);
+    this.getBackground(this)
+
   }
   getPrograms(t){
     Stores.find('/programs', {order:'id DESC'}, function(programs, status) {
@@ -40,6 +45,20 @@ export class Program extends React.Component{
         console.log(t.state.programs)
       }
     });
+  }
+  getBackground(t){
+    Actions.find('/backgrounds',{
+        where:
+        {
+          feature: 'program'
+        },
+        order: 'id DESC'},
+      function (background) {
+        console.log(background);
+        if(background[0]){
+          t.setState({url: background[0].url})
+        }
+      })
   }
   render(){
     const programs = this.state.programs.map(function(item, index) {
@@ -56,7 +75,7 @@ export class Program extends React.Component{
 
     return(
       <div className="bg-color-white">
-        <HeaderPage background={'../index/img/bg-components/chuong-trinh-mini.jpg'} />
+        <HeaderPage background={this.state.url} />
         <div className="container content-sm">
           <div className="row">
             <div className="col-md-9">

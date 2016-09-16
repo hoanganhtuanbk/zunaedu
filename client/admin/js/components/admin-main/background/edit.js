@@ -28,7 +28,12 @@ export class EditBackground extends React.Component{
       feature : this.state.feature,
     };
     if(this.state.file){
-      data.url= `/api/containers/files/download/${this.state.file.name}`
+      data.url= `/api/containers/files/download/${this.state.file.name}`;
+      const imgData = new FormData();
+      imgData.append('file', this.state.file);
+      Actions.upload('/containers/files/upload',imgData,function(result, stt){
+        console.log(result, stt)
+      })
     }
     Actions.update('/backgrounds', this.props.params.id, data, function(result, status) {
       if(status = 'success'){browserHistory.goBack()}else alert(status)

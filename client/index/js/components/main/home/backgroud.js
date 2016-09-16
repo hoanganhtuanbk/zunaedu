@@ -4,7 +4,19 @@ import Slider from 'react-slick'
 import { Link, browserHistory } from 'react-router';
 
 export class Backgroud extends React.Component{
-
+  constructor(){
+    super()
+  }
+  componentWillMount(){
+    this.getBackgrounds(this)
+  }
+  getBackgrounds(){
+    Actions.find('/backgrounds',{
+      where:{
+        
+      }
+    })
+  }
   render(){
     var settings = {
       dots: true,
