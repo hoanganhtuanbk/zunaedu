@@ -603,7 +603,7 @@ class QuyTrinh extends React.Component{
             <div className="row">
               <div className="col-md-4 text-center">
                 <div className="step-img">
-                  <img className="img-icon" alt="null" src="https://tgm.cdn.vccloud.vn/wp-content/uploads/2016/06/DMIT_baocao1.png" />
+                  <img className="img-icon" alt="null" src="../index/img/van-tay-hoc/buoc1.png" />
                 </div>
                 <div className="aio-icon-header">
                   <h3 className="sub-title-ss-9">Bản báo cáo</h3>
