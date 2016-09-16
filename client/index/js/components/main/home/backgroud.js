@@ -8,15 +8,8 @@ export class Backgroud extends React.Component{
     super()
   }
   componentWillMount(){
-    this.getBackgrounds(this)
   }
-  getBackgrounds(){
-    Actions.find('/backgrounds',{
-      where:{
-        
-      }
-    })
-  }
+
   render(){
     var settings = {
       dots: true,
