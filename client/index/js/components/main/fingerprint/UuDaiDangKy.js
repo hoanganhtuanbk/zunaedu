@@ -20,12 +20,11 @@ export class UuDaiDangKy extends React.Component{
       media: 'Facebook',
       content: ''
 
-    }
+    };
     this.openModal = this.openModal.bind(this);
     this.closeModal = this.closeModal.bind(this);
     this.afterOpenModal = this.afterOpenModal.bind(this);
-    this.handleRegisterService = this._handleRegisterService.bind(this);
-
+    this.handleRegisterService = this.handleRegisterService.bind(this);
   }
 
   componentWillMount(){
@@ -41,14 +40,13 @@ export class UuDaiDangKy extends React.Component{
   };
 
   afterOpenModal(t){
-    // references are now sync'd and can be accessed.
     this.refs.subtitle.style.color = '#f00';
   };
 
   closeModal(t){
     this.setState({modalIsOpen: false});
   };
-  _handleRegisterService(t){
+  handleRegisterService(t){
     const dateNow = new Date();
     const apps = {
       nameParent: this.state.nameParent,
@@ -65,7 +63,7 @@ export class UuDaiDangKy extends React.Component{
     Actions.create('/RegisterServices', apps, function(data){
       console.log(data);
     });
-    t.setState({modalIsOpen:false})
+    this.setState({modalIsOpen:false})
   }
   render(){
     const customStyles = {
