@@ -4,15 +4,7 @@ import { Link, IndexLink, browserHistory } from 'react-router';
 import {PanelHeader} from '../../../../../sharedComponent/main/panel-header'
 import Stores from '../../../stores/stores';
 import Actions from '../../../actions/actions.js'
-import {
-  Editor,
-  EditorState,
-  Entity,
-  ContentState,
-  convertFromRaw,
-  convertToRaw
-} from 'draft-js';
-import ImageComponent from '../src/components/ImageComponent';
+
 export class EditFeedback extends React.Component{
   constructor() {
     super();
@@ -26,7 +18,6 @@ export class EditFeedback extends React.Component{
     this.findById(this);
   }
   findById(t) {
-    var id = window.location.pathname.split('/')[3];
     Stores.findById('/feedbacks', this.props.params.id, function(feedback, status) {
       t.setState({name: feedback.name,job: feedback.job,content: feedback.content, url: feedback.url});
     })
@@ -39,7 +30,13 @@ export class EditFeedback extends React.Component{
       content: this.state.content,
     };
     if(this.state.file){
-      data.url= `/api/containers/files/download/${this.state.file.name}`
+      console.log('hi');
+      data.url= `/api/containers/files/download/${this.state.file.name}`;
+      const imgData = new FormData();
+      imgData.append('file', this.state.file);
+      Actions.upload('/containers/files/upload',imgData,function(result, stt){
+        console.log(result, stt)
+      })
     }
     Actions.update('/feedbacks', this.props.params.id, data, function(result, status) {
       if(status = 'success'){browserHistory.goBack()}else alert(status)
@@ -47,6 +44,7 @@ export class EditFeedback extends React.Component{
   }
   _handleImageChange(e) {
     e.preventDefault();
+    console.log(this.state.file)
 
     let reader = new FileReader();
     let file = e.target.files[0];
@@ -57,6 +55,8 @@ export class EditFeedback extends React.Component{
         imagePreviewUrl: reader.result
       });
     };
+    console.log(this.state.file)
+
     reader.readAsDataURL(file)
 
   }
