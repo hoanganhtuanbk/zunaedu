@@ -50,14 +50,15 @@ export class Login extends React.Component{
         }
         this.getCurrentUser(function(user) {
           console.log(user, user.privilege);
-          switch (user.privilege) {
-            case 3: window.location = '/consumer/apis';
-                  break;
-            case 2: window.location = '/admin';
-                  break;
-            case 1: window.location = '/admin';
-                  break;
-          }
+          // switch (user.privilege) {
+          //   case 3: window.location = '/consumer/apis';
+          //         break;
+          //   case 2: window.location = '/admin';
+          //         break;
+          //   case 1: window.location = '/admin';
+          //         break;
+          // }
+          window.location = '/admin'
         })
       }
     });

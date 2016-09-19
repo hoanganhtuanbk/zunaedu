@@ -35,8 +35,8 @@ export class WhatPeopleSay extends React.Component{
     const limitContent= 315;
     const childFeedback = this.state.feedbacks.map(function(result, index){
       return(
-        <div key={result.id} className="instructor">
-          <div  className="instructor-item">
+        <div  className="instructor">
+          <div key={result.id} className="instructor-item">
             <div className="avatar">
               <img alt="" src={result.url}  className="avatar avatar-65 photo" height="65" width="65"/>
             </div>
@@ -45,7 +45,7 @@ export class WhatPeopleSay extends React.Component{
               <p className="job">{result.job}</p>
             </div>
             <div className="description">{
-              result.content.length > 50 ? `${result.content.substr(0, limitContent)}...` : `${result.content}`
+              `${result.content.substr(0, 200)}...`
             }</div><Link to="/van-tay-hoc/phan-hoi" className="readmore btn-u btn-u-sm">Read More</Link>
           </div>
         </div>

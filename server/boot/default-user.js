@@ -3,7 +3,8 @@ module.exports = function(app) {
   var users = [{
     email: 'user@user.com',
     password: 'user',
-    emailVerified: true
+    emailVerified: true,
+    privilege: 2
   }, {
     username: 'admin',
     email: 'admin@admin.com',
@@ -14,9 +15,11 @@ module.exports = function(app) {
 
 
   var User = app.models.user;
+
   users.forEach(function(user) {
     User.create(user, function(err, result) {
       if (err) console.log(err);
+      console.log(result)
     })
   })
 };

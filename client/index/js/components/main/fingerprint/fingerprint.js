@@ -7,7 +7,7 @@ import Slider from 'react-slick'
 import Modal from 'react-modal'
 import {UuDaiDangKy} from './UuDaiDangKy'
 import Actions from '../../../actions/actions'
-
+import {WhatPeopleSay} from '../home/what-people-say'
 class VideoGioiThieu extends React.Component{
   constructor(){
     super();
@@ -67,7 +67,7 @@ class VideoGioiThieu extends React.Component{
             </div>
             <div className="col-md-4">
               <div className="column-inner">
-                <button className="btn btn-active" onClick={this.openModal}>XEM VIDEO CLIP GIỚI THIỆU</button>
+                <button className="btn btn-active">XEM VIDEO CLIP GIỚI THIỆU</button>
               </div>
             </div>
             <div className="col-md-4">
@@ -657,7 +657,7 @@ class CamKet extends React.Component{
             </div>
           </div>
         </div>
-        <div className="session-8" style={{'margin-top':'0'}}>
+        <div className="session-8" style={{marginTop:'0px'}}>
           <div className="content-ss-8">
             <div className="wrap-ss-8">
               <div className="icon-ss-8">
@@ -765,7 +765,7 @@ class HoiDapTruyenHinh extends React.Component{
 
     })
     return(
-      <div className="session-1 container" style={{'margin-top': '35px'}}>
+      <div className="session-1 container" style={{marginTop: '35px'}}>
         <div className="text-center">
           <div className="title-ss-1 ">
             Hỏi - Đáp về Sinh Trắc Vân Tay qua truyền hình
@@ -820,6 +820,7 @@ export class FingerPage extends React.Component{
             <DiemKhacBiet />
             <QuyTrinh />
             <UuDaiDangKy />
+            <WhatPeopleSay />
             <CamKet />
             <HoiDapTruyenHinh />
           </div>
