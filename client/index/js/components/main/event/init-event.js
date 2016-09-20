@@ -8,7 +8,7 @@ class EventItem extends React.Component{
     return(
       <div className="row margin-bottom-20 feature-item">
         <div className="col-sm-5 sm-margin-bottom-20 feature-image">
-          <Link to={`/goc-cha-me/${this.props.keyNote}`} >
+          <Link to={`/su-kien/${this.props.keyNote}`} >
             <img className="img-responsive" src={this.props.url} />
           </Link>
         </div>
@@ -20,12 +20,12 @@ class EventItem extends React.Component{
               <li>/ Ngày đăng {this.props.date}</li>
             </ul>
             <h2>
-              <Link to={`/goc-cha-me/${this.props.keyNote}`} >
+              <Link to={`/su-kien/${this.props.keyNote}`} >
                 {this.props.title}
               </Link>
             </h2>
             <p>{this.props.description}</p>
-            <Link to={`/goc-cha-me/${this.props.keyNote}`} className="read-more">Xem chi tiết</Link>
+            <Link to={`/su-kien/${this.props.keyNote}`} className="read-more">Xem chi tiết</Link>
           </div>
         </div>
       </div>
