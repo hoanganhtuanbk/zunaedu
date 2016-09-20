@@ -15,7 +15,7 @@ class Trending extends React.Component{
             <img src={this.props.url} />
           </div>
           <div className="col-md-9 trending-title">
-            <h3><Link to={`/van-tay-hoc/${this.props.keyNote}`}>{this.props.title}</Link></h3>
+            <h3><Link to={`/dao-tao/${this.props.keyNote}`}>{this.props.title}</Link></h3>
             <small>{this.props.date} / Admin</small>
           </div>
         </div>
