@@ -13,6 +13,23 @@ import {
 import ImageComponent from '../src/ImageComponent';
 import {FeedbackForm} from '../src/feedback-form'
 
+class Trending extends React.Component{
+  render(){
+    return(
+      <div className="row trending">
+        <div className="col-md-3 trending-img">
+          <img src={this.props.url} />
+        </div>
+        <div className="col-md-9 trending-title">
+          <h3><Link to={`/van-tay-hoc/${this.props.keyNote}`}>{this.props.title}</Link></h3>
+          <small>{this.props.date} / Admin</small>
+        </div>
+      </div>
+
+
+    )
+  }
+}
 export class SubBook extends React.Component{
   constructor(props){
     super();
@@ -72,11 +89,15 @@ export class SubBook extends React.Component{
     });
   }
   render(){
-    const childElements = this.state.books.map(function(book,id){
+    const childElements = this.state.books.map(function(item,id){
       return (
         <li key={id}>
-          <h3><Link to={`/sach-giao-duc/${book.key}`} >{book.title}</Link></h3>
-          <small>{book.date} <a href="#">Art,</a> <a href="#">Admin</a></small>
+          <Trending
+            keyNote={item.key}
+            title={item.title}
+            date={item.date}
+            url={item.url}
+          />
         </li>
       );
     });

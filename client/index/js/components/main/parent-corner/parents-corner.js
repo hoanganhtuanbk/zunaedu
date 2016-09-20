@@ -8,6 +8,23 @@ import {HeaderPage} from '../src/header-page'
 import {FeedbackForm} from '../src/feedback-form'
 import {HitBooks} from '../src/hit-books'
 
+class Trending extends React.Component{
+  render(){
+    return(
+      <div className="row trending">
+        <div className="col-md-3 trending-img">
+          <img src={this.props.url} />
+        </div>
+        <div className="col-md-9 trending-title">
+          <h3><Link to={`/van-tay-hoc/${this.props.keyNote}`}>{this.props.title}</Link></h3>
+          <small>{this.props.date} / Admin</small>
+        </div>
+      </div>
+
+
+    )
+  }
+}
 export class ParentsCorner extends React.Component{
   constructor(props){
     super();
@@ -45,11 +62,15 @@ export class ParentsCorner extends React.Component{
     })
   }
   render(){
-    const childElements = this.state.parents.map(function(parent,id){
+    const childElements = this.state.parents.map(function(item,id){
       return (
         <li key={id}>
-          <h3><Link to={`/goc-cha-me/${parent.key}`} >{parent.title}</Link></h3>
-          <small>{parent.date} <a href="#">Art,</a> <a href="#">Lifestyles</a></small>
+          <Trending
+            keyNote={item.key}
+            title={item.title}
+            date={item.date}
+            url={item.url}
+          />
         </li>
       );
     });

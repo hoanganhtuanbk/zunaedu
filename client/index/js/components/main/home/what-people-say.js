@@ -46,7 +46,7 @@ export class WhatPeopleSay extends React.Component{
             </div>
             <div className="description">{
               `${result.content.substr(0, 200)}...`
-            }</div><Link to="/van-tay-hoc/phan-hoi" className="readmore btn-u btn-u-sm">Read More</Link>
+            }</div><Link to="/van-tay-hoc/phan-hoi" className="readmore btn-u btn-u-sm">Xem thêm</Link>
           </div>
         </div>
       )
