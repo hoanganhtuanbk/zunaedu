@@ -492,15 +492,21 @@
   }
   .section-3{
     padding-top: 60px;
+    padding-bottom: 40px;
   }
 }
 
 .section-4{
   padding-top: 60px;
+  padding-bottom: 30px;
+  .slick-dots{
+    bottom: 0!important;
+  }
   .instructor{
     padding-left: 20px;
     padding-right: 20px;
     padding-bottom: 45px;
+
     .instructor-item {
       background: #fff;
       padding: 30px;
