@@ -47,7 +47,6 @@ export class EditParent extends React.Component{
     }
   }
   findById(t) {
-    var id = window.location.pathname.split('/')[3];
     Stores.findById('/parents', this.props.params.id, function(parent, status) {
       const jsObject = JSON.parse(parent.content);
       const contentState = convertFromRaw(jsObject);
@@ -64,7 +63,12 @@ export class EditParent extends React.Component{
       description: this.state.description
     };
     if(this.state.file){
-      data.url= `/api/containers/files/download/${this.state.file.name}`
+      data.url= `/api/containers/files/download/${this.state.file.name}`;
+      const imgData = new FormData();
+      imgData.append('file', this.state.file);
+      Actions.upload('/containers/files/upload',imgData,function(result, stt){
+        console.log(result, stt)
+      })
     }
     Actions.update('/parents', this.props.params.id, data, function(result, status) {
       if(status = 'success'){browserHistory.goBack()}else alert(status)

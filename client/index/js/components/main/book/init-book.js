@@ -17,8 +17,12 @@ class BookItem extends React.Component{
                   <Link className="btn-more hover-effect" to={`/sach-giao-duc/${this.props.keyNote}`}>Xem thêm +</Link>
                 </div>
                 <div className="caption">
-                  <h3><Link className="hover-effect" to={`/sach-giao-duc/${this.props.keyNote}`}>{this.props.title}</Link></h3>
-                  <p>{this.props.description}</p>
+                  <h3><Link className="hover-effect" to={`/sach-giao-duc/${this.props.keyNote}`}>
+                    { this.props.title}
+                  </Link></h3>
+                  <p> {
+                    this.props.description.length > 200 ? `${ this.props.description.substr(0, 200)}...` : `${ this.props.description}`
+                  }</p>
                 </div>
               </div>: <div className="blog-post-quote-book">
                 <div className="blog-post-quote-item">
@@ -52,7 +56,7 @@ export class InitBook extends React.Component{
   render(){
    const BookList = this.state.books.map(function(book,index){
      return(
-       <div className="col-md-3 col-sm-6" key={index}>
+       <div className="col-md-4 col-sm-6" key={index}>
          <BookItem
            keyNote={book.key}
            title={book.title}
@@ -68,16 +72,7 @@ export class InitBook extends React.Component{
     };
     return (
       <div className="feature-new row margin-bottom-20">
-        <Masonry
-          className={'my-gallery-class'} // default ''
-          elementType={'ul'} // default 'div'
-          options={masonryOptions} // default {}
-          disableImagesLoaded={false} // default false
-          updateOnEachImageLoad={false} // default false and works only if disableImagesLoaded is false
-        >
           {BookList}
-
-        </Masonry>
       </div>
     );
   }

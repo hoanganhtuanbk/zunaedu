@@ -409,6 +409,17 @@
           .ts-info-panel-info-main {
             margin: 0;
             padding: 0 10px;
+            h2{
+              padding: 0;
+              font-size: 15px;
+              line-height: 0px;
+            }
+            h1{
+              padding: 0;
+              font-size: 15px;
+              line-height: 0px;
+              font-weight: 700;
+            }
             p {
               margin: 5px 0;
               padding: 0;

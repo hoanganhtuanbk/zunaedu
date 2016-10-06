@@ -3,12 +3,23 @@ import {render} from 'react-dom';
 import Stores from '../../../stores/stores'
 import Actions from '../../../actions/actions'
 import Modal from 'react-modal'
+import {
+  Editor,
+  EditorState,
+  Entity,
+  ContentState,
+  convertFromRaw,
+  convertToRaw
+} from 'draft-js';
+import ImageComponent from '../src/ImageComponent';
 
 export class UuDaiDangKy extends React.Component{
   constructor(){
     super();
     this.state = {
       feedbacks: [],
+      promotion: {},
+      editorState: EditorState.createEmpty(),
       modalIsOpen: false,
       nameParent: '',
       email: '',
@@ -25,28 +36,47 @@ export class UuDaiDangKy extends React.Component{
     this.closeModal = this.closeModal.bind(this);
     this.afterOpenModal = this.afterOpenModal.bind(this);
     this.handleRegisterService = this.handleRegisterService.bind(this);
+    this.getPromotion = this.getPromotion.bind(this);
+    this.blockRenderer = (block) => {
+      if (block.getType() === 'atomic') {
+        return {
+          component: ImageComponent
+        };
+      }
+      return null;
+    }
   }
 
   componentWillMount(){
-    this.getFeedbackDatas(this)
+    this.getFeedbackDatas(this);
+    this.getPromotion(this)
   }
   getFeedbackDatas(t){
     Stores.find('/feedbacks',{order:'id DESC',limit: 5}, function(feedbacks){
       t.setState({feedbacks: feedbacks})
     })
   }
-  openModal(t){
+  getPromotion(t){
+    Stores.find('/promotions',{order:'id DESC',limit: 1}, function(promotions){
+      console.log(promotions);
+      const jsObject = JSON.parse(promotions[0].content);
+      const contentState = convertFromRaw(jsObject);
+      const editorState = EditorState.createWithContent(contentState);
+      t.setState({book: promotions[0],editorState:editorState})
+    })
+  }
+  openModal(){
     this.setState({modalIsOpen: true});
   };
 
-  afterOpenModal(t){
+  afterOpenModal(){
     this.refs.subtitle.style.color = '#f00';
   };
 
-  closeModal(t){
+  closeModal(){
     this.setState({modalIsOpen: false});
   };
-  handleRegisterService(t){
+  handleRegisterService(){
     const dateNow = new Date();
     const apps = {
       nameParent: this.state.nameParent,
@@ -124,7 +154,13 @@ export class UuDaiDangKy extends React.Component{
                     <p></p>
                     <p className="text-justify">
                       ƯU ĐÃI ĐẶC BIỆT CHO CÁC THIÊN THẦN NHỎ NHÂN DỊP TRUNG THU<br/>
-                      Nhân dịp lễ Trung Thu, chúng tôi dành những phần quà đặc biệt cho những bạn hiểu được giá trị của dịch vụ <strong>&nbsp;Sinh Trắc Vân Tay Đa Trí Thông Minh (DMIT)</strong> và muốn khám phá bản thân mình càng sớm càng tốt, Zuna xin dành <span style={{'color': '#ff0000'}}><strong>15 suất ưu đãi GIẢM 25%</strong></span>&nbsp; (từ <strong>2.800.000 vnđ</strong> chỉ còn <span style={{'color': '#ff0000'}}><strong>2.200.000đ</strong></span>&nbsp; – giúp bạn tiết kiệm được <strong>600.000đ</strong>) nếu bạn đăng ký trước ngày <strong>30/09/2016</strong>.
+                      <h2>{this.state.promotion.title}</h2>
+                      <Editor
+                        blockRendererFn={this.blockRenderer}
+                        editorState={this.state.editorState}
+                        readOnly={true}
+                      />
+
 
                     </p><p></p>
                   </div>

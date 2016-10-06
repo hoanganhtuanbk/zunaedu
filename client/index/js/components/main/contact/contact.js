@@ -41,8 +41,8 @@ class Map extends React.Component{
 
   render(){
     const coords = {
-      lat: 16.8112768,
-      lng: 107.0846848
+      lat: 16.811280,
+      lng: 107.102184
     };
     return(
       <Gmaps

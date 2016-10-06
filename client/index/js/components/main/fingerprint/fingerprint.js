@@ -192,7 +192,7 @@ class DoiTuongDichVu extends React.Component{
                     <i className="fa fa-angle-right" aria-hidden="true"></i>
                   </div>
                   <div className="text-ss">
-                    <p className="text-justify">Giúp cha mẹ hiểu được tương quan giữa các chỉ số divên quan mật thiết đến thành công <strong>IQ, EQ, AQ, CQ</strong> mà con sở hữu.</p>
+                    <p className="text-justify">Giúp cha mẹ hiểu được tương quan giữa các chỉ số liên quan mật thiết đến thành công <strong>IQ, EQ, AQ, CQ</strong> mà con sở hữu.</p>
                   </div>
                 </li>
                 <li>
@@ -722,7 +722,7 @@ class HoiDapTruyenHinh extends React.Component{
       },
       {
         name : 'Mối liên hệ giữa vân tay và não bộ?',
-        link: '"https://www.youtube.com/embed/1Jj4bs7Zwuc',
+        link: 'https://www.youtube.com/embed/1Jj4bs7Zwuc',
         number: 6
       },
       {

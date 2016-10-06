@@ -14,13 +14,9 @@ export class AddEvent extends React.Component{
       title: '',
       description: '',
       content: '',
-      url: '',
-      author: '',
+      url: [],
       dateCreate: '',
-      date: '',
-      time: '',
-      month: '',
-      address: ''
+      file: []
     };
     this.handleCreateEvent = this._handleCreateEvent.bind(this);
     this.onChangeContent = this.onChangeContent.bind(this);
@@ -35,41 +31,64 @@ export class AddEvent extends React.Component{
     const dateNow = new Date();
     const apps = {
       title: this.state.title,
-      time: this.state.time,
-      date: this.state.date,
-      month: this.state.month,
-      address: this.state.address,
       key: this._changeToSlug(this.state.title),
       description: this.state.description,
       content: this.state.content,
-      url: `/api/containers/files/download/${this.state.file.name}`,
+      urls: [],
+      url: '',
       dateCreate: dateNow.toDateString()
     };
+
     const data = new FormData();
-    data.append('file', this.state.file);
-    Actions.upload('/containers/files/upload',data,function(data, stt){
-      console.log(data, stt)
-    });
+    if(this.state.files.length>0){
+      for(var i=0;i < this.state.files.length;i++){
+        data.append('file', this.state.files[i]);
+        apps.urls.push(`/api/containers/files/download/${this.state.files[i].name}`);
+        Actions.upload('/containers/files/upload',data,function(data, stt){
+          console.log(data, stt)
+        });
+      }
+    }
+    if(this.state.file){
+      data.append('file', this.state.file);
+      apps.url = `/api/containers/files/download/${this.state.file.name}`
+      Actions.upload('/containers/files/upload',data,function(data, stt){
+        console.log(data, stt)
+      });
+    }
     Actions.create('/events', apps, function(data){
       console.log(data);
       browserHistory.goBack();
     })
 
   }
-  _handleImageChange(e) {
+  _handleAvaterChange(e) {
     e.preventDefault();
-
+    console.log(e.target.files)
     let reader = new FileReader();
-    let file = e.target.files[0];
-
+    const file = e.target.files[0];
     reader.onloadend = () => {
       this.setState({
         file: file,
         imagePreviewUrl: reader.result
       });
     };
-
     reader.readAsDataURL(file)
+  }
+  _handleImageChange(e) {
+    e.preventDefault();
+    console.log(e.target.files)
+    // let reader = new FileReader();
+    const files = e.target.files;
+    // for(var i=0;i < file.length;i++){
+    //   url.push(`/api/containers/files/download/${file[i].name}`)
+    // }
+    this.setState({
+      files: files,
+      // imagePreviewUrl: reader.result
+    });
+
+    // reader.readAsDataURL(file)
   }
   _changeToSlug(title){
     var slug;
@@ -126,28 +145,19 @@ export class AddEvent extends React.Component{
                   </div>
                 </div>
                 <div className="col-md-6">
-                  <div className="col-md-4">
-                    <label>Time</label>
-                    <input type="text" className="form-control "  onChange={(e) =>{this.setState({time : e.target.value})}} />
-                  </div>
-                  <div className="col-md-4">
-                    <label>Date</label>
-                    <input type="text" className="form-control "  onChange={(e) =>{this.setState({date : e.target.value})}} />
-                  </div>
-                  <div className="col-md-4">
-                    <label>Month</label>
-                    <input type="text" className="form-control "  onChange={(e) =>{this.setState({month : e.target.value})}} />
-                  </div>
                   <div className="col-md-12">
-                    <label>Address</label>
-                    <input type="text" className="form-control "  onChange={(e) =>{this.setState({address : e.target.value})}} />
-                  </div>
-                  <div className="col-md-12">
-                    <label>Url image</label>
-                    <input type="file" className="form-control "  onChange={(e)=>this._handleImageChange(e)} />
+                    <label>Image Represent</label>
+                    <input type="file" className="form-control " onChange={(e)=>this._handleAvaterChange(e)} />
                   </div>
                   <div className="col-md-12 previewImage" >
                     {$imagePreview}
+                  </div>
+                  <div className="col-md-12">
+                    <label>Image Album</label>
+                    <input type="file" className="form-control " multiple onChange={(e)=>this._handleImageChange(e)} />
+                  </div>
+                  <div className="col-md-12 previewImage" >
+
                   </div>
                 </div>
                 <div className="col-md-12">

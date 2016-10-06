@@ -56,7 +56,7 @@ export class InitEvent extends React.Component{
            keyNote={event.key}
            title={event.title}
            description={event.description}
-           date={event.date}
+           date={event.dateCreate}
            url={event.url}
          />
          <div className="clearfix margin-bottom-20"><hr/></div>

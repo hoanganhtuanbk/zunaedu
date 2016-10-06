@@ -41,11 +41,24 @@ import {AddBackground} from './js/components/admin-main/background/add'
 import {EditBackground} from './js/components/admin-main/background/edit'
 import {ListBackground} from './js/components/admin-main/background/list'
 
+import {PartnerManagement} from './js/components/admin-main/partner/partner'
+import {AddPartner} from './js/components/admin-main/partner/add'
+import {EditPartner} from './js/components/admin-main/partner/edit'
+import {ListPartner} from './js/components/admin-main/partner/list'
+import {ViewPartner} from './js/components/admin-main/partner/view'
+
 import {Dermatoglyphics} from './js/components/admin-main/dermatoglyphic/dermatoglyphic'
 import {ViewDermatoglyphic} from './js/components/admin-main/dermatoglyphic/view'
 import {AddDermatoglyphic} from './js/components/admin-main/dermatoglyphic/add'
 import {EditDermatoglyphic} from './js/components/admin-main/dermatoglyphic/edit'
 import {ListDermatoglyphic} from './js/components/admin-main/dermatoglyphic/list'
+
+import {Promotions} from './js/components/admin-main/promotion/promotion'
+import {ViewPromotion} from './js/components/admin-main/promotion/view'
+import {AddPromotion} from './js/components/admin-main/promotion/add'
+import {EditPromotion} from './js/components/admin-main/promotion/edit'
+import {ListPromotion} from './js/components/admin-main/promotion/list'
+
 import {AdminProfile, EditAdminProfile, ViewAdminProfile} from './js/components/admin-main/profile/profile.js';
 import {DashBoard} from './js/components/admin-main/dashboard/dashboard'
 import SideBar from '../sharedComponent/sidebar/sidebar';
@@ -74,11 +87,7 @@ export class AdminCenter extends React.Component{
   }
 
   render(){
-    const items = [{
-      name: 'Dashboar',
-      icon: 'fa fa-envira',
-      link: '/admin/dashBoard'
-    },
+    const items = [
       {
         name: 'Register Service',
         icon: 'fa fa-forumbee',
@@ -116,6 +125,16 @@ export class AdminCenter extends React.Component{
         name: 'Background',
         icon: 'fa fa-forumbee',
         link: '/admin/background'
+      },
+      {
+        name: 'Partner',
+        icon: 'fa fa-forumbee',
+        link: '/admin/partner'
+      },
+      {
+        name: 'Promotion',
+        icon: 'fa fa-forumbee',
+        link: '/admin/promotion'
       },
       {
         name: 'Profile',
@@ -190,12 +209,25 @@ render(
         <Route path="/admin/background/:id/edit" component={EditBackground}/>
       </Route>
 
+      <Route path="/admin/partner" component={PartnerManagement} >
+        <IndexRoute component={ListPartner} />
+        <Route path="/admin/partner/add" component={AddPartner} />
+        <Route path="/admin/partner/:id/edit" component={EditPartner}/>
+        <Route path="/admin/partner/:id" component={ViewPartner} />
+      </Route>
+
       <Route path="/admin/dermatoglyphic" component={Dermatoglyphics} >
       <IndexRoute component={ListDermatoglyphic} />
       <Route path="/admin/dermatoglyphic/add" component={AddDermatoglyphic} />
       <Route path="/admin/dermatoglyphic/:id/edit" component={EditDermatoglyphic}/>
       <Route path="/admin/dermatoglyphic/:id" component={ViewDermatoglyphic} />
     </Route>
+      <Route path="/admin/promotion" component={Promotions} >
+        <IndexRoute component={ListPromotion} />
+        <Route path="/admin/promotion/add" component={AddPromotion} />
+        <Route path="/admin/promotion/:id/edit" component={EditPromotion}/>
+        <Route path="/admin/promotion/:id" component={ViewPromotion} />
+      </Route>
     </Route>
   </Router>
   , document.getElementById('app')

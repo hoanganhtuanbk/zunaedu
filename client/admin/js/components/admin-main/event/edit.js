@@ -18,7 +18,8 @@ export class EditEvent extends React.Component{
     super();
     this.state = {
       editorState: EditorState.createEmpty(),
-      url : ''
+      url : '',
+      urls: []
     };
     this.onChange = (editorState) => {
       const contentState1 = editorState.getCurrentContent();
@@ -47,7 +48,6 @@ export class EditEvent extends React.Component{
     }
   }
   findById(t) {
-    var id = window.location.pathname.split('/')[3];
     Stores.findById('/events', this.props.params.id, function(event, status) {
       const jsObject = JSON.parse(event.content);
       const contentState = convertFromRaw(jsObject);
@@ -58,10 +58,7 @@ export class EditEvent extends React.Component{
         content: event.content,
         description: event.description,
         url: event.url,
-        time: event.time,
-        date: event.date,
-        month: event.month,
-        address: event.address
+        urls: event.urls
       });
     })
   }
@@ -72,13 +69,14 @@ export class EditEvent extends React.Component{
       content: this.state.content,
       key: this._changeToSlug(this.state.title),
       description: this.state.description,
-      time: this.state.time,
-      date: this.state.date,
-      month: this.state.month,
-      address: this.state.address,
     };
     if(this.state.file){
-      data.url= `/api/containers/files/download/${this.state.file.name}`
+      data.url= `/api/containers/files/download/${this.state.file.name}`;
+      const imgData = new FormData();
+      imgData.append('file', this.state.file);
+      Actions.upload('/containers/files/upload',imgData,function(result, stt){
+        console.log(result, stt)
+      })
     }
     Actions.update('/events', this.props.params.id, data, function(result, status) {
       if(status = 'success'){browserHistory.goBack()}else alert(status)
@@ -131,6 +129,14 @@ export class EditEvent extends React.Component{
     if (imagePreviewUrl ) {
       $imagePreview = (<img src={imagePreviewUrl} />);
     }
+    const ImageAlbum = this.state.urls.map(function (result,index) {
+      return(
+        <div className="col-md-3 imgItem">
+
+          <img src={result} />
+        </div>
+      )
+    })
     return(
       <div className="panel">
         <PanelHeader
@@ -153,28 +159,21 @@ export class EditEvent extends React.Component{
               </div>
             </div>
             <div className="col-md-6">
-              <div className="col-md-4">
-                <label>Time</label>
-                <input type="text" className="form-control "  value={this.state.time} onChange={(e) =>{this.setState({time : e.target.value})}} />
-              </div>
-              <div className="col-md-4">
-                <label>Date</label>
-                <input type="text" className="form-control " value={this.state.date} onChange={(e) =>{this.setState({date : e.target.value})}} />
-              </div>
-              <div className="col-md-4">
-                <label>Month</label>
-                <input type="text" className="form-control " value={this.state.month} onChange={(e) =>{this.setState({month : e.target.value})}} />
-              </div>
               <div className="col-md-12">
-                <label>Address</label>
-                <input type="text" className="form-control " value={this.state.address} onChange={(e) =>{this.setState({address : e.target.value})}} />
-              </div>
-              <div className="col-md-12">
-                <label>Url image</label>
+                <label>Image Represent</label>
                 <input type="file" className="form-control " onChange={(e)=>this._handleImageChange(e)} />
               </div>
               <div className="col-md-12 previewImage" >
                 {$imagePreview == null ? <img src={this.state.url} /> : <div>{$imagePreview} </div>}
+              </div>
+            </div>
+            <div className="col-md-6">
+              <div className="col-md-12">
+                <label>Image Album</label>
+                <input type="file" className="form-control " onChange={(e)=>this._handleImageChange(e)} />
+              </div>
+              <div className="col-md-12 imageAlbum" >
+                {ImageAlbum}
               </div>
             </div>
             <div className="col-md-12">

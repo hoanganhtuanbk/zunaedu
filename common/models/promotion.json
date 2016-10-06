@@ -1,15 +1,15 @@
 {
-  "name": "Background",
+  "name": "Promotion",
   "base": "PersistedModel",
   "idInjection": true,
   "options": {
     "validateUpsert": true
   },
   "properties": {
-    "url": {
+    "title": {
       "type": "string"
     },
-    "feature": {
+    "content": {
       "type": "string"
     }
   },

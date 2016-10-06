@@ -5,15 +5,6 @@ import Stores from '../../../stores/stores'
 import Actions from '../../../actions/actions'
 import Slider from 'react-slick'
 
-import {
-  Editor,
-  EditorState,
-  Entity,
-  ContentState,
-  convertFromRaw,
-  convertToRaw
-} from 'draft-js';
-import ImageComponent from '../src/ImageComponent';
 export class SubFingerPrint extends React.Component{
   constructor(props){
     super(props);

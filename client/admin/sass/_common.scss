@@ -66,15 +66,30 @@ input {
   font-family: 'Hoefler Text', Georgia, serif;
   font-style: italic;
 }
+.imageAlbum{
+  margin-top: 30px;
+  margin-bottom: 15px;
+  .imgItem{
+    padding-bottom: 15px!important;
+    img{
+      max-width: 100%!important;
+      height: 85px;
+      margin-left: 0!important;
+    }
+  }
+
+}
 .previewImage{
   padding-top: 25px;
-  height: 200px;
+  max-height: 200px;
+
   img{
     height: 100%;
     width: auto;
     margin-left: auto;
     margin-right: auto;
   }
+
 }
 /**
  * @providesModule DraftEditor

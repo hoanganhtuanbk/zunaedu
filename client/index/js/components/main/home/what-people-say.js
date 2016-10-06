@@ -16,7 +16,7 @@ export class WhatPeopleSay extends React.Component{
     this.getFeedbackDatas(this)
   }
   getFeedbackDatas(t){
-    Stores.find('/feedbacks',{order:'id DESC',limit: 5}, function(feedbacks){
+    Stores.find('/feedbacks',{order:'id DESC',limit: 15}, function(feedbacks){
       t.setState({feedbacks: feedbacks})
     })
   }

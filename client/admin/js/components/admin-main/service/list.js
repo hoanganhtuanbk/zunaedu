@@ -1,18 +1,12 @@
 import React from 'react';
-import {render} from 'react-dom';
+import {render,forceUpdate} from 'react-dom';
 import { Link, IndexLink } from 'react-router';
-import Actions from '../../../actions/actions.js'
+import Actions from '../../../actions/actions'
 import Stores from '../../../stores/stores.js'
 import {PanelHeader} from '../../../../../sharedComponent/main/panel-header'
 
 class ServicesView extends React.Component{
-  deleteService(t){
-   if(t.props.id){
-     Actions.deleteById('/RegisterServices', t.props.id, function(resutl){
-     console.log(result);
-   })
-   }
-  }
+
   render() {
     return (
       <tr>
@@ -27,7 +21,7 @@ class ServicesView extends React.Component{
             <Link className="btn btn-xs btn-default" to={`/admin/service/${this.props.id}`}>
               <i className="fa fa-eye"></i>
             </Link>
-            <a className="btn btn-xs btn-default" onClick={this.deleteService.bind(this.props.id,this)} >
+            <a className="btn btn-xs btn-default" onClick={this.props.deleteService.bind(this.props.id,this)} >
               <i className="fa fa-times"></i>
             </a>
           </span>
@@ -47,6 +41,23 @@ export class ListService extends React.Component{
   componentWillMount(){
     this.getAll(this);
   }
+  componentDidMount(){
+    console.log(3);
+    Stores.addChangeListener(this.onChange);
+  }
+  onChange(){
+    console.log(2);
+  }
+  deleteService(t,e){
+    console.log(t,e)
+      Actions.deleteById('/RegisterServices', t.props.id, function(result){
+        Actions.find('/RegisterServices',{order: 'id DESC'}, function(services, status) {
+          if (services) {
+            t.setState({services: services})
+          }
+        });
+      })
+  }
   getAll(t) {
     Actions.find('/RegisterServices',{order: 'id DESC'}, function(services, status) {
       console.log(services);
@@ -57,7 +68,7 @@ export class ListService extends React.Component{
   }
 
   render(){
-
+    const deleteService = this.deleteService;
     const services = this.state.services.map(function(item, id) {
       return (<ServicesView
         key={id}
@@ -65,13 +76,13 @@ export class ListService extends React.Component{
         nameParent={item.nameParent}
         nameChilden={item.nameChilden}
         content={item.content}
+        deleteService={deleteService}
         />)
     });
     return(
       <div className="panel">
       <PanelHeader
               name = "Services"
-              link = "/admin/service/add"
         />
 
         <div className="table-responsive">

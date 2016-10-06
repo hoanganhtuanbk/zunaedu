@@ -4,28 +4,35 @@ import { Link, IndexLink, browserHistory } from 'react-router';
 import {PanelHeader} from '../../../../../sharedComponent/main/panel-header'
 import Stores from '../../../stores/stores';
 import Actions from '../../../actions/actions.js'
-
-export class EditBackground extends React.Component{
+export class EditPartner extends React.Component{
   constructor() {
     super();
     this.state = {
-      url : ''
+      name:'',
+      url: ''
     };
     this.save = this.save.bind(this);
   }
-
   componentWillMount(){
     this.findById(this);
   }
+  onChangeContent(content){
+    if(typeof(content) == 'string'){
+      this.setState({content: content})
+    }
+  }
   findById(t) {
-    Stores.findById('/backgrounds', this.props.params.id, function(background, status) {
-      t.setState({feature: background.feature, url: background.url});
+    Stores.findById('/partners', this.props.params.id, function(partner, status) {
+      t.setState({
+        name: partner.name,
+        url: partner.url,
+      });
     })
   }
   save(e) {
     e.preventDefault();
     const data = {
-      feature : this.state.feature,
+      name: this.state.name,
     };
     if(this.state.file){
       data.url= `/api/containers/files/download/${this.state.file.name}`;
@@ -35,7 +42,7 @@ export class EditBackground extends React.Component{
         console.log(result, stt)
       })
     }
-    Actions.update('/backgrounds', this.props.params.id, data, function(result, status) {
+    Actions.update('/partners', this.props.params.id, data, function(result, status) {
       if(status = 'success'){browserHistory.goBack()}else alert(status)
     })
   }
@@ -64,7 +71,7 @@ export class EditBackground extends React.Component{
       <div className="panel">
         <PanelHeader
           navigateBack = "true"
-          name = "Edit a background"
+          name = "Edit a service"
         />
         <div className="panel-body">
           <div className="row">
@@ -72,22 +79,15 @@ export class EditBackground extends React.Component{
               <div className="form-group row">
 
                 <div className="col-md-12">
-                  <label>Feature</label> *
-                  <select name="" id="" value={this.state.feature} onChange={(e)=>{this.setState({feature: e.target.value})}}>
-                    <option value="event">Event</option>
-                    <option value="program">Program</option>
-                    <option value="dmit">Dmit</option>
-                    <option value="book">Book</option>
-                    <option value="parent-corner">Parent-corner</option>
-                    <option value="contact">Contact</option>
-                  </select>
+                  <label>Name</label> *
+                  <input type="text" value={this.state.name} className="form-control " onChange={(e)=>{this.setState({name: e.target.value })}}/>
                 </div>
               </div>
             </div>
             <div className="col-md-6">
               <div className="col-md-12">
-                <label>Background</label>
-                <input type="file" className="form-control" onChange={(e)=>this._handleImageChange(e)} />
+                <label>Url image</label>
+                <input type="file" className="form-control " onChange={(e)=>this._handleImageChange(e)} />
               </div>
               <div className="col-md-12 previewImage" >
                 {$imagePreview == null ? <img src={this.state.url} /> : <div>{$imagePreview} </div>}

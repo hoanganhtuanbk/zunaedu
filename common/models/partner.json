@@ -1,15 +1,12 @@
 {
-  "name": "Background",
+  "name": "Partner",
   "base": "PersistedModel",
   "idInjection": true,
   "options": {
     "validateUpsert": true
   },
   "properties": {
-    "url": {
-      "type": "string"
-    },
-    "feature": {
+    "name": {
       "type": "string"
     }
   },

@@ -2,7 +2,6 @@ import React from 'react';
 import {render} from 'react-dom';
 import { Link, IndexLink } from 'react-router';
 import Stores from '../../../stores/stores'
-import Masonry from 'react-masonry-component'
 
 export class FeaturedNews extends React.Component {
   constructor(){

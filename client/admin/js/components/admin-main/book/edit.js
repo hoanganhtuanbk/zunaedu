@@ -47,7 +47,6 @@ export class EditBook extends React.Component{
     }
   }
   findById(t) {
-    var id = window.location.pathname.split('/')[3];
     Stores.findById('/books', this.props.params.id, function(book, status) {
       const jsObject = JSON.parse(book.content);
       const contentState = convertFromRaw(jsObject);
@@ -61,11 +60,15 @@ export class EditBook extends React.Component{
       title : this.state.title,
       key: this._changeToSlug(this.state.title),
       content: this.state.content,
-
       description: this.state.description
     };
     if(this.state.file){
-     data.url= `/api/containers/files/download/${this.state.file.name}`
+      data.url= `/api/containers/files/download/${this.state.file.name}`;
+      const imgData = new FormData();
+      imgData.append('file', this.state.file);
+      Actions.upload('/containers/files/upload',imgData,function(result, stt){
+        console.log(result, stt)
+      })
     }
     Actions.update('/books', this.props.params.id, data, function(result, status) {
       if(status = 'success'){browserHistory.goBack()}else alert(status)
@@ -73,6 +76,7 @@ export class EditBook extends React.Component{
   }
   _handleImageChange(e) {
     e.preventDefault();
+    console.log(this.state.file)
 
     let reader = new FileReader();
     let file = e.target.files[0];
@@ -83,7 +87,10 @@ export class EditBook extends React.Component{
         imagePreviewUrl: reader.result
       });
     };
+    console.log(this.state.file)
+
     reader.readAsDataURL(file)
+
   }
   _changeToSlug(title){
     var slug;

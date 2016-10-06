@@ -19,7 +19,8 @@ export class SubEvent extends React.Component{
     this.state = {
       event: {},
       editorState: EditorState.createEmpty(),
-      key: ''
+      key: '',
+      urls: []
     };
     console.log('hi')
     this.blockRenderer = (block) => {
@@ -62,28 +63,30 @@ export class SubEvent extends React.Component{
       const contentState = convertFromRaw(jsObject);
       const editorState = EditorState.createWithContent(contentState);
       console.log(event[0])
-      t.setState({event: event[0],editorState:editorState})
+      t.setState({event: event[0],urls:event[0].urls,editorState:editorState})
     })
   }
   render(){
+    const ImageAlbum = this.state.urls.map(function(result,index) {
+      return(
+        <div className="text-center" style={{'padding':'50px'}} key={index}>
+          <img src={result} />
+        </div>
+      )
+    })
     return (
       <div className="news-v3 bg-content-detail margin-bottom-30">
         <div className="bg-article">
           <img className="img-responsive" src={this.state.event.url} alt={this.state.event.title}/>
         </div>
         <div className="news-v3-in">
-          <ul className="list-inline posted-info">
-            <li>By <a href="#">Alexander Jenni</a></li>
-            <li>In <a href="#">Design</a></li>
-            <li>Posted {this.state.event.date}</li>
-          </ul>
           <h2>{this.state.event.title}</h2>
           <Editor
             blockRendererFn={this.blockRenderer}
             editorState={this.state.editorState}
             readOnly={true}
           />
-
+          {ImageAlbum}
         </div>
       </div>
     );
