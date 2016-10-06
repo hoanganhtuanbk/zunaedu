@@ -153,7 +153,6 @@ export class UuDaiDangKy extends React.Component{
                   <div className="ts-info-panel-info-main">
                     <p></p>
                     <p className="text-justify">
-                      ƯU ĐÃI ĐẶC BIỆT CHO CÁC THIÊN THẦN NHỎ NHÂN DỊP TRUNG THU<br/>
                       <h2>{this.state.promotion.title}</h2>
                       <Editor
                         blockRendererFn={this.blockRenderer}

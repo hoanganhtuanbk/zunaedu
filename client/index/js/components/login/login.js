@@ -21,7 +21,6 @@ export class Login extends React.Component{
       password: this.state.password
     };
     var rememberMe = this.refs.rememberMe.checked;
-    console.log(credentials);
     $.ajax({
       method: 'POST',
       url: '/api/users/login',
