@@ -7,6 +7,8 @@ import { Footer} from './js/components/footer/footer';
 import { HomePage } from './js/components/main/home/home';
 
 import { FingerPage } from './js/components/main/fingerprint/fingerprint';
+import { InfoFingerprint } from './js/components/main/fingerprint/info-fingerprint';
+
 import { SubFingerPrint } from './js/components/main/fingerprint/sub-fingerprint';
 
 import { Program } from './js/components/main/program/program'
@@ -55,7 +57,8 @@ render(
     <Route path="/" component={Index}>
       <IndexRoute component={HomePage}/>
       <Route path="/van-tay-hoc" component={FingerPage}>
-        <Route path="/van-tay-hoc/:key" component={SubFingerPrint}/>
+        <IndexRoute component={InfoFingerprint}/>
+        <Route path="/van-tay-hoc/phan-hoi" component={SubFingerPrint}/>
       </Route>
 
       <Route path="/dao-tao" component={Program}>

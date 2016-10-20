@@ -4,79 +4,72 @@ import { Link, IndexLink } from 'react-router';
 import Stores from '../../../stores/stores'
 import Actions from '../../../actions/actions'
 import Slider from 'react-slick'
+import {FeedbackForm} from '../src/feedback-form'
 
-export class SubFingerPrint extends React.Component{
-  constructor(props){
+class Trending extends React.Component{
+  render(){
+    return(
+      <div className="row trending">
+        <div className="col-md-3 trending-img">
+          <img src={this.props.url} />
+        </div>
+        <div className="col-md-9 trending-title">
+          <h3><Link to={`/goc-cha-me/${this.props.keyNote}`}>{this.props.title}</Link></h3>
+          <small>{this.props.date} / Admin</small>
+        </div>
+      </div>
+
+
+    )
+  }
+}
+export class SubFingerPrint extends React.Component {
+  constructor(props) {
     super(props);
     this.state = {
-      concept : {},
       feedbacks: [],
-      editorState: EditorState.createEmpty()
+      parents: []
+    };
+  }
 
-    };
-    this.blockRenderer = (block) => {
-      if (block.getType() === 'atomic') {
-        return {
-          component: ImageComponent
-        };
-      }
-      return null;
-    };
+  componentWillMount() {
+    this.getFeedbackDatas(this);
+    this.getParentCorners(this);
+
   }
-  componentWillMount(){
-    this.getDermatoglyphicCorners(this);
-    this.getFeedbackDatas(this)
-  }
-  componentWillReceiveProps(nextProps){ //Function nay chay mỗi khi có thay đổi props
-    this.getDermatoglyphicDetailPlus(this,nextProps.params.key)
-  }
-  getDermatoglyphicDetailPlus(t,key){
-    Stores.find('/dermatoglyphics', {
-      where:{
-        key: key
-      }
-    }, function(dermatoglyphic){
-      const jsObject = JSON.parse(dermatoglyphic[0].content);
-      const contentState = convertFromRaw(jsObject);
-      const editorState = EditorState.createWithContent(contentState);
-      console.log(dermatoglyphic[0]);
-      t.setState({concept: dermatoglyphic[0],editorState:editorState})
-    })
-  }
-  getFeedbackDatas(t){
-    Stores.find('/feedbacks',{order:'id DESC',limit: 5}, function(feedbacks){
+
+  getFeedbackDatas(t) {
+    Stores.find('/feedbacks', {order: 'id DESC'}, function (feedbacks) {
       t.setState({feedbacks: feedbacks})
     })
   }
-  getDermatoglyphicCorners(t){
-    Stores.find('/dermatoglyphics', {
-      where:{
-        key : this.props.params.key
-      }
-    }, function(dermatoglyphic, status) {
-      if (dermatoglyphic[0]) {
-        const jsObject = JSON.parse(dermatoglyphic[0].content);
-        const contentState = convertFromRaw(jsObject);
-        const editorState = EditorState.createWithContent(contentState);
-        t.setState({concept: dermatoglyphic[0],editorState:editorState});
+  getParentCorners(t){
+    Stores.find('/parents',{order: 'id DESC', limit: '10'}, function(parents, status) {
+      if (parents) {
+        t.setState({parents: parents});
       }
     });
   }
-  render(){
-    var settings = {
-      speed: 1000,
-      autoplaySpeed: 7000,
-      autoplay: true,
-      fade: true,
-      arrows: false,
-    };
-    var childFeedback = this.state.feedbacks.map(function(result,index){
-      return(
-        <div  key={index} className="testimonials-v4 feedback md-margin-bottom-50">
+  render() {
+    const childElements = this.state.parents.map(function(item,id){
+      return (
+        <li key={id}>
+          <Trending
+            keyNote={item.key}
+            title={item.title}
+            date={item.date}
+            url={item.url}
+          />
+        </li>
+      );
+    });
+    const childFeedback = this.state.feedbacks.map(function (result, index) {
+      return (
+        <div key={index} className="testimonials-v4 padding-top-50 feedback margin-bottom-20">
           <div className="testimonials-v4-in">
             <p>{result.content}</p>
           </div>
-          <img className="rounded-x" src={result.url} alt="thumb" />
+          <img className="rounded-x" src={result.url} alt="thumb"/>
           <span className="testimonials-author">
 								Cảm nhận của {result.name}<br/>
 								<em>{result.job}</em>
@@ -84,85 +77,29 @@ export class SubFingerPrint extends React.Component{
         </div>
       )
     });
-    if(this.props.params.key == "phan-hoi"){
-      return(
-        <div className="col-md-8 ">
-          {childFeedback}
-        </div>
-      )
-    } else return(
-      <div className="col-md-8">
-        <div className="news-v3 bg-content-detail margin-bottom-60">
-          <div className="bg-article">
-            <img className="img-responsive" src={this.state.concept.url} alt={this.state.concept.title} />
-          </div>
-          <div className="news-v3-in">
-            <ul className="list-inline posted-info">
-              <li>Đăng bởi <a href="#">Admin</a></li>
-              <li>/ Ngày đăng {this.state.concept.date}</li>
-            </ul>
-            <h2>{this.state.concept.title}</h2>
-            <Editor
-              blockRendererFn={this.blockRenderer}
-              editorState={this.state.editorState}
-              readOnly={true}
-            />
-
+    return (
+      <div className="content-sm">
+        <div className="container ">
+          <div className="row">
+            <div className="col-md-9">
+              <div className="session-1">
+                <div className="title-ss-1 text-justify">
+                  Phản hồi khách hàng
+                </div>
+              </div>
+              {childFeedback}
+              <FeedbackForm/>
+            </div>
+            <div className="col-md-3">
+              <div className="headline-v2 bg-trending"><h2>Bài đăng mới nhất</h2></div>
+              <ul className="list-unstyled blog-trending margin-bottom-50">
+                {childElements}
+              </ul>
+            </div>
           </div>
         </div>
-        <Slider {...settings}>
-          <div className="blog-post-quote bg-quote margin-bottom-60">
-            <div className="blog-post-quote-item">
-              <p>"Trẻ con là những kẻ bắt chước bẩm sinh hành động giống như cha mẹ mình bất chấp mọi nỗ lực để dạy chúng cách xử thế." </p>
-              <small>- Khuyết danh -</small>
-            </div>
-
-          </div>
-          <div className="blog-post-quote bg-content-detail margin-bottom-60">
-            <div className="blog-post-quote-item">
-              <p>"Trẻ nhỏ sẽ không nhớ bạn vì vật chất bạn cho chúng, mà vì tình cảm bạn dành cho chúng." </p>
-              <small>- Richard L Evans -</small>
-            </div>
-
-          </div>
-          <div className="blog-post-quote bg-content-detail margin-bottom-60">
-            <div className="blog-post-quote-item">
-              <p>"Tôi nhận ra một điều rằng cuộc sống không có nghĩa gì nhiều nếu bạn không sẵn lòng đóng góp phần nhỏ bé của mình nhằm để lại cho con cháu chúng ta - tất cả con cháu chúng ta - một thế giới tốt đẹp hơn. Kẻ ngốc nào cũng có thể có con. Điều đó không khiến bạn trở thành một người cha. Chính lòng can đảm trong việc nuôi dạy đứa trẻ mới khiến bạn là một người cha." </p>
-              <small>- Barack Obama -</small>
-            </div>
-
-          </div>
-          <div className="blog-post-quote bg-content-detail margin-bottom-60">
-            <div className="blog-post-quote-item">
-              <p>"Mỗi người sẽ sớm học được mình hiểu biết ít đến thế nào khi con trẻ bắt đầu đặt câu hỏi." </p>
-              <small>- Richard L Evans -</small>
-            </div>
-
-          </div>
-          <div className="blog-post-quote bg-content-detail margin-bottom-60">
-            <div className="blog-post-quote-item">
-              <p>"Chẳng bao giờ có loại thuốc bổ chữa được những căn bệnh xã hội hữu hiệu tốt hơn một mái ấm khỏe khoắn và hạnh phúc. Chẳng bao giờ có nguồn ổn định xã hội lớn hơn một gia đình yêu thương và biết cảm thông. Chẳng bao giờ có cách giúp trẻ em hạnh phúc tốt hơn lời tâm tình của bậc cha mẹ sáng suốt và trìu mến." </p>
-              <small>- Richard L Evans -</small>
-            </div>
-
-          </div>
-          <div className="blog-post-quote bg-content-detail margin-bottom-60">
-            <div className="blog-post-quote-item">
-              <p>"Trẻ nhỏ vừa là hy vọng, vừa là lời hứa hẹn của nhân loại." </p>
-              <small>- Maria Montessori -</small>
-            </div>
-
-          </div>
-          <div className="blog-post-quote bg-content-detail margin-bottom-60">
-            <div className="blog-post-quote-item">
-              <p>"Đừng bao giờ giúp đứa trẻ với việc mà nó cảm thấy mình có thể thành công." </p>
-              <small>- Maria Montessori -</small>
-            </div>
-
-          </div>
-        </Slider>
-
       </div>
+
     )
   }
 }

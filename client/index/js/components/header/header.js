@@ -38,7 +38,7 @@ export class Header extends React.Component{
           <div className="container">
             <ul className="nav navbar-nav">
               <li className={this.isActive('')} onClick={this.setMenuActive.bind(this, '')}><Link className="route-page" to="/">Trang chủ</Link></li>
-              <li className={this.isActive('van-tay-hoc')} onClick={this.setMenuActive.bind(this, 'van-tay-hoc')}><Link to="/van-tay-hoc/sinh-trac-van-tay-dermatoglyphics-la-gi" className="route-page">Sinh trắc vân tay</Link> </li>
+              <li className={this.isActive('van-tay-hoc')} onClick={this.setMenuActive.bind(this, 'van-tay-hoc')}><Link to="/van-tay-hoc" className="route-page">Sinh trắc vân tay</Link> </li>
               <li className={this.isActive('dao-tao')} onClick={this.setMenuActive.bind(this, 'dao-tao')}><Link className="route-page" to="/dao-tao">Đào tạo</Link></li>
               <li className={this.isActive('su-kien')} onClick={this.setMenuActive.bind(this, 'su-kien')}><Link className="route-page" to="/su-kien">Tổ chức Sự kiện</Link></li>
               <li className={this.isActive('sach-giao-duc')} onClick={this.setMenuActive.bind(this, 'sach-giao-duc')}><Link  className="route-page" to="/sach-giao-duc">Sách giáo dục</Link></li>
