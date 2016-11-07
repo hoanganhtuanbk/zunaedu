@@ -23,7 +23,7 @@ class Trending extends React.Component{
     )
   }
 }
-export class SubFingerPrint extends React.Component {
+export class Feedback extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
@@ -77,8 +77,9 @@ export class SubFingerPrint extends React.Component {
         </div>
       )
     });
+
     return (
-      <div className="content-sm">
+      <div className="bg-color-light content-sm">
         <div className="container ">
           <div className="row">
             <div className="col-md-9">

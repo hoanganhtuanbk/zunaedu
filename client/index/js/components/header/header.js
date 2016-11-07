@@ -2,11 +2,13 @@ import React from 'react';
 import {render} from 'react-dom';
 import { Link, IndexLink } from 'react-router';
 import { Button,DropdownButton,ButtonGroup,MenuItem } from 'react-bootstrap';
+
 export class Header extends React.Component{
   constructor (){
     super();
     this.state = {
       selected: '',
+      catch: false,
     }
   }
 
@@ -23,6 +25,9 @@ export class Header extends React.Component{
     const activeNavbar = function(){
       $(".navbar-collapse").toggleClass("in");
     };
+    const drowdown = function () {
+      this.setState({catch: !this.state.catch})
+    }.bind(this);
     return (
       <header className="header">
         <div className="container">
@@ -37,12 +42,32 @@ export class Header extends React.Component{
         <div className="navbar-collapse mega-menu navbar-responsive-collapse collapse menu-nav">
           <div className="container">
             <ul className="nav navbar-nav">
-              <li className={this.isActive('')} onClick={this.setMenuActive.bind(this, '')}><Link className="route-page" to="/">Trang chủ</Link></li>
-              <li className={this.isActive('van-tay-hoc')} onClick={this.setMenuActive.bind(this, 'van-tay-hoc')}><Link to="/van-tay-hoc" className="route-page">Sinh trắc vân tay</Link> </li>
-              <li className={this.isActive('dao-tao')} onClick={this.setMenuActive.bind(this, 'dao-tao')}><Link className="route-page" to="/dao-tao">Đào tạo</Link></li>
-              <li className={this.isActive('su-kien')} onClick={this.setMenuActive.bind(this, 'su-kien')}><Link className="route-page" to="/su-kien">Tổ chức Sự kiện</Link></li>
-              <li className={this.isActive('sach-giao-duc')} onClick={this.setMenuActive.bind(this, 'sach-giao-duc')}><Link  className="route-page" to="/sach-giao-duc">Sách giáo dục</Link></li>
-              <li className={this.isActive('goc-cha-me')} onClick={this.setMenuActive.bind(this, 'goc-cha-me')}><Link className="route-page" to="/goc-cha-me">Góc cha mẹ</Link></li>
+              <li className={this.isActive('')} onClick={this.setMenuActive.bind(this, '')}>
+                <Link className="route-page" to="/">Trang chủ </Link>
+              </li>
+              <li className={this.isActive('van-tay-hoc')}>
+                <a onClick={drowdown} className="route-page">Sinh trắc vân tay</a>
+                {
+                  (this.state.catch == true) ? <ul onClick={drowdown} className="dropdown-body">
+                    <li><Link to="/van-tay-hoc/sinh-trac-van-tay">Sinh trắc vân tay học</Link></li>
+                    <li><Link to="/van-tay-hoc/bi-mat-bo-nao">Bí mật não bộ</Link></li>
+                    <li><Link to="/van-tay-hoc/phan-hoi">Phản hồi khách hàng</Link></li>
+                  </ul> : null
+                }
+              </li>
+
+              <li className={this.isActive('dao-tao')} onClick={this.setMenuActive.bind(this, 'dao-tao')}>
+                <Link className="route-page" to="/dao-tao">Đào tạo</Link>
+              </li>
+              <li className={this.isActive('su-kien')} onClick={this.setMenuActive.bind(this, 'su-kien')}>
+                <Link className="route-page" to="/su-kien">Tổ chức Sự kiện</Link>
+              </li>
+              <li className={this.isActive('sach-giao-duc')} onClick={this.setMenuActive.bind(this, 'sach-giao-duc')}>
+                <Link  className="route-page" to="/sach-giao-duc">Sách giáo dục</Link>
+              </li>
+              <li className={this.isActive('goc-cha-me')} onClick={this.setMenuActive.bind(this, 'goc-cha-me')}>
+                <Link className="route-page" to="/goc-cha-me">Góc cha mẹ</Link>
+              </li>
               <li className={this.isActive('lien-he')} onClick={this.setMenuActive.bind(this, 'lien-he')}><Link className="route-page" to="/lien-he">Liên hệ</Link></li>
             </ul>
           </div>

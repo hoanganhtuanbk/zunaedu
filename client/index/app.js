@@ -9,8 +9,8 @@ import { HomePage } from './js/components/main/home/home';
 import { FingerPage } from './js/components/main/fingerprint/fingerprint';
 import { InfoFingerprint } from './js/components/main/fingerprint/info-fingerprint';
 
-import { SubFingerPrint } from './js/components/main/fingerprint/sub-fingerprint';
-
+import { Feedback } from './js/components/main/fingerprint/feedback';
+import { SubFingerPrint } from './js/components/main/fingerprint/SubFingerPrint';
 import { Program } from './js/components/main/program/program'
 import { SubProgram } from './js/components/main/program/sub-program'
 import { InitProgram } from './js/components/main/program/init-program'
@@ -57,8 +57,13 @@ render(
     <Route path="/" component={Index}>
       <IndexRoute component={HomePage}/>
       <Route path="/van-tay-hoc" component={FingerPage}>
-        <IndexRoute component={InfoFingerprint}/>
-        <Route path="/van-tay-hoc/phan-hoi" component={SubFingerPrint}/>
+        <IndexRedirect to="//van-tay-hoc/sinh-trac-van-tay" />
+        <Route path="/van-tay-hoc/sinh-trac-van-tay" component={InfoFingerprint}/>
+        <Route path="/van-tay-hoc/bi-mat-bo-nao" component={SubFingerPrint}/>
+        <Route path="/van-tay-hoc/bi-mat-bo-nao/:key" component={SubFingerPrint}/>
+
+        <Route path="/van-tay-hoc/phan-hoi" component={Feedback}/>
+
       </Route>
 
       <Route path="/dao-tao" component={Program}>

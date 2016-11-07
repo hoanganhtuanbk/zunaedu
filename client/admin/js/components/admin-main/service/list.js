@@ -10,17 +10,19 @@ class ServicesView extends React.Component{
   render() {
     return (
       <tr>
-        <td >{this.props.id}</td>
-        <td >{this.props.nameParent}</td>
-        <td >{this.props.nameChilden}</td>
-
+        <td >
+            {this.props.id}
+        </td>
+        <td >
+      <Link className="btn btn-xs btn-default" to={`/admin/service/${this.props.id}`}>
+    {this.props.nameParent}
+      </Link>
+        </td>
+    <td >{this.props.nameChilden}</td>
         <td >{this.props.content}</td>
-
+        <td >{this.props.dateCreate}</td>
         <td>
           <span className="btn-group">
-            <Link className="btn btn-xs btn-default" to={`/admin/service/${this.props.id}`}>
-              <i className="fa fa-eye"></i>
-            </Link>
             <a className="btn btn-xs btn-default" onClick={this.props.deleteService.bind(this.props.id,this)} >
               <i className="fa fa-times"></i>
             </a>
@@ -76,6 +78,7 @@ export class ListService extends React.Component{
         nameParent={item.nameParent}
         nameChilden={item.nameChilden}
         content={item.content}
+        dateCreate = {item.dateCreate}
         deleteService={deleteService}
         />)
     });
