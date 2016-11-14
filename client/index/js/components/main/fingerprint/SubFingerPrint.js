@@ -1,10 +1,7 @@
 import React from 'react';
 import {render} from 'react-dom';
-import { Link, IndexLink } from 'react-router';
+import { Link } from 'react-router';
 import Stores from '../../../stores/stores'
-import Actions from '../../../actions/actions'
-import Slider from 'react-slick'
-import {FeedbackForm} from '../src/feedback-form'
 
 class Trending extends React.Component{
   render(){
@@ -28,7 +25,7 @@ class FingerPrintItem extends React.Component{
     return(
       <div className="row margin-bottom-20 feature-item">
         <div className="col-sm-5 sm-margin-bottom-20 feature-image">
-          <Link to={`/su-kien/${this.props.keyNote}`} >
+          <Link to={`/van-tay-hoc/bi-mat-bo-nao/${this.props.keyNote}`} >
             <img className="img-responsive" src={this.props.url} />
           </Link>
         </div>
@@ -40,12 +37,12 @@ class FingerPrintItem extends React.Component{
               <li>/ Ngày đăng {this.props.date}</li>
             </ul>
             <h2>
-              <Link to={`/su-kien/${this.props.keyNote}`} >
+              <Link to={`/van-tay-hoc/bi-mat-bo-nao/${this.props.keyNote}`} >
                 {this.props.title}
               </Link>
             </h2>
             <p>{this.props.description}</p>
-            <Link to={`/su-kien/${this.props.keyNote}`} className="read-more">Xem chi tiết</Link>
+            <Link to={`/van-tay-hoc/bi-mat-bo-nao/${this.props.keyNote}`} className="read-more">Xem chi tiết</Link>
           </div>
         </div>
       </div>
@@ -97,6 +94,7 @@ export class SubFingerPrint extends React.Component {
       )
     });
 
+
     return (
       <div className="bg-color-light content-sm">
         <div className="container ">
@@ -113,6 +111,7 @@ export class SubFingerPrint extends React.Component {
           </div>
         </div>
       </div>
+
 
     )
   }

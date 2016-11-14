@@ -1,6 +1,6 @@
 import React from 'react';
 import {render} from 'react-dom';
-import { Router,IndexRedirect, Route, hashHistory, browserHistory, Link, IndexRoute, useRouterHistory } from 'react-router';
+import { Router,IndexRedirect, Route, browserHistory, IndexRoute } from 'react-router';
 import { Header } from './js/components/header/header';
 import { Footer} from './js/components/footer/footer';
 
@@ -8,9 +8,10 @@ import { HomePage } from './js/components/main/home/home';
 
 import { FingerPage } from './js/components/main/fingerprint/fingerprint';
 import { InfoFingerprint } from './js/components/main/fingerprint/info-fingerprint';
-
 import { Feedback } from './js/components/main/fingerprint/feedback';
 import { SubFingerPrint } from './js/components/main/fingerprint/SubFingerPrint';
+import { DetailFingerPrint } from './js/components/main/fingerprint/DetailFingerPrint';
+
 import { Program } from './js/components/main/program/program'
 import { SubProgram } from './js/components/main/program/sub-program'
 import { InitProgram } from './js/components/main/program/init-program'
@@ -60,8 +61,7 @@ render(
         <IndexRedirect to="//van-tay-hoc/sinh-trac-van-tay" />
         <Route path="/van-tay-hoc/sinh-trac-van-tay" component={InfoFingerprint}/>
         <Route path="/van-tay-hoc/bi-mat-bo-nao" component={SubFingerPrint}/>
-        <Route path="/van-tay-hoc/bi-mat-bo-nao/:key" component={SubFingerPrint}/>
-
+        <Route path="/van-tay-hoc/bi-mat-bo-nao/:key" component={DetailFingerPrint}/>
         <Route path="/van-tay-hoc/phan-hoi" component={Feedback}/>
 
       </Route>
