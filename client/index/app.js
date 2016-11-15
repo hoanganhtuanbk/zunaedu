@@ -43,12 +43,29 @@ class Index extends React.Component {
     const returnTop = function(){
       $('html, body').animate({ scrollTop: 0 }, 'slow');
     };
+    var items = document.querySelectorAll('li');
+    const button1 = function() {
+      console.log(1);
+        $(".test").toggleClass("slideout");
+        $(".trigger").toggleClass("trigger-active");
+      };
     return (
       <div className="wrapper ">
         <Header />
         {this.props.children}
         <div id="topcontrol" className="returnTop" onClick={returnTop} title="Scroll Back to Top" ></div>
+        <div className="position">
+          <ul>
+            <li className="one test"><a href="https://www.facebook.com/zunaedu/?fref=ts" target="_blank"></a></li>
+            <li className="two test"><a href="https://www.facebook.com/zunaedu/?fref=ts" target="_blank"></a></li>
+            <li className="three test"><a href="https://www.facebook.com/zunaedu/?fref=ts" target="_blank"></a></li>
+            <li className="four test"><a href="https://www.facebook.com/zunaedu/?fref=ts" target="_blank"></a></li>
+            <li className="five test"><a href="https://www.facebook.com/zunaedu/?fref=ts" target="_blank"></a></li>
+          </ul>
+          <button onClick={button1} className="trigger"></button>
+        </div>
         <Footer />
+
       </div>
     )
   }

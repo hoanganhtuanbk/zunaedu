@@ -330,3 +330,14 @@ div{
 .headline-v2{
   border-left: 2px solid $base-color !important;
 }
+.event-style{
+  img{
+    transition: all 0.5s;
+    &:hover{
+      transition: all 0.7s;
+
+      -webkit-transform: scale(1.2);
+      transform: scale(1.2);
+    }
+  }
+}

@@ -79,7 +79,7 @@ export class SubEvent extends React.Component{
         <div className="bg-article">
           <img className="img-responsive" src={this.state.event.url} alt={this.state.event.title}/>
         </div>
-        <div className="news-v3-in">
+        <div className="news-v3-in event-style">
           <h2>{this.state.event.title}</h2>
           <Editor
             blockRendererFn={this.blockRenderer}
