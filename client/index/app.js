@@ -44,25 +44,59 @@ class Index extends React.Component {
       $('html, body').animate({ scrollTop: 0 }, 'slow');
     };
     var items = document.querySelectorAll('li');
-    const button1 = function() {
-      console.log(1);
-        $(".test").toggleClass("slideout");
-        $(".trigger").toggleClass("trigger-active");
+    const socialOpenMenu = function() {
+        $(".social-itens").addClass("open");
+        $(".social-itens").removeClass("hidden");
       };
+    const stop = function() {
+      $(".social-itens").removeClass("open");
+      $(".social-itens").addClass("hidden");
+    };
     return (
       <div className="wrapper ">
         <Header />
         {this.props.children}
-        <div id="topcontrol" className="returnTop" onClick={returnTop} title="Scroll Back to Top" ></div>
-        <div className="position">
-          <ul>
-            <li className="one test"><a href="https://www.facebook.com/zunaedu/?fref=ts" target="_blank"></a></li>
-            <li className="two test"><a href="https://www.facebook.com/zunaedu/?fref=ts" target="_blank"></a></li>
-            <li className="three test"><a href="https://www.facebook.com/zunaedu/?fref=ts" target="_blank"></a></li>
-            <li className="four test"><a href="https://www.facebook.com/zunaedu/?fref=ts" target="_blank"></a></li>
-            <li className="five test"><a href="https://www.facebook.com/zunaedu/?fref=ts" target="_blank"></a></li>
+        <div id="social-share" onMouseLeave={stop}>
+          <ul className="social-itens hidden">
+            <li>
+              <button className="btn-share social-item-4">
+                <a href="https://www.facebook.com/zunaedu/?fref=ts" target="_blank">
+                  <i className="material-icons">location_on</i>
+                  <span className="btn-share-text">Location</span>
+                </a>
+
+              </button>
+            </li>
+            <li>
+              <button className="btn-share social-item-3">
+                <a href="https://www.facebook.com/zunaedu/?fref=ts" target="_blank">
+                <i className="material-icons">shopping_cart</i>
+                <span className="btn-share-text">Cart</span>
+                  </a>
+              </button>
+
+            </li>
+            <li>
+              <button className="btn-share social-item-2">
+                <a href="https://www.facebook.com/zunaedu/?fref=ts" target="_blank">
+                <i className="material-icons">phone</i>
+                <span className="btn-share-text">Phone</span>
+                  </a>
+              </button>
+
+            </li>
+            <li>
+              <button className="btn-share social-item-1">
+                <a href="https://www.facebook.com/zunaedu/?fref=ts" target="_blank">
+                <i className="material-icons">thumb_up</i>
+                <span className="btn-share-text">Facebook</span>
+                  </a>
+              </button>
+            </li>
           </ul>
-          <button onClick={button1} className="trigger"></button>
+          <div className="social-open-menu" onMouseOver={socialOpenMenu} >
+            <button className="btn-share"><i className="material-icons">share</i></button>
+          </div>
         </div>
         <Footer />
 

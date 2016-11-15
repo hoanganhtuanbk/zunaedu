@@ -17,44 +17,49 @@ export class Backgroud extends React.Component{
       autoplay: true,
       lazyLoad: true,
       arrows: false,
-      fade: true,
+      fade: true
     };
     return (
       <section className="section-1">
         <Slider {...settings}>
           <div className="carousel-content">
-            <Link to="/van-tay-hoc" className="item active">
+            <Link to="/van-tay-hoc" className="item effect-apollo">
               <img className="img-responsive" src="../index/img/bg-components/sinh-trac-mini.jpg" alt="van-tay-hoc-viet-nam"/>
-              <div className="carousel-caption">
-              </div>
+              <figcaption>
+
+              </figcaption>
             </Link>
           </div>
           <div className="carousel-content">
-            <Link to="/dao-tao" className="item">
+            <Link to="/dao-tao" className="item effect-apollo">
               <img className="img-responsive" src="../index/img/bg-components/chuong-trinh-mini.jpg" alt="van-tay-hoc-viet-nam"/>
-              <div className="carousel-caption">
-              </div>
+              <figcaption>
+
+              </figcaption>
             </Link>
           </div>
           <div className="carousel-content">
-            <Link to="/su-kien" className="item">
+            <Link to="/su-kien" className="item effect-apollo">
               <img className="img-responsive" src="../index/img/bg-components/su-kien-mini.jpg" alt="van-tay-hoc-viet-nam" />
-              <div className="carousel-caption">
-              </div>
+              <figcaption>
+
+              </figcaption>
             </Link>
           </div>
           <div className="carousel-content">
-            <Link to="/sach-giao-duc" className="item">
+            <Link to="/sach-giao-duc" className="item effect-apollo">
               <img className="img-responsive" src="../index/img/bg-components/sach-mini.jpg" alt="van-tay-hoc-viet-nam" />
-              <div className="carousel-caption">
-              </div>
+              <figcaption>
+
+              </figcaption>
             </Link>
           </div>
           <div className="carousel-content">
-            <Link to="/goc-cha-me" className="item">
+            <Link to="/goc-cha-me" className="item effect-apollo">
               <img className="img-responsive" src="../index/img/bg-components/goc-cha-me-mini.jpg" alt="van-tay-hoc-viet-nam" />
-              <div className="carousel-caption">
-              </div>
+              <figcaption>
+
+              </figcaption>
             </Link>
           </div>
         </Slider>

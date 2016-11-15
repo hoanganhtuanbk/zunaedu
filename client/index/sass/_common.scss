@@ -79,7 +79,7 @@ label {
   width: 30px;
   height: 30px;
   font-size: 20px;
-  background: #222;
+  background: rgba(34, 34, 34, 0.25);
   right: 14px !important;
   bottom: 11px !important;
   border-radius: 3px !important;
@@ -332,9 +332,9 @@ div{
 }
 .event-style{
   img{
-    transition: all 0.5s;
+    transition: all 0.3s;
     &:hover{
-      transition: all 0.7s;
+      transition: all 0.4s;
 
       -webkit-transform: scale(1.2);
       transform: scale(1.2);
