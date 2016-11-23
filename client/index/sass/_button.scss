@@ -251,22 +251,26 @@ body {
   color: #fff;
   display: block;
   opacity: 0;
-  transition: all 500ms ease-in-out  0.5s;
+  transition: all 500ms ease-in-out  2s;
 }
 #social-share ul.social-itens li:hover .btn-share-text {
   opacity: 1;
 }
 #social-share div.social-open-menu .btn-share {
-  width: 65px;
-  height: 65px;
+  width: 50px;
+  height: 50px;
   background-color: #F44336;
+  &:hover {
+    width: 65px;
+    height: 65px;
+  }
 }
 #social-share div.social-open-menu .btn-share i {
   text-shadow: 0px 0px #f32c1e, 1px 1px #f32c1e, 2px 2px #f32c1e, 3px 3px #f32c1e, 4px 4px #f32c1e, 5px 5px #f32c1e;
 }
 #social-share .social-itens.open .social-item-1,
 #social-share .social-itens.open .social-item-1 .btn-share-text {
-  transition: all 500ms cubic-bezier(0.68, -0.55, 0.265, 1.55) 0.1s;
+  transition: all 2000ms cubic-bezier(0.68, -0.55, 0.265, 1.55) 0.1s;
 }
 #social-share .social-itens.hidden .social-item-1,
 #social-share .social-itens.open .social-item-1 .btn-share-text {
