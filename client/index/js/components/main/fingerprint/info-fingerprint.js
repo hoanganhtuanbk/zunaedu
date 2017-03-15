@@ -168,7 +168,6 @@ class DoiTuongDichVu extends React.Component{
           <div className="title-ss-4">
             <h3 className="text-center">Dịch vụ này dành cho độ tuổi nào?</h3>
           </div>
-
         </div>
         <div className="session-5 container">
           <div className="title-ss-5">
@@ -204,7 +203,6 @@ class DoiTuongDichVu extends React.Component{
                   </div>
                 </li>
               </ul>
-
             </div>
             <div className="col-md-4">
               <div className="img-ss-5 text-center">
@@ -219,7 +217,6 @@ class DoiTuongDichVu extends React.Component{
                   </div>
                   <div className="text-ss">
                     <p className="text-justify">Giúp cha mẹ xác định các chỉ số đặc biệt khác của con như là: <strong>TFRC</strong> (thể hiện mật độ tế bào thần kinh trên vỏ não), <strong>VAK</strong> (phương pháp tiếp nhận thông tin hiệu quả), <strong>ATD</strong> (tốc độ tiếp thu nhanh chậm), cấu trúc thùy não (thùy trước trán, thùy đỉnh, thùy chẩm, thùy trán, thùy thái dương).</p>
-
                   </div>
                 </li>
                 <li>
@@ -229,10 +226,8 @@ class DoiTuongDichVu extends React.Component{
                   <div className="text-ss">
                     <p className="text-justify">Giúp cha mẹ <strong>hiểu và có phương pháp</strong> nuôi dạy con phù hợp hơn ngay từ sớm.</p>
                   </div>
-
                 </li>
               </ul>
-
             </div>
           </div>
         </div>
@@ -263,7 +258,6 @@ class DoiTuongDichVu extends React.Component{
                     </div>
                     <div className="text-ss">
                       <p className="text-justify">Giúp phát triển điểm mạnh để đạt được <strong>sự tự tin và chuyên nghiệp</strong> cao nhất.</p>
-
                     </div>
                   </li>
                   <li>
@@ -272,7 +266,6 @@ class DoiTuongDichVu extends React.Component{
                     </div>
                     <div className="text-ss">
                       <p className="text-justify">Giúp <strong>tự tin phát huy những tố chất sẵn có</strong> của mình để vươn đến những tầm cao mới trong công việc lẫn cuộc sống.</p>
-
                     </div>
                   </li>
                 </ul>
@@ -280,7 +273,6 @@ class DoiTuongDichVu extends React.Component{
               <div className="col-md-4">
                 <div className="img-ss-5 text-center">
                   <img width="315" height="315" src="../index/img/van-tay-hoc/nguoi-truong-thanh.png" className="vc_single_image-img attachment-large" alt="DMIT_anh2" />
-
                 </div>
               </div>
               <div className="col-md-4">
@@ -291,7 +283,6 @@ class DoiTuongDichVu extends React.Component{
                     </div>
                     <div className="text-ss">
                       <p className="text-justify">Giúp <strong>vạch ra mục tiêu rõ ràng hơn</strong> và tin tưởng, tập trung vào mục tiêu của bản thân hơn.</p>
-
                     </div>
                   </li>
                   <li>
@@ -301,7 +292,6 @@ class DoiTuongDichVu extends React.Component{
                     <div className="text-ss">
                       <p className="text-justify">Giúp<strong> lý giải những mâu thuẫn</strong> trong tính cách khiến bạn băn khoăn bấy lâu nay.</p>
                     </div>
-
                   </li>
                   <li>
                     <div className="icon-ss">
@@ -309,7 +299,6 @@ class DoiTuongDichVu extends React.Component{
                     </div>
                     <div className="text-ss">
                       <p className="text-justify">Giúp <strong>xây dựng các mối quan hệ tốt hơn</strong> với người xung quanh thông qua việc thấu hiểu cách tư duy và hành động của&nbsp;bản thân bạn.</p>
-
                     </div>
                   </li>
                 </ul>
@@ -336,7 +325,6 @@ class DoiTuongDichVu extends React.Component{
                     </div>
                     <div className="text-ss">
                       <p className="text-justify">Giúp cha mẹ thấu hiểu các <strong>năng khiếu bẩm sinh</strong> điểm manh và điểm yếu của con em mình.</p>
-
                     </div>
                   </li>
                   <li>
@@ -346,20 +334,16 @@ class DoiTuongDichVu extends React.Component{
                     <div className="text-ss">
                       <p className="text-justify">Giúp định hướng trẻ phát huy tối đa <strong>tiềm năng</strong></p>
                     </div>
-
                   </li>
-
                 </ul>
               </div>
               <div className="col-md-4">
                 <div className="img-ss-5 text-center">
                   <img width="315" height="315" src="../index/img/van-tay-hoc/gia-dinh.png" className="vc_single_image-img attachment-large" alt="DMIT_anh2" />
-
                 </div>
               </div>
               <div className="col-md-4">
                 <ul>
-
                   <li>
                     <div className="icon-ss">
                       <i className="fa fa-angle-right" aria-hidden="true"></i>
@@ -367,7 +351,6 @@ class DoiTuongDichVu extends React.Component{
                     <div className="text-ss">
                       <p className="text-justify">Giúp <strong>tư vấn cải thiện </strong> các bất đồng quan điểm giữa cha mẹ và con trẻ..</p>
                     </div>
-
                   </li>
                   <li>
                     <div className="icon-ss">
@@ -376,7 +359,6 @@ class DoiTuongDichVu extends React.Component{
                     <div className="text-ss">
                       <p className="text-justify">Giúp<strong> thấu hiểu </strong> lẫn nhau – Nâng cao giá trị gia đình.</p>
                     </div>
-
                   </li>
                 </ul>
               </div>
@@ -428,7 +410,6 @@ class DoiTuongDichVu extends React.Component{
               <div className="col-md-4">
                 <div className="img-ss-5 text-center">
                   <img width="315" height="315" src="../index/img/van-tay-hoc/doanh-nghiep.png" className="vc_single_image-img attachment-large" alt="DMIT_anh2" />
-
                 </div>
               </div>
               <div className="col-md-4">
@@ -457,7 +438,6 @@ class DoiTuongDichVu extends React.Component{
                     <div className="text-ss">
                       <p className="text-justify">Giúp <strong>tối ưu hóa</strong> chi phí tuyển dụng, đào tạo nhân sự.</p>
                     </div>
-
                   </li>
                 </ul>
               </div>
@@ -504,7 +484,6 @@ class DiemKhacBiet extends React.Component{
                   <li>
                     <p>
                       <strong>Với chi phí để làm 1 bài báo cáo thấp nhất tại tp Hồ Chí Minh và Hà Nội sẽ là 3.200.000 vnđ</strong>, nhưng với nỗ lực và sự hỗ trợ từ Zuna, chúng tôi quyết định sản phẩm đưa về Miền Trung thân yêu chỉ còn <strong>2.800.000 vnđ</strong>, để giúp bạn dễ dàng tiếp cận hơn với <strong>công nghệ Sinh Trắc Vân Tay</strong>?
-
                     </p>
                   </li>
                 </ul>
@@ -547,7 +526,6 @@ class QuyTrinh extends React.Component{
                 <div className="around-icon">
                   <i className="fa fa-thumbs-o-up" aria-hidden="true"></i>
                 </div>
-
                 <h3 className="sub-title-ss-9 ult-responsive">Bước 1</h3>
                 <div className="description-ss-9 ult-responsive" ><p></p>
                   <p className="text-center">Khách hàng<strong> lấy dấu vân tay tại văn phòng Zuna </strong>bằng máy scan.<br/>
@@ -559,8 +537,6 @@ class QuyTrinh extends React.Component{
                 <div className="around-icon">
                   <i className="fa fa-television" aria-hidden="true"></i>
                 </div>
-
-
                 <h3 className="sub-title-ss-9 ult-responsive">Bước 2</h3>
                 <div className="description-ss-9 ult-responsive"><p></p>
                   <p className="text-center">Các chuyên viên<strong>&nbsp;phân tích dấu vân tay bằng hệ thống</strong> máy tính và phần mềm mới nhất.<br/>(5 – 7 ngày)</p>
@@ -611,7 +587,7 @@ class QuyTrinh extends React.Component{
               </div>
               <div className="col-md-4 text-center">
                 <div className="step-img">
-                  <img className="img-icon" alt="null" src="https://tgm.cdn.vccloud.vn/wp-content/uploads/2016/06/DMIT_baocao2.png" />
+                  <img className="img-icon" alt="null" src="/index/img/filepdf.png" />
                 </div>
                 <div className="aio-icon-header">
                   <h3 className="sub-title-ss-9" >File PDF</h3>
@@ -619,7 +595,7 @@ class QuyTrinh extends React.Component{
               </div>
               <div className="col-md-4 text-center">
                 <div className="step-img">
-                  <img className="img-icon" alt="null" src="https://tgm.cdn.vccloud.vn/wp-content/uploads/2016/06/DMIT_baocao3.png" />
+                  <img className="img-icon" alt="null" src="/index/img/ghiam.png" />
                 </div>
                 <div className="aio-icon-header">
                   <h3 className="sub-title-ss-9">File ghi âm</h3>
@@ -641,7 +617,7 @@ class CamKet extends React.Component{
         <div className="session-11 ">
           <div className="container">
             <div className="commitment text-center">
-              <img width="500" height="228" src="https://tgm.cdn.vccloud.vn/wp-content/uploads/2016/06/CamketDMIT.png" alt="CamketDMIT" />
+              <img width="500" height="228" src="/index/img/sinhtrac.jpg" alt="CamketDMIT" />
             </div>
             <div className="row">
               <div className="col-md-4">
